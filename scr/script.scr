@@ -1,0 +1,8 @@
+
+# Simple eagle script for running a different script
+
+SCRIPT %SCRIPT_PATH%;
+
+SCH:
+
+quit;

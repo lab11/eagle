@@ -1,0 +1,7 @@
+
+# Simple eagle script for running a ulp
+
+BRD:
+
+run %ULP_PATH%
+quit;

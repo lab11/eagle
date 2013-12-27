@@ -1,0 +1,11 @@
+
+# Good Eagle Settings
+
+Directories.IgnoreNonExisting = "1"
+
+Printer.Paper = "Letter"
+Printer.Orientation = "1"
+
+Sch.MenuText.01 = ""
+
+

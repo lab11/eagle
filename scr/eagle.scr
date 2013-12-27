@@ -1,0 +1,77 @@
+# Configuration Script
+# Lab 11 Eagle Defaults
+# This file can be used to configure the editor windows.
+
+BRD:
+
+Grid Default On;
+Grid .1;
+Grid Alt .01;
+Change Width 0.010;
+Change Font vector;
+Change Align bottom-center;
+
+Change Ratio 12%;
+Change Shape round;
+Change Drill .016;
+Change Isolate .012;
+
+#Menu Add Change Copy Delete Display Grid Group Move Name Quit Rect \
+#     Route Script Show Signal Split Text Value Via Window ';'  Wire Write Edit;
+
+
+SCH:
+
+Grid Default On;
+Grid .1;
+Grid Alt .05;
+Change Width 0.010;
+Change Font proportional;
+Change Align bottom-center;
+
+Change Size .04;
+Change Xref on;
+
+#Menu Add Bus Change Copy Delete Display Gateswap Grid Group Invoke Junction \
+#     Label Move Name Net Pinswap Quit Script Show Split Value Window ';' \
+#     Wire Write Edit;
+
+LBR:
+
+#Menu Close Export Open Script Write ';' Edit;
+
+DEV:
+
+Grid Default On;
+
+#Menu Add Change Copy Connect Delete Display Export Grid Move Name Package \
+#     Prefix Quit Script Show Value Window ';' Write Edit;
+
+SYM:
+
+Grid Default On;
+Grid .1;
+Grid Alt .05;
+Change Width 0.010;
+Change Size 0.07;
+Change Font Proportional;
+Change Align bottom-center;
+
+Change Visible pin;
+
+#Menu Arc Change Copy Cut Delete Display Export Grid Group Move Name Paste \
+#     Pin Quit Script Show Split Text Value Window ';' Wire Write Edit;
+
+PAC:
+
+Grid Default On;
+Grid .1;
+Grid Alt .05;
+Change Width 0.005;
+Change Size 0.040;
+Change Font vector;
+Change Ratio 12;
+Change Align bottom-center;
+
+#Menu Add Change Copy Delete Display Grid Group Move Name Pad Quit \
+#     Script Show Smd Split Text Window ';' Wire Write Edit;

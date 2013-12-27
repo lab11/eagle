@@ -1,0 +1,7 @@
+
+# Simple eagle script for running a ulp
+
+SCH:
+
+run %ULP_PATH%
+quit;

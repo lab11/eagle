@@ -1,0 +1,71 @@
+
+# Create pdfs of a 2 layer board
+
+BRD:
+
+# Display a nice view of the top of the board
+Display None;
+Display Top Pads Vias Unrouted Dimension tPlace tOrigins tNames;
+Rip @;
+Print FILE %N_top_drawing.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+
+# Display the top copper and not much else
+Ratsnest;
+Display -tPlace -tNames -tOrigins;
+Print FILE %N_top_copper.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+Print FILE %N_top_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
+
+# Do a top image thats designed for placing parts
+Display None;
+Display Dimension tPlace tOrigins tNames tNamesHidden tCream;
+Print FILE %N_top_place.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+
+# Do the same for the bottom
+Display None;
+Display Bottom Pads Vias Unrouted Dimension bPlace bOrigins bNames;
+Rip @;
+Print FILE %N_bot_drawing.pdf MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+
+Ratsnest;
+Display -bPlace -bNames -bOrigins;
+Print FILE %N_bot_copper.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+Print FILE %N_bot_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
+
+Display None;
+Display Dimension bPlace bOrigins bNames bNamesHidden bCream;
+Print FILE %N_bot_place.pdf 100 MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter -1;
+
+Display None Top Bottom Pads Vias Unrouted Dimension tPlace tOrigins tNames;
+
+
+# Get all traces
+Display None;
+Display Top Bottom ?? Route2 ?? Route15 Pads Vias Unrouted Dimension tPlace tOrigins tNames bPlace bOrigins bNames;
+Rip @;
+Print FILE %N_drawing.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+Print FILE %N_drawing_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
+
+
+# Get the inner layers, if they exist
+Display None;
+Display ?? Route2 Pads Vias Unrouted Dimension;
+Ratsnest;
+Print FILE %N_layer2_copper.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+Print FILE %N_layer2_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
+
+Display None;
+Display ?? Route15 Pads Vias Unrouted Dimension;
+Ratsnest;
+Print FILE %N_layer3_copper.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+Print FILE %N_layer3_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
+
+
+# Get a pdf of just the outline and vias to check for multiple layers
+Display None;
+Display Pads Vias Unrouted Dimension;
+Ratsnest;
+Print FILE %N_layer_test.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
+
+SCH:
+
+Print FILE %N_schematic.pdf -CAPTION LANDSCAPE SHEETS ALL;
