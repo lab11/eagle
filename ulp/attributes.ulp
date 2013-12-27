@@ -1,0 +1,14 @@
+#usage "<b>List the global attributes<\b>\n"
+
+string FileName;
+
+if (schematic) {
+	schematic(SCH) {
+		FileName = filesetext(SCH.name, ".info");
+		output(FileName) {
+			SCH.attributes(A) { // global attributes
+				printf("%s: %s\n", A.name, A.value);
+			}
+		}
+	}
+}
