@@ -72,6 +72,7 @@ for b in bases:
 
 # Get all images
 jpgs = glob.glob('*.jpg')
+jpgs.append(glob.glob('*.png'))
 
 # Find the bom
 boms = glob.glob('*_bom.xls*')
