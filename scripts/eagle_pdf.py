@@ -76,12 +76,12 @@ if len(sys.argv) > 1:
 	sys.exit(0)
 
 # Determine the location of this script and the .scr file
-here = os.path.dirname(os.path.realpath(__file__))
-pdfscr = os.path.join(here, '..', 'scr', 'pdf.scr')
-scr = os.path.join(here, '..', 'scr', 'script.scr')
-tmpscr = os.path.join('/', 'tmp', 'script.scr')
+here      = os.path.dirname(os.path.realpath(__file__))
+pdfscr    = os.path.join(here, '..', 'scr', 'pdf.scr')
+scr       = os.path.join(here, '..', 'scr', 'script.scr')
+tmpscr    = os.path.join('/', 'tmp', 'script.scr')
 numberpdf = os.path.join(here, 'number_pdf.sh')
-titlepdf = os.path.join(here, 'pdf_titles.py')
+titlepdf  = os.path.join(here, 'pdf_titles.py')
 
 # Create script to run the pdf script
 contents = ''
@@ -181,35 +181,6 @@ without it.')
 	rm('{}_numbered.pdf'.format(sch_name))
 	mv('{}_numbered_titles.pdf'.format(sch_name), '{}.pdf'.format(sch_name))
 
-
-"""
-todo:
-from pyPdf import PdfFileWriter, PdfFileReader
-import StringIO
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
-
-packet = StringIO.StringIO()
-# create a new PDF with Reportlab
-can = canvas.Canvas(packet, pagesize=letter)
-can.drawString(10, 100, "Hello world")
-can.save()
-
-#move to the beginning of the StringIO buffer
-packet.seek(0)
-new_pdf = PdfFileReader(packet)
-# read your existing PDF
-existing_pdf = PdfFileReader(file("original.pdf", "rb"))
-output = PdfFileWriter()
-# add the "watermark" (which is the new pdf) on the existing page
-page = existing_pdf.getPage(0)
-page.mergePage(new_pdf.getPage(0))
-output.addPage(page)
-# finally, write "output" to a real file
-outputStream = file("destination.pdf", "wb")
-output.write(outputStream)
-outputStream.close()
-"""
-
-
+# Delete doc_data.txt if it was created
+rm('-f', 'doc_data.txt')
 
