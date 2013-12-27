@@ -1,0 +1,11 @@
+
+# Create pdfs of a 2 layer board
+
+BRD:
+
+# Get all traces
+Display None;
+Display Top Bottom ?? Route2 ?? Route15 Pads Vias Unrouted Dimension tPlace tOrigins tNames bPlace bOrigins bNames;
+Rip @;
+Export IMAGE %N_pcb.png 300
+

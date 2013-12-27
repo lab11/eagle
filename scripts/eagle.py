@@ -12,6 +12,7 @@ scripts = [('eagle_centroid.py',   False),
            ('bom_to_text.py',      False),
            ('eagle_tofab_zip.py',  True),
            ('eagle_pdf.py',        False),
+           ('eagle_png.py',        False),
            ('eagle_attributes.py', False),
            ('board_bundle.py',     True)
           ]
