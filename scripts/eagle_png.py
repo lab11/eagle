@@ -39,18 +39,25 @@ if len(sys.argv) > 1:
 	sys.exit(0)
 
 # Determine the location of this script and the .scr file
-here      = os.path.dirname(os.path.realpath(__file__))
-pngscr    = os.path.join(here, '..', 'scr', 'png.scr')
-scr       = os.path.join(here, '..', 'scr', 'script.scr')
-tmpscr    = os.path.join('/tmp', str(mktemp('scrXXXX')).strip())
+here   = os.path.dirname(os.path.realpath(__file__))
+pngscr = os.path.join(here, '..', 'scr', 'png.scr')
+scr    = os.path.join(here, '..', 'scr', 'script.scr')
+tmppng = os.path.join(str(mktemp('/tmp/pngXXXX')).strip() + '.scr')
+tmpscr = os.path.join(str(mktemp('/tmp/scrXXXX')).strip() + '.scr')
+
+# Get the text from the png script file so that we can replace the 
+# schematic name later.
+pngscr_contents = ''
+with open(pngscr, 'r') as f:
+	pngscr_contents = f.read()
 
 # Create script to run the pdf script
 contents = ''
 with open(scr, 'r') as f:
 	contents = f.read()
-
-contents = contents.replace('%SCRIPT_PATH%', pngscr)
-
+contents = contents.replace('%SCRIPT_PATH%', tmppng)
+with open(tmpscr, 'w') as f:
+	f.write(contents)
 
 # Figure out the name of the schematic to run this on.
 for sch in glob('*.sch'):
@@ -58,13 +65,13 @@ for sch in glob('*.sch'):
 
 	rm('-f', '{}_pcb.png'.format(sch_name))
 
-	contents_now = contents.replace('%N', sch_name)
-	print(contents_now)
-	with open(tmpscr, 'w') as f:
-		f.write(contents_now)
+	pngscr_contents = pngscr_contents.replace('%N', sch_name)
+	with open(tmppng, 'w') as f:
+		f.write(pngscr_contents)
 	
 	# Generate the png
 	eagle('-S', tmpscr, sch)
 
 rm('-f', tmpscr)
+rm('-f', tmppng)
 
