@@ -17,7 +17,7 @@ Print FILE %N_top_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPT
 
 # Do a top image thats designed for placing parts
 Display None;
-Display Dimension tPlace tOrigins tNames tNamesHidden tCream;
+Display Dimension tPlace tOrigins tNames ?? tNamesHidden tCream;
 Print FILE %N_top_place.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
 
 # Do the same for the bottom
@@ -32,7 +32,7 @@ Print FILE %N_bot_copper.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION 
 Print FILE %N_bot_copper_1-1.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 1;
 
 Display None;
-Display Dimension bPlace bOrigins bNames bNamesHidden bCream;
+Display Dimension bPlace bOrigins bNames ?? bNamesHidden bCream;
 Print FILE %N_bot_place.pdf 100 MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter -1;
 
 Display None Top Bottom Pads Vias Unrouted Dimension tPlace tOrigins tNames;
