@@ -40,7 +40,7 @@ for folder in folders:
 
 # Check for the zip files we need
 fab_zip = glob.glob('*to_fab_{}.zip'.format(args.date))[0]
-assem_zip = glob.glob('*to_fab_{}.zip'.format(args.date))[0]
+assem_zip = glob.glob('*to_assembler_{}.zip'.format(args.date))[0]
 
 if not fab_zip:
 	print('No to_fab .zip file found. Maybe you should run eagle.py.')
