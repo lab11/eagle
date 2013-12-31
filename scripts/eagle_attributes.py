@@ -29,6 +29,8 @@ import os
 def read_in_info (filename, d):
 	with open(filename) as f:
 		for line in f:
+			if len(line.strip()) == 0:
+				continue
 			opts = line.split(':', 1)
 			d[opts[0].strip().lower()] = opts[1].strip()
 
