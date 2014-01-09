@@ -63,7 +63,8 @@ with open(tmpscr, 'w') as f:
 for sch in glob('*.sch'):
 	sch_name, sch_ext = os.path.splitext(sch)
 
-	rm('-f', '{}_pcb.png'.format(sch_name))
+	png_name = '{}_pcb.png'.format(sch_name)
+	rm('-f', png_name)
 
 	pngscr_contents = pngscr_contents.replace('%N', sch_name)
 	with open(tmppng, 'w') as f:
@@ -71,6 +72,9 @@ for sch in glob('*.sch'):
 	
 	# Generate the png
 	eagle('-S', tmpscr, sch)
+
+	# Trip whitespace
+	sh.convert(png_name, '-trim', png_name)
 
 rm('-f', tmpscr)
 rm('-f', tmppng)
