@@ -16,7 +16,7 @@ command -v pdftk >/dev/null 2>&1 || {
 
 set -e
 
-tmp=`mktemp -d pdf_number`
+tmp=`mktemp -d pdf_numberXXXXXXXXXX`
 if [ -z "$2" ]; then
 	out=`basename "$1" .pdf`"_numbered.pdf"
 else
@@ -27,7 +27,7 @@ cp $1 $tmp
 pushd $tmp &> /dev/null
 
 echo "Breaking original pdf into individual pages"
-pdftk $1 burst output p_%04d.pdf
+pdftk $1 burst output ZXZX_%04d.pdf
 
 echo "Generating latex template..."
 cat > page_numbers.tex << EOF
@@ -39,7 +39,7 @@ cat > page_numbers.tex << EOF
 EOF
 
 total=0
-for f in `ls p_*pdf`; do
+for f in `ls ZXZX_*pdf`; do
 	echo "~ \newpage" >> page_numbers.tex
 	let total=total+1
 done
@@ -55,18 +55,18 @@ if [[ ! -e page_numbers.pdf ]]; then
 fi
 
 echo "Breaking latex pages into individual documents"
-pdftk page_numbers.pdf burst output b_p_%04d.pdf
+pdftk page_numbers.pdf burst output b_ZXZX_%04d.pdf
 
 echo "Overlaying pages"
 cnt=1
-for i in p_*.pdf; do
+for i in ZXZX_*.pdf; do
 	echo "  Processing page $cnt/$total"
 	pdftk $i background b_$i output x_$i.pdf
 	let cnt=cnt+1
 done
 
 echo "Creating unified pdf"
-pdftk x_p_*.pdf cat output $out
+pdftk x_ZXZX_*.pdf cat output $out
 
 popd &> /dev/null
 

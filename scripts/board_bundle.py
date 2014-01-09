@@ -63,6 +63,10 @@ pdfs = []
 for b in bases:
 	pdfs += glob.glob('{}.pdf'.format(b))
 
+# Get any dxf files
+dxfs = []
+dxfs += glob.glob('*.dxf')
+
 # Get the info files if they exist
 infos = []
 for b in bases:
@@ -111,8 +115,8 @@ fab_files = glob.glob('{}/*'.format(FAB_FOLDER))
 assem_files = glob.glob('{}/*'.format(ASSEM_FOLDER))
 image_files = glob.glob('{}/*'.format(IMAGE_FOLDER))
 
-combined =  [output_name] + schs + brds + pdfs + infos + boms + fab_files + \
-                            assem_files + image_files
+combined =  [output_name] + schs + brds + pdfs + dxfs + infos + boms + \
+                            fab_files + assem_files + image_files
 
 sh.zip(*combined)
 

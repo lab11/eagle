@@ -42,8 +42,8 @@ if len(sys.argv) > 1:
 here   = os.path.dirname(os.path.realpath(__file__))
 pngscr = os.path.join(here, '..', 'scr', 'png.scr')
 scr    = os.path.join(here, '..', 'scr', 'script.scr')
-tmppng = os.path.join(str(mktemp('/tmp/pngXXXX')).strip() + '.scr')
-tmpscr = os.path.join(str(mktemp('/tmp/scrXXXX')).strip() + '.scr')
+tmppng = os.path.join(str(mktemp('/tmp/pngXXXXXXXXXX')).strip() + '.scr')
+tmpscr = os.path.join(str(mktemp('/tmp/scrXXXXXXXXXX')).strip() + '.scr')
 
 # Get the text from the png script file so that we can replace the 
 # schematic name later.

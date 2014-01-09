@@ -43,7 +43,7 @@ if len(sys.argv) > 1:
 here   = os.path.dirname(os.path.realpath(__file__))
 ulp    = os.path.join(here, '..', 'ulp', 'attributes.ulp')
 scr    = os.path.join(here, '..', 'scr', 'ulp-sch.scr')
-tmpscr = str(mktemp(os.path.join('/', 'tmp', 'ulp.scrXXXX'))).strip()
+tmpscr = str(mktemp(os.path.join('/', 'tmp', 'ulp.scrXXXXXXXXXX'))).strip()
 
 contents = ''
 with open(scr, 'r') as f:
