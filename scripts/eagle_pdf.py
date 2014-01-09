@@ -9,7 +9,7 @@ reference for others to use.
 Simply run this script in a folder containing a .sch and .brd file to
 generate the pdfs.
 """
-import sys
+import sys, os, platform
 
 # Get all of the tricky packages out of the way
 try:
@@ -34,20 +34,26 @@ except:
 	print("export PATH=$PATH:~/eagle-6.5.0/bin")
 	sys.exit(1)
 
-try:
-	from sh import unoconv
-	include_bom = True
-except:
-	print("If you want to include the bom you must have unoconv installed.")
-	print("sudo apt-get install unoconv")
-	include_bom = False
+if platform.system().lower() == 'darwin':
+	if os.path.exists('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'):
+		include_bom = True
+	else:
+		print("If you want to include the bom you must have wkhtmltopdf installed.")
+		print("Get it from here: https://code.google.com/p/wkhtmltopdf/downloads/detail?name=wkhtmltopdf.dmg")
+		include_bom = False
+else:
+	try:
+		from sh import unoconv
+		include_bom = True
+	except:
+		print("If you want to include the bom you must have unoconv installed.")
+		print("sudo apt-get install unoconv")
+		include_bom = False
 
 
 from glob import glob
-import os
-import sys
 import sh
-
+from subprocess import call
 
 # List of all of the pdfs that get generated
 pdf_files = [('schematic', '~'),
@@ -113,18 +119,28 @@ for sch in glob('*.sch'):
 		if len(boms) > 0:
 			bom_tries = 3
 			while bom_tries > 0:
-				try:
-					unoconv('-f', 'pdf', '-o', '{}_bom.pdf'.format(sch_name),
-						boms[0])
+				if platform.system().lower() == 'darwin':
+					call(['/bin/rm', '-rf', 'osx_bom_to_pdf'])
+					os.mkdir('osx_bom_to_pdf')
+					call(['qlmanage','-o','osx_bom_to_pdf','-p',boms[0]])
+					qldir = boms[0] + '.qlpreview'
+					os.chdir("%s/%s" % ('osx_bom_to_pdf',qldir))
+					call(['/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf',
+						'Preview.html', '{}_bom.pdf'.format(sch_name)])
+					mv('{}_bom.pdf'.format(sch_name), '../../')
+					os.chdir('../..')
+					call(['/bin/rm', '-rf', 'osx_bom_to_pdf'])
 					break
-				except sh.ErrorReturnCode:
-					print('Unable to convert bom on this go. Will try again \
-because that seems to fix it.')
+				else:
+					try:
+						unoconv('-f', 'pdf', '-o', '{}_bom.pdf'.format(sch_name), boms[0])
+						break
+					except sh.ErrorReturnCode:
+						print('Unable to convert bom on this go. Will try again \ because that seems to fix it.')
 				bom_tries -= 1
 				if bom_tries == 0:
 					# Failed to convert bom. Exclude it
-					print('Just could not convert bom. You\'ll have to go \
-without it.')
+					print('Just could not convert bom. You\'ll have to go \ without it.')
 					include_bom = False
 		else:
 			include_bom = False
