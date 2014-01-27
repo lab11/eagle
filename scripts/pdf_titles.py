@@ -47,16 +47,15 @@ MERGED_GLOB = os.path.join(tdir, 'merged_{}.pdf')
 MERGED_PDF = os.path.join(tdir, 'merged.pdf')
 
 latex_header = """
-\documentclass{article}
-\usepackage[margin=1cm,pdftex]{geometry}
-\pagestyle{plain}
-\\renewcommand{\\familydefault}{\sfdefault}
-\pagenumbering{gobble}
+\\documentclass{article}
+\\usepackage[margin=1cm,pdftex]{geometry}
+\\pagestyle{plain}
+\\renewcommand{\\familydefault}{\\sfdefault}
+\\pagenumbering{gobble}
 \\begin{document}
-\center
-"""
+\\center """
 latex_footer = """
-\end{document}
+\\end{document}
 """
 
 if len(sys.argv) < 3:
