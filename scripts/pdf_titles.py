@@ -71,8 +71,11 @@ titles = sys.argv[2:]
 
 pdfinfo = pdftk(input_file, 'dump_data')
 pdfinfol = pdfinfo.strip().split('\n')
-pdfpages = pdfinfol[-1].split(':')
-numpages = int(pdfpages[1].strip())
+for line in pdfinfol:
+	items = line.split(':')
+	if len(items) == 2 and items[0] == 'NumberOfPages':
+		numpages = int(items[1].strip())
+		break
 
 while numpages > len(titles):
 	titles.append('~')

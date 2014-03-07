@@ -163,9 +163,11 @@ for sch in glob('*.sch'):
 		if os.path.exists(pdfname):
 			pdfinfo = pdftk(pdfname, 'dump_data')
 			pdfinfol = pdfinfo.strip().split('\n')
-			pdfpages = pdfinfol[-1].split(':')
-			numpages = int(pdfpages[1].strip())
-
+			for line in pdfinfol:
+				items = line.split(':')
+				if len(items) == 2 and items[0] == 'NumberOfPages':
+					numpages = int(items[1].strip())
+					break
 			titles += [title]*numpages
 			pdfs.append(pdfname)
 	if include_bom:
