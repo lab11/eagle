@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -588,6 +588,17 @@
 <wire x1="3" y1="-0.635" x2="-3" y2="-0.635" width="0.127" layer="21"/>
 <wire x1="-3" y1="-0.635" x2="-3" y2="0.635" width="0.127" layer="21"/>
 <text x="-3.5" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="SH-1X2/1MM">
+<smd name="1" x="-0.5" y="0.1" dx="0.6" dy="1.35" layer="1"/>
+<smd name="2" x="0.5" y="0.1" dx="0.6" dy="1.35" layer="1"/>
+<smd name="SUPPORT2" x="1.8" y="2.335" dx="1.2" dy="1.6" layer="1"/>
+<smd name="SUPPORT1" x="-1.8" y="2.335" dx="1.2" dy="1.6" layer="1"/>
+<wire x1="-2" y1="3.1335" x2="2" y2="3.135" width="0.127" layer="21"/>
+<wire x1="2" y1="3.135" x2="2" y2="0.235" width="0.127" layer="21"/>
+<wire x1="2" y1="0.235" x2="-2" y2="0.235" width="0.127" layer="21"/>
+<wire x1="-2" y1="0.235" x2="-2" y2="3.1335" width="0.127" layer="21"/>
+<text x="0" y="3.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -1281,6 +1292,25 @@ Digi-Key Part Number
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SH_MALE_2/1MM" prefix="J">
+<description>1.0mm pitch/Disconnectable Crimp style connectors</description>
+<gates>
+<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SH-1X2/1MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="455-1788-2-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
