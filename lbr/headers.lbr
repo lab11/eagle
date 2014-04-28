@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -599,6 +599,38 @@
 <wire x1="2" y1="0.235" x2="-2" y2="0.235" width="0.127" layer="21"/>
 <wire x1="-2" y1="0.235" x2="-2" y2="3.1335" width="0.127" layer="21"/>
 <text x="0" y="3.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="1X3/SMD/SH/RA/1MM">
+<smd name="1" x="-1" y="4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="2" x="0" y="4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="3" x="1" y="4.775" dx="0.6" dy="1.55" layer="1"/>
+<smd name="MOUNT2" x="2.3" y="0.9" dx="1.2" dy="1.8" layer="1"/>
+<wire x1="-2" y1="5" x2="-1.5" y2="5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="5" x2="2" y2="5" width="0.127" layer="21"/>
+<wire x1="2" y1="5" x2="2" y2="2" width="0.127" layer="21"/>
+<smd name="MOUNT1" x="-2.3" y="0.9" dx="1.2" dy="1.8" layer="1"/>
+<text x="-1" y="3.9" size="1" layer="51" align="top-center">1</text>
+<text x="0" y="3.9" size="1" layer="51" align="top-center">2</text>
+<text x="1" y="3.9" size="1" layer="51" align="top-center">3</text>
+<wire x1="1.5" y1="0.2" x2="-1.5" y2="0.2" width="0.127" layer="21"/>
+<wire x1="-2" y1="2" x2="-2" y2="5" width="0.127" layer="21"/>
+<text x="0" y="5.6" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="1X3/SMD/SH/1MM">
+<smd name="1" x="-1" y="-3.425" dx="0.6" dy="1.55" layer="1"/>
+<smd name="2" x="0" y="-3.425" dx="0.6" dy="1.55" layer="1"/>
+<smd name="3" x="1" y="-3.425" dx="0.6" dy="1.55" layer="1"/>
+<smd name="MOUNT2" x="2.3" y="-0.9" dx="1.2" dy="1.8" layer="1"/>
+<smd name="MOUNT1" x="-2.3" y="-0.9" dx="1.2" dy="1.8" layer="1"/>
+<wire x1="-1.5" y1="-0.2" x2="1.5" y2="-0.2" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2" x2="2.5" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-3.1" x2="1.5" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-3.1" x2="-2.5" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-3.1" x2="-2.5" y2="-2" width="0.127" layer="21"/>
+<text x="0" y="0.1" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="-1" y="-2.6" size="1" layer="51" ratio="12" align="bottom-center">1</text>
+<text x="0" y="-2.6" size="1" layer="51" ratio="12" align="bottom-center">2</text>
+<text x="1" y="-2.6" size="1" layer="51" ratio="12" align="bottom-center">3</text>
 </package>
 </packages>
 <symbols>
@@ -1310,6 +1342,38 @@ Digi-Key Part Number
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="455-1788-2-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SH_MALE_1X3/1MM" prefix="J">
+<description>CONN HEADER SH 3POS TOP 1MM TIN</description>
+<gates>
+<gate name="G$1" symbol="PINHD3" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="-TOP" package="1X3/SMD/SH/1MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="455-1789-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-RA" package="1X3/SMD/SH/RA/1MM">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="455-1803-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
