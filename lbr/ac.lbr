@@ -94,6 +94,9 @@
 <wire x1="-4" y1="2" x2="4" y2="2" width="0.127" layer="51"/>
 <wire x1="4" y1="1" x2="-4" y2="1" width="0.127" layer="51"/>
 </package>
+<package name="WIRE_HOLE-14AWG">
+<pad name="P$1" x="0" y="0" drill="2.54" diameter="5.08" shape="octagon"/>
+</package>
 </packages>
 <symbols>
 <symbol name="CURRENT_TRANSFORMER">
@@ -115,6 +118,12 @@
 <pin name="1" x="5.08" y="5.08" visible="off" length="point"/>
 <pin name="2" x="5.08" y="-5.08" visible="off" length="point"/>
 </symbol>
+<symbol name="WIRE_HOLE">
+<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
+<pin name="P$1" x="2.54" y="0" visible="off" length="short" rot="R180"/>
+<text x="0" y="2.54" size="1.27" layer="95" ratio="12">&gt;NAME</text>
+<text x="0" y="-3.81" size="1.27" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="CR8348" prefix="CT">
@@ -132,6 +141,22 @@
 <technology name="">
 <attribute name="DIGIKEY" value="582-1161-ND" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WIRE_HOLE-14AWG" prefix="J">
+<description>Solder point for 14AWG wire</description>
+<gates>
+<gate name="G$1" symbol="WIRE_HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WIRE_HOLE-14AWG">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
