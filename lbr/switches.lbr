@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.0375" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -448,6 +448,24 @@
 <wire x1="0.635" y1="-0.9525" x2="0.635" y2="0.9525" width="0.2032" layer="51"/>
 <wire x1="0.635" y1="0.9525" x2="-6.35" y2="0.9525" width="0.2032" layer="51"/>
 <rectangle x1="-6.35" y1="-0.9525" x2="0.635" y2="0.9525" layer="51"/>
+</package>
+<package name="SSA22/DPDT">
+<pad name="B1" x="-2.5" y="1" drill="1.0922"/>
+<pad name="COM1" x="0" y="1" drill="1.0922"/>
+<pad name="A1" x="2.5" y="1" drill="1.0922"/>
+<pad name="B2" x="-2.5" y="-1" drill="1.0922"/>
+<pad name="COM2" x="0" y="-1" drill="1.0922"/>
+<pad name="A2" x="2.5" y="-1" drill="1.0922"/>
+<wire x1="-4.5" y1="2.25" x2="4.5" y2="2.25" width="0.127" layer="21"/>
+<wire x1="4.5" y1="2.25" x2="4.5" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="4.5" y1="-2.25" x2="-4.5" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="-4.5" y1="-2.25" x2="-4.5" y2="2.25" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="1.5" x2="-2.5" y2="-1.5" width="0.127" layer="51"/>
+<wire x1="-2.5" y1="-1.5" x2="2.5" y2="-1.5" width="0.127" layer="51"/>
+<wire x1="2.5" y1="-1.5" x2="2.5" y2="1.5" width="0.127" layer="51"/>
+<wire x1="2.5" y1="1.5" x2="-2.5" y2="1.5" width="0.127" layer="51"/>
+<rectangle x1="0" y1="-1.5" x2="2.5" y2="1.5" layer="51"/>
+<text x="0" y="2.5" size="1.27" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -898,6 +916,28 @@ GH7366-ND</description>
 <connect gate="G$4" pin="C" pad="D3"/>
 <connect gate="G$4" pin="D" pad="D4"/>
 <connect gate="G$4" pin="INPUT" pad="IND"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SSA22/DPDT" prefix="S">
+<description>SW SLIDE DPDT 2POS SSA SER 30V</description>
+<gates>
+<gate name="G$1" symbol="SPDT" x="0" y="12.7"/>
+<gate name="G$2" symbol="SPDT" x="0" y="-10.16"/>
+</gates>
+<devices>
+<device name="" package="SSA22/DPDT">
+<connects>
+<connect gate="G$1" pin="1" pad="A1"/>
+<connect gate="G$1" pin="2" pad="COM1"/>
+<connect gate="G$1" pin="3" pad="B1"/>
+<connect gate="G$2" pin="1" pad="A2"/>
+<connect gate="G$2" pin="2" pad="COM2"/>
+<connect gate="G$2" pin="3" pad="B2"/>
 </connects>
 <technologies>
 <technology name=""/>
