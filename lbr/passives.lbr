@@ -384,6 +384,17 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 <rectangle x1="-0.2286" y1="-0.381" x2="0.2286" y2="0.381" layer="21"/>
 </package>
+<package name="CAP1210">
+<smd name="CATHODE" x="0" y="1.55" dx="2.4" dy="1.6" layer="1"/>
+<smd name="ANODE" x="0" y="-1.55" dx="2.4" dy="1.6" layer="1"/>
+<wire x1="1.4" y1="1.75" x2="1.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="1.4" y1="0.4" x2="1.4" y2="-1.75" width="0.127" layer="21"/>
+<wire x1="-1.4" y1="-1.75" x2="-1.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-1.4" y1="0.4" x2="-1.4" y2="1.75" width="0.127" layer="21"/>
+<wire x1="-1.4" y1="0.4" x2="1.4" y2="0.4" width="0.127" layer="21"/>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.81" size="1.016" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -434,6 +445,18 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <text x="3.81" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="2" x="0" y="-7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 <pin name="1" x="0" y="7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+</symbol>
+<symbol name="CAP_POLARIZED">
+<pin name="ANODE" x="0" y="-2.54" visible="off" length="point"/>
+<pin name="CATHODE" x="0" y="2.54" visible="off" length="point"/>
+<wire x1="0" y1="2.54" x2="0" y2="0.508" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-0.508" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0.508" x2="0" y2="0.508" width="0.254" layer="94"/>
+<wire x1="0" y1="0.508" x2="-2.54" y2="0.508" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-1.016" x2="-2.54" y2="-1.016" width="0.254" layer="94" curve="45"/>
+<text x="3.302" y="1.524" size="1.016" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="3.302" y="-2.54" size="1.016" layer="96" ratio="12" align="bottom-center">&gt;VALUE</text>
+<text x="-0.762" y="0.762" size="1.016" layer="94" font="vector" ratio="12" align="bottom-center">+</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -549,6 +572,24 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="1210_CAP_POLARIZED" prefix="C" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="CAP_POLARIZED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="CAP1210">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

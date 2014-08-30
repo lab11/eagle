@@ -940,7 +940,11 @@ GH7366-ND</description>
 <connect gate="G$2" pin="3" pad="B2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="450-1604-ND" constant="no"/>
+<attribute name="MOUSER" value="506-SSA22" constant="no"/>
+<attribute name="NEWARK" value="50F5561" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

@@ -959,6 +959,45 @@ QFN-24</description>
 <rectangle x1="0.9" y1="-1" x2="1.8" y2="-0.1" layer="31"/>
 <rectangle x1="0.9" y1="0.1" x2="1.8" y2="1" layer="31"/>
 </package>
+<package name="QFN-20-4MM">
+<smd name="3" x="-1.9" y="0" dx="0.7" dy="0.3" layer="1" roundness="100"/>
+<smd name="2" x="-1.9" y="0.5" dx="0.7" dy="0.3" layer="1" roundness="100"/>
+<smd name="1" x="-1.9" y="1" dx="0.7" dy="0.3" layer="1" roundness="100"/>
+<wire x1="2" y1="2" x2="-2" y2="2" width="0.127" layer="21"/>
+<wire x1="-2" y1="2" x2="-2" y2="-2" width="0.127" layer="21"/>
+<wire x1="-2" y1="-2" x2="2" y2="-2" width="0.127" layer="21"/>
+<wire x1="2" y1="-2" x2="2" y2="2" width="0.127" layer="21"/>
+<smd name="4" x="-1.9" y="-0.5" dx="0.7" dy="0.3" layer="1" roundness="100"/>
+<smd name="5" x="-1.9" y="-1" dx="0.7" dy="0.3" layer="1" roundness="100"/>
+<smd name="6" x="-1" y="-1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R90"/>
+<smd name="7" x="-0.5" y="-1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R90"/>
+<smd name="8" x="0" y="-1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R90"/>
+<smd name="9" x="0.5" y="-1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R90"/>
+<smd name="10" x="1" y="-1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R90"/>
+<smd name="11" x="1.9" y="-1" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R180"/>
+<smd name="12" x="1.9" y="-0.5" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R180"/>
+<smd name="13" x="1.9" y="0" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R180"/>
+<smd name="14" x="1.9" y="0.5" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R180"/>
+<smd name="15" x="1.9" y="1" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R180"/>
+<smd name="16" x="1" y="1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R270"/>
+<smd name="17" x="0.5" y="1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R270"/>
+<smd name="18" x="0" y="1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R270"/>
+<smd name="19" x="-0.5" y="1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R270"/>
+<smd name="20" x="-1" y="1.9" dx="0.7" dy="0.3" layer="1" roundness="100" rot="R270"/>
+<circle x="-2.25" y="2.25" radius="0.2" width="0" layer="21"/>
+<smd name="GND" x="0" y="0" dx="2.45" dy="2.45" layer="1"/>
+<text x="0" y="2.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="SC70-3">
+<smd name="3" x="0" y="0.8509" dx="0.5588" dy="0.6604" layer="1"/>
+<smd name="2" x="0.6223" y="-0.8509" dx="0.5588" dy="0.6604" layer="1"/>
+<smd name="1" x="-0.6223" y="-0.8509" dx="0.5588" dy="0.6604" layer="1"/>
+<wire x1="-1.016" y1="0.635" x2="1.016" y2="0.635" width="0.127" layer="21"/>
+<wire x1="1.016" y1="0.635" x2="1.016" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="1.016" y1="-0.635" x2="-1.016" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-1.016" y1="-0.635" x2="-1.016" y2="0.635" width="0.127" layer="21"/>
+<text x="0" y="1.2446" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -1480,6 +1519,44 @@ I2C, clock output, interrupt output</description>
 <wire x1="-10.16" y1="-12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
 <text x="-10.16" y="13.208" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="-2.54" y="13.208" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="LTC3109">
+<pin name="C1A" x="-15.24" y="17.78" visible="pin" length="short"/>
+<pin name="C2A" x="-15.24" y="12.7" visible="pin" length="short"/>
+<pin name="SWA" x="-15.24" y="10.16" visible="pin" length="short"/>
+<pin name="VINA" x="-15.24" y="7.62" visible="pin" length="short"/>
+<pin name="C1B" x="-15.24" y="2.54" visible="pin" length="short"/>
+<pin name="C2B" x="-15.24" y="-2.54" visible="pin" length="short"/>
+<pin name="SWB" x="-15.24" y="-7.62" visible="pin" length="short"/>
+<pin name="VINB" x="-15.24" y="-10.16" visible="pin" length="short"/>
+<pin name="VS1" x="-15.24" y="-12.7" visible="pin" length="short"/>
+<pin name="VS2" x="-15.24" y="-15.24" visible="pin" length="short"/>
+<pin name="GND" x="0" y="-25.4" visible="pin" length="short" rot="R90"/>
+<pin name="VAUX" x="15.24" y="-15.24" visible="pin" length="short" rot="R180"/>
+<pin name="VSTORE" x="15.24" y="-12.7" visible="pin" length="short" rot="R180"/>
+<pin name="VOUT2_EN" x="15.24" y="-7.62" visible="pin" length="short" rot="R180"/>
+<pin name="PGOOD" x="15.24" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="VOUT2" x="15.24" y="17.78" visible="pin" length="short" rot="R180"/>
+<pin name="VOUT" x="15.24" y="12.7" visible="pin" length="short" rot="R180"/>
+<pin name="VLDO" x="15.24" y="7.62" visible="pin" length="short" rot="R180"/>
+<wire x1="-12.7" y1="22.86" x2="12.7" y2="22.86" width="0.254" layer="94"/>
+<wire x1="12.7" y1="22.86" x2="12.7" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-22.86" x2="-12.7" y2="-22.86" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-22.86" x2="-12.7" y2="22.86" width="0.254" layer="94"/>
+<text x="-12.7" y="23.114" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-5.08" y="23.114" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="VOLTAGE_MONITOR">
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="0" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="0" y1="-3.81" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<pin name="IN" x="-10.16" y="0" visible="off" length="middle"/>
+<pin name="OUT" x="10.16" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="GND" x="0" y="-7.62" visible="off" length="short" rot="R90"/>
+<wire x1="0" y1="-5.08" x2="0" y2="-3.81" width="0.1524" layer="94"/>
+<text x="-5.08" y="7.874" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-1.778" y="7.874" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2417,6 +2494,62 @@ Interface) and offers temperature compensated time.</description>
 <technology name="">
 <attribute name="DIGIKEY" value="FM25V20-DGRA-ND" constant="no"/>
 <attribute name="MOUSER" value="877-FM25V20-DG" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LTC3109" prefix="U">
+<description>IC BOOST CONVERTER PMU 20QFN</description>
+<gates>
+<gate name="G$1" symbol="LTC3109" x="0" y="0"/>
+</gates>
+<devices>
+<device name="EUF" package="QFN-20-4MM">
+<connects>
+<connect gate="G$1" pin="C1A" pad="18"/>
+<connect gate="G$1" pin="C1B" pad="9"/>
+<connect gate="G$1" pin="C2A" pad="17"/>
+<connect gate="G$1" pin="C2B" pad="10"/>
+<connect gate="G$1" pin="GND" pad="8 11 16 GND"/>
+<connect gate="G$1" pin="PGOOD" pad="6"/>
+<connect gate="G$1" pin="SWA" pad="15"/>
+<connect gate="G$1" pin="SWB" pad="12"/>
+<connect gate="G$1" pin="VAUX" pad="2"/>
+<connect gate="G$1" pin="VINA" pad="14"/>
+<connect gate="G$1" pin="VINB" pad="13"/>
+<connect gate="G$1" pin="VLDO" pad="7"/>
+<connect gate="G$1" pin="VOUT" pad="3"/>
+<connect gate="G$1" pin="VOUT2" pad="4"/>
+<connect gate="G$1" pin="VOUT2_EN" pad="5"/>
+<connect gate="G$1" pin="VS1" pad="19"/>
+<connect gate="G$1" pin="VS2" pad="20"/>
+<connect gate="G$1" pin="VSTORE" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="LTC3109EUF#PBF-ND" constant="no"/>
+<attribute name="NEWARK" value="84R6674" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TC54" prefix="U">
+<description>CMOS Voltage Detectors. 1uA quiescent current.</description>
+<gates>
+<gate name="G$1" symbol="VOLTAGE_MONITOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="VC2102ECB713" package="SOT-23">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="TC54VC2102ECB713CT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>

@@ -972,6 +972,8 @@ Rounded side is up.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="H11574CT-ND" constant="no"/>
+<attribute name="MOUSER" value="798-ZX62R-B-5P" constant="no"/>
+<attribute name="NEWARK" value="69W0714" constant="no"/>
 </technology>
 </technologies>
 </device>
