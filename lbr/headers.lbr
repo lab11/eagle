@@ -632,6 +632,27 @@
 <text x="0" y="-2.6" size="1" layer="51" ratio="12" align="bottom-center">2</text>
 <text x="1" y="-2.6" size="1" layer="51" ratio="12" align="bottom-center">3</text>
 </package>
+<package name="2X10-0.050">
+<pad name="GND@2" x="-1.27" y="0" drill="0.5" shape="square"/>
+<pad name="GND@1" x="-2.54" y="0" drill="0.5" shape="square"/>
+<pad name="SWDIO/TMS" x="-3.81" y="1.27" drill="0.5842"/>
+<pad name="VTREF" x="-3.81" y="0" drill="0.5842"/>
+<pad name="SWCLK/TCK" x="-2.54" y="1.27" drill="0.5842"/>
+<pad name="SWO/TDO" x="-1.27" y="1.27" drill="0.5842"/>
+<pad name="TDI" x="0" y="1.27" drill="0.5842"/>
+<pad name="NRESET" x="1.27" y="1.27" drill="0.5842"/>
+<pad name="NC" x="1.27" y="0" drill="0.5842"/>
+<wire x1="-4.699" y1="2.159" x2="2.159" y2="2.159" width="0.127" layer="51"/>
+<wire x1="2.159" y1="2.159" x2="2.159" y2="-0.889" width="0.127" layer="51"/>
+<wire x1="2.159" y1="-0.889" x2="-4.699" y2="-0.889" width="0.127" layer="51"/>
+<wire x1="-4.699" y1="-0.889" x2="-4.699" y2="2.159" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="2.54" x2="2.54" y2="2.54" width="0.127" layer="21"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-5.08" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="-1.27" x2="-5.08" y2="2.54" width="0.127" layer="21"/>
+<text x="3.048" y="0.889" size="0.8128" layer="25" ratio="12">&gt;NAME</text>
+<text x="3.048" y="0" size="0.6096" layer="27" ratio="12">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -880,6 +901,36 @@
 <pin name="4" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="5" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="6" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+<symbol name="JLINK_TAG">
+<wire x1="-12.7" y1="5.08" x2="12.7" y2="5.08" width="0.3048" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="12.7" y2="-5.08" width="0.3048" layer="94"/>
+<wire x1="12.7" y1="-5.08" x2="-12.7" y2="-5.08" width="0.3048" layer="94"/>
+<wire x1="-12.7" y1="-5.08" x2="-12.7" y2="5.08" width="0.3048" layer="94"/>
+<pin name="VTREF" x="-17.78" y="2.54" length="middle"/>
+<pin name="NRESET" x="-17.78" y="0" length="middle"/>
+<pin name="GND" x="-17.78" y="-2.54" length="middle"/>
+<pin name="SWO" x="17.78" y="-2.54" length="middle" rot="R180"/>
+<pin name="SWCLK" x="17.78" y="0" length="middle" rot="R180"/>
+<pin name="SWDIO" x="17.78" y="2.54" length="middle" rot="R180"/>
+<text x="-12.7" y="5.842" size="1.778" layer="95">&gt;NAME</text>
+<text x="3.302" y="-7.366" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="PIN_JLINK_MINI">
+<description>9 pin programming interface for j-link</description>
+<pin name="VTREF" x="-12.7" y="5.08" length="middle"/>
+<pin name="GND@1" x="-12.7" y="2.54" length="middle"/>
+<pin name="GND@2" x="-12.7" y="0" length="middle"/>
+<pin name="SWDIO/TMS" x="25.4" y="5.08" length="middle" rot="R180"/>
+<pin name="SWO/TDO" x="25.4" y="0" length="middle" rot="R180"/>
+<pin name="SWCLK/TCK" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="NC" x="-12.7" y="-5.08" length="middle"/>
+<pin name="TDI" x="25.4" y="-2.54" length="middle" rot="R180"/>
+<pin name="NRESET" x="25.4" y="-5.08" length="middle" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="20.32" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-7.62" x2="20.32" y2="7.62" width="0.254" layer="94"/>
+<wire x1="20.32" y1="7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1383,6 +1434,50 @@ Digi-Key Part Number
 <technology name="">
 <attribute name="DIGIKEY" value="455-1803-1-ND" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JLINK_6PIN_TAG-CON">
+<description>This is a 6-pin Tag Connect header with the J-Link.</description>
+<gates>
+<gate name="G$1" symbol="JLINK_TAG" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="2X3_MALE_SHROUDED_0.100">
+<connects>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="NRESET" pad="3"/>
+<connect gate="G$1" pin="SWCLK" pad="6"/>
+<connect gate="G$1" pin="SWDIO" pad="2"/>
+<connect gate="G$1" pin="SWO" pad="4"/>
+<connect gate="G$1" pin="VTREF" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD-2X3/0.050">
+<gates>
+<gate name="G$1" symbol="PIN_JLINK_MINI" x="-5.08" y="0"/>
+</gates>
+<devices>
+<device name="" package="2X10-0.050">
+<connects>
+<connect gate="G$1" pin="GND@1" pad="GND@1"/>
+<connect gate="G$1" pin="GND@2" pad="GND@2"/>
+<connect gate="G$1" pin="NC" pad="NC"/>
+<connect gate="G$1" pin="NRESET" pad="NRESET"/>
+<connect gate="G$1" pin="SWCLK/TCK" pad="SWCLK/TCK"/>
+<connect gate="G$1" pin="SWDIO/TMS" pad="SWDIO/TMS"/>
+<connect gate="G$1" pin="SWO/TDO" pad="SWO/TDO"/>
+<connect gate="G$1" pin="TDI" pad="TDI"/>
+<connect gate="G$1" pin="VTREF" pad="VTREF"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
