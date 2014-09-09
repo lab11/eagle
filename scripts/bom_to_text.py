@@ -26,7 +26,7 @@ except:
 	sys.exit(1)
 
 try:
-	from dataprint import dataprint
+	import dataprint
 except:
 	print("You need to install the dataprint module.")
 	print("sudo pip install dataprint")
