@@ -666,6 +666,48 @@ Round side is up.</description>
 <wire x1="0.25" y1="3.5" x2="0.25" y2="1.5" width="0.127" layer="21"/>
 <text x="0" y="5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="USB_MICRO_B-HIROSE-ZX62M-B-5P">
+<smd name="P$1" x="-5.2" y="0" dx="1.6" dy="2.4" layer="1"/>
+<smd name="P$2" x="5.2" y="0" dx="1.6" dy="2.4" layer="1"/>
+<smd name="P$3" x="5.2" y="4.3" dx="1.6" dy="2.4" layer="1"/>
+<smd name="P$4" x="-5.2" y="4.3" dx="1.6" dy="2.4" layer="1"/>
+<smd name="P$5" x="-2.35" y="6.4" dx="2" dy="1.5" layer="1"/>
+<smd name="P$6" x="2.35" y="6.4" dx="2" dy="1.5" layer="1"/>
+<smd name="1" x="-1.3" y="4.625" dx="0.4" dy="1.05" layer="1"/>
+<smd name="2" x="-0.65" y="4.625" dx="0.4" dy="1.05" layer="1"/>
+<smd name="3" x="0" y="4.625" dx="0.4" dy="1.05" layer="1"/>
+<smd name="4" x="0.65" y="4.625" dx="0.4" dy="1.05" layer="1"/>
+<smd name="5" x="1.3" y="4.625" dx="0.4" dy="1.05" layer="1"/>
+<wire x1="-3.9" y1="0" x2="-3.9" y2="3.2" width="0.127" layer="20"/>
+<wire x1="-3.9" y1="3.2" x2="-3.5" y2="3.6" width="0.127" layer="20" curve="-90"/>
+<wire x1="-3.5" y1="3.6" x2="3.5" y2="3.6" width="0.127" layer="20"/>
+<wire x1="3.5" y1="3.6" x2="3.9" y2="3.2" width="0.127" layer="20" curve="-90"/>
+<wire x1="3.9" y1="3.2" x2="3.9" y2="0" width="0.127" layer="20"/>
+<wire x1="-3.9" y1="0" x2="-3.9" y2="-1.9" width="0.127" layer="51"/>
+<wire x1="-3.9" y1="-1.9" x2="-6" y2="-1.9" width="0.127" layer="51"/>
+<wire x1="3.9" y1="0" x2="3.9" y2="-1.9" width="0.127" layer="51"/>
+<wire x1="3.9" y1="-1.9" x2="6" y2="-1.9" width="0.127" layer="51"/>
+<text x="0" y="8" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="top-center">&gt;NAME</text>
+</package>
+<package name="USB_MICRO_B-JST-MC5BR3-M404-4S-TB">
+<smd name="P$1" x="-4.85" y="0" dx="1.8" dy="2.2" layer="1"/>
+<smd name="P$2" x="4.85" y="0" dx="1.8" dy="2.2" layer="1"/>
+<smd name="P$3" x="-4.85" y="2.4" dx="1.8" dy="1.8" layer="1"/>
+<smd name="P$4" x="4.85" y="2.4" dx="1.8" dy="1.8" layer="1"/>
+<smd name="P$5" x="-2.35" y="3.825" dx="1.2" dy="1.55" layer="1"/>
+<smd name="P$6" x="2.35" y="3.825" dx="1.2" dy="1.55" layer="1"/>
+<smd name="1" x="-1.3" y="3.825" dx="0.4" dy="1.55" layer="1"/>
+<smd name="2" x="-0.65" y="3.825" dx="0.4" dy="1.55" layer="1"/>
+<smd name="3" x="0" y="3.825" dx="0.4" dy="1.55" layer="1"/>
+<smd name="4" x="0.65" y="3.825" dx="0.4" dy="1.55" layer="1"/>
+<smd name="5" x="1.3" y="3.825" dx="0.4" dy="1.55" layer="1"/>
+<wire x1="-3.85" y1="-1.5" x2="-3.85" y2="2.55" width="0" layer="20"/>
+<wire x1="-3.85" y1="2.55" x2="-3.45" y2="2.95" width="0" layer="20" curve="-90"/>
+<wire x1="-3.45" y1="2.95" x2="3.45" y2="2.95" width="0" layer="20"/>
+<wire x1="3.45" y1="2.95" x2="3.85" y2="2.55" width="0" layer="20" curve="-90"/>
+<wire x1="3.85" y1="2.55" x2="3.85" y2="-1.5" width="0" layer="20"/>
+<text x="0" y="5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -1087,6 +1129,53 @@ The RX/TX switch happens on the programmer board, so when using this connect the
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="WM5524-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MICRO_USB_B_HIROSE_ZX62M-B-5P" prefix="J">
+<description>Micro B - Drop-in (Mid-mount), Shell SMT</description>
+<gates>
+<gate name="G$1" symbol="USB-B-MICRO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="USB_MICRO_B-HIROSE-ZX62M-B-5P">
+<connects>
+<connect gate="G$1" pin="+5V" pad="1"/>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="H11680TR-ND" constant="no"/>
+<attribute name="MOUSER" value="798-ZX62M-B-5P01" constant="no"/>
+<attribute name="NEWARK" value="68X3587" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MICRO_USB_B_JST_MC5BR3-M404-4S" prefix="J">
+<description>Micro USB B mid mount</description>
+<gates>
+<gate name="G$1" symbol="USB-B-MICRO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="USB_MICRO_B-JST-MC5BR3-M404-4S-TB">
+<connects>
+<connect gate="G$1" pin="+5V" pad="1"/>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="455-2567-2-ND" constant="no"/>
+<attribute name="MOUSER" value="53X3655" constant="no"/>
 </technology>
 </technologies>
 </device>

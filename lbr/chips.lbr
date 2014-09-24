@@ -1089,6 +1089,30 @@ QFN-24</description>
 <smd name="SE" x="0.537" y="0" dx="0.22" dy="0.22" layer="1" roundness="100"/>
 <text x="0" y="0.75" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="FRACTUS-ANTENNA-FR05-S1-N-0-110">
+<smd name="ANT" x="-1.7" y="0" dx="0.8" dy="2.4" layer="1"/>
+<smd name="NULL" x="1.7" y="0" dx="0.8" dy="2.4" layer="1"/>
+<wire x1="-1.05" y1="1" x2="-1" y2="1" width="0.127" layer="21"/>
+<wire x1="-1" y1="1" x2="1.05" y2="1" width="0.127" layer="21"/>
+<wire x1="1.05" y1="-1" x2="-1" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1" x2="-1.05" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1" y1="1" x2="-1" y2="-1" width="0.127" layer="21"/>
+<text x="0" y="1.4" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="DFN6L-1.2MMX1.3MM">
+<smd name="5" x="0" y="0.335" dx="0.28" dy="0.53" layer="1"/>
+<smd name="4" x="0.4" y="0.335" dx="0.28" dy="0.53" layer="1"/>
+<smd name="6" x="-0.4" y="0.335" dx="0.28" dy="0.53" layer="1"/>
+<smd name="1" x="-0.4" y="-0.335" dx="0.28" dy="0.53" layer="1"/>
+<smd name="2" x="0" y="-0.335" dx="0.28" dy="0.53" layer="1"/>
+<smd name="3" x="0.4" y="-0.335" dx="0.28" dy="0.53" layer="1"/>
+<wire x1="-0.6" y1="0.65" x2="0.6" y2="0.65" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.65" x2="0.6" y2="-0.65" width="0.127" layer="21"/>
+<wire x1="0.6" y1="-0.65" x2="-0.6" y2="-0.65" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="-0.65" x2="-0.6" y2="0.65" width="0.127" layer="21"/>
+<circle x="-0.75" y="-0.8" radius="0.1" width="0" layer="21"/>
+<text x="0" y="1" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -1714,6 +1738,18 @@ I2C, clock output, interrupt output</description>
 <wire x1="12.7" y1="5.08" x2="-12.7" y2="5.08" width="0.254" layer="94"/>
 <text x="-12.7" y="5.588" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="-6.858" y="5.588" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="VOLTAGE_REG-ENABLE">
+<pin name="IN" x="-10.16" y="2.54" visible="pin" length="short"/>
+<pin name="EN" x="-10.16" y="-2.54" visible="pin" length="short"/>
+<pin name="GND" x="10.16" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="OUT" x="10.16" y="2.54" visible="pin" length="short" rot="R180"/>
+<wire x1="-7.62" y1="5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<text x="-7.62" y="5.588" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-7.62" y="-7.366" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2816,6 +2852,48 @@ nRF24LE1, nRF51822-QFAA/AB, with integrated harmonic filter</description>
 <technology name="">
 <attribute name="DIGIKEY" value="497-13637-1-ND" constant="no"/>
 <attribute name="MOUSER" value="511-BAL-NRF01D3" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FRACTUS-2.4GHZ-FR05-S1-N-0-110" prefix="A">
+<description>Fractus Micro Reach Xtend
+&lt;br&gt;&lt;br&gt;
+Requires matching network.</description>
+<gates>
+<gate name="G$1" symbol="ANTENNA" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FRACTUS-ANTENNA-FR05-S1-N-0-110">
+<connects>
+<connect gate="G$1" pin="ANTENNA" pad="ANT"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="RICHARDSON_RFPD" value="FR05-S1-N-0110B" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LDK120" prefix="U">
+<description>200 mA low quiescent current very low noise LDO</description>
+<gates>
+<gate name="G$1" symbol="VOLTAGE_REG-ENABLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="PU30R" package="DFN6L-1.2MMX1.3MM">
+<connects>
+<connect gate="G$1" pin="EN" pad="4"/>
+<connect gate="G$1" pin="GND" pad="2 5"/>
+<connect gate="G$1" pin="IN" pad="6"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="497-14015-1-ND" constant="no"/>
+<attribute name="MOUSER" value="511-LDK120PU30R" constant="no"/>
 </technology>
 </technologies>
 </device>
