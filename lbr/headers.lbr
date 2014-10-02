@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="2.3" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -674,6 +674,30 @@
 <wire x1="1.44" y1="2.3" x2="1.44" y2="-2.3" width="0.127" layer="51"/>
 <wire x1="1.44" y1="-2.3" x2="-1.44" y2="-2.3" width="0.127" layer="51"/>
 <wire x1="-1.44" y1="-2.3" x2="-1.44" y2="2.3" width="0.127" layer="51"/>
+</package>
+<package name="DF40C-10DS-0.4V">
+<wire x1="-1.44" y1="2.3" x2="-1.44" y2="1" width="0.127" layer="21"/>
+<wire x1="-1.44" y1="-1" x2="-1.44" y2="-2.3" width="0.127" layer="21"/>
+<wire x1="-1.44" y1="-2.3" x2="1.44" y2="-2.3" width="0.127" layer="21"/>
+<wire x1="1.44" y1="-2.3" x2="1.44" y2="-1" width="0.127" layer="21"/>
+<wire x1="1.44" y1="1" x2="1.44" y2="2.3" width="0.127" layer="21"/>
+<wire x1="1.44" y1="2.3" x2="-1.44" y2="2.3" width="0.127" layer="21"/>
+<smd name="1" x="-1.32" y="0.8" dx="1.14" dy="0.2" layer="1"/>
+<smd name="2" x="1.32" y="0.8" dx="1.14" dy="0.2" layer="1"/>
+<smd name="3" x="-1.32" y="0.4" dx="1.14" dy="0.2" layer="1"/>
+<smd name="4" x="1.32" y="0.4" dx="1.14" dy="0.2" layer="1"/>
+<smd name="5" x="-1.32" y="0" dx="1.14" dy="0.2" layer="1"/>
+<smd name="6" x="1.32" y="0" dx="1.14" dy="0.2" layer="1"/>
+<smd name="7" x="-1.32" y="-0.4" dx="1.14" dy="0.2" layer="1"/>
+<smd name="8" x="1.32" y="-0.4" dx="1.14" dy="0.2" layer="1"/>
+<smd name="9" x="-1.32" y="-0.8" dx="1.14" dy="0.2" layer="1"/>
+<smd name="10" x="1.32" y="-0.8" dx="1.14" dy="0.2" layer="1"/>
+<wire x1="-0.8" y1="1.8" x2="-0.8" y2="-1.8" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="-1.8" x2="0.8" y2="-1.8" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-1.8" x2="0.8" y2="1.8" width="0.127" layer="51"/>
+<wire x1="0.8" y1="1.8" x2="-0.8" y2="1.8" width="0.127" layer="51"/>
+<circle x="-2.2" y="1.2" radius="0.2" width="0" layer="21"/>
+<text x="0" y="2.4" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -1548,6 +1572,33 @@ Digi-Key Part Number
 <attribute name="DIGIKEY" value="H11616CT-ND" constant="no"/>
 <attribute name="MOUSER" value="798-DF40C10DP0.4V51" constant="no"/>
 <attribute name="NEWARK" value="68X2585" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="HIROSE-DF40C-10DS-0.4V" prefix="J">
+<description>CONN RCPT 10POS 0.4MM SMD GOLD</description>
+<gates>
+<gate name="G$1" symbol="PINH2X5" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DF40C-10DS-0.4V">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="H11617CT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>

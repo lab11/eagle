@@ -88,6 +88,15 @@
 <wire x1="0.75" y1="0.55" x2="0.75" y2="0.75" width="0.127" layer="21"/>
 <wire x1="0.75" y1="0.75" x2="0.55" y2="0.75" width="0.127" layer="21"/>
 </package>
+<package name="SFH4056">
+<smd name="CATHODE" x="-1.4" y="0" dx="1" dy="1.6" layer="1"/>
+<smd name="ANODE" x="1.4" y="0" dx="1" dy="1.6" layer="1"/>
+<wire x1="-0.7" y1="0.7" x2="-0.7" y2="0" width="0.127" layer="21"/>
+<wire x1="-0.7" y1="0" x2="-0.7" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="0" y1="0.7" x2="-0.7" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.7" x2="-0.7" y2="0" width="0.127" layer="21"/>
+<text x="0" y="0.9" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="LED_TRICOLOR">
@@ -145,6 +154,25 @@
 <wire x1="-0.508" y1="-0.508" x2="-0.508" y2="0.508" width="0.254" layer="94"/>
 <wire x1="-0.508" y1="-3.302" x2="-0.508" y2="-2.032" width="0.254" layer="94"/>
 </symbol>
+<symbol name="LED">
+<wire x1="-0.889" y1="0" x2="-0.889" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-0.889" y1="-1.016" x2="0.762" y2="0" width="0.254" layer="94"/>
+<wire x1="0.762" y1="0" x2="-0.889" y2="1.016" width="0.254" layer="94"/>
+<wire x1="-0.889" y1="1.016" x2="-0.889" y2="0" width="0.254" layer="94"/>
+<wire x1="0.508" y1="0.762" x2="1.016" y2="1.778" width="0.127" layer="94"/>
+<wire x1="1.016" y1="1.778" x2="1.016" y2="1.016" width="0.127" layer="94"/>
+<wire x1="1.016" y1="1.016" x2="1.524" y2="2.286" width="0.127" layer="94"/>
+<wire x1="1.2192" y1="2.032" x2="1.524" y2="2.286" width="0.127" layer="94"/>
+<wire x1="1.524" y1="2.286" x2="1.6002" y2="1.9304" width="0.127" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-0.889" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.762" y1="-0.508" x2="0.762" y2="0" width="0.254" layer="94"/>
+<pin name="ANODE" x="-2.54" y="0" visible="off" length="point"/>
+<wire x1="0.762" y1="0" x2="0.762" y2="0.508" width="0.254" layer="94"/>
+<pin name="CATHODE" x="2.54" y="0" visible="off" length="point"/>
+<text x="0" y="2.54" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.175" size="1.778" layer="96" ratio="12" align="bottom-center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SML-LX0404SIUPGUSB" prefix="D">
@@ -163,6 +191,25 @@
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="67-2125-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SFH4056" prefix="D">
+<description>LED IR EMITTER 850NM</description>
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SFH4056">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="475-3042-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
