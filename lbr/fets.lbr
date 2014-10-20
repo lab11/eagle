@@ -269,6 +269,17 @@ High-power, low thermal resistance package.</description>
 <text x="-1.716" y="-1.389" size="1.016" layer="25" font="vector" ratio="10" rot="R90">&gt;NAME</text>
 <text x="2.811" y="-1.562" size="1.016" layer="27" font="vector" ratio="10" rot="R90">&gt;VALUE</text>
 </package>
+<package name="VMT3">
+<smd name="3" x="0" y="0.5" dx="0.4" dy="0.35" layer="1"/>
+<smd name="1" x="-0.4" y="-0.5" dx="0.3" dy="0.35" layer="1"/>
+<smd name="2" x="0.4" y="-0.5" dx="0.3" dy="0.35" layer="1"/>
+<wire x1="0.6" y1="0.4" x2="0.6" y2="-0.2" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.4" x2="0.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.4" y1="0.4" x2="-0.6" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="0.4" x2="-0.6" y2="-0.2" width="0.127" layer="21"/>
+<wire x1="-0.1" y1="-0.4" x2="0.1" y2="-0.4" width="0.127" layer="21"/>
+<text x="0" y="0.8" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="MOSFET-N">
@@ -424,6 +435,28 @@ High-power, low thermal resistance package.</description>
 <vertex x="2.032" y="0.508"/>
 </polygon>
 </symbol>
+<symbol name="NPN">
+<circle x="1.27" y="0" radius="2.54" width="0.254" layer="94"/>
+<pin name="EMITTER" x="2.54" y="-5.08" visible="off" length="point"/>
+<pin name="COLLECTOR" x="2.54" y="5.08" visible="off" length="point"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="-2.286" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.524" x2="1.016" y2="-0.762" width="0.3302" layer="94"/>
+<wire x1="1.016" y1="-0.762" x2="1.016" y2="0" width="0.3302" layer="94"/>
+<wire x1="1.016" y1="0" x2="1.016" y2="0.762" width="0.3302" layer="94"/>
+<wire x1="1.016" y1="0.762" x2="1.016" y2="1.524" width="0.3302" layer="94"/>
+<wire x1="2.54" y1="2.286" x2="2.54" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="2.286" x2="1.016" y2="0.762" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.286" x2="1.016" y2="-0.762" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="0" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<pin name="BASE" x="-2.54" y="0" visible="off" length="point"/>
+<polygon width="0.1524" layer="94">
+<vertex x="2.54" y="-2.286"/>
+<vertex x="2.286" y="-1.524"/>
+<vertex x="1.778" y="-2.032"/>
+</polygon>
+<text x="5.08" y="2.54" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="5.08" y="0" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="MOSFET-NCHANNEL" prefix="Q">
@@ -559,6 +592,25 @@ High-power, low thermal resistance package.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="SI3585DV-T1-E3CT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ROHM-NPN-2SC5662" prefix="Q">
+<gates>
+<gate name="G$1" symbol="NPN" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="VMT3">
+<connects>
+<connect gate="G$1" pin="BASE" pad="1"/>
+<connect gate="G$1" pin="COLLECTOR" pad="3"/>
+<connect gate="G$1" pin="EMITTER" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="2SC5662T2LPCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
