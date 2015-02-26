@@ -36,6 +36,9 @@ fab_extensions = ['bot', 'bsk', 'drd', 'oln', 'slk', 'smb', 'smt', 'top',
                   'GBL', 'GBO', 'GBS', 'GTL', 'GTO', 'GTS', 'TXT', 'DIM', 'mil',
                   'gbs', 'gts']
 assembler_extensions = ['bps', 'tps', 'tsp', 'bsp', 'centroid', 'pdf']
+# Files to add if they exist
+fab_add_files = ['fabnotes.txt']
+
 fab_files = []
 assem_files = []
 
@@ -116,6 +119,9 @@ for f in files:
 		fab_files.append(f)
 		assem_files.append(f)
 	if fext[1:] in assembler_extensions:
+		assem_files.append(f)
+	if os.path.basename(f) in fab_add_files:
+		fab_files.append(f)
 		assem_files.append(f)
 
 # Add any bom files to the assembler zip
