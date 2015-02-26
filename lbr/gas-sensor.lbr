@@ -98,67 +98,66 @@
 <wire x1="-8" y1="-2" x2="-2" y2="-8" width="0.127" layer="20"/>
 <wire x1="2" y1="-8" x2="8" y2="-2" width="0.127" layer="20"/>
 <wire x1="2" y1="8" x2="8" y2="2" width="0.127" layer="20"/>
-<polygon width="0.127" layer="1">
-<vertex x="-7.8" y="2.6"/>
-<vertex x="-2.4" y="8"/>
+<polygon width="0.1524" layer="1">
+<vertex x="-8" y="3.3"/>
+<vertex x="-3.2" y="8"/>
 <vertex x="-8" y="8"/>
-<vertex x="-8" y="2.4"/>
 </polygon>
-<polygon width="0.127" layer="1">
-<vertex x="2.4" y="8"/>
-<vertex x="8" y="2.4"/>
+<polygon width="0.1524" layer="1">
+<vertex x="3.2" y="8"/>
+<vertex x="8" y="3.3"/>
 <vertex x="8" y="8"/>
 </polygon>
-<polygon width="0.127" layer="1">
-<vertex x="-8" y="-2.4"/>
-<vertex x="-2.4" y="-8"/>
+<polygon width="0.1524" layer="1">
+<vertex x="-8" y="-3.3"/>
+<vertex x="-3.3" y="-8"/>
 <vertex x="-8" y="-8"/>
 </polygon>
-<polygon width="0.127" layer="1">
-<vertex x="2.4" y="-8"/>
+<polygon width="0.1524" layer="1">
+<vertex x="3.3" y="-8"/>
 <vertex x="8" y="-8"/>
-<vertex x="8" y="-2.4"/>
+<vertex x="8" y="-3.2"/>
 </polygon>
 <pad name="C_1" x="-7.5" y="7.5" drill="0.3"/>
-<pad name="C_2" x="-6.4" y="7.5" drill="0.3"/>
-<pad name="C_3" x="-5.3" y="7.5" drill="0.3"/>
-<pad name="C_4" x="-4.2" y="7.5" drill="0.3"/>
-<pad name="C_5" x="-7.5" y="6.4" drill="0.3"/>
-<pad name="C_8" x="-7.5" y="5.3" drill="0.3"/>
-<pad name="C_10" x="-7.5" y="4.2" drill="0.3"/>
-<pad name="C_9" x="-6.4" y="5.3" drill="0.3"/>
-<pad name="C_6" x="-6.4" y="6.4" drill="0.3"/>
-<pad name="C_7" x="-5.3" y="6.4" drill="0.3"/>
+<pad name="C_2" x="-6.5" y="7.5" drill="0.3"/>
+<pad name="C_3" x="-5.5" y="7.5" drill="0.3"/>
+<pad name="C_4" x="-4.5" y="7.5" drill="0.3"/>
+<pad name="C_5" x="-7.5" y="6.5" drill="0.3"/>
+<pad name="C_8" x="-7.5" y="5.5" drill="0.3"/>
+<pad name="C_10" x="-7.5" y="4.5" drill="0.3"/>
+<pad name="C_9" x="-6.5" y="5.5" drill="0.3"/>
+<pad name="C_6" x="-6.5" y="6.5" drill="0.3"/>
+<pad name="C_7" x="-5.5" y="6.5" drill="0.3"/>
 <pad name="W1_1" x="7.5" y="7.5" drill="0.3"/>
-<pad name="W1_2" x="6.4" y="7.5" drill="0.3"/>
-<pad name="W1_3" x="5.3" y="7.5" drill="0.3"/>
-<pad name="W1_4" x="4.2" y="7.5" drill="0.3"/>
-<pad name="W1_7" x="5.3" y="6.4" drill="0.3"/>
-<pad name="W1_6" x="6.4" y="6.4" drill="0.3"/>
-<pad name="W1_5" x="7.5" y="6.4" drill="0.3"/>
-<pad name="W1_8" x="7.5" y="5.3" drill="0.3"/>
-<pad name="W1_9" x="6.4" y="5.3" drill="0.3"/>
-<pad name="W1_10" x="7.5" y="4.2" drill="0.3"/>
+<pad name="W1_2" x="6.5" y="7.5" drill="0.3"/>
+<pad name="W1_3" x="5.5" y="7.5" drill="0.3"/>
+<pad name="W1_4" x="4.5" y="7.5" drill="0.3"/>
+<pad name="W1_7" x="5.5" y="6.5" drill="0.3"/>
+<pad name="W1_6" x="6.5" y="6.5" drill="0.3"/>
+<pad name="W1_5" x="7.5" y="6.5" drill="0.3"/>
+<pad name="W1_8" x="7.5" y="5.5" drill="0.3"/>
+<pad name="W1_9" x="6.5" y="5.5" drill="0.3"/>
+<pad name="W1_10" x="7.5" y="4.5" drill="0.3"/>
 <pad name="R_1" x="-7.5" y="-7.5" drill="0.3"/>
-<pad name="R_2" x="-6.4" y="-7.5" drill="0.3"/>
-<pad name="R_7" x="-7.5" y="-6.4" drill="0.3"/>
-<pad name="R_3" x="-5.3" y="-7.5" drill="0.3"/>
-<pad name="R_4" x="-4.1" y="-7.5" drill="0.3"/>
-<pad name="R_5" x="-5.3" y="-6.4" drill="0.3"/>
-<pad name="R_6" x="-6.4" y="-6.4" drill="0.3"/>
-<pad name="R_9" x="-7.5" y="-5.3" drill="0.3"/>
-<pad name="R_8" x="-6.4" y="-5.3" drill="0.3"/>
-<pad name="R_10" x="-7.5" y="-4.2" drill="0.3"/>
+<pad name="R_2" x="-6.5" y="-7.5" drill="0.3"/>
+<pad name="R_7" x="-7.5" y="-6.5" drill="0.3"/>
+<pad name="R_3" x="-5.5" y="-7.5" drill="0.3"/>
+<pad name="R_4" x="-4.5" y="-7.5" drill="0.3"/>
+<pad name="R_5" x="-5.5" y="-6.5" drill="0.3"/>
+<pad name="R_6" x="-6.5" y="-6.5" drill="0.3"/>
+<pad name="R_9" x="-7.5" y="-5.5" drill="0.3"/>
+<pad name="R_8" x="-6.5" y="-5.5" drill="0.3"/>
+<pad name="R_10" x="-7.5" y="-4.5" drill="0.3"/>
 <pad name="W2_1" x="7.5" y="-7.5" drill="0.3"/>
-<pad name="W2_2" x="6.4" y="-7.5" drill="0.3"/>
-<pad name="W2_3" x="5.3" y="-7.5" drill="0.3"/>
-<pad name="W2_4" x="4.2" y="-7.5" drill="0.3"/>
-<pad name="W2_5" x="7.5" y="-6.4" drill="0.3"/>
-<pad name="W2_6" x="6.4" y="-6.4" drill="0.3"/>
-<pad name="W2_7" x="5.3" y="-6.4" drill="0.3"/>
-<pad name="W2_9" x="6.4" y="-5.3" drill="0.3"/>
-<pad name="W2_8" x="7.5" y="-5.3" drill="0.3"/>
-<pad name="W2_10" x="7.5" y="-4.2" drill="0.3"/>
+<pad name="W2_2" x="6.5" y="-7.5" drill="0.3"/>
+<pad name="W2_3" x="5.5" y="-7.5" drill="0.3"/>
+<pad name="W2_4" x="4.5" y="-7.5" drill="0.3"/>
+<pad name="W2_5" x="7.5" y="-6.5" drill="0.3"/>
+<pad name="W2_6" x="6.5" y="-6.5" drill="0.3"/>
+<pad name="W2_7" x="5.5" y="-6.5" drill="0.3"/>
+<pad name="W2_9" x="6.5" y="-5.5" drill="0.3"/>
+<pad name="W2_8" x="7.5" y="-5.5" drill="0.3"/>
+<pad name="W2_10" x="7.5" y="-4.5" drill="0.3"/>
 <circle x="9.1" y="-6.9" radius="0.316225" width="0.127" layer="21"/>
 <text x="-7.6" y="9.1" size="1.27" layer="25">&gt;NAME</text>
 </package>
@@ -200,6 +199,7 @@
 </devices>
 </deviceset>
 <deviceset name="SPECSENSOR">
+<description>Three Electrod Gas Sensor</description>
 <gates>
 <gate name="G$1" symbol="3E" x="0" y="0"/>
 </gates>

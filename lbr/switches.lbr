@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -566,7 +566,6 @@
 <circle x="2.54" y="0" radius="0.3592" width="0.254" layer="94"/>
 <circle x="-2.54" y="0" radius="0.3592" width="0.254" layer="94"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="P$1" x="-7.62" y="0" visible="pad" length="middle" direction="pas"/>
 <pin name="P$2" x="7.62" y="0" visible="pad" length="middle" direction="pas" rot="R180"/>
 <wire x1="0" y1="2.032" x2="0" y2="3.048" width="0.254" layer="94" style="shortdash"/>
@@ -974,6 +973,7 @@ GH7366-ND</description>
 </devices>
 </deviceset>
 <deviceset name="B3U" prefix="S">
+<description>Switch</description>
 <gates>
 <gate name="G$1" symbol="PUSH-BUTTON-SWITCH" x="0" y="0"/>
 </gates>
