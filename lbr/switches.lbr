@@ -491,6 +491,23 @@
 <wire x1="1.5" y1="1.25" x2="-1.5" y2="1.25" width="0.127" layer="21"/>
 <text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="TE_SSA12/SPDT">
+<description>SPDT</description>
+<wire x1="-4.3942" y1="1.7018" x2="4.3942" y2="1.7018" width="0.127" layer="21"/>
+<wire x1="4.3942" y1="1.7018" x2="4.3942" y2="-1.7018" width="0.127" layer="21"/>
+<wire x1="4.3942" y1="-1.7018" x2="-4.3942" y2="-1.7018" width="0.127" layer="21"/>
+<wire x1="-4.3942" y1="-1.7018" x2="-4.3942" y2="1.7018" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="1.27" width="0.4064" layer="51"/>
+<wire x1="-2.54" y1="1.27" x2="0" y2="1.27" width="0.4064" layer="51"/>
+<wire x1="0" y1="1.27" x2="0" y2="0" width="0.4064" layer="51"/>
+<pad name="1" x="-2.4892" y="0" drill="1.0922" diameter="1.9304"/>
+<pad name="2" x="2.4892" y="0" drill="1.0922" diameter="1.9304"/>
+<pad name="IN" x="0" y="0" drill="1.0922" diameter="1.9304"/>
+<text x="-3.81" y="0" size="1.016" layer="21" font="vector" ratio="12" align="center">1</text>
+<text x="4.064" y="0" size="1.016" layer="21" font="vector" ratio="12" align="center">2</text>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.175" size="1.016" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="8X_SPST">
@@ -665,6 +682,19 @@
 <text x="6.35" y="-4.826" size="1.016" layer="95" ratio="12" align="bottom-center">E</text>
 <pin name="E" x="7.62" y="-5.08" visible="off" length="short" rot="R180"/>
 </symbol>
+<symbol name="SPDT-1">
+<circle x="0" y="0" radius="0.762" width="0.254" layer="94"/>
+<circle x="5.08" y="2.54" radius="0.762" width="0.254" layer="94"/>
+<circle x="5.08" y="-2.54" radius="0.762" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="4.572" y2="4.064" width="0.254" layer="94"/>
+<pin name="A" x="7.62" y="2.54" visible="off" length="short" rot="R180"/>
+<pin name="B" x="7.62" y="-2.54" visible="off" length="short" rot="R180"/>
+<pin name="IN" x="-2.54" y="0" visible="off" length="short"/>
+<text x="6.604" y="2.794" size="1.016" layer="94" align="bottom-center">A</text>
+<text x="6.604" y="-2.286" size="1.016" layer="94" align="bottom-center">B</text>
+<text x="-2.54" y="-7.62" size="1.27" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-10.16" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SWITCH-DIP-8X-SMD">
@@ -737,8 +767,8 @@ GH7366-ND</description>
 <devices>
 <device name="" package="EVQP2">
 <connects>
-<connect gate="G$1" pin="P$1" pad="P$1 P$2"/>
-<connect gate="G$1" pin="P$2" pad="P$3 P$4"/>
+<connect gate="G$1" pin="P$1" pad="P$1 P$3"/>
+<connect gate="G$1" pin="P$2" pad="P$2 P$4"/>
 </connects>
 <technologies>
 <technology name="">
@@ -997,6 +1027,26 @@ GH7366-ND</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="SW1020CT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TE_SSA12/SPDT" prefix="S">
+<description>SWITCH SLIDE SPDT 2POS SSA SER</description>
+<gates>
+<gate name="G$1" symbol="SPDT-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TE_SSA12/SPDT">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="G$1" pin="IN" pad="IN"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="450-1602-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
