@@ -1398,6 +1398,7 @@ QFN-24</description>
 <smd name="TP3" x="0" y="0" dx="1.6" dy="1" layer="1"/>
 <circle x="-0.7" y="-1.6" radius="0.05" width="0.05" layer="21"/>
 <text x="-1.1" y="1.7" size="0.6096" layer="25">&gt;NAME</text>
+</package>
 <package name="AMN2">
 <pad name="GND" x="1.796" y="-1.796" drill="0.65"/>
 <circle x="0" y="0" radius="5.5" width="0.127" layer="21"/>
@@ -2260,6 +2261,7 @@ I2C, clock output, interrupt output</description>
 <pin name="OUT" x="15.24" y="2.54" length="middle" rot="R180"/>
 <pin name="GND" x="0" y="-7.62" length="middle" rot="R90"/>
 <text x="-10.16" y="7.62" size="2.54" layer="95">&gt;NAME</text>
+</symbol>
 <symbol name="AMN">
 <pin name="VCC" x="7.62" y="2.54" visible="pin" length="short" rot="R180"/>
 <pin name="OUT" x="7.62" y="0" visible="pin" length="short" rot="R180"/>
@@ -3764,6 +3766,11 @@ Requires matching network.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="TPS715A33DRVR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="AMN" prefix="U">
 <description>Passive infrared human detection sensor with built-in amp.</description>
 <gates>
