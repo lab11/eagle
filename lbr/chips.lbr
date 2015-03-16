@@ -3647,7 +3647,7 @@ Requires matching network.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="497-14380-1-ND" constant="no"/>
+<attribute name="DIGIKEY" value="497-15070-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
