@@ -708,6 +708,12 @@ Round side is up.</description>
 <wire x1="3.8354" y1="2.55" x2="3.8354" y2="-1.524" width="0" layer="20"/>
 <text x="0" y="5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="BATTERY_FLAT_PAD">
+<smd name="P" x="-1.5" y="0" dx="2" dy="2" layer="1"/>
+<smd name="M" x="1.5" y="0" dx="2" dy="2" layer="1"/>
+<text x="-2" y="1" size="1.27" layer="25">+</text>
+<text x="1.5" y="1" size="1.27" layer="25">-</text>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -867,6 +873,14 @@ Round side is up.</description>
 <wire x1="10.16" y1="7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
 <text x="-10.16" y="7.874" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="-10.16" y="-9.906" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="BAT">
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<pin name="+" x="10.16" y="2.54" length="middle" rot="R180"/>
+<pin name="-" x="10.16" y="-2.54" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1221,6 +1235,22 @@ The RX/TX switch happens on the programmer board, so when using this connect the
 <connect gate="G$1" pin="SWDIO" pad="2"/>
 <connect gate="G$1" pin="SWO" pad="6"/>
 <connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BAT_FLAT_PAD">
+<gates>
+<gate name="G$1" symbol="BAT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BATTERY_FLAT_PAD">
+<connects>
+<connect gate="G$1" pin="+" pad="P"/>
+<connect gate="G$1" pin="-" pad="M"/>
 </connects>
 <technologies>
 <technology name=""/>
