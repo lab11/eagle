@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -414,6 +414,29 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <wire x1="-1.0414" y1="-0.6096" x2="-0.3048" y2="-0.6096" width="0.127" layer="21"/>
 <circle x="0" y="0" radius="0.1778" width="0" layer="21"/>
 </package>
+<package name="SLF10145">
+<smd name="1" x="-4.55" y="0" dx="3.5" dy="3.2" layer="1"/>
+<smd name="2" x="4.55" y="0" dx="3.5" dy="3.2" layer="1"/>
+<wire x1="-5.05" y1="4.4" x2="-5.05" y2="-5.05" width="0.127" layer="21"/>
+<wire x1="-5.05" y1="-5.05" x2="5.05" y2="-5.05" width="0.127" layer="21"/>
+<wire x1="5.05" y1="-5.05" x2="5.05" y2="5.05" width="0.127" layer="21"/>
+<wire x1="5.05" y1="5.05" x2="-4.4" y2="5.05" width="0.127" layer="21"/>
+<wire x1="-4.4" y1="5.05" x2="-4.4" y2="4.4" width="0.127" layer="21"/>
+<wire x1="-4.4" y1="4.4" x2="-5.05" y2="4.4" width="0.127" layer="21"/>
+<text x="0" y="5.3" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="2917-POL">
+<smd name="+" x="0" y="3.1" dx="2.48" dy="2.5" layer="1"/>
+<smd name="-" x="0" y="-3.1" dx="2.48" dy="2.5" layer="1"/>
+<wire x1="-2.15" y1="3.65" x2="-2.15" y2="1" width="0.127" layer="21"/>
+<wire x1="-2.15" y1="1" x2="-2.15" y2="-3.65" width="0.127" layer="21"/>
+<wire x1="-2.15" y1="-3.65" x2="2.15" y2="-3.65" width="0.127" layer="21"/>
+<wire x1="2.15" y1="-3.65" x2="2.15" y2="1" width="0.127" layer="21"/>
+<wire x1="2.15" y1="1" x2="2.15" y2="3.65" width="0.127" layer="21"/>
+<wire x1="2.15" y1="3.65" x2="-2.15" y2="3.65" width="0.127" layer="21"/>
+<text x="-2.54" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<wire x1="-2.15" y1="1" x2="2.15" y2="1" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -663,6 +686,34 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+<device name="2917" package="2917-POL">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="-"/>
+<connect gate="G$1" pin="CATHODE" pad="+"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SLF10145" prefix="L">
+<description>Fixed inductor 1.9 A</description>
+<gates>
+<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="T-220M1R9-PF" package="SLF10145">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="445-1981-1-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

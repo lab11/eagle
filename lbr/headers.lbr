@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1360,6 +1360,54 @@
 <circle x="-0.054" y="58.728" radius="0.359209375" width="0.127" layer="21"/>
 <circle x="48.206" y="58.728" radius="0.359209375" width="0.127" layer="21"/>
 </package>
+<package name="CONN_BLOCK_5">
+<wire x1="-6.61" y1="3.1" x2="-6.61" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="-6.61" y1="-3.1" x2="6.58" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="6.58" y1="-3.1" x2="6.58" y2="3.1" width="0.127" layer="21"/>
+<wire x1="6.58" y1="3.1" x2="-6.61" y2="3.1" width="0.127" layer="21"/>
+<pad name="1" x="-5.08" y="0" drill="1.1"/>
+<pad name="2" x="-2.54" y="0" drill="1.1"/>
+<wire x1="-0.03" y1="-1.7" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<wire x1="-0.03" y1="-3" x2="-0.53" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-0.53" y1="-2.5" x2="0.47" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="0.47" y1="-2.5" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<pad name="3" x="0" y="0" drill="1.1"/>
+<text x="-6.35" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<pad name="4" x="2.54" y="0" drill="1.1"/>
+<pad name="5" x="5.08" y="0" drill="1.1"/>
+</package>
+<package name="CONN_BLOCK_4">
+<wire x1="-5.34" y1="3.1" x2="-5.34" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="-5.34" y1="-3.1" x2="5.31" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="5.31" y1="-3.1" x2="5.31" y2="3.1" width="0.127" layer="21"/>
+<wire x1="5.31" y1="3.1" x2="-5.34" y2="3.1" width="0.127" layer="21"/>
+<pad name="1" x="-3.81" y="0" drill="1.1"/>
+<pad name="2" x="-1.27" y="0" drill="1.1"/>
+<wire x1="-0.03" y1="-1.7" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<wire x1="-0.03" y1="-3" x2="-0.53" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-0.53" y1="-2.5" x2="0.47" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="0.47" y1="-2.5" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<pad name="3" x="1.27" y="0" drill="1.1"/>
+<text x="-5.08" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<pad name="4" x="3.81" y="0" drill="1.1"/>
+</package>
+<package name="CONN_BLOCK_6">
+<wire x1="-7.88" y1="3.1" x2="-7.88" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="-7.88" y1="-3.1" x2="7.85" y2="-3.1" width="0.127" layer="21"/>
+<wire x1="7.85" y1="-3.1" x2="7.85" y2="3.1" width="0.127" layer="21"/>
+<wire x1="7.85" y1="3.1" x2="-7.88" y2="3.1" width="0.127" layer="21"/>
+<pad name="1" x="-6.35" y="0" drill="1.1"/>
+<pad name="2" x="-3.81" y="0" drill="1.1"/>
+<wire x1="-0.03" y1="-1.7" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<wire x1="-0.03" y1="-3" x2="-0.53" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="-0.53" y1="-2.5" x2="0.47" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="0.47" y1="-2.5" x2="-0.03" y2="-3" width="0.127" layer="21"/>
+<pad name="3" x="-1.27" y="0" drill="1.1"/>
+<text x="-7.62" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<pad name="4" x="1.27" y="0" drill="1.1"/>
+<pad name="5" x="3.81" y="0" drill="1.1"/>
+<pad name="6" x="6.35" y="0" drill="1.1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -1805,6 +1853,19 @@
 <pin name="GPIO2_7" x="137.16" y="2.54" length="middle" rot="R180"/>
 <text x="0" y="63.5" size="1.778" layer="95">P9</text>
 <text x="91.44" y="63.5" size="1.778" layer="95">P8</text>
+</symbol>
+<symbol name="CONN_BLOCK_5">
+<pin name="1" x="0" y="5.08" visible="pad" length="middle" rot="R180"/>
+<pin name="2" x="0" y="2.54" visible="pad" length="middle" rot="R180"/>
+<pin name="3" x="0" y="0" visible="pad" length="middle" rot="R180"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<text x="-10.16" y="8.128" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-10.16" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="4" x="0" y="-2.54" visible="pad" length="middle" rot="R180"/>
+<pin name="5" x="0" y="-5.08" visible="pad" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2575,6 +2636,28 @@ Digi-Key Part Number
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SCREW-TERMINAL_5_0.100" prefix="J">
+<description>5x 0.100 in screw terminal block</description>
+<gates>
+<gate name="G$1" symbol="CONN_BLOCK_5" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="CONN_BLOCK_5">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="277-1276-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

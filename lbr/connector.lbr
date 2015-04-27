@@ -714,6 +714,23 @@ Round side is up.</description>
 <text x="-2" y="1" size="1.27" layer="25">+</text>
 <text x="1.5" y="1" size="1.27" layer="25">-</text>
 </package>
+<package name="PJ-102AH">
+<pad name="1" x="0" y="-3" drill="1.65"/>
+<pad name="2" x="0" y="3" drill="1.65"/>
+<pad name="3" x="-4.7" y="0" drill="1.65"/>
+<wire x1="4.3" y1="10.7" x2="4.3" y2="-3.7" width="0.127" layer="21"/>
+<wire x1="4.3" y1="-3.7" x2="-4.7" y2="-3.7" width="0.127" layer="21"/>
+<wire x1="-4.7" y1="-3.7" x2="-4.7" y2="10.7" width="0.127" layer="21"/>
+<wire x1="-4.7" y1="10.7" x2="4.3" y2="10.7" width="0.127" layer="21"/>
+<wire x1="0" y1="10" x2="-1" y2="9" width="0.127" layer="51"/>
+<wire x1="-1" y1="9" x2="1" y2="9" width="0.127" layer="51"/>
+<wire x1="1" y1="9" x2="0" y2="10" width="0.127" layer="51"/>
+<wire x1="0" y1="10" x2="0" y2="7" width="0.127" layer="51"/>
+<text x="0" y="11" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-1.905" x2="3.175" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="1.905" y1="3.81" x2="3.175" y2="3.81" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -881,6 +898,17 @@ Round side is up.</description>
 <wire x1="5.08" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
 <pin name="+" x="10.16" y="2.54" length="middle" rot="R180"/>
 <pin name="-" x="10.16" y="-2.54" length="middle" rot="R180"/>
+</symbol>
+<symbol name="BARREL-JACK">
+<pin name="VCC" x="7.62" y="2.54" length="short" rot="R180"/>
+<pin name="GND" x="7.62" y="-2.54" length="short" rot="R180"/>
+<pin name="NC" x="7.62" y="0" length="short" rot="R180"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<text x="-5.08" y="5.588" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-5.08" y="-7.366" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1254,6 +1282,28 @@ The RX/TX switch happens on the programmer board, so when using this connect the
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PJ-102AH" prefix="J">
+<description>DC Power Jack 
+&lt;br&gt;
+2.0mm / 5.5mm</description>
+<gates>
+<gate name="G$1" symbol="BARREL-JACK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PJ-102AH">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="NC" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="CP-102AH-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

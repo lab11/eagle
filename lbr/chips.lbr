@@ -1427,6 +1427,27 @@ QFN-24</description>
 <smd name="13" x="0" y="0" dx="1.6" dy="2.5" layer="1"/>
 <circle x="2.0574" y="1.143" radius="0.113590625" width="0.127" layer="21"/>
 </package>
+<package name="MSOP-16(12)">
+<smd name="16" x="-1.75" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="14" x="-0.75" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="12" x="0.25" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="11" x="0.75" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="10" x="1.25" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="9" x="1.75" y="2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="8" x="1.75" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="7" x="1.25" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="6" x="0.75" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="5" x="0.25" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="3" x="-0.75" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="1" x="-1.75" y="-2.1055" dx="0.3048" dy="0.889" layer="1"/>
+<smd name="17" x="0" y="0" dx="2.845" dy="1.651" layer="1"/>
+<wire x1="-2.018" y1="1.5" x2="-2.018" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-2.018" y1="-1.5" x2="2.018" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="2.018" y1="-1.5" x2="2.018" y2="1.5" width="0.127" layer="21"/>
+<wire x1="2.018" y1="1.5" x2="-2.018" y2="1.5" width="0.127" layer="21"/>
+<text x="-2.5" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<circle x="-2.5" y="-1.5" radius="0.25" width="0" layer="25"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -2311,6 +2332,24 @@ I2C, clock output, interrupt output</description>
 <pin name="USBDM" x="-20.32" y="2.54" length="middle"/>
 <pin name="USBDP" x="-20.32" y="-2.54" length="middle"/>
 <pin name="!RESET" x="-20.32" y="-10.16" length="middle"/>
+</symbol>
+<symbol name="LTC3630">
+<pin name="VIN" x="-12.7" y="7.62" length="short"/>
+<pin name="RUN" x="-12.7" y="2.54" length="short"/>
+<pin name="ISET" x="-12.7" y="0" length="short"/>
+<pin name="VPRG2" x="12.7" y="-5.08" length="short" rot="R180"/>
+<pin name="GND" x="-12.7" y="-7.62" length="short"/>
+<pin name="VPRG1" x="12.7" y="-2.54" length="short" rot="R180"/>
+<pin name="SS" x="12.7" y="0" length="short" rot="R180"/>
+<pin name="VFB" x="12.7" y="5.08" length="short" rot="R180"/>
+<pin name="SW" x="12.7" y="7.62" length="short" rot="R180"/>
+<pin name="FBO" x="-12.7" y="-2.54" length="short"/>
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<text x="-10.16" y="10.414" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-10.16" y="-12.446" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -3853,6 +3892,33 @@ Requires matching network.</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LTC3630" prefix="U">
+<description>65 V 500 mA Step Down converter</description>
+<gates>
+<gate name="G$1" symbol="LTC3630" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MSOP-16(12)">
+<connects>
+<connect gate="G$1" pin="FBO" pad="12"/>
+<connect gate="G$1" pin="GND" pad="8 14 16 17"/>
+<connect gate="G$1" pin="ISET" pad="11"/>
+<connect gate="G$1" pin="RUN" pad="5"/>
+<connect gate="G$1" pin="SS" pad="10"/>
+<connect gate="G$1" pin="SW" pad="1"/>
+<connect gate="G$1" pin="VFB" pad="9"/>
+<connect gate="G$1" pin="VIN" pad="3"/>
+<connect gate="G$1" pin="VPRG1" pad="7"/>
+<connect gate="G$1" pin="VPRG2" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="LTC3630EMSE#PBF-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
