@@ -1408,6 +1408,11 @@
 <pad name="5" x="3.81" y="0" drill="1.1"/>
 <pad name="6" x="6.35" y="0" drill="1.1"/>
 </package>
+<package name="TESTPOINT_0.112IN">
+<pad name="1" x="0" y="0" drill="2.9464"/>
+<circle x="0" y="0" radius="2.3876" width="0.127" layer="21"/>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -2657,6 +2662,24 @@ Digi-Key Part Number
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="277-1276-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TEST_POINT_0.112IN" prefix="TP">
+<description>Solder terminal, turreted</description>
+<gates>
+<gate name="G$1" symbol="TEST_POINT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TESTPOINT_0.112IN">
+<connects>
+<connect gate="G$1" pin="TESTPOINT" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="NEWARK" value="40F6015" constant="no"/>
 </technology>
 </technologies>
 </device>
