@@ -1448,6 +1448,21 @@ QFN-24</description>
 <text x="-2.5" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 <circle x="-2.5" y="-1.5" radius="0.25" width="0" layer="25"/>
 </package>
+<package name="TAIYO-YUDEN-AH086M">
+<smd name="A" x="0" y="-3.95" dx="1.1" dy="1.1" layer="1"/>
+<smd name="NC3" x="1.8" y="-3.95" dx="1.1" dy="1.1" layer="1"/>
+<smd name="NC4" x="-1.8" y="-3.95" dx="1.1" dy="1.1" layer="1"/>
+<smd name="NC2" x="1.8" y="3.95" dx="1.1" dy="1.1" layer="1"/>
+<smd name="NC1" x="0" y="3.95" dx="1.1" dy="1.1" layer="1"/>
+<smd name="NC0" x="-1.8" y="3.95" dx="1.1" dy="1.1" layer="1"/>
+<wire x1="-3" y1="4" x2="3" y2="4" width="0.127" layer="21"/>
+<wire x1="3" y1="4" x2="3" y2="-4" width="0.127" layer="21"/>
+<wire x1="3" y1="-4" x2="-3" y2="-4" width="0.127" layer="21"/>
+<wire x1="-3" y1="-4" x2="-3" y2="4" width="0.127" layer="21"/>
+<rectangle x1="-0.5" y1="-3" x2="0.5" y2="-2" layer="21"/>
+<circle x="-2" y="2.5" radius="0.5" width="0" layer="21"/>
+<text x="0" y="5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -3918,6 +3933,24 @@ Requires matching network.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="LTC3630EMSE#PBF-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TAIYO-YUDEN-AH086M" prefix="A">
+<description>UWB Antenna - 3.1-8GHz</description>
+<gates>
+<gate name="G$1" symbol="ANTENNA" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="TAIYO-YUDEN-AH086M">
+<connects>
+<connect gate="G$1" pin="ANTENNA" pad="A"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="587-2204-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
