@@ -757,6 +757,12 @@ Round side is up.</description>
 <wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0" layer="107"/>
 <wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0" layer="46"/>
 </package>
+<package name="BATTERY_HOLE">
+<text x="-1.5" y="1.25" size="1.27" layer="25" align="bottom-center">+</text>
+<text x="1.5" y="1.25" size="1.27" layer="25" align="bottom-center">-</text>
+<pad name="N" x="1.5" y="0" drill="1.1" diameter="2" shape="octagon"/>
+<pad name="P" x="-1.5" y="0" drill="1.1" diameter="2" shape="octagon"/>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -1355,6 +1361,22 @@ Bottom Mount</description>
 <attribute name="MOUSER" value="798-ZX62-B-5PA11" constant="no"/>
 <attribute name="NEWARK" value="86P8793" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BAT_HOLE">
+<gates>
+<gate name="G$1" symbol="BAT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BATTERY_HOLE">
+<connects>
+<connect gate="G$1" pin="+" pad="P"/>
+<connect gate="G$1" pin="-" pad="N"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
