@@ -1334,7 +1334,7 @@ The RX/TX switch happens on the programmer board, so when using this connect the
 </device>
 </devices>
 </deviceset>
-<deviceset name="MICRO_USB_B_HIROSE_ZX62-B-5PA(11)">
+<deviceset name="MICRO_USB_B_HIROSE_ZX62-B-5PA(11)" prefix="J">
 <description>Connector Receptacle USB - micro B 2.0 5 Position Surface Mount, Right Angle, Horizontal &lt;br/&gt;&lt;br/&gt;
 Bottom Mount</description>
 <gates>
