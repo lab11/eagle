@@ -763,6 +763,60 @@ Round side is up.</description>
 <pad name="N" x="1.5" y="0" drill="1.1" diameter="2" shape="octagon"/>
 <pad name="P" x="-1.5" y="0" drill="1.1" diameter="2" shape="octagon"/>
 </package>
+<package name="PJ-069B-SMT-TR">
+<wire x1="10.6" y1="4.95" x2="-1.2" y2="4.95" width="0.127" layer="21"/>
+<wire x1="-1.2" y1="4.95" x2="-1.2" y2="-4.95" width="0.127" layer="21"/>
+<wire x1="-1.2" y1="-4.95" x2="10.6" y2="-4.95" width="0.127" layer="21"/>
+<wire x1="0" y1="7.62" x2="0" y2="5.15" width="0" layer="20"/>
+<wire x1="0" y1="5.15" x2="10.9" y2="5.15" width="0" layer="20"/>
+<wire x1="10.9" y1="4.15" x2="10.9" y2="-4.15" width="0" layer="20"/>
+<wire x1="10.9" y1="-5.15" x2="0" y2="-5.15" width="0" layer="20"/>
+<wire x1="0" y1="-5.15" x2="0" y2="-7.62" width="0" layer="20"/>
+<pad name="MOUNT1" x="2.35" y="6.55" drill="1" diameter="1.5"/>
+<pad name="MOUNT2" x="3.75" y="6.55" drill="1" diameter="1.5"/>
+<wire x1="2.35" y1="7.05" x2="3.75" y2="7.05" width="0" layer="20"/>
+<wire x1="3.75" y1="7.05" x2="3.75" y2="6.05" width="0" layer="20" curve="-180"/>
+<wire x1="3.75" y1="6.05" x2="2.35" y2="6.05" width="0" layer="20"/>
+<wire x1="2.35" y1="6.05" x2="2.35" y2="7.05" width="0" layer="20" curve="-180"/>
+<rectangle x1="2.35" y1="7.05" x2="3.75" y2="7.3" layer="17"/>
+<rectangle x1="2.35" y1="5.8" x2="3.75" y2="6.05" layer="17"/>
+<pad name="MOUNT3" x="2.35" y="-6.55" drill="1" diameter="1.5"/>
+<pad name="MOUNT4" x="3.75" y="-6.55" drill="1" diameter="1.5"/>
+<wire x1="2.35" y1="-6.05" x2="3.75" y2="-6.05" width="0" layer="20"/>
+<wire x1="3.75" y1="-6.05" x2="3.75" y2="-7.05" width="0" layer="20" curve="-180"/>
+<wire x1="3.75" y1="-7.05" x2="2.35" y2="-7.05" width="0" layer="20"/>
+<wire x1="2.35" y1="-7.05" x2="2.35" y2="-6.05" width="0" layer="20" curve="-180"/>
+<rectangle x1="2.35" y1="-6.05" x2="3.75" y2="-5.8" layer="17"/>
+<rectangle x1="2.35" y1="-7.3" x2="3.75" y2="-7.05" layer="17"/>
+<pad name="3A" x="9.55" y="6.3" drill="0.7" diameter="1.2"/>
+<pad name="3B" x="10.25" y="6.3" drill="0.7" diameter="1.2"/>
+<wire x1="9.55" y1="6.65" x2="10.25" y2="6.65" width="0" layer="20"/>
+<wire x1="10.25" y1="6.65" x2="10.25" y2="5.95" width="0" layer="20" curve="-180"/>
+<wire x1="10.25" y1="5.95" x2="9.55" y2="5.95" width="0" layer="20"/>
+<wire x1="9.55" y1="5.95" x2="9.55" y2="6.65" width="0" layer="20" curve="-180"/>
+<rectangle x1="9.55" y1="6.65" x2="10.25" y2="6.9" layer="17"/>
+<rectangle x1="9.55" y1="5.7" x2="10.25" y2="5.95" layer="17"/>
+<pad name="2A" x="9.55" y="-6.3" drill="0.7" diameter="1.2"/>
+<pad name="2B" x="10.25" y="-6.3" drill="0.7" diameter="1.2"/>
+<wire x1="9.55" y1="-5.95" x2="10.25" y2="-5.95" width="0" layer="20"/>
+<wire x1="10.25" y1="-5.95" x2="10.25" y2="-6.65" width="0" layer="20" curve="-180"/>
+<wire x1="10.25" y1="-6.65" x2="9.55" y2="-6.65" width="0" layer="20"/>
+<wire x1="9.55" y1="-6.65" x2="9.55" y2="-5.95" width="0" layer="20" curve="-180"/>
+<rectangle x1="9.55" y1="-5.95" x2="10.25" y2="-5.7" layer="17"/>
+<rectangle x1="9.55" y1="-6.9" x2="10.25" y2="-6.65" layer="17"/>
+<pad name="1A" x="12.6" y="1.25" drill="0.8" diameter="1.3"/>
+<pad name="1B" x="12.6" y="0.15" drill="0.8" diameter="1.3"/>
+<wire x1="12.2" y1="0.15" x2="13" y2="0.15" width="0" layer="20" curve="180"/>
+<wire x1="13" y1="0.15" x2="13" y2="1.25" width="0" layer="20"/>
+<wire x1="13" y1="1.25" x2="12.2" y2="1.25" width="0" layer="20" curve="180"/>
+<wire x1="12.2" y1="1.25" x2="12.2" y2="0.15" width="0" layer="20"/>
+<rectangle x1="11.95" y1="0.15" x2="12.2" y2="1.24" layer="17"/>
+<rectangle x1="13" y1="0.15" x2="13.25" y2="1.25" layer="17"/>
+<wire x1="10.9" y1="5.15" x2="10.9" y2="4.15" width="0" layer="20" curve="-180"/>
+<wire x1="10.9" y1="-5.15" x2="10.9" y2="-4.15" width="0" layer="20" curve="180"/>
+<text x="14" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;NAME</text>
+<wire x1="10.6" y1="4.95" x2="10.6" y2="-4.95" width="0.127" layer="25"/>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -1377,6 +1431,28 @@ Bottom Mount</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CUI_PJ-069B-SMT-TR" prefix="J">
+<description>CONN PWR JACK 5.5X2.5MM R/A SMD
+&lt;br /&gt;&lt;br /&gt;
+Mid mount</description>
+<gates>
+<gate name="G$1" symbol="BARREL-JACK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PJ-069B-SMT-TR">
+<connects>
+<connect gate="G$1" pin="GND" pad="2A 2B"/>
+<connect gate="G$1" pin="NC" pad="3A 3B"/>
+<connect gate="G$1" pin="VCC" pad="1A 1B"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="CP-069BPJCT-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
