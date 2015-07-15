@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -1393,8 +1393,6 @@ QFN-24</description>
 <smd name="1" x="-0.65" y="-1.05" dx="0.7" dy="0.3" layer="1" rot="R90"/>
 <smd name="2" x="0" y="-1.05" dx="0.7" dy="0.3" layer="1" rot="R90"/>
 <smd name="3" x="0.65" y="-1.05" dx="0.7" dy="0.3" layer="1" rot="R90"/>
-<pad name="TP" x="-0.4" y="0" drill="0.21" diameter="0.4064"/>
-<pad name="TP2" x="0.4" y="0" drill="0.21" diameter="0.4064"/>
 <smd name="TP3" x="0" y="0" dx="1.6" dy="1" layer="1"/>
 <circle x="-0.7" y="-1.6" radius="0.05" width="0.05" layer="21"/>
 <text x="-1.1" y="1.7" size="0.6096" layer="25">&gt;NAME</text>
@@ -2325,7 +2323,8 @@ I2C, clock output, interrupt output</description>
 <pin name="BAT" x="15.24" y="7.62" length="middle" rot="R180"/>
 <pin name="PROG" x="15.24" y="0" length="middle" rot="R180"/>
 <pin name="GND" x="15.24" y="-7.62" length="middle" rot="R180"/>
-<text x="-7.62" y="12.7" size="2.54" layer="95">&gt;NAME</text>
+<text x="-7.62" y="10.668" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="TPS715AXX">
 <wire x1="-10.16" y1="5.08" x2="-10.16" y2="-2.54" width="0.254" layer="94"/>
@@ -2335,7 +2334,8 @@ I2C, clock output, interrupt output</description>
 <pin name="IN" x="-15.24" y="2.54" length="middle"/>
 <pin name="OUT" x="15.24" y="2.54" length="middle" rot="R180"/>
 <pin name="GND" x="0" y="-7.62" length="middle" rot="R90"/>
-<text x="-10.16" y="7.62" size="2.54" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.588" size="1.778" layer="95">&gt;NAME</text>
+<text x="0.508" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="AMN">
 <pin name="VCC" x="7.62" y="2.54" visible="pin" length="short" rot="R180"/>
@@ -3888,7 +3888,7 @@ Requires matching network.</description>
 <devices>
 <device name="" package="WDFN-6">
 <connects>
-<connect gate="G$1" pin="GND" pad="2 3 4 5 TP TP2 TP3"/>
+<connect gate="G$1" pin="GND" pad="2 3 4 5 TP3"/>
 <connect gate="G$1" pin="IN" pad="1"/>
 <connect gate="G$1" pin="OUT" pad="6"/>
 </connects>
