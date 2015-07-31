@@ -1,0 +1,3 @@
+[submodule "lbr/Sparkfun_Blocks_Template"]
+	path = lbr/Sparkfun_Blocks_Template
+	url = https://github.com/sparkfun/Sparkfun_Blocks_Template.git
