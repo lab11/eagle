@@ -1578,6 +1578,39 @@ QFN-24</description>
 <circle x="-4.6" y="-4.6" radius="0.3" width="0" layer="21"/>
 <text x="0" y="5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="S-PVQFN-N20">
+<smd name="1" x="-1" y="-2" dx="0.3" dy="1" layer="1" roundness="100"/>
+<smd name="2" x="-0.5" y="-2" dx="0.3" dy="1" layer="1" roundness="100"/>
+<smd name="3" x="0" y="-2" dx="0.3" dy="1" layer="1" roundness="100"/>
+<smd name="4" x="0.5" y="-2" dx="0.3" dy="1" layer="1" roundness="100"/>
+<smd name="5" x="1" y="-2" dx="0.3" dy="1" layer="1" roundness="100"/>
+<wire x1="-2" y1="2" x2="2" y2="2" width="0.127" layer="21"/>
+<wire x1="2" y1="2" x2="2" y2="-2" width="0.127" layer="21"/>
+<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.127" layer="21"/>
+<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.127" layer="21"/>
+<smd name="6" x="2" y="-1" dx="0.3" dy="1" layer="1" roundness="100" rot="R90"/>
+<smd name="7" x="2" y="-0.5" dx="0.3" dy="1" layer="1" roundness="100" rot="R90"/>
+<smd name="8" x="2" y="0" dx="0.3" dy="1" layer="1" roundness="100" rot="R90"/>
+<smd name="9" x="2" y="0.5" dx="0.3" dy="1" layer="1" roundness="100" rot="R90"/>
+<smd name="10" x="2" y="1" dx="0.3" dy="1" layer="1" roundness="100" rot="R90"/>
+<smd name="11" x="1" y="2" dx="0.3" dy="1" layer="1" roundness="100" rot="R180"/>
+<smd name="12" x="0.5" y="2" dx="0.3" dy="1" layer="1" roundness="100" rot="R180"/>
+<smd name="13" x="0" y="2" dx="0.3" dy="1" layer="1" roundness="100" rot="R180"/>
+<smd name="14" x="-0.5" y="2" dx="0.3" dy="1" layer="1" roundness="100" rot="R180"/>
+<smd name="15" x="-1" y="2" dx="0.3" dy="1" layer="1" roundness="100" rot="R180"/>
+<smd name="16" x="-2" y="1" dx="0.3" dy="1" layer="1" roundness="100" rot="R270"/>
+<smd name="17" x="-2" y="0.5" dx="0.3" dy="1" layer="1" roundness="100" rot="R270"/>
+<smd name="18" x="-2" y="0" dx="0.3" dy="1" layer="1" roundness="100" rot="R270"/>
+<smd name="19" x="-2" y="-0.5" dx="0.3" dy="1" layer="1" roundness="100" rot="R270"/>
+<smd name="20" x="-2" y="-1" dx="0.3" dy="1" layer="1" roundness="100" rot="R270"/>
+<circle x="-2.5" y="-2.5" radius="0.3" width="0" layer="21"/>
+<smd name="PAD" x="0" y="0" dx="2.4" dy="2.4" layer="1" cream="no"/>
+<rectangle x1="-0.4" y1="0.6" x2="0.4" y2="1" layer="31"/>
+<rectangle x1="0.6" y1="-0.4" x2="1" y2="0.4" layer="31"/>
+<rectangle x1="-0.4" y1="-1" x2="0.4" y2="-0.6" layer="31"/>
+<rectangle x1="-1" y1="-0.4" x2="-0.6" y2="0.4" layer="31"/>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -2571,6 +2604,30 @@ I2C, clock output, interrupt output</description>
 <wire x1="-17.78" y1="-27.94" x2="-17.78" y2="27.94" width="0.254" layer="94"/>
 <text x="-17.78" y="28.448" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="-17.78" y="-30.48" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="CC110L">
+<pin name="GND" x="0" y="-22.86" length="short" rot="R90"/>
+<pin name="RF_P" x="17.78" y="5.08" length="short" rot="R180"/>
+<pin name="RF_N" x="17.78" y="2.54" length="short" rot="R180"/>
+<pin name="MOSI" x="-17.78" y="7.62" length="short"/>
+<pin name="MISO" x="-17.78" y="5.08" length="short"/>
+<pin name="SCLK" x="-17.78" y="2.54" length="short"/>
+<pin name="!CS" x="-17.78" y="0" length="short"/>
+<pin name="RBIAS" x="-17.78" y="-12.7" length="short"/>
+<pin name="XOSC_Q1" x="17.78" y="-7.62" length="short" rot="R180"/>
+<pin name="XOSC_Q2" x="17.78" y="-10.16" length="short" rot="R180"/>
+<pin name="AVDD" x="2.54" y="22.86" length="short" rot="R270"/>
+<pin name="DVDD" x="-2.54" y="22.86" length="short" rot="R270"/>
+<pin name="DGUARD" x="-17.78" y="12.7" length="short"/>
+<pin name="DCOUPL" x="-17.78" y="-15.24" length="short"/>
+<pin name="GDO0" x="-17.78" y="-5.08" length="short"/>
+<pin name="GDO2" x="-17.78" y="-7.62" length="short"/>
+<wire x1="-15.24" y1="20.32" x2="15.24" y2="20.32" width="0.254" layer="94"/>
+<wire x1="15.24" y1="20.32" x2="15.24" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-20.32" x2="-15.24" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-20.32" x2="-15.24" y2="20.32" width="0.254" layer="94"/>
+<text x="-15.24" y="20.828" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-15.24" y="-22.86" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4285,6 +4342,40 @@ Requires matching network.</description>
 <attribute name="DIGIKEY" value="768-1102-1-ND" constant="no"/>
 <attribute name="MOUSER" value="895-FT232HQ-REEL" constant="no"/>
 <attribute name="NEWARK" value="65W8039" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CC110L" prefix="U">
+<description>The CC110L is a cost optimized sub-1 GHz RF transceiver for the 300–348 MHz, 387–464 MHz, and
+779–928 MHz frequency bands.</description>
+<gates>
+<gate name="G$1" symbol="CC110L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="S-PVQFN-N20">
+<connects>
+<connect gate="G$1" pin="!CS" pad="7"/>
+<connect gate="G$1" pin="AVDD" pad="9 11 14 15"/>
+<connect gate="G$1" pin="DCOUPL" pad="5"/>
+<connect gate="G$1" pin="DGUARD" pad="18"/>
+<connect gate="G$1" pin="DVDD" pad="4"/>
+<connect gate="G$1" pin="GDO0" pad="6"/>
+<connect gate="G$1" pin="GDO2" pad="3"/>
+<connect gate="G$1" pin="GND" pad="16 19 PAD"/>
+<connect gate="G$1" pin="MISO" pad="2"/>
+<connect gate="G$1" pin="MOSI" pad="20"/>
+<connect gate="G$1" pin="RBIAS" pad="17"/>
+<connect gate="G$1" pin="RF_N" pad="13"/>
+<connect gate="G$1" pin="RF_P" pad="12"/>
+<connect gate="G$1" pin="SCLK" pad="1"/>
+<connect gate="G$1" pin="XOSC_Q1" pad="8"/>
+<connect gate="G$1" pin="XOSC_Q2" pad="10"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-35719-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
