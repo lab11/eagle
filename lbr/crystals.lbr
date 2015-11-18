@@ -170,6 +170,17 @@
 <wire x1="-1.6" y1="-1.4" x2="-0.4" y2="-1.4" width="0.127" layer="21"/>
 <text x="0" y="1.6" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="M416">
+<smd name="1" x="-0.485" y="-0.36" dx="0.67" dy="0.52" layer="1"/>
+<smd name="2" x="0.485" y="-0.36" dx="0.67" dy="0.52" layer="1"/>
+<smd name="3" x="0.485" y="0.36" dx="0.67" dy="0.52" layer="1"/>
+<smd name="4" x="-0.485" y="0.36" dx="0.67" dy="0.52" layer="1"/>
+<wire x1="-0.8" y1="0.05" x2="-0.8" y2="-0.05" width="0.127" layer="21"/>
+<wire x1="-0.1" y1="0.6" x2="0.1" y2="0.6" width="0.127" layer="21"/>
+<wire x1="0.8" y1="0.05" x2="0.8" y2="-0.05" width="0.127" layer="21"/>
+<wire x1="-0.1" y1="-0.6" x2="0.1" y2="-0.6" width="0.127" layer="21"/>
+<text x="0" y="0.7" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="CRYSTAL">
@@ -340,6 +351,25 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="887-1487-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="M416" prefix="X">
+<gates>
+<gate name="G$1" symbol="CRYSTAL-GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="F26022CKR" package="M416">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2 4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="CTX1407CT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
