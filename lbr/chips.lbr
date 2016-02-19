@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -1694,6 +1694,36 @@ QFN-24</description>
 <rectangle x1="-0.25" y1="0.85" x2="0.25" y2="1.5" layer="51"/>
 <rectangle x1="-1.2" y1="0.85" x2="-0.7" y2="1.5" layer="51"/>
 </package>
+<package name="RXM-GPS-RM-T">
+<smd name="1" x="-6.35" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="2" x="-5.08" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="3" x="-3.81" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="4" x="-2.54" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="5" x="-1.27" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="6" x="1.27" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="7" x="2.54" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="8" x="3.81" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="9" x="5.08" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="10" x="6.35" y="-6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="11" x="6.35" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="12" x="5.08" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="13" x="3.81" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="14" x="2.54" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="15" x="1.27" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="16" x="-1.27" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="17" x="-2.54" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="18" x="-3.81" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="19" x="-5.08" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="20" x="-6.35" y="6.5024" dx="0.7112" dy="0.9144" layer="1"/>
+<smd name="21" x="0" y="-6.2738" dx="0.9144" dy="0.4572" layer="1"/>
+<smd name="22" x="0" y="6.2738" dx="0.9144" dy="0.4572" layer="1"/>
+<wire x1="-7.5" y1="6.5" x2="7.5" y2="6.5" width="0.127" layer="21"/>
+<wire x1="7.5" y1="6.5" x2="7.5" y2="-6.5" width="0.127" layer="21"/>
+<wire x1="7.5" y1="-6.5" x2="-7.5" y2="-6.5" width="0.127" layer="21"/>
+<wire x1="-7.5" y1="-6.5" x2="-7.5" y2="6.5" width="0.127" layer="21"/>
+<circle x="-8.25" y="-7.25" radius="0.35" width="0" layer="21"/>
+<text x="0" y="7.25" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -2745,6 +2775,23 @@ I2C, clock output, interrupt output</description>
 <pin name="SCLK" x="22.86" y="2.54" length="middle" rot="R180"/>
 <text x="0" y="17.78" size="1.27" layer="95">&gt;NAME</text>
 <text x="0" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="RXM-GPS-RM-T">
+<pin name="VCC" x="-15.24" y="10.16" length="short"/>
+<pin name="VBACKUP" x="-15.24" y="5.08" length="short"/>
+<pin name="RFIN" x="15.24" y="10.16" length="short" rot="R180"/>
+<pin name="VOUT" x="15.24" y="7.62" length="short" rot="R180"/>
+<pin name="TX" x="15.24" y="0" length="short" rot="R180"/>
+<pin name="RX" x="15.24" y="-2.54" length="short" rot="R180"/>
+<pin name="GND" x="-15.24" y="-7.62" length="short"/>
+<pin name="!RESET" x="-15.24" y="-2.54" length="short"/>
+<pin name="1PPS" x="15.24" y="-7.62" length="short" rot="R180"/>
+<wire x1="-12.7" y1="12.7" x2="12.7" y2="12.7" width="0.254" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-10.16" x2="-12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-10.16" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<text x="-12.7" y="12.954" size="1.778" layer="95" ratio="12">&gt;NAME</text>
+<text x="-12.7" y="-12.446" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4588,6 +4635,34 @@ Wakeup Receiver</description>
 <attribute name="DIGIKEY" value="ADC121S101CIMF/NOPBCT-ND " constant="no"/>
 <attribute name="MOUSER" value="926-AD121S101CISDNPB" constant="no"/>
 <attribute name="NEWARK" value="96K6188" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RXM-GPS-RM-T" prefix="U">
+<description>The RM Series GPS receiver module is a 
+self-contained high-performance Global 
+Positioning System receiver</description>
+<gates>
+<gate name="G$1" symbol="RXM-GPS-RM-T" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RXM-GPS-RM-T">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="8"/>
+<connect gate="G$1" pin="1PPS" pad="3"/>
+<connect gate="G$1" pin="GND" pad="18 20 21 22"/>
+<connect gate="G$1" pin="RFIN" pad="19"/>
+<connect gate="G$1" pin="RX" pad="5"/>
+<connect gate="G$1" pin="TX" pad="4"/>
+<connect gate="G$1" pin="VBACKUP" pad="11"/>
+<connect gate="G$1" pin="VCC" pad="12"/>
+<connect gate="G$1" pin="VOUT" pad="17"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="RXM-GPS-RM-TCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
