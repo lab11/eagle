@@ -1413,6 +1413,11 @@
 <circle x="0" y="0" radius="2.3876" width="0.127" layer="21"/>
 <text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="TESTPOINT_0.020IN">
+<pad name="TESTPOINT" x="0" y="0" drill="0.508"/>
+<text x="0" y="1.016" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<circle x="0" y="0" radius="0.762" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -2681,6 +2686,21 @@ Digi-Key Part Number
 <technology name="">
 <attribute name="NEWARK" value="40F6015" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TEST_POINT_0.020IN" prefix="TP">
+<gates>
+<gate name="G$1" symbol="TEST_POINT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TESTPOINT_0.020IN">
+<connects>
+<connect gate="G$1" pin="TESTPOINT" pad="TESTPOINT"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
