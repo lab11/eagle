@@ -1,0 +1,345 @@
+/**********************************************************************
+**                                                                   **
+** Filename:  import_dxf_polygons.ulp                                **
+**                                                                   **
+** Author:    Tim Ruetz                                              **
+**            tim at caiaq.de                                        **
+**                                                                   **
+** This ULP imports polylines and splines from DXF files             **
+** Use it for importing vectorized logos, fonts etc.                 **
+** Arcs, circles, splines, curves are not supported yet.             **
+** Since this is a very simple, rudimentary script it just uses      **
+** straight lines as approximation.                                  **
+** Please use a vector graphics editor to edit/refine you DXF file:  **
+** - add as many as needed vertexes to the shape                     **
+** - convert all curves to straight lines                            **
+** - no negative shapes are supported by eagle, so create openings   **
+**   to connect negative shapes to outside (see example DXF)         **
+**                                                                   **
+***********************************************************************
+**                                                                   **
+** Legal issues: This program is provided as it is. Without any      **
+**               warranties of any kind of data lose or damages.     **	
+**                                                                   **
+** Feel free to modify and improve this program and let me know.     **
+**                                                                   **
+** Version:      0.4                                                 **
+** Date:         04.07.2011                                          **
+**                                                                   **
+***********************************************************************
+**                                                                   **
+** Version history                                                   **
+**                                                                   **
+** 0.1           initial version                                     **
+**                                                                   **
+** 0.2           added default pen with = 0.0                        **
+**               added insert offset settings to dialog              **
+**                                                                   **
+** 0.3           increased coordinate precision                      **
+**               to import very tiny shapes                          **
+**                                                                   **
+** 0.4           added WIRE vs POLYGON option                        **
+**               by Tod E. Kurt, http://todbot.com/blog/             **
+**                                                                   **
+***********************************************************************
+*/
+
+#usage "<b>Simple DXF Polyline Import V0.3</b>\n"
+       "<p>"
+       "Imports and scales (only!) POLYLINE and SPLINE entries in DXF files."
+       "Splines are not drawn as splines but as stright lines!"
+       "<author>Author: Tim Ruetz (tim@caiaq.de)</author>"
+
+string	dxf_filename;	
+int		dxf_len;	
+int		i, j;	
+string	dxf_filedata[];	
+
+int		dxf_code;
+string	dxf_value;
+
+int		state = 0;
+
+real	vertex_x;
+real	vertex_y;
+real 	vertex_x_buf;
+real	vertex_y_buf;
+real	scale = 1.0;
+
+real	pen_width = 0.2;	// mm
+real	angle = 0.0;		// degrees
+real	rot_s;				// rotation sinus
+real	rot_c;				// rotation cosinus
+int		mirror_flag = 0;	// 1=mirror 
+
+real    xmin, xmax;
+real    ymin, ymax;
+
+real	width_orig;
+real	height_orig;
+real	w, h;
+
+string	parse_msg = "";
+
+string	l;
+string	cmd;
+string	script_out;
+
+int		layer_cnt;
+int		layer_sel=0;
+string	layer_list[];
+
+int		pen_sel = 0;
+string	pen_list[] = { "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "1.0", "1.5", "2.0" };
+
+int		line_sel = 0;
+string	line_list[] = { "WIRE", "POLYGON" };
+
+real	offset_x = 0.0;
+real	offset_y = 0.0;
+
+
+void find_layers()
+{
+	if (library) {
+		layer_cnt=0;
+		library(L) {
+			L.layers(LA) {
+				if (LA.visible)
+				{
+					if ((LA.number < 17 || LA.number > 19) && (LA.number < 23 || LA.number > 25) && LA.number != 28)
+					{ 
+						if (LA.number == 94) layer_sel = layer_cnt;
+						sprintf(layer_list[layer_cnt++], "%3d - %s", LA.number, LA.name);
+					}
+				}
+			}
+		}
+	}
+	if (board) {
+		layer_cnt=0;	
+		board(B) {
+			B.layers(LA) {
+				if (LA.visible)
+				{
+					if ((LA.number < 17 || LA.number > 19) && (LA.number < 23 || LA.number > 25) && LA.number != 28)
+						sprintf(layer_list[layer_cnt++], "%3d - %s", LA.number, LA.name);
+				}
+			}
+		}
+	}
+	if (schematic) {
+		layer_cnt=0;
+		schematic(S) {
+			S.layers(LA) {
+				if (LA.visible)
+				{
+					if (LA.number < 95 || LA.number > 96)
+					{
+						if (LA.number == 94) layer_sel = layer_cnt;
+						sprintf(layer_list[layer_cnt++], "%3d - %s", LA.number, LA.name);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+void update_script()
+{
+	script_out  = "";
+//	script_out += "SET UNDO_LOG OFF;\n";
+	script_out += "GRID MM;\n";
+	script_out += "SET WIDTH "+pen_list[pen_sel]+";\n";
+	script_out += "CHANGE POUR SOLID;\n";
+	script_out += "LAYER "+strsub(layer_list[layer_sel],0, 3)+";\n";
+	script_out += "SET WIRE_BEND 2;\n";
+	script_out += cmd;
+//	script_out += "SET UNDO_LOG ON;\n";
+}
+
+
+void parse_dxf()
+{
+	string	cmd_temp = "";
+	int 	vertexes = 0;
+	cmd = "";
+	xmin = ymin =  100000.0;
+	xmax = ymax = -100000.0;
+	
+	rot_s = sin(angle / 180.0 * PI);
+	rot_c = cos(angle / 180.0 * PI);
+
+	for (i=0; i<dxf_len; i+=2)
+	{
+		dxf_code  = strtol(dxf_filedata[i]);
+		dxf_value = dxf_filedata[i+1];
+
+		if (dxf_code == 0) 
+		{
+
+			if (state > 2 && dxf_value != "VERTEX") 
+			{
+				if (vertexes > 2)			// only draw polygons with at least 3 vertexes
+				{
+					cmd += cmd_temp+";\n";
+				}
+				state = 0;
+				cmd_temp="";
+				vertexes = 0;
+				
+			}
+			
+
+			if (dxf_value == "POLYLINE")
+				state = 1;
+			
+			if (dxf_value == "VERTEX" && state==1)
+			{
+                cmd_temp += line_list[line_sel];
+//				cmd_temp += "POLYGON";
+				state=2;
+			}
+
+			if (dxf_value == "SPLINE")
+			{
+                cmd_temp += line_list[line_sel];
+//				cmd_temp += "POLYGON";
+				state = 2;
+			}
+			
+		}
+		
+		
+		
+		if (state >= 2)
+		{
+			if (dxf_code == 10) 
+				vertex_x = strtod(dxf_value) * scale;
+				
+			if (dxf_code == 20) 
+			{
+				state = 3;
+				vertex_y = strtod(dxf_value) * scale;
+
+				if (vertex_x > xmax) xmax = vertex_x;
+				if (vertex_x < xmin) xmin = vertex_x;
+				if (vertex_y > ymax) ymax = vertex_y;
+				if (vertex_y < ymin) ymin = vertex_y;
+				
+				if (vertex_x != vertex_x_buf || vertex_y != vertex_y_buf)
+				{
+					vertex_x_buf = vertex_x;
+					vertex_y_buf = vertex_y;
+					if (mirror_flag)
+						vertex_x = -vertex_x;
+
+					sprintf(l, " (%5.6f %5.6f)", (vertex_x * rot_c - vertex_y * rot_s) + offset_x, (vertex_y * rot_c + vertex_x * rot_s) + offset_y);
+					
+					cmd_temp += l;
+					vertexes++;
+				}
+			}
+		}
+	}
+	sprintf(parse_msg, "%s\n\nWidth: %5.3f mm\nHeight: %5.3f mm\n\nLeft: %5.3f mm\nRight: %5.3f mm\n\nTop: %5.3f mm\nBottom: %5.3f mm\n\n", 
+				dxf_filename, xmax-xmin, ymax-ymin, xmin + offset_x, xmax + offset_x, ymin + offset_y, ymax + offset_y);
+
+	if (scale==1.0)	// at least the first time
+	{
+		w = width_orig  = xmax-xmin;
+		h = height_orig = ymax-ymin;
+		
+	}
+
+	update_script();
+}
+
+
+
+
+//
+//	main()
+//
+
+find_layers();
+
+dxf_filename = dlgFileOpen("DXF file to import", ".", "DXF files (*.dxf);;All files (*)");
+if (dxf_filename == "")	exit (0);
+	
+dxf_len = fileread(dxf_filedata, dxf_filename);
+if (dxf_len<1) exit(0);
+	
+parse_dxf();
+
+// dialog
+int result = dlgDialog("Simple DXF Polyline Import") {
+	dlgTabWidget {
+		dlgTabPage("Settings")
+		{
+			dlgGridLayout {
+				dlgCell(0, 0) dlgLabel("Scale");
+				dlgCell(0, 1) dlgRealEdit(scale, 0.0, 999.0);		
+				dlgCell(0, 2) dlgPushButton("+Rescale") parse_dxf();		
+		
+				dlgCell(1, 0) dlgLabel("Scale to width [mm]");
+				dlgCell(1, 1) dlgRealEdit(w, 0.1, 9999.0);		
+				dlgCell(1, 2) dlgPushButton("+Scale to width") { scale = w/width_orig; h=scale*height_orig; parse_dxf();	}
+		
+				dlgCell(2, 0) dlgLabel("Scale to height [mm]");
+				dlgCell(2, 1) dlgRealEdit(h, 0.1, 9999.0);		
+				dlgCell(2, 2) dlgPushButton("+Scale to height") { scale = h/height_orig; w=scale*width_orig; parse_dxf();	}
+		
+				dlgCell(3, 0) dlgLabel("Info");
+				dlgCell(3, 1, 3, 2) dlgTextView(parse_msg);;
+				
+				dlgCell(4, 0) dlgLabel("Import to layer");
+				dlgCell(4, 1, 4, 2) dlgComboBox(layer_list, layer_sel) update_script();
+				
+                dlgCell(5, 0) dlgLabel("Wire or Polygon");
+                dlgCell(5, 1, 5,2) dlgComboBox( line_list, line_sel) parse_dxf();
+
+				dlgCell(6, 0) dlgLabel("Pen width [mm]");
+				dlgCell(6, 1, 6, 2) dlgComboBox(pen_list, pen_sel) update_script(); 
+
+				dlgCell(7, 0) dlgLabel("Angle (ccw)");
+				dlgCell(7, 1) dlgRealEdit(angle, 0.0, 360.0) parse_dxf(); 
+				dlgCell(7, 2) dlgCheckBox("Mirror", mirror_flag) parse_dxf();
+
+				dlgCell(8, 0) dlgLabel("Insert offset [mm] x=");
+				dlgCell(8, 1, 8,2) {
+					dlgGridLayout {
+						dlgCell (1, 1) dlgRealEdit(offset_x, -999.0, 999.0) parse_dxf(); 
+						dlgCell (1, 2) dlgLabel("y=");
+						dlgCell (1, 3) dlgRealEdit(offset_y, -999.0, 999.0) parse_dxf();
+					}
+				}
+			}
+		}	
+		dlgTabPage("Generated Script")
+		{
+			dlgTextView(script_out);
+		}
+
+	}
+
+	dlgGridLayout {
+		dlgCell(0, 0) dlgPushButton("-Cancel")  dlgReject();
+		dlgCell(0, 3) { 
+			dlgPushButton("+Execute") 
+			{
+				parse_dxf();
+				dlgAccept();
+			}
+		}
+	}
+};
+
+if (result == 0)
+	exit(0);
+else
+{
+	exit(script_out);
+}
