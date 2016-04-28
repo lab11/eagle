@@ -528,6 +528,16 @@
 <wire x1="-2.25" y1="-2.25" x2="-2.25" y2="2.25" width="0.127" layer="21"/>
 <text x="0" y="2.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="SKPDAMD010">
+<pad name="P$1" x="-2.5" y="0" drill="1"/>
+<pad name="P$2" x="2.5" y="0" drill="1"/>
+<wire x1="-3.9" y1="3.9" x2="3.9" y2="3.9" width="0.127" layer="21"/>
+<wire x1="3.9" y1="3.9" x2="3.9" y2="-3.9" width="0.127" layer="21"/>
+<wire x1="3.9" y1="-3.9" x2="-3.9" y2="-3.9" width="0.127" layer="21"/>
+<wire x1="-3.9" y1="-3.9" x2="-3.9" y2="3.9" width="0.127" layer="21"/>
+<text x="-4" y="6.5" size="1" layer="25" font="vector" ratio="10">&gt;NAME</text>
+<text x="-4" y="5" size="1" layer="25" font="vector" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="8X_SPST">
@@ -1104,6 +1114,24 @@ GH7366-ND</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="EG4620CT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SKPDAMD010">
+<gates>
+<gate name="G$1" symbol="PUSH-BUTTON-SWITCH" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SKPDAMD010">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MOUSER" value="688-SKPDAM" constant="no"/>
 </technology>
 </technologies>
 </device>
