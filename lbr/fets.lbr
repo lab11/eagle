@@ -641,6 +641,26 @@ High-power, low thermal resistance package.</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="MOSFET-PCHANNEL" prefix="Q" uservalue="yes">
+<description>small package Pchannel fet</description>
+<gates>
+<gate name="G$1" symbol="P_MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="XFDFN-3">
+<connects>
+<connect gate="G$1" pin="D" pad="D"/>
+<connect gate="G$1" pin="G" pad="G"/>
+<connect gate="G$1" pin="S" pad="S"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="DMP21D5UFB4-7BDICT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
