@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -449,6 +449,17 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <wire x1="-0.13" y1="0" x2="0.12" y2="0" width="0.05" layer="21"/>
 <text x="-0.36" y="0.4" size="0.127" layer="25">&gt;NAME</text>
 </package>
+<package name="0603_CAP_SMALL">
+<smd name="POS" x="-0.55" y="0" dx="0.6" dy="0.9" layer="1"/>
+<smd name="NEG" x="0.55" y="0" dx="0.6" dy="0.9" layer="1"/>
+<text x="0" y="0.762" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="-0.1548" y1="0.5596" x2="-0.8914" y2="0.5596" width="0.0762" layer="21"/>
+<wire x1="-0.8914" y1="0.5596" x2="-0.993" y2="0.508" width="0.0762" layer="21"/>
+<wire x1="-0.993" y1="0.508" x2="-0.993" y2="-0.508" width="0.0762" layer="21"/>
+<wire x1="-0.993" y1="-0.508" x2="-0.8914" y2="-0.5596" width="0.0762" layer="21"/>
+<wire x1="-0.8914" y1="-0.5596" x2="-0.1548" y2="-0.5596" width="0.0762" layer="21"/>
+<circle x="0" y="0" radius="0.1778" width="0" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -733,6 +744,15 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 <connects>
 <connect gate="G$1" pin="ANODE" pad="-"/>
 <connect gate="G$1" pin="CATHODE" pad="+"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="0603_SMALL" package="0603_CAP_SMALL">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="NEG"/>
+<connect gate="G$1" pin="CATHODE" pad="POS"/>
 </connects>
 <technologies>
 <technology name=""/>
