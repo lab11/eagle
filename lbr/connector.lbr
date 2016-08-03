@@ -962,7 +962,7 @@ Round side is up.</description>
 <pad name="7" x="1.27" y="-1.27" drill="0.9906" shape="octagon"/>
 <pad name="5" x="-1.27" y="-1.27" drill="0.9906" shape="octagon"/>
 <pad name="3" x="-3.81" y="-1.27" drill="0.9906" shape="octagon"/>
-<pad name="1" x="-6.35" y="-1.27" drill="0.9906" shape="octagon"/>
+<pad name="1" x="-6.35" y="-1.27" drill="0.9906" shape="square"/>
 <wire x1="-7.62" y1="3.0988" x2="-7.62" y2="-3.0988" width="0.127" layer="21"/>
 <wire x1="-7.62" y1="-3.0988" x2="-7.366" y2="-3.0988" width="0.127" layer="21"/>
 <wire x1="-7.366" y1="-3.0988" x2="-7.366" y2="-2.794" width="0.127" layer="21"/>
@@ -1021,7 +1021,7 @@ Round side is up.</description>
 <package name="MOLEX-C-GRID-MALE-12">
 <pad name="5" x="-1.27" y="1.27" drill="0.9906" shape="octagon"/>
 <pad name="3" x="-3.81" y="1.27" drill="0.9906" shape="octagon"/>
-<pad name="1" x="-6.35" y="1.27" drill="0.9906" shape="octagon"/>
+<pad name="1" x="-6.35" y="1.27" drill="0.9906" shape="square"/>
 <pad name="2" x="-6.35" y="-1.27" drill="0.9906" shape="octagon"/>
 <pad name="4" x="-3.81" y="-1.27" drill="0.9906" shape="octagon"/>
 <pad name="6" x="-1.27" y="-1.27" drill="0.9906" shape="octagon"/>
