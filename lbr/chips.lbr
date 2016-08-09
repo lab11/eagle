@@ -2170,6 +2170,10 @@ QFN-24</description>
 <smd name="P$3" x="-1.52" y="0.61" dx="0.9" dy="0.68" layer="1"/>
 <smd name="P$1" x="-1.52" y="-0.61" dx="0.9" dy="0.68" layer="1"/>
 <smd name="P$2" x="0" y="0" dx="1.55" dy="1.55" layer="1" roundness="100"/>
+<wire x1="1.08" y1="1.288" x2="1.08" y2="-1.288" width="0.127" layer="21"/>
+<wire x1="-2.27" y1="-1.288" x2="-2.27" y2="1.288" width="0.127" layer="21"/>
+<wire x1="-2.27" y1="1.288" x2="1.08" y2="1.288" width="0.127" layer="21"/>
+<wire x1="-2.27" y1="-1.288" x2="1.08" y2="-1.288" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -3683,6 +3687,18 @@ I2C, clock output, interrupt output</description>
 <pin name="OUT" x="10.16" y="0" visible="pin" length="short" rot="R180"/>
 <text x="0" y="7.62" size="1.778" layer="94" align="bottom-center">&gt;NAME</text>
 <text x="2.54" y="-7.62" size="1.778" layer="94" ratio="12" align="bottom-center">ICS-40310</text>
+</symbol>
+<symbol name="LD39015">
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<pin name="IN" x="-12.7" y="5.08" length="middle"/>
+<pin name="EN" x="-12.7" y="-5.08" length="middle"/>
+<pin name="OUT" x="12.7" y="5.08" length="middle" rot="R180"/>
+<pin name="GND" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<text x="-7.62" y="10.16" size="1.27" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-10.16" size="1.27" layer="95">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6119,6 +6135,24 @@ DS RMS-to-DC Converter</description>
 <connect gate="G$1" pin="GND" pad="P$2"/>
 <connect gate="G$1" pin="OUT" pad="P$3"/>
 <connect gate="G$1" pin="VDD" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LD39015">
+<gates>
+<gate name="G$1" symbol="LD39015" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-23-5">
+<connects>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
