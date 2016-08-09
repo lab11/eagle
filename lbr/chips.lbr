@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="736" unitdist="mic" unit="mic" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -2165,6 +2165,12 @@ QFN-24</description>
 <wire x1="0.3048" y1="2.5146" x2="-0.3048" y2="2.4892" width="0.1524" layer="21" curve="-180"/>
 <text x="-3.2512" y="2.2606" size="1.27" layer="21" ratio="6" rot="SR0">*</text>
 </package>
+<package name="LGA_CAV3">
+<hole x="0" y="0" drill="0.95"/>
+<smd name="P$3" x="-1.52" y="0.61" dx="0.9" dy="0.68" layer="1"/>
+<smd name="P$1" x="-1.52" y="-0.61" dx="0.9" dy="0.68" layer="1"/>
+<smd name="P$2" x="0" y="0" dx="1.55" dy="1.55" layer="1" roundness="100"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -3666,6 +3672,17 @@ I2C, clock output, interrupt output</description>
 <wire x1="53.34" y1="5.08" x2="7.62" y2="5.08" width="0.1524" layer="94"/>
 <text x="25.7556" y="9.1186" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
 <text x="25.1206" y="6.5786" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
+</symbol>
+<symbol name="ICS-40310">
+<wire x1="-5.08" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<pin name="VDD" x="-7.62" y="2.54" visible="pin" length="short"/>
+<pin name="GND" x="-7.62" y="-2.54" visible="pin" length="short"/>
+<pin name="OUT" x="10.16" y="0" visible="pin" length="short" rot="R180"/>
+<text x="0" y="7.62" size="1.778" layer="94" align="bottom-center">&gt;NAME</text>
+<text x="2.54" y="-7.62" size="1.778" layer="94" ratio="12" align="bottom-center">ICS-40310</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6088,6 +6105,23 @@ DS RMS-to-DC Converter</description>
 <attribute name="MANUFACTURER_PART_NUMBER" value="max417esa+" constant="no"/>
 <attribute name="VENDOR" value="MAXIM" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ICS-40310">
+<gates>
+<gate name="G$1" symbol="ICS-40310" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LGA_CAV3">
+<connects>
+<connect gate="G$1" pin="GND" pad="P$2"/>
+<connect gate="G$1" pin="OUT" pad="P$3"/>
+<connect gate="G$1" pin="VDD" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
