@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -129,7 +129,7 @@
 <symbol name="LETTER_L">
 <frame x1="0" y1="0" x2="248.92" y2="185.42" columns="12" rows="17" layer="94" border-left="no" border-top="no" border-right="no" border-bottom="no"/>
 </symbol>
-<symbol name="DOCFIELD">
+<symbol name="DOCFIELD_M">
 <wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
 <wire x1="101.6" y1="20.32" x2="87.63" y2="20.32" width="0.1016" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
@@ -1718,16 +1718,43 @@
 <text x="17.145" y="6.35" size="2.54" layer="94" font="vector">&gt;AUTHOR</text>
 <wire x1="87.63" y1="10.16" x2="101.6" y2="10.16" width="0.1016" layer="94"/>
 </symbol>
+<symbol name="DOCFIELD_BLANK">
+<wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="20.32" x2="87.63" y2="20.32" width="0.1016" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="0" y1="10.16" x2="0" y2="20.32" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="20.32" x2="101.6" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="10.16" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="20.32" x2="87.63" y2="10.16" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="20.32" x2="0" y2="20.32" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<text x="1.27" y="1.27" size="2.54" layer="94" font="vector">Date:</text>
+<text x="12.7" y="1.27" size="2.54" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
+<text x="72.39" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
+<text x="86.36" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
+<text x="88.9" y="16.51" size="2.54" layer="94" font="vector">REV:</text>
+<text x="94.01175" y="11.755121875" size="2.54" layer="94" font="vector" align="bottom-center">&gt;REV</text>
+<text x="1.27" y="12.2428" size="3.175" layer="94" font="vector">&gt;TITLE</text>
+<wire x1="0" y1="10.16" x2="87.63" y2="10.16" width="0.1016" layer="94"/>
+<text x="1.27" y="6.35" size="2.54" layer="94" font="vector">Author:</text>
+<text x="17.145" y="6.35" size="2.54" layer="94" font="vector">&gt;AUTHOR</text>
+<wire x1="87.63" y1="10.16" x2="101.6" y2="10.16" width="0.1016" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="LETTER_L" prefix="FRAME" uservalue="yes">
+<deviceset name="LETTER_L_UMICH" prefix="FRAME" uservalue="yes">
 <description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
 LETTER landscape - UofM
 &lt;p&gt;
 To use, set global attributes TITLE, AUTHOR and REV in your schematic.</description>
 <gates>
 <gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
-<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
+<gate name="G$2" symbol="DOCFIELD_M" x="147.32" y="0" addlevel="must"/>
 </gates>
 <devices>
 <device name="">
@@ -1736,6 +1763,21 @@ To use, set global attributes TITLE, AUTHOR and REV in your schematic.</descript
 <attribute name="HEIGHT" value="8.5in"/>
 <attribute name="WIDTH" value="11in"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LETTER_L_BLANK" prefix="FRAME" uservalue="yes">
+<description>LETTER landscape - Generic&lt;br/&gt;&lt;br&gt;
+To use, set global attributes TITLE, AUTHOR and REV in your schematic.</description>
+<gates>
+<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
+<gate name="G$2" symbol="DOCFIELD_BLANK" x="147.32" y="0" addlevel="must"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
