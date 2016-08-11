@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -6376,59 +6376,59 @@ DS RMS-to-DC Converter</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SAM4LC8AA">
+<deviceset name="SAM4LC8AA" prefix="U">
 <description>Atmel SAM4L microcontroller. ARM Cortex M4 with 512 KB Flash and 64 KB RAM</description>
 <gates>
-<gate name="G$1" symbol="SAM4LC8AA" x="0" y="0"/>
+<gate name="U1" symbol="SAM4LC8AA" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="QFN-48-7MM">
 <connects>
-<connect gate="G$1" pin="!RESET" pad="4"/>
-<connect gate="G$1" pin="ADVREFP" pad="18"/>
-<connect gate="G$1" pin="BIASH" pad="28"/>
-<connect gate="G$1" pin="BIASL" pad="29"/>
-<connect gate="G$1" pin="CAPH" pad="25"/>
-<connect gate="G$1" pin="CAPL" pad="26"/>
-<connect gate="G$1" pin="GND" pad="6 30 48"/>
-<connect gate="G$1" pin="GNDANA" pad="17"/>
-<connect gate="G$1" pin="PA00" pad="1"/>
-<connect gate="G$1" pin="PA01" pad="2"/>
-<connect gate="G$1" pin="PA02" pad="3"/>
-<connect gate="G$1" pin="PA03" pad="10"/>
-<connect gate="G$1" pin="PA04" pad="11"/>
-<connect gate="G$1" pin="PA05" pad="12"/>
-<connect gate="G$1" pin="PA06" pad="15"/>
-<connect gate="G$1" pin="PA07" pad="16"/>
-<connect gate="G$1" pin="PA08" pad="20"/>
-<connect gate="G$1" pin="PA09" pad="21"/>
-<connect gate="G$1" pin="PA10" pad="22"/>
-<connect gate="G$1" pin="PA11" pad="23"/>
-<connect gate="G$1" pin="PA12" pad="24"/>
-<connect gate="G$1" pin="PA13" pad="32"/>
-<connect gate="G$1" pin="PA14" pad="33"/>
-<connect gate="G$1" pin="PA15" pad="34"/>
-<connect gate="G$1" pin="PA16" pad="35"/>
-<connect gate="G$1" pin="PA17" pad="36"/>
-<connect gate="G$1" pin="PA18" pad="37"/>
-<connect gate="G$1" pin="PA19" pad="38"/>
-<connect gate="G$1" pin="PA20" pad="39"/>
-<connect gate="G$1" pin="PA21" pad="41"/>
-<connect gate="G$1" pin="PA22" pad="42"/>
-<connect gate="G$1" pin="PA23" pad="43"/>
-<connect gate="G$1" pin="PA24" pad="44"/>
-<connect gate="G$1" pin="PA25" pad="46"/>
-<connect gate="G$1" pin="PA26" pad="47"/>
-<connect gate="G$1" pin="TCK" pad="9"/>
-<connect gate="G$1" pin="VDDANA" pad="19"/>
-<connect gate="G$1" pin="VDDCORE" pad="5"/>
-<connect gate="G$1" pin="VDDIN" pad="8"/>
-<connect gate="G$1" pin="VDDIO" pad="40 45"/>
-<connect gate="G$1" pin="VDDOUT" pad="7"/>
-<connect gate="G$1" pin="VLCD" pad="27"/>
-<connect gate="G$1" pin="VLCDIN" pad="31"/>
-<connect gate="G$1" pin="XIN32" pad="13"/>
-<connect gate="G$1" pin="XOUT32" pad="14"/>
+<connect gate="U1" pin="!RESET" pad="4"/>
+<connect gate="U1" pin="ADVREFP" pad="18"/>
+<connect gate="U1" pin="BIASH" pad="28"/>
+<connect gate="U1" pin="BIASL" pad="29"/>
+<connect gate="U1" pin="CAPH" pad="25"/>
+<connect gate="U1" pin="CAPL" pad="26"/>
+<connect gate="U1" pin="GND" pad="6 30 48"/>
+<connect gate="U1" pin="GNDANA" pad="17"/>
+<connect gate="U1" pin="PA00" pad="1"/>
+<connect gate="U1" pin="PA01" pad="2"/>
+<connect gate="U1" pin="PA02" pad="3"/>
+<connect gate="U1" pin="PA03" pad="10"/>
+<connect gate="U1" pin="PA04" pad="11"/>
+<connect gate="U1" pin="PA05" pad="12"/>
+<connect gate="U1" pin="PA06" pad="15"/>
+<connect gate="U1" pin="PA07" pad="16"/>
+<connect gate="U1" pin="PA08" pad="20"/>
+<connect gate="U1" pin="PA09" pad="21"/>
+<connect gate="U1" pin="PA10" pad="22"/>
+<connect gate="U1" pin="PA11" pad="23"/>
+<connect gate="U1" pin="PA12" pad="24"/>
+<connect gate="U1" pin="PA13" pad="32"/>
+<connect gate="U1" pin="PA14" pad="33"/>
+<connect gate="U1" pin="PA15" pad="34"/>
+<connect gate="U1" pin="PA16" pad="35"/>
+<connect gate="U1" pin="PA17" pad="36"/>
+<connect gate="U1" pin="PA18" pad="37"/>
+<connect gate="U1" pin="PA19" pad="38"/>
+<connect gate="U1" pin="PA20" pad="39"/>
+<connect gate="U1" pin="PA21" pad="41"/>
+<connect gate="U1" pin="PA22" pad="42"/>
+<connect gate="U1" pin="PA23" pad="43"/>
+<connect gate="U1" pin="PA24" pad="44"/>
+<connect gate="U1" pin="PA25" pad="46"/>
+<connect gate="U1" pin="PA26" pad="47"/>
+<connect gate="U1" pin="TCK" pad="9"/>
+<connect gate="U1" pin="VDDANA" pad="19"/>
+<connect gate="U1" pin="VDDCORE" pad="5"/>
+<connect gate="U1" pin="VDDIN" pad="8"/>
+<connect gate="U1" pin="VDDIO" pad="40 45"/>
+<connect gate="U1" pin="VDDOUT" pad="7"/>
+<connect gate="U1" pin="VLCD" pad="27"/>
+<connect gate="U1" pin="VLCDIN" pad="31"/>
+<connect gate="U1" pin="XIN32" pad="13"/>
+<connect gate="U1" pin="XOUT32" pad="14"/>
 </connects>
 <technologies>
 <technology name=""/>
