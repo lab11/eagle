@@ -4778,19 +4778,19 @@ Interface) and offers temperature compensated time.</description>
 <deviceset name="FM25" prefix="U">
 <description>Cypress FRAM</description>
 <gates>
-<gate name="G$1" symbol="FM25LB" x="0" y="0"/>
+<gate name="U1" symbol="FM25LB" x="0" y="0"/>
 </gates>
 <devices>
 <device name="L04B-G" package="SOIC-8">
 <connects>
-<connect gate="G$1" pin="!CS" pad="1"/>
-<connect gate="G$1" pin="!HOLD" pad="7"/>
-<connect gate="G$1" pin="!WP" pad="3"/>
-<connect gate="G$1" pin="SCK" pad="6"/>
-<connect gate="G$1" pin="SI" pad="5"/>
-<connect gate="G$1" pin="SO" pad="2"/>
-<connect gate="G$1" pin="VDD" pad="8"/>
-<connect gate="G$1" pin="VSS" pad="4"/>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
@@ -4801,14 +4801,14 @@ Interface) and offers temperature compensated time.</description>
 </device>
 <device name="L04B-DG" package="TDFN-8">
 <connects>
-<connect gate="G$1" pin="!CS" pad="1"/>
-<connect gate="G$1" pin="!HOLD" pad="7"/>
-<connect gate="G$1" pin="!WP" pad="3"/>
-<connect gate="G$1" pin="SCK" pad="6"/>
-<connect gate="G$1" pin="SI" pad="5"/>
-<connect gate="G$1" pin="SO" pad="2"/>
-<connect gate="G$1" pin="VDD" pad="8"/>
-<connect gate="G$1" pin="VSS" pad="4"/>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
@@ -4819,20 +4819,35 @@ Interface) and offers temperature compensated time.</description>
 </device>
 <device name="V20-DG" package="TDFN-8/6MM">
 <connects>
-<connect gate="G$1" pin="!CS" pad="1"/>
-<connect gate="G$1" pin="!HOLD" pad="7"/>
-<connect gate="G$1" pin="!WP" pad="3"/>
-<connect gate="G$1" pin="SCK" pad="6"/>
-<connect gate="G$1" pin="SI" pad="5"/>
-<connect gate="G$1" pin="SO" pad="2"/>
-<connect gate="G$1" pin="VDD" pad="8"/>
-<connect gate="G$1" pin="VSS" pad="4"/>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="FM25V20-DGRA-ND" constant="no"/>
 <attribute name="MOUSER" value="877-FM25V20-DG" constant="no"/>
 </technology>
+</technologies>
+</device>
+<device name="CLXXB" package="SOIC-8">
+<connects>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
