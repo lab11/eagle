@@ -6446,7 +6446,9 @@ DS RMS-to-DC Converter</description>
 <connect gate="U1" pin="XOUT32" pad="14"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="ATSAM4LC8AA-MU-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
