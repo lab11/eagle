@@ -36,7 +36,7 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -2279,6 +2279,41 @@ Panasonic SMini3-F2-B</description>
 <smd name="48" x="-2.75" y="3.5" dx="0.8" dy="0.28" layer="1" roundness="100" rot="R90"/>
 <rectangle x1="-2.8" y1="-2.8" x2="-1.2" y2="-1.2" layer="31"/>
 </package>
+<package name="R-PVQFN-N20">
+<description>R-PVQFN-N20
+Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description>
+<smd name="THERMAL" x="0" y="0" dx="3" dy="2" layer="1" cream="no"/>
+<smd name="P$1" x="-2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1"/>
+<smd name="P$2" x="-1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$3" x="-1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$4" x="-0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$5" x="-0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$6" x="0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$7" x="0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$8" x="1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$9" x="1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="P$10" x="2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="P$11" x="2.1125" y="0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="P$12" x="1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$13" x="1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$14" x="0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$15" x="0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$16" x="-0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$17" x="-0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$18" x="-1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$19" x="-1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="P$20" x="-2.1125" y="0.75" dx="0.825" dy="0.28" layer="1"/>
+<wire x1="-2.425" y1="-1.825" x2="2.425" y2="-1.825" width="0.127" layer="21"/>
+<wire x1="2.425" y1="-1.825" x2="2.425" y2="1.825" width="0.127" layer="21"/>
+<wire x1="2.425" y1="1.825" x2="-2.425" y2="1.825" width="0.127" layer="21"/>
+<wire x1="-2.425" y1="1.825" x2="-2.425" y2="-1.825" width="0.127" layer="21"/>
+<text x="0" y="2.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<circle x="-2.825" y="-2.225" radius="0.3" width="0" layer="21"/>
+<rectangle x1="-1.475" y1="-0.975" x2="-0.15" y2="-0.15" layer="31"/>
+<rectangle x1="-1.475" y1="0.15" x2="-0.15" y2="0.975" layer="31"/>
+<rectangle x1="0.15" y1="0.15" x2="1.475" y2="0.975" layer="31"/>
+<rectangle x1="0.15" y1="-0.975" x2="1.475" y2="-0.15" layer="31"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -3895,6 +3930,35 @@ I2C, clock output, interrupt output</description>
 <pin name="CAPH" x="-20.32" y="30.48" length="middle"/>
 <text x="-15.494" y="41.402" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="5.08" y="41.402" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="TXS0108E">
+<description>TXS010E 8-bit Bi-directional Voltage Translator</description>
+<wire x1="-10.16" y1="-15.24" x2="10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-15.24" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="12.7" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
+<text x="-10.16" y="13.462" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VCCA" x="-15.24" y="10.16" length="middle"/>
+<pin name="A1" x="-15.24" y="7.62" length="middle"/>
+<pin name="A2" x="-15.24" y="5.08" length="middle"/>
+<pin name="A3" x="-15.24" y="2.54" length="middle"/>
+<pin name="A4" x="-15.24" y="0" length="middle"/>
+<pin name="GND" x="15.24" y="-12.7" length="middle" rot="R180"/>
+<pin name="OE" x="-15.24" y="-12.7" length="middle"/>
+<pin name="B4" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="B3" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="B2" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="B1" x="15.24" y="7.62" length="middle" rot="R180"/>
+<pin name="VCCB" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="A5" x="-15.24" y="-2.54" length="middle"/>
+<pin name="A6" x="-15.24" y="-5.08" length="middle"/>
+<pin name="A7" x="-15.24" y="-7.62" length="middle"/>
+<pin name="A8" x="-15.24" y="-10.16" length="middle"/>
+<pin name="B5" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<pin name="B6" x="15.24" y="-5.08" length="middle" rot="R180"/>
+<pin name="B7" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="B8" x="15.24" y="-10.16" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -6449,6 +6513,41 @@ DS RMS-to-DC Converter</description>
 <technology name="">
 <attribute name="DIGIKEY" value="ATSAM4LC8AA-MU-ND" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TXS0108E" prefix="U">
+<description>TXS0108E 8-Bit Bi-directional Voltage Translator</description>
+<gates>
+<gate name="G$1" symbol="TXS0108E" x="0" y="0"/>
+</gates>
+<devices>
+<device name="VQFN20" package="R-PVQFN-N20">
+<connects>
+<connect gate="G$1" pin="A1" pad="P$1"/>
+<connect gate="G$1" pin="A2" pad="P$3"/>
+<connect gate="G$1" pin="A3" pad="P$4"/>
+<connect gate="G$1" pin="A4" pad="P$5"/>
+<connect gate="G$1" pin="A5" pad="P$6"/>
+<connect gate="G$1" pin="A6" pad="P$7"/>
+<connect gate="G$1" pin="A7" pad="P$8"/>
+<connect gate="G$1" pin="A8" pad="P$9"/>
+<connect gate="G$1" pin="B1" pad="P$20"/>
+<connect gate="G$1" pin="B2" pad="P$18"/>
+<connect gate="G$1" pin="B3" pad="P$17"/>
+<connect gate="G$1" pin="B4" pad="P$16"/>
+<connect gate="G$1" pin="B5" pad="P$15"/>
+<connect gate="G$1" pin="B6" pad="P$14"/>
+<connect gate="G$1" pin="B7" pad="P$13"/>
+<connect gate="G$1" pin="B8" pad="P$12"/>
+<connect gate="G$1" pin="GND" pad="P$11 THERMAL"/>
+<connect gate="G$1" pin="OE" pad="P$10"/>
+<connect gate="G$1" pin="VCCA" pad="P$2"/>
+<connect gate="G$1" pin="VCCB" pad="P$19"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
