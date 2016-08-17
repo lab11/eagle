@@ -2283,26 +2283,26 @@ Panasonic SMini3-F2-B</description>
 <description>R-PVQFN-N20
 Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description>
 <smd name="THERMAL" x="0" y="0" dx="3" dy="2" layer="1" cream="no"/>
-<smd name="P$1" x="-2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1"/>
-<smd name="P$2" x="-1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$3" x="-1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$4" x="-0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$5" x="-0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$6" x="0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$7" x="0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$8" x="1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$9" x="1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
-<smd name="P$10" x="2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
-<smd name="P$11" x="2.1125" y="0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
-<smd name="P$12" x="1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$13" x="1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$14" x="0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$15" x="0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$16" x="-0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$17" x="-0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$18" x="-1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$19" x="-1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
-<smd name="P$20" x="-2.1125" y="0.75" dx="0.825" dy="0.28" layer="1"/>
+<smd name="1" x="-2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1"/>
+<smd name="2" x="-1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="3" x="-1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="4" x="-0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="5" x="-0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="6" x="0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="7" x="0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="8" x="1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="9" x="1.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="10" x="2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="11" x="2.1125" y="0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="12" x="1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="13" x="1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="14" x="0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="15" x="0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="16" x="-0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="17" x="-0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="18" x="-1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="19" x="-1.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="20" x="-2.1125" y="0.75" dx="0.825" dy="0.28" layer="1"/>
 <wire x1="-2.425" y1="-1.825" x2="2.425" y2="-1.825" width="0.127" layer="21"/>
 <wire x1="2.425" y1="-1.825" x2="2.425" y2="1.825" width="0.127" layer="21"/>
 <wire x1="2.425" y1="1.825" x2="-2.425" y2="1.825" width="0.127" layer="21"/>
@@ -6525,26 +6525,26 @@ DS RMS-to-DC Converter</description>
 <devices>
 <device name="VQFN20" package="R-PVQFN-N20">
 <connects>
-<connect gate="G$1" pin="A1" pad="P$1"/>
-<connect gate="G$1" pin="A2" pad="P$3"/>
-<connect gate="G$1" pin="A3" pad="P$4"/>
-<connect gate="G$1" pin="A4" pad="P$5"/>
-<connect gate="G$1" pin="A5" pad="P$6"/>
-<connect gate="G$1" pin="A6" pad="P$7"/>
-<connect gate="G$1" pin="A7" pad="P$8"/>
-<connect gate="G$1" pin="A8" pad="P$9"/>
-<connect gate="G$1" pin="B1" pad="P$20"/>
-<connect gate="G$1" pin="B2" pad="P$18"/>
-<connect gate="G$1" pin="B3" pad="P$17"/>
-<connect gate="G$1" pin="B4" pad="P$16"/>
-<connect gate="G$1" pin="B5" pad="P$15"/>
-<connect gate="G$1" pin="B6" pad="P$14"/>
-<connect gate="G$1" pin="B7" pad="P$13"/>
-<connect gate="G$1" pin="B8" pad="P$12"/>
-<connect gate="G$1" pin="GND" pad="P$11 THERMAL"/>
-<connect gate="G$1" pin="OE" pad="P$10"/>
-<connect gate="G$1" pin="VCCA" pad="P$2"/>
-<connect gate="G$1" pin="VCCB" pad="P$19"/>
+<connect gate="G$1" pin="A1" pad="1"/>
+<connect gate="G$1" pin="A2" pad="3"/>
+<connect gate="G$1" pin="A3" pad="4"/>
+<connect gate="G$1" pin="A4" pad="5"/>
+<connect gate="G$1" pin="A5" pad="6"/>
+<connect gate="G$1" pin="A6" pad="7"/>
+<connect gate="G$1" pin="A7" pad="8"/>
+<connect gate="G$1" pin="A8" pad="9"/>
+<connect gate="G$1" pin="B1" pad="20"/>
+<connect gate="G$1" pin="B2" pad="18"/>
+<connect gate="G$1" pin="B3" pad="17"/>
+<connect gate="G$1" pin="B4" pad="16"/>
+<connect gate="G$1" pin="B5" pad="15"/>
+<connect gate="G$1" pin="B6" pad="14"/>
+<connect gate="G$1" pin="B7" pad="13"/>
+<connect gate="G$1" pin="B8" pad="12"/>
+<connect gate="G$1" pin="GND" pad="11 THERMAL"/>
+<connect gate="G$1" pin="OE" pad="10"/>
+<connect gate="G$1" pin="VCCA" pad="2"/>
+<connect gate="G$1" pin="VCCB" pad="19"/>
 </connects>
 <technologies>
 <technology name=""/>
