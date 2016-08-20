@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+
 HELP = """
 This script runs an eagle ULP to generate the pick and place file for smd parts.
 
