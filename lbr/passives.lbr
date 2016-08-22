@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -477,6 +477,16 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <text x="-2.55" y="1.78" size="1.016" layer="25">&gt;NAME</text>
 <text x="-2.72" y="-2.77" size="1.016" layer="25">&gt;VALUE</text>
 </package>
+<package name="XFL4015">
+<description>Coilcraft XFL4015 series inductor package</description>
+<smd name="1" x="-1.1811" y="0" dx="0.9652" dy="3.4036" layer="1"/>
+<smd name="2" x="1.1811" y="0" dx="0.9652" dy="3.4036" layer="1"/>
+<wire x1="-1.9939" y1="1.9939" x2="1.9939" y2="1.9939" width="0.127" layer="21"/>
+<wire x1="1.9939" y1="1.9939" x2="1.9939" y2="-1.9939" width="0.127" layer="21"/>
+<wire x1="1.9939" y1="-1.9939" x2="-1.9939" y2="-1.9939" width="0.127" layer="21"/>
+<wire x1="-1.9939" y1="-1.9939" x2="-1.9939" y2="1.9939" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -694,6 +704,15 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </technologies>
 </device>
 <device name="1210" package="1210_CAP">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="XFL4015" package="XFL4015">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
