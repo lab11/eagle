@@ -495,7 +495,7 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 </device>
 </devices>
 </deviceset>
-<deviceset name="ABM3">
+<deviceset name="ABM3" prefix="Y" uservalue="yes">
 <gates>
 <gate name="G$1" symbol="CRYSTAL" x="0" y="0"/>
 </gates>
