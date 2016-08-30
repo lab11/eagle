@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -4415,11 +4415,12 @@ I2C, clock output, interrupt output</description>
 <pin name="B" x="-7.62" y="-2.54" length="middle"/>
 <pin name="Y" x="10.16" y="0" length="middle" rot="R180"/>
 <wire x1="-2.54" y1="5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="0" x2="0" y2="-5.08" width="0.254" layer="94" curve="-90"/>
-<wire x1="5.08" y1="0" x2="0" y2="5.08" width="0.254" layer="94" curve="90"/>
-<wire x1="0" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="3.81" y1="0" x2="-1.27" y2="-5.08" width="0.254" layer="94" curve="-90"/>
+<wire x1="3.81" y1="0" x2="-1.27" y2="5.08" width="0.254" layer="94" curve="90"/>
+<wire x1="-1.27" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-1.27" y2="-5.08" width="0.254" layer="94"/>
 <text x="0" y="5.588" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<circle x="4.445" y="0" radius="0.635" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
