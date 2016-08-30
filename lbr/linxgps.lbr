@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="6.6.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="yes"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="yes"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="yes"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="yes"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="yes"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="yes"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="yes"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="yes"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="yes"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="yes"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="yes"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<packages>
+<package name="RXM-GPS-RM">
+<wire x1="0" y1="0" x2="14.986" y2="0" width="0.127" layer="21"/>
+<wire x1="14.986" y1="0" x2="14.986" y2="13.0048" width="0.127" layer="21"/>
+<wire x1="14.986" y1="13.0048" x2="0" y2="13.0048" width="0.127" layer="21"/>
+<wire x1="0" y1="13.0048" x2="0" y2="0" width="0.127" layer="21"/>
+<smd name="VBACKUP" x="1.143" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="VCC" x="2.413" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="NC9" x="3.683" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="NC8" x="4.953" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="GND1" x="13.843" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="RFIN" x="12.573" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="GND2" x="11.303" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="VOUT" x="10.033" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="NC6" x="8.763" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="NC7" x="6.223" y="0" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="GND3" x="7.493" y="0.254" dx="0.9144" dy="0.508" layer="1" rot="R180"/>
+<smd name="NC" x="13.843" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="NC1" x="12.573" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="1PPS" x="11.303" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="TX" x="10.033" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="NC5" x="1.143" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="NC4" x="2.413" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="!RESET" x="3.683" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="NC3" x="4.953" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="NC2" x="6.223" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R270"/>
+<smd name="RX" x="8.763" y="13.0048" dx="0.9144" dy="0.7112" layer="1" rot="R90"/>
+<smd name="GND" x="7.493" y="13.2588" dx="0.9144" dy="0.508" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="RXM-GPS-RM">
+<wire x1="0" y1="0" x2="38.1" y2="0" width="0.254" layer="94"/>
+<wire x1="38.1" y1="0" x2="38.1" y2="35.56" width="0.254" layer="94"/>
+<wire x1="38.1" y1="35.56" x2="0" y2="35.56" width="0.254" layer="94"/>
+<wire x1="0" y1="35.56" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="1PPS" x="-5.08" y="27.94" length="middle"/>
+<pin name="TX" x="-5.08" y="22.86" length="middle"/>
+<pin name="RX" x="-5.08" y="17.78" length="middle"/>
+<pin name="GND" x="-5.08" y="12.7" length="middle"/>
+<pin name="!RESET" x="-5.08" y="7.62" length="middle"/>
+<pin name="GND2" x="43.18" y="33.02" length="middle" rot="R180"/>
+<pin name="RFIN" x="43.18" y="27.94" length="middle" rot="R180"/>
+<pin name="GND3" x="43.18" y="22.86" length="middle" rot="R180"/>
+<pin name="VOUT" x="43.18" y="17.78" length="middle" rot="R180"/>
+<pin name="GND4" x="43.18" y="12.7" length="middle" rot="R180"/>
+<pin name="VCC" x="43.18" y="7.62" length="middle" rot="R180"/>
+<pin name="VBACKUP" x="43.18" y="2.54" length="middle" rot="R180"/>
+<text x="12.7" y="35.56" size="2.54" layer="95" font="vector" ratio="12">&gt;NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="RXM-GPS-RM">
+<gates>
+<gate name="G$1" symbol="RXM-GPS-RM" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RXM-GPS-RM">
+<connects>
+<connect gate="G$1" pin="!RESET" pad="!RESET"/>
+<connect gate="G$1" pin="1PPS" pad="1PPS"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GND2" pad="GND1"/>
+<connect gate="G$1" pin="GND3" pad="GND2"/>
+<connect gate="G$1" pin="GND4" pad="GND3"/>
+<connect gate="G$1" pin="RFIN" pad="RFIN"/>
+<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="TX" pad="TX"/>
+<connect gate="G$1" pin="VBACKUP" pad="VBACKUP"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="G$1" pin="VOUT" pad="VOUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
