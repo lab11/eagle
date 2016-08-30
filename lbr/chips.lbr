@@ -7120,7 +7120,7 @@ DS RMS-to-DC Converter</description>
 </devices>
 </deviceset>
 <deviceset name="74LVC2G00DC">
-<description>NOR, 2-Array</description>
+<description>NAND, 2-Array</description>
 <gates>
 <gate name="G$1" symbol="NAND" x="0" y="12.7"/>
 <gate name="G$2" symbol="NAND" x="0" y="-2.54"/>
