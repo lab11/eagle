@@ -125,9 +125,6 @@
 <connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="DIGIKEY" value="" constant="no"/>
-</technology>
 <technology name="3310C">
 <attribute name="DIGIKEY" value="3310C-125-103L-ND" constant="no"/>
 </technology>
