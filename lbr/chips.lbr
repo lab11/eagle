@@ -4253,6 +4253,25 @@ I2C, clock output, interrupt output</description>
 <text x="2.032" y="7.62" size="0.6096" layer="98" align="center-left">1.15V-VCC_Y</text>
 <text x="-3.81" y="-9.144" size="0.6096" layer="98" align="center">Ref to VCC_A</text>
 </symbol>
+<symbol name="TLV62130">
+<wire x1="-10.16" y1="-17.78" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-17.78" x2="-10.16" y2="-17.78" width="0.254" layer="94"/>
+<pin name="PVIN" x="-15.24" y="10.16" length="middle"/>
+<pin name="AVIN" x="-15.24" y="5.08" length="middle"/>
+<pin name="EN" x="-15.24" y="0" length="middle"/>
+<pin name="SS/TR" x="-15.24" y="-5.08" length="middle"/>
+<pin name="DEF" x="-15.24" y="-10.16" length="middle"/>
+<pin name="FSW" x="-15.24" y="-15.24" length="middle"/>
+<pin name="SW" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="VOS" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="PG" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="FB" x="15.24" y="-5.08" length="middle" rot="R180"/>
+<pin name="AGND" x="15.24" y="-10.16" length="middle" rot="R180"/>
+<pin name="PGND" x="15.24" y="-15.24" length="middle" rot="R180"/>
+<text x="-10.16" y="15.24" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BQ25504" prefix="U">
@@ -6896,6 +6915,35 @@ DS RMS-to-DC Converter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="ADG3304BRUZ-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TLV62130" prefix="U" uservalue="yes">
+<description>High Efficient 3A switching step-down regulator. 1V-5V out, 4V-17V in.</description>
+<gates>
+<gate name="G$1" symbol="TLV62130" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="TQFN-16/3MM">
+<connects>
+<connect gate="G$1" pin="AGND" pad="6"/>
+<connect gate="G$1" pin="AVIN" pad="10"/>
+<connect gate="G$1" pin="DEF" pad="8"/>
+<connect gate="G$1" pin="EN" pad="13"/>
+<connect gate="G$1" pin="FB" pad="5"/>
+<connect gate="G$1" pin="FSW" pad="7"/>
+<connect gate="G$1" pin="PG" pad="4"/>
+<connect gate="G$1" pin="PGND" pad="15 16"/>
+<connect gate="G$1" pin="PVIN" pad="11 12"/>
+<connect gate="G$1" pin="SS/TR" pad="9"/>
+<connect gate="G$1" pin="SW" pad="1 2 3"/>
+<connect gate="G$1" pin="VOS" pad="14"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-35978-1-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
