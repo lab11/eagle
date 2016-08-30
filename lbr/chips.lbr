@@ -7011,7 +7011,9 @@ DS RMS-to-DC Converter</description>
 <connect gate="G$1" pin="VCC" pad="8"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="296-18578-1-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
