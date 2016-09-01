@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4322,7 +4322,8 @@ I2C, clock output, interrupt output</description>
 <pin name="FB" x="15.24" y="-5.08" length="middle" rot="R180"/>
 <pin name="AGND" x="15.24" y="-10.16" length="middle" rot="R180"/>
 <pin name="PGND" x="15.24" y="-15.24" length="middle" rot="R180"/>
-<text x="-10.16" y="15.24" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="13.462" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-20.32" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 <symbol name="MONOSTABLE_MULTIVIBRATOR">
 <pin name="!A" x="-10.16" y="5.08" length="middle"/>
@@ -7089,7 +7090,7 @@ DS RMS-to-DC Converter</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TLV62130" prefix="U" uservalue="yes">
+<deviceset name="TLV62130" prefix="U">
 <description>High Efficient 3A switching step-down regulator. 1V-5V out, 4V-17V in.</description>
 <gates>
 <gate name="G$1" symbol="TLV62130" x="0" y="2.54"/>
