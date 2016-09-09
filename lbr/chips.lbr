@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1986,6 +1986,7 @@ QFN-24</description>
 <wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.127" layer="21"/>
 <circle x="-1.82" y="-1.93" radius="0.086021875" width="0.127" layer="21"/>
 <text x="-2.35" y="2.29" size="0.889" layer="25">&gt;NAME</text>
+<smd name="GND" x="0" y="0" dx="1.63" dy="1.63" layer="1"/>
 </package>
 <package name="TDFN-8/3MM">
 <smd name="7" x="-0.33" y="1.35" dx="0.7" dy="0.3" layer="1" rot="R90"/>
@@ -4364,7 +4365,8 @@ I2C, clock output, interrupt output</description>
 <pin name="FB" x="15.24" y="-5.08" length="middle" rot="R180"/>
 <pin name="AGND" x="15.24" y="-10.16" length="middle" rot="R180"/>
 <pin name="PGND" x="15.24" y="-15.24" length="middle" rot="R180"/>
-<text x="-10.16" y="15.24" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="13.462" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-20.32" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 <symbol name="MONOSTABLE_MULTIVIBRATOR">
 <pin name="!A" x="-10.16" y="5.08" length="middle"/>
@@ -7162,7 +7164,7 @@ DS RMS-to-DC Converter</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TLV62130" prefix="U" uservalue="yes">
+<deviceset name="TLV62130" prefix="U">
 <description>High Efficient 3A switching step-down regulator. 1V-5V out, 4V-17V in.</description>
 <gates>
 <gate name="G$1" symbol="TLV62130" x="0" y="2.54"/>
@@ -7177,7 +7179,7 @@ DS RMS-to-DC Converter</description>
 <connect gate="G$1" pin="FB" pad="5"/>
 <connect gate="G$1" pin="FSW" pad="7"/>
 <connect gate="G$1" pin="PG" pad="4"/>
-<connect gate="G$1" pin="PGND" pad="15 16"/>
+<connect gate="G$1" pin="PGND" pad="15 16 GND"/>
 <connect gate="G$1" pin="PVIN" pad="11 12"/>
 <connect gate="G$1" pin="SS/TR" pad="9"/>
 <connect gate="G$1" pin="SW" pad="1 2 3"/>
