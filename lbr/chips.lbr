@@ -2237,7 +2237,7 @@ Panasonic SMini3-F2-B</description>
 </package>
 <package name="QFN-48-7MM">
 <description>7MM x 7MM 48 QFN package</description>
-<smd name="P$1" x="0" y="0" dx="5.6" dy="5.6" layer="1" cream="no"/>
+<smd name="THERMAL" x="0" y="0" dx="5.6" dy="5.6" layer="1" cream="no"/>
 <wire x1="-3.5" y1="-3.5" x2="3.5" y2="-3.5" width="0.127" layer="21"/>
 <wire x1="-3.5" y1="-3.5" x2="-3.5" y2="3.5" width="0.127" layer="21"/>
 <wire x1="-3.5" y1="3.5" x2="3.5" y2="3.5" width="0.127" layer="21"/>
@@ -7184,7 +7184,7 @@ DS RMS-to-DC Converter</description>
 <connect gate="U1" pin="BIASL" pad="29"/>
 <connect gate="U1" pin="CAPH" pad="25"/>
 <connect gate="U1" pin="CAPL" pad="26"/>
-<connect gate="U1" pin="GND" pad="6 30 48"/>
+<connect gate="U1" pin="GND" pad="6 30 48 THERMAL"/>
 <connect gate="U1" pin="GNDANA" pad="17"/>
 <connect gate="U1" pin="PA00" pad="1"/>
 <connect gate="U1" pin="PA01" pad="2"/>
