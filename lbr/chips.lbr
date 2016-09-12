@@ -5614,7 +5614,22 @@ Interface) and offers temperature compensated time.</description>
 </technology>
 </technologies>
 </device>
-<device name="CLXXB" package="SOIC-8">
+<device name="CLXXB-G" package="SOIC-8">
+<connects>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="CLXXB-DG" package="TDFN-8">
 <connects>
 <connect gate="U1" pin="!CS" pad="1"/>
 <connect gate="U1" pin="!HOLD" pad="7"/>
