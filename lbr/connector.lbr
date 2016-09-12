@@ -1415,7 +1415,7 @@ This package flares out on both sides.</description>
 <connect gate="G$1" pin="DATA1/RSV" pad="8"/>
 <connect gate="G$1" pin="DATA2/NC" pad="1"/>
 <connect gate="G$1" pin="DATA3-CD/CS_N" pad="2"/>
-<connect gate="G$1" pin="GND" pad="6"/>
+<connect gate="G$1" pin="GND" pad="6 MOUNT0 MOUNT1 MOUNT2 MOUNT3"/>
 <connect gate="G$1" pin="VCC" pad="4"/>
 </connects>
 <technologies>
