@@ -78,14 +78,14 @@ sch_part_tag_re = re.compile(
       '<part name="{}(.+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
-sch_instance_tag_re = re.compile('<instance part="{}(.+?)".*'.format(prefix))
-sch_pinref_tag_re = re.compile('<pinref part="{}(.+?)".*'.format(prefix))
+sch_instance_tag_re = re.compile('<instance part="{}([0-9]+?)".*'.format(prefix))
+sch_pinref_tag_re = re.compile('<pinref part="{}([0-9]+?)".*'.format(prefix))
 
 brd_element_tag_re = re.compile(
       '<element name="{}(.+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
-brd_contactref_tag_re = re.compile('<contactref element="{}(.+?)".*'.format(prefix))
+brd_contactref_tag_re = re.compile('<contactref element="{}([0-9]+?)".*'.format(prefix))
 
 numbers = set()
 values = collections.Counter()
