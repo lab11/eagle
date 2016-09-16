@@ -2562,6 +2562,35 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <rectangle x1="0.2" y1="-1.4" x2="1.4" y2="-0.2" layer="31"/>
 <rectangle x1="1.8" y1="0.2" x2="3" y2="1.4" layer="31"/>
 </package>
+<package name="R-PVQFN-N16">
+<smd name="THERMAL" x="0" y="0" dx="3" dy="2" layer="1" cream="no"/>
+<smd name="1" x="-2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1"/>
+<smd name="2" x="-1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="3" x="-0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="4" x="-0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="5" x="0.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="6" x="0.75" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="7" x="1.25" y="-1.6125" dx="0.825" dy="0.28" layer="1" rot="R90"/>
+<smd name="8" x="2.1125" y="-0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="9" x="2.1125" y="0.75" dx="0.825" dy="0.28" layer="1" rot="R180"/>
+<smd name="10" x="1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="11" x="0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="12" x="0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="13" x="-0.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="14" x="-0.75" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="15" x="-1.25" y="1.6125" dx="0.825" dy="0.28" layer="1" rot="R270"/>
+<smd name="16" x="-2.1125" y="0.75" dx="0.825" dy="0.28" layer="1"/>
+<wire x1="-2.425" y1="-1.825" x2="2.425" y2="-1.825" width="0.127" layer="21"/>
+<wire x1="2.425" y1="-1.825" x2="2.425" y2="1.825" width="0.127" layer="21"/>
+<wire x1="2.425" y1="1.825" x2="-2.425" y2="1.825" width="0.127" layer="21"/>
+<wire x1="-2.425" y1="1.825" x2="-2.425" y2="-1.825" width="0.127" layer="21"/>
+<text x="0" y="2.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<circle x="-2.825" y="-2.225" radius="0.3" width="0" layer="21"/>
+<rectangle x1="-1.475" y1="-0.975" x2="-0.15" y2="-0.15" layer="31"/>
+<rectangle x1="-1.475" y1="0.15" x2="-0.15" y2="0.975" layer="31"/>
+<rectangle x1="0.15" y1="0.15" x2="1.475" y2="0.975" layer="31"/>
+<rectangle x1="0.15" y1="-0.975" x2="1.475" y2="-0.15" layer="31"/>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -4674,6 +4703,30 @@ I2C, clock output, interrupt output</description>
 <pin name="PB02" x="-20.32" y="-10.16" length="middle"/>
 <pin name="PB01" x="-20.32" y="-7.62" length="middle"/>
 <pin name="PB00" x="-20.32" y="-5.08" length="middle"/>
+</symbol>
+<symbol name="TRANSLATOR_6CH">
+<wire x1="-10.16" y1="-15.24" x2="10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-15.24" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="7.62" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
+<text x="-10.16" y="8.382" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VCCA" x="-15.24" y="5.08" length="middle"/>
+<pin name="A1" x="-15.24" y="2.54" length="middle"/>
+<pin name="A2" x="-15.24" y="0" length="middle"/>
+<pin name="A3" x="-15.24" y="-2.54" length="middle"/>
+<pin name="A4" x="-15.24" y="-5.08" length="middle"/>
+<pin name="GND" x="15.24" y="-12.7" length="middle" rot="R180"/>
+<pin name="OE" x="-15.24" y="-12.7" length="middle"/>
+<pin name="B4" x="15.24" y="-5.08" length="middle" rot="R180"/>
+<pin name="B3" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<pin name="B2" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="B1" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="VCCB" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="A5" x="-15.24" y="-7.62" length="middle"/>
+<pin name="A6" x="-15.24" y="-10.16" length="middle"/>
+<pin name="B5" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="B6" x="15.24" y="-10.16" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -7539,6 +7592,39 @@ DS RMS-to-DC Converter</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TXB0106">
+<description>6 channel level translator</description>
+<gates>
+<gate name="G$1" symbol="TRANSLATOR_6CH" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="R-PVQFN-N16">
+<connects>
+<connect gate="G$1" pin="A1" pad="1"/>
+<connect gate="G$1" pin="A2" pad="3"/>
+<connect gate="G$1" pin="A3" pad="4"/>
+<connect gate="G$1" pin="A4" pad="5"/>
+<connect gate="G$1" pin="A5" pad="6"/>
+<connect gate="G$1" pin="A6" pad="7"/>
+<connect gate="G$1" pin="B1" pad="16"/>
+<connect gate="G$1" pin="B2" pad="14"/>
+<connect gate="G$1" pin="B3" pad="13"/>
+<connect gate="G$1" pin="B4" pad="12"/>
+<connect gate="G$1" pin="B5" pad="11"/>
+<connect gate="G$1" pin="B6" pad="10"/>
+<connect gate="G$1" pin="GND" pad="9"/>
+<connect gate="G$1" pin="OE" pad="8"/>
+<connect gate="G$1" pin="VCCA" pad="2"/>
+<connect gate="G$1" pin="VCCB" pad="15"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-23868-2-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
