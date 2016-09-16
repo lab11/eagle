@@ -2237,7 +2237,7 @@ Panasonic SMini3-F2-B</description>
 </package>
 <package name="QFN-48-7MM">
 <description>7MM x 7MM 48 QFN package</description>
-<smd name="P$1" x="0" y="0" dx="5.6" dy="5.6" layer="1" cream="no"/>
+<smd name="THERMAL" x="0" y="0" dx="5.6" dy="5.6" layer="1" cream="no"/>
 <wire x1="-3.5" y1="-3.5" x2="3.5" y2="-3.5" width="0.127" layer="21"/>
 <wire x1="-3.5" y1="-3.5" x2="-3.5" y2="3.5" width="0.127" layer="21"/>
 <wire x1="-3.5" y1="3.5" x2="3.5" y2="3.5" width="0.127" layer="21"/>
@@ -4164,7 +4164,7 @@ I2C, clock output, interrupt output</description>
 <pin name="VDDCORE" x="-20.32" y="-20.32" length="middle" direction="pwr"/>
 <pin name="VDDOUT" x="-20.32" y="-22.86" length="middle" direction="pwr"/>
 <pin name="VDDIN" x="-20.32" y="-2.54" length="middle" direction="pwr"/>
-<pin name="ADVREFP" x="-20.32" y="-15.24" length="middle" direction="pwr"/>
+<pin name="ADVREFP" x="-20.32" y="-15.24" length="middle"/>
 <pin name="VDDANA" x="-20.32" y="-12.7" length="middle" direction="pwr"/>
 <pin name="VDDIO" x="-20.32" y="-5.08" length="middle" direction="pwr"/>
 <pin name="GNDANA" x="-20.32" y="-40.64" length="middle" direction="pwr"/>
@@ -5667,7 +5667,22 @@ Interface) and offers temperature compensated time.</description>
 </technology>
 </technologies>
 </device>
-<device name="CLXXB" package="SOIC-8">
+<device name="CLXXB-G" package="SOIC-8">
+<connects>
+<connect gate="U1" pin="!CS" pad="1"/>
+<connect gate="U1" pin="!HOLD" pad="7"/>
+<connect gate="U1" pin="!WP" pad="3"/>
+<connect gate="U1" pin="SCK" pad="6"/>
+<connect gate="U1" pin="SI" pad="5"/>
+<connect gate="U1" pin="SO" pad="2"/>
+<connect gate="U1" pin="VDD" pad="8"/>
+<connect gate="U1" pin="VSS" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="CLXXB-DG" package="TDFN-8">
 <connects>
 <connect gate="U1" pin="!CS" pad="1"/>
 <connect gate="U1" pin="!HOLD" pad="7"/>
@@ -7237,7 +7252,7 @@ DS RMS-to-DC Converter</description>
 <connect gate="U1" pin="BIASL" pad="29"/>
 <connect gate="U1" pin="CAPH" pad="25"/>
 <connect gate="U1" pin="CAPL" pad="26"/>
-<connect gate="U1" pin="GND" pad="6 30 48"/>
+<connect gate="U1" pin="GND" pad="6 30 48 THERMAL"/>
 <connect gate="U1" pin="GNDANA" pad="17"/>
 <connect gate="U1" pin="PA00" pad="1"/>
 <connect gate="U1" pin="PA01" pad="2"/>

@@ -28,4 +28,8 @@ for s, args in scripts:
 	else:
 		cmd = path
 
-	os.system(cmd)
+	ret = os.system(cmd)
+	if ret != 0:
+		print("Error running scripts")
+		sys.exit(1)
+
