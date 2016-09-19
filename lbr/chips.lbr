@@ -4632,8 +4632,8 @@ I2C, clock output, interrupt output</description>
 <pin name="BOOT" x="-20.32" y="7.62" length="middle"/>
 <pin name="P17" x="20.32" y="5.08" length="middle" rot="R180"/>
 <pin name="RF" x="20.32" y="12.7" length="middle" rot="R180"/>
-<text x="-15.24" y="20.32" size="2.286" layer="104" font="vector">&gt;NAME</text>
-<text x="-5.08" y="-5.08" size="2.286" layer="104" font="vector">IM880</text>
+<text x="-15.24" y="20.32" size="2.286" layer="95" font="vector">&gt;NAME</text>
+<text x="-5.08" y="-5.08" size="2.286" layer="95" font="vector">IM880</text>
 </symbol>
 <symbol name="SAM4LC8BA">
 <wire x1="-15.24" y1="40.64" x2="15.24" y2="40.64" width="0.254" layer="94"/>
@@ -7606,7 +7606,9 @@ DS RMS-to-DC Converter</description>
 <connect gate="G$1" pin="XOUT32" pad="18"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="ATSAM4LC8BA-MURDKR-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
