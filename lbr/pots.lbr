@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -91,18 +91,29 @@
 <text x="3.81" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-7.62" y="6.35" size="1.27" layer="25">&gt;NAME</text>
 </package>
+<package name="TC33X-2">
+<smd name="2" x="0" y="0.75" dx="1.6" dy="1.5" layer="1"/>
+<smd name="1" x="-1.4" y="-2.5" dx="1.2" dy="1.2" layer="1"/>
+<smd name="3" x="1.4" y="-2.5" dx="1.2" dy="1.2" layer="1"/>
+<text x="0" y="2.25" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0.1" y="-4.85" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
+<wire x1="1.8" y1="1.15" x2="-1.8" y2="1.15" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="1.15" x2="-1.8" y2="-2.6" width="0.127" layer="21"/>
+<wire x1="-1.8" y1="-2.6" x2="1.8" y2="-2.6" width="0.127" layer="21"/>
+<wire x1="1.8" y1="-2.6" x2="1.8" y2="1.15" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="POT">
-<pin name="1" x="-5.08" y="0" visible="off" length="short"/>
-<pin name="3" x="7.62" y="0" visible="off" length="short" rot="R180"/>
+<pin name="CW" x="-5.08" y="0" visible="off" length="short"/>
+<pin name="CCW" x="7.62" y="0" visible="off" length="short" rot="R180"/>
 <wire x1="-1.905" y1="0.635" x2="-0.635" y2="-0.635" width="0.254" layer="94"/>
 <wire x1="-0.635" y1="-0.635" x2="0.635" y2="0.635" width="0.254" layer="94"/>
 <wire x1="0.635" y1="0.635" x2="1.905" y2="-0.635" width="0.254" layer="94"/>
 <wire x1="1.905" y1="-0.635" x2="3.175" y2="0.635" width="0.254" layer="94"/>
 <wire x1="3.175" y1="0.635" x2="4.445" y2="-0.635" width="0.254" layer="94"/>
 <wire x1="4.445" y1="-0.635" x2="5.08" y2="0" width="0.254" layer="94"/>
-<pin name="2" x="2.54" y="5.08" visible="off" length="short" rot="R270"/>
+<pin name="W" x="2.54" y="5.08" visible="off" length="short" rot="R270"/>
 <wire x1="-1.905" y1="0.635" x2="-2.54" y2="0" width="0.254" layer="94"/>
 <wire x1="-0.635" y1="-1.27" x2="-0.635" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0.635" y1="-1.905" x2="-0.635" y2="-2.54" width="0.254" layer="94"/>
@@ -120,13 +131,25 @@
 <devices>
 <device name="" package="3310C">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="CCW" pad="3"/>
+<connect gate="G$1" pin="CW" pad="1"/>
+<connect gate="G$1" pin="W" pad="2"/>
 </connects>
 <technologies>
 <technology name="3310C">
 <attribute name="DIGIKEY" value="3310C-125-103L-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="TC33X" package="TC33X-2">
+<connects>
+<connect gate="G$1" pin="CCW" pad="1"/>
+<connect gate="G$1" pin="CW" pad="2"/>
+<connect gate="G$1" pin="W" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="TC33X-2-204ECT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
