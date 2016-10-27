@@ -69,6 +69,7 @@
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 </layers>
 <library>
+<description>LAB11 - Regulators.</description>
 <packages>
 <package name="RLT0007A">
 <smd name="1" x="-0.9" y="0.75" dx="0.6" dy="0.25" layer="1"/>
