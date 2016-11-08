@@ -41,7 +41,7 @@ brd = sch[:-4] + '.brd'
 try:
    with open(brd) as b:
       board = b.readlines()
-   print("> Using {} as schematic".format(brd))
+   print("> Using {} as board".format(brd))
 except IOError:
    print("")
    print("WARN: No matching .brd file")
