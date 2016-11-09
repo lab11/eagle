@@ -1925,22 +1925,22 @@ QFN-24</description>
 <text x="-3" y="-3.8" size="0.762" layer="27">&gt;VALUE</text>
 </package>
 <package name="UMAX10">
-<smd name="8" x="0" y="2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="9" x="-0.5" y="2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="10" x="-1" y="2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="7" x="0.5" y="2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="6" x="1" y="2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="1" x="-1" y="-2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="2" x="-0.5" y="-2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="3" x="0" y="-2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="4" x="0.5" y="-2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
-<smd name="5" x="1" y="-2.17" dx="0.4" dy="0.2" layer="1" rot="R90"/>
+<smd name="8" x="0" y="2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="9" x="-0.5" y="2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="10" x="-1" y="2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="7" x="0.5" y="2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="6" x="1" y="2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="1" x="-1" y="-2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="2" x="-0.5" y="-2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="3" x="0" y="-2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="4" x="0.5" y="-2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
+<smd name="5" x="1" y="-2.17" dx="1.4" dy="0.28" layer="1" rot="R90"/>
 <wire x1="-1.45" y1="1.45" x2="1.45" y2="1.45" width="0.127" layer="21"/>
 <wire x1="1.45" y1="1.45" x2="1.45" y2="-1.45" width="0.127" layer="21"/>
 <wire x1="1.45" y1="-1.45" x2="-1.45" y2="-1.45" width="0.127" layer="21"/>
 <wire x1="-1.45" y1="-1.45" x2="-1.45" y2="1.45" width="0.127" layer="21"/>
-<text x="-2.48" y="3.01" size="1.016" layer="21">&gt;NAME</text>
-<circle x="-1.07" y="-1.02" radius="0.1523125" width="0.127" layer="21"/>
+<text x="-1.61" y="0.02" size="1.016" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<circle x="-1.77" y="-1.72" radius="0.1523125" width="0" layer="21"/>
 </package>
 <package name="DFN-12/4MM">
 <smd name="10" x="-0.25" y="1.9" dx="0.7" dy="0.25" layer="1" rot="R90"/>
@@ -2620,6 +2620,18 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <smd name="2" x="0.61" y="0.925" dx="0.9" dy="0.68" layer="1" rot="R90"/>
 <circle x="-1.8" y="1.9" radius="0.15" width="0.127" layer="21"/>
 <text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="R-PDSO-G5">
+<smd name="1" x="-0.95" y="-1.35" dx="0.6" dy="1.05" layer="1"/>
+<smd name="2" x="0" y="-1.35" dx="0.6" dy="1.05" layer="1"/>
+<smd name="3" x="0.95" y="-1.35" dx="0.6" dy="1.05" layer="1"/>
+<smd name="4" x="0.95" y="1.35" dx="0.6" dy="1.05" layer="1"/>
+<smd name="5" x="-0.95" y="1.35" dx="0.6" dy="1.05" layer="1"/>
+<wire x1="-1.49" y1="0.8" x2="1.49" y2="0.8" width="0.127" layer="21"/>
+<wire x1="1.49" y1="0.8" x2="1.49" y2="-0.8" width="0.127" layer="21"/>
+<wire x1="1.49" y1="-0.8" x2="-1.49" y2="-0.8" width="0.127" layer="21"/>
+<wire x1="-1.49" y1="-0.8" x2="-1.49" y2="0.8" width="0.127" layer="21"/>
+<text x="-1.7" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -4846,6 +4858,36 @@ MICROPHONE</text>
 <wire x1="10.16" y1="-17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
 <text x="-7.62" y="18.034" size="1.27" layer="95" ratio="12">&gt;NAME</text>
 <text x="-7.62" y="-20.32" size="1.27" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="MAX992">
+<pin name="OUT" x="12.7" y="-2.54" length="short" rot="R180"/>
+<pin name="FB" x="12.7" y="-7.62" length="short" rot="R180"/>
+<pin name="REF" x="-12.7" y="-10.16" length="short"/>
+<pin name="GND" x="-12.7" y="-12.7" length="short"/>
+<pin name="!SHDN" x="12.7" y="-12.7" length="short" rot="R180"/>
+<pin name="VDD" x="-12.7" y="10.16" length="short"/>
+<pin name="RSB" x="12.7" y="10.16" length="short" rot="R180"/>
+<pin name="RS-" x="12.7" y="2.54" length="short" rot="R180"/>
+<pin name="RS+" x="12.7" y="7.62" length="short" rot="R180"/>
+<wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<text x="-10.16" y="13.208" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-17.78" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="LP3985">
+<pin name="OUT" x="10.16" y="5.08" length="short" rot="R180"/>
+<pin name="BYPASS" x="10.16" y="0" length="short" rot="R180"/>
+<pin name="IN" x="-10.16" y="5.08" length="short"/>
+<pin name="EN" x="-10.16" y="-5.08" length="short"/>
+<pin name="GND" x="10.16" y="-5.08" length="short" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<text x="-7.62" y="8.128" size="1.27" layer="95" ratio="12">&gt;NAME</text>
+<text x="-7.62" y="-10.16" size="1.27" layer="96" ratio="12">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -7858,6 +7900,59 @@ DS RMS-to-DC Converter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="568-8879-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAX992" prefix="U">
+<description>The MAX9922/MAX9923 ultra-precision, high-side current-
+sense amplifiers feature ultra-low offset voltage
+(VOS) of 25μV (max) and laser-trimmed gain accuracy
+better than 0.5%. The combination of low VOS and highgain
+accuracy allows precise current measurements
+even at very small sense voltages.</description>
+<gates>
+<gate name="G$1" symbol="MAX992" x="0" y="0"/>
+</gates>
+<devices>
+<device name="3H" package="UMAX10">
+<connects>
+<connect gate="G$1" pin="!SHDN" pad="6"/>
+<connect gate="G$1" pin="FB" pad="8"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="OUT" pad="9"/>
+<connect gate="G$1" pin="REF" pad="7"/>
+<connect gate="G$1" pin="RS+" pad="2"/>
+<connect gate="G$1" pin="RS-" pad="3"/>
+<connect gate="G$1" pin="RSB" pad="1"/>
+<connect gate="G$1" pin="VDD" pad="10"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="MAX9923HEUB+-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LP3985" prefix="U">
+<description>Linear Voltage Regulator IC Positive Fixed 1 Output 3.3V 150mA SOT-23-5</description>
+<gates>
+<gate name="G$1" symbol="LP3985" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="R-PDSO-G5">
+<connects>
+<connect gate="G$1" pin="BYPASS" pad="4"/>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="LP3985IM5-3.3/NOPBCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
