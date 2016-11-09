@@ -11,7 +11,7 @@ import termcolor
 print_attn = lambda x: termcolor.cprint(x, attrs=['bold'])
 
 print("")
-print("*** MAKE SURE YOU HAVE CLOSED EAGLE COMPLETELY BEFORE RUNNING THIS ***")
+print("*** MAKE SURE YOU HAVE CLOSED THE EAGLE FILE BEFORE RUNNING THIS ***")
 print("")
 
 print("I also recommend doing this with clean git, because, I wrote this in")
