@@ -36,11 +36,13 @@ fab_extensions = ['bot', 'bsk', 'drd', 'oln', 'slk', 'smb', 'smt', 'top',
                   'GBL', 'GBO', 'GBS', 'GTL', 'GTO', 'GTS', 'TXT', 'DIM', 'mil',
                   'gbs', 'gts']
 assembler_extensions = ['bps', 'tps', 'tsp', 'bsp', 'centroid', 'pdf']
+stencil_extensions = ['tsp', 'bsp', 'oln', 'DIM', 'mil']
 # Files to add if they exist
 fab_add_files = ['fabnotes.txt']
 
 fab_files = []
 assem_files = []
+stencil_files = []
 
 schematic  = ''
 
@@ -120,6 +122,8 @@ for f in files:
 		assem_files.append(f)
 	if fext[1:] in assembler_extensions:
 		assem_files.append(f)
+	if fext[1:] in stencil_extensions:
+		stencil_files.append(f)
 	if os.path.basename(f) in fab_add_files:
 		fab_files.append(f)
 		assem_files.append(f)
@@ -131,12 +135,15 @@ assem_files += boms
 fab_filename = '{0}_{1}_to_fab_{2}'.format(project_name, revision, project_date)
 assem_filename = '{0}_{1}_to_assembler_{2}'.format(project_name, revision,
 	project_date)
+stencil_filename = '{0}_{1}_to_stencil_{2}'.format(project_name, revision,
+	project_date)
 
 print('Project name:    {}'.format(project_name))
 print('Revision:        {}'.format(revision))
 print('Date:            {}'.format(project_date))
 print('Fab files:       {}'.format(' '.join(fab_files)))
 print('Assembler files: {}'.format(' '.join(assem_files)))
+print('Stencil files:   {}'.format(' '.join(stencil_files)))
 
 if len(fab_files) == 0:
 	print('Nothing to do!')
@@ -145,5 +152,7 @@ if len(fab_files) == 0:
 
 rm('-f', fab_filename)
 rm('-f', assem_filename)
+rm('-f', stencil_filename)
 sh.zip(fab_filename, fab_files)
 sh.zip(assem_filename, assem_files)
+sh.zip(stencil_filename, stencil_files)
