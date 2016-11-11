@@ -193,26 +193,30 @@ for value_unit,partlist in parts.items():
 rename = dict()
 
 print("")
-print("This script will relabel parts as follows:")
-for value_unit,partlist in parts.items():
-   value,unit = value_unit
-   for part in partlist:
-      old = "{}{} : {}{}{}".format(prefix, part['number'], value, unit, part['suffix'])
-      new = "{}{} : {}{}{}".format(prefix, part['new_number'], value, unit, part['new_suffix'])
-      if old == new:
-         print("{:10} => {:10}".format(old, new))
-      else:
-         print_attn("{:10} => {:10}".format(old, new))
+if len(parts) == 0:
+   print('No parts found that match the prefix "{}"'.format(prefix))
+   sys.exit(1);
+else:
+   print("This script will relabel parts as follows:")
+   for value_unit,partlist in parts.items():
+      value,unit = value_unit
+      for part in partlist:
+         old = "{}{} : {}{}{}".format(prefix, part['number'], value, unit, part['suffix'])
+         new = "{}{} : {}{}{}".format(prefix, part['new_number'], value, unit, part['new_suffix'])
+         if old == new:
+            print("{:10} => {:10}".format(old, new))
+         else:
+            print_attn("{:10} => {:10}".format(old, new))
 
-      rename[prefix + part['number']] = {
-            'old_value': value + unit + part['suffix'],
-            'new_value': value + unit + part['new_suffix'],
-            'new_name': prefix + part['new_number'],
-            }
+         rename[prefix + part['number']] = {
+               'old_value': value + unit + part['suffix'],
+               'new_value': value + unit + part['new_suffix'],
+               'new_name': prefix + part['new_number'],
+               }
 
-r = input("Write new names to eagle files? [Y/n] ").upper()
-if len(r) and r[0] == 'N':
-   sys.exit()
+   r = input("Write new names to eagle files? [Y/n] ").upper()
+   if len(r) and r[0] == 'N':
+      sys.exit()
 
 # Update schematic and board. Do everything in memory before touching files on disk
 new_sch = tempfile.TemporaryFile()
