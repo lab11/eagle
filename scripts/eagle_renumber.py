@@ -86,7 +86,11 @@ known_unit_prefixes = {
 
 def resolve_unit(value, unit_prefix):
    if unit_prefix == '':
-      return value
+      try:
+         out = float(value)
+      except:
+         out = value
+      return out
    else:
       return float(value) * known_unit_prefixes[unit_prefix]
 
