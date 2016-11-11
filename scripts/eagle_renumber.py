@@ -228,6 +228,7 @@ for line in schematic:
          old_value = value + unit_prefix + suffix
          line = line.replace(old_name, rename[old_name]['new_name'], 1)
          line = line.replace(old_value, rename[old_name]['new_value'], 1)
+         continue
       result = sch_instance_tag_re.match(line)
       if result is not None:
          number, = result.groups()
@@ -236,6 +237,7 @@ for line in schematic:
                continue
          old_name = prefix + number
          line = line.replace(old_name, rename[old_name]['new_name'], 1)
+         continue
       result = sch_pinref_tag_re.match(line)
       if result is not None:
          number, = result.groups()
@@ -244,6 +246,7 @@ for line in schematic:
                continue
          old_name = prefix + number
          line = line.replace(old_name, rename[old_name]['new_name'], 1)
+         continue
       result = sch_part_tag_novalue_re.match(line)
       if result is not None:
          number, deviceset = result.groups()
@@ -251,6 +254,7 @@ for line in schematic:
             continue
          old_name = prefix + number
          line = line.replace(old_name, rename[old_name]['new_name'], 1)
+         continue
    finally:
       new_sch.write(line.encode('utf-8'))
 
@@ -268,6 +272,7 @@ if board:
             old_value = value + unit_prefix + suffix
             line = line.replace(old_name, rename[old_name]['new_name'], 1)
             line = line.replace(old_value, rename[old_name]['new_value'], 1)
+            continue
          result = brd_contactref_tag_re.match(line)
          if result is not None:
             number, = result.groups()
@@ -276,6 +281,7 @@ if board:
                   continue
             old_name = prefix + number
             line = line.replace(old_name, rename[old_name]['new_name'], 1)
+            continue
          result = brd_element_tag_othervalue_re.match(line)
          if result is not None:
             number, value = result.groups()
@@ -284,6 +290,7 @@ if board:
                   continue
             old_name = prefix + number
             line = line.replace(old_name, rename[old_name]['new_name'], 1)
+            continue
       finally:
          new_brd.write(line.encode('utf-8'))
 
