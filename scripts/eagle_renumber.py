@@ -51,7 +51,20 @@ except IOError:
    board = None
    print("")
 
-prefix = input("What part prefix to renumber (e.g. R, C)? ")
+
+# Look for valid part prefixes to show the user
+sch_part_tag_getname_re = re.compile('<part name="([a-zA-Z]+)[0-9]+".*[/]?>')
+valid_prefixes = []
+for line in schematic:
+   result = sch_part_tag_getname_re.match(line)
+   if result is not None:
+      prefix = result.groups()[0]
+      if prefix not in ['FRAME', 'GND']:
+         valid_prefixes.append(prefix)
+valid_prefixes = ', '.join(sorted(set(valid_prefixes)))
+
+print('')
+prefix = input("What part prefix to renumber ({})? ".format(valid_prefixes))
 
 
 known_unit_prefixes = {
