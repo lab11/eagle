@@ -141,8 +141,9 @@
 <wire x1="100" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
 <smd name="-" x="63" y="106" dx="10" dy="12" layer="1"/>
 <smd name="+" x="37" y="106" dx="10" dy="12" layer="1"/>
-<text x="28" y="102" size="6.4516" layer="20" font="vector" ratio="12" align="bottom-center">+</text>
-<text x="73" y="102" size="6.4516" layer="20" font="vector" ratio="12" align="bottom-center">-</text>
+<text x="28" y="102" size="6.4516" layer="25" font="vector" ratio="12" align="bottom-center">+</text>
+<text x="73" y="102" size="6.4516" layer="25" font="vector" ratio="12" align="bottom-center">-</text>
+<text x="7.62" y="104.14" size="2.54" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
