@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5055,6 +5055,33 @@ MICROPHONE</text>
 <text x="-2.54" y="15.24" size="1.778" layer="95" align="bottom-center">&gt;NAME</text>
 <text x="0" y="-10.16" size="1.778" layer="95" align="bottom-center">MAX44284</text>
 </symbol>
+<symbol name="BQ77904">
+<wire x1="-15.24" y1="25.4" x2="-15.24" y2="-25.4" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-25.4" x2="15.24" y2="-25.4" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-25.4" x2="15.24" y2="25.4" width="0.254" layer="94"/>
+<wire x1="15.24" y1="25.4" x2="-15.24" y2="25.4" width="0.254" layer="94"/>
+<pin name="VDD" x="-20.32" y="22.86" visible="pin" length="middle"/>
+<pin name="AVDD" x="-20.32" y="17.78" visible="pin" length="middle"/>
+<pin name="VC5" x="-20.32" y="12.7" visible="pin" length="middle"/>
+<pin name="VC4" x="-20.32" y="7.62" visible="pin" length="middle"/>
+<pin name="VC3" x="-20.32" y="2.54" visible="pin" length="middle"/>
+<pin name="VC2" x="-20.32" y="-2.54" visible="pin" length="middle"/>
+<pin name="VC1" x="-20.32" y="-7.62" visible="pin" length="middle"/>
+<pin name="AVSS" x="-20.32" y="-12.7" visible="pin" length="middle"/>
+<pin name="SRP" x="-20.32" y="-17.78" visible="pin" length="middle"/>
+<pin name="SRN" x="-20.32" y="-22.86" visible="pin" length="middle"/>
+<pin name="DSG" x="20.32" y="-22.86" visible="pin" length="middle" rot="R180"/>
+<pin name="CHGU" x="20.32" y="-17.78" visible="pin" length="middle" rot="R180"/>
+<pin name="CHG" x="20.32" y="-12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="LD" x="20.32" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="TS" x="20.32" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="VTB" x="20.32" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="CCFG" x="20.32" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="CTRC" x="20.32" y="12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="CTRD" x="20.32" y="17.78" visible="pin" length="middle" rot="R180"/>
+<pin name="DVSS" x="20.32" y="22.86" visible="pin" length="middle" rot="R180"/>
+<text x="-10.16" y="27.94" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BQ25504" prefix="U">
@@ -8232,6 +8259,43 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="MAX44284FAUT+TCT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BQ77904" prefix="U">
+<description>A battery protection chip with OV/UV/OT/UT</description>
+<gates>
+<gate name="G$1" symbol="BQ77904" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TSSOP-20/6MM">
+<connects>
+<connect gate="G$1" pin="AVDD" pad="2"/>
+<connect gate="G$1" pin="AVSS" pad="8"/>
+<connect gate="G$1" pin="CCFG" pad="17"/>
+<connect gate="G$1" pin="CHG" pad="13"/>
+<connect gate="G$1" pin="CHGU" pad="12"/>
+<connect gate="G$1" pin="CTRC" pad="18"/>
+<connect gate="G$1" pin="CTRD" pad="19"/>
+<connect gate="G$1" pin="DSG" pad="11"/>
+<connect gate="G$1" pin="DVSS" pad="20"/>
+<connect gate="G$1" pin="LD" pad="14"/>
+<connect gate="G$1" pin="SRN" pad="10"/>
+<connect gate="G$1" pin="SRP" pad="9"/>
+<connect gate="G$1" pin="TS" pad="15"/>
+<connect gate="G$1" pin="VC1" pad="7"/>
+<connect gate="G$1" pin="VC2" pad="6"/>
+<connect gate="G$1" pin="VC3" pad="5"/>
+<connect gate="G$1" pin="VC4" pad="4"/>
+<connect gate="G$1" pin="VC5" pad="3"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+<connect gate="G$1" pin="VTB" pad="16"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-44599-5-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
