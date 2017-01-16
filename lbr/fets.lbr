@@ -496,8 +496,8 @@ High-power, low thermal resistance package.</description>
 <wire x1="-3.556" y1="2.159" x2="-5.08" y2="2.159" width="0.1524" layer="94"/>
 <wire x1="-5.08" y1="3.048" x2="-6.477" y2="3.048" width="0.1524" layer="94"/>
 <wire x1="-6.477" y1="3.048" x2="-6.477" y2="0.762" width="0.1524" layer="94"/>
-<text x="-7.62" y="-5.08" size="1.778" layer="96" rot="MR0">&gt;VALUE</text>
-<text x="-7.62" y="2.54" size="1.778" layer="95" rot="MR0">&gt;NAME</text>
+<text x="-8.382" y="5.08" size="1.778" layer="96" rot="MR270">&gt;VALUE</text>
+<text x="7.62" y="-10.16" size="1.778" layer="95" rot="MR0">&gt;NAME</text>
 <rectangle x1="-3.556" y1="1.397" x2="-3.048" y2="2.921" layer="94" rot="R180"/>
 <rectangle x1="-3.556" y1="-0.762" x2="-3.048" y2="0.762" layer="94" rot="R180"/>
 <rectangle x1="-3.556" y1="-2.921" x2="-3.048" y2="-1.397" layer="94" rot="R180"/>
@@ -784,7 +784,9 @@ High-power, low thermal resistance package.</description>
 <connect gate="G$1" pin="S" pad="S"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="DMN32D2LDF-7DICT-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
