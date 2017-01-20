@@ -529,6 +529,15 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <rectangle x1="-0.4" y1="-0.625" x2="0.4" y2="0.625" layer="21"/>
 <text x="0" y="0.892" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="0805_DIODE">
+<wire x1="0.3" y1="0.6" x2="0.3" y2="0" width="0.1524" layer="21"/>
+<smd name="ANODE" x="-0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<smd name="CATHODE" x="0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<text x="0" y="1" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="0.3" y1="0" x2="0.3" y2="-0.6" width="0.1524" layer="21"/>
+<wire x1="-0.3" y1="0.6" x2="0.3" y2="0" width="0.1524" layer="21"/>
+<wire x1="0.3" y1="0" x2="-0.3" y2="-0.6" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -901,7 +910,16 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 <gate name="G$1" symbol="DIODE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="0402_DIODE">
+<device name="0402" package="0402_DIODE">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="ANODE"/>
+<connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="" package="0805_DIODE">
 <connects>
 <connect gate="G$1" pin="ANODE" pad="ANODE"/>
 <connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
