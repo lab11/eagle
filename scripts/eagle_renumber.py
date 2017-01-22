@@ -2,6 +2,7 @@
 
 import collections
 import glob
+from pprint import pprint
 import re
 import shutil
 import sys
@@ -9,6 +10,7 @@ import tempfile
 import termcolor
 
 print_attn = lambda x: termcolor.cprint(x, attrs=['bold'])
+print_err = lambda x: termcolor.cprint(x, 'red', attrs=['bold'])
 
 print("")
 print("*** MAKE SURE YOU HAVE CLOSED THE EAGLE FILE BEFORE RUNNING THIS ***")
@@ -190,7 +192,25 @@ for line in schematic:
                parts[(deviceset,'')] = []
             parts[(deviceset,'')].append({'number': number, 'suffix': ''})
 
-parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: resolve_unit(*t[0])))
+try:
+   parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: resolve_unit(*t[0])))
+except TypeError:
+   type_unit = {}
+   for part in parts.items():
+      unit = resolve_unit(*part[0])
+      if type(unit) not in type_unit:
+         type_unit[type(unit)] = []
+      type_unit[type(unit)].append(part)
+   if len(type_unit) > 1:
+      print_err("Error: Parts have mixture of values and no values")
+      print("This is likely an error caused by a part with a missing value that should have one.")
+      print("Below is a list of all parts, first sorted by whether they have a value")
+      print("The 'number' field is the part number. One or more of these is likely wrong")
+      pprint(type_unit)
+      print("")
+      sys.exit(1)
+   else:
+      raise
 # print(parts)
 # quit()
 
