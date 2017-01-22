@@ -89,7 +89,10 @@ def resolve_unit(value, unit_prefix):
       try:
          out = float(value)
       except:
-         out = value
+         if value == 'DNP':
+            out = float("inf")
+         else:
+            out = value
       return out
    else:
       return float(value) * known_unit_prefixes[unit_prefix]
@@ -98,6 +101,8 @@ sch_part_tag_re = re.compile(
       '<part name="{}(.+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
+sch_part_tag_dnp_re = re.compile(
+      '<part name="{}(.+?)".*value="(DNP|dnp)".*[/]?>'.format(prefix))
 sch_part_tag_novalue_re = re.compile(
       '<part name="{}([0-9]+)".*deviceset="(.*?)".*[/]?>'.format(prefix))
 sch_instance_tag_re = re.compile('<instance part="{}([\.0-9]+?)".*'.format(prefix))
@@ -139,12 +144,12 @@ for line in schematic:
       if (value,unit_prefix) not in parts:
          parts[(value,unit_prefix)] = []
       parts[(value,unit_prefix)].append({'number': number, 'suffix': suffix})
+
    else:
-      # This isn't a part with a value, check if it still matches. We want to
-      # group parts, even if we don't have a perfect ordering mechanism.
-      result = sch_part_tag_novalue_re.match(line)
+      # Check if the part is marked as DNP (do not populate)
+      result = sch_part_tag_dnp_re.match(line)
       if result is not None:
-         number, deviceset = result.groups()
+         number, value = result.groups()
          if int(number) >= 1000:
             if ignore_high_parts is None:
                print("")
@@ -156,11 +161,34 @@ for line in schematic:
          if number in numbers:
             raise NotImplementedError("Duplicate part numbers? Found {} twice :/".format(number))
          numbers.add(number)
-         values[deviceset] += 1
+         values['DNP'] += 1
 
-         if (deviceset,'') not in parts:
-            parts[(deviceset,'')] = []
-         parts[(deviceset,'')].append({'number': number, 'suffix': ''})
+         if ('DNP','') not in parts:
+            parts[('DNP','')] = []
+         parts[('DNP','')].append({'number': number, 'suffix': ''})
+
+      else:
+         # This isn't a part with a value, check if it still matches. We want to
+         # group parts, even if we don't have a perfect ordering mechanism.
+         result = sch_part_tag_novalue_re.match(line)
+         if result is not None:
+            number, deviceset = result.groups()
+            if int(number) >= 1000:
+               if ignore_high_parts is None:
+                  print("")
+                  print("This board has parts numbered >1000.")
+                  r = input("Would you like to ignore/skip parts >1000? [Y/n] ").upper()
+                  ignore_high_parts = not( len(r) and r[0] == 'N' )
+               if ignore_high_parts:
+                  continue
+            if number in numbers:
+               raise NotImplementedError("Duplicate part numbers? Found {} twice :/".format(number))
+            numbers.add(number)
+            values[deviceset] += 1
+
+            if (deviceset,'') not in parts:
+               parts[(deviceset,'')] = []
+            parts[(deviceset,'')].append({'number': number, 'suffix': ''})
 
 parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: resolve_unit(*t[0])))
 # print(parts)
