@@ -172,9 +172,9 @@ for b in boms:
                                 cur_num = num;
                             else:
                                 if first_num == cur_num:
-                                    ref_string = ref_string + (str(first_num)+",")
+                                    ref_string = ref_string + (str(first_num)+";")
                                 else:
-                                    ref_string = ref_string + (str(first_num)+"-"+str(cur_num)+",")
+                                    ref_string = ref_string + (str(first_num)+"-"+str(cur_num)+";")
                                 cur_num = num;
                                 first_num = num;
 
