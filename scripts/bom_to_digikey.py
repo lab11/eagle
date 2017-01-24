@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-HELP = """
-Convert an xls[x] bom to a digikey parts order spreadsheet.
-
-Accepts no arguments.
-"""
+print("This script takes a BOM (in csv) and turns it into an uploadable Digikey order (also csv).");
+print("To use the script you must have a \"Part\" Column and up to four \"DIGIKEY*\" columns.");
+print("You can then enter the rough number of components you want to order.\n\n")
 
 import sys
 
