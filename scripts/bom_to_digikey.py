@@ -11,26 +11,27 @@ import sys
 
 # Get all of the tricky packages out of the way
 try:
-	from sh import rm
+        from sh import rm
 except:
-	print("You need to install the sh module.")
-	print("https://github.com/amoffat/sh")
-	sys.exit(1)
+        print("You need to install the sh module.")
+        print("https://github.com/amoffat/sh")
+        sys.exit(1)
 
 try:
-	from sh import unoconv
-	import sh
+        from sh import unoconv
+        from sh import soffice
+        import sh
 except:
-	print("You must have unoconv installed to convert the bom.")
-	print("sudo apt-get install unoconv")
-	sys.exit(1)
+        print("You must have unoconv installed to convert the bom.")
+        print("sudo apt-get install unoconv")
+        sys.exit(1)
 
 try:
-	import dataprint
+        import dataprint
 except:
-	print("You need to install the dataprint module.")
-	print("sudo pip install dataprint")
-	sys.exit(1)
+        print("You need to install the dataprint module.")
+        print("sudo pip install dataprint")
+        sys.exit(1)
 
 import csv as csvr
 from glob import glob
@@ -63,7 +64,7 @@ def query_yes_no(question, default="yes"):
 
     while True:
         sys.stdout.write(question + prompt)
-        choice = raw_input().lower()
+        choice = input().lower()
         if default is not None and choice == '':
             return valid[default]
         elif choice in valid:
@@ -74,8 +75,8 @@ def query_yes_no(question, default="yes"):
 
 # Display the help if any arguments are provided.
 if len(sys.argv) > 1:
-	print(HELP)
-	sys.exit(0)
+        print(HELP)
+        sys.exit(0)
 
 header = """\"# Digikey order form\"
 \"# Converted from {}\"
@@ -86,51 +87,39 @@ header = """\"# Digikey order form\"
 boms = glob('*bom.xls*')
 
 if len(boms) == 0:
-	print("Could not find a bom to convert.")
-	sys.exit(1)
+        print("Could not find a bom to convert.")
+        sys.exit(1)
 
 for b in boms:
-	# Get the root name
-	base = os.path.splitext(b)[0]
-	csv = '{}_digikey.csv'.format(base)
+        # Get the root name
+        base = os.path.splitext(b)[0]
+        csv_out = '{}_digikey.csv'.format(base)
+        csv_in = '{}.csv'.format(base)
 
-	# Check if csv and txt versions already exist
-	if os.path.exists(csv):
-		# Open it and determine if we created it. If we did, then I'm sure it's
-		# fine to overwrite it. Otherwise, we probably shouldn't just overwrite
-		# other people's files.
-		with open(csv, 'r') as f:
-		    print('Found existing {}'.format(csv))
-                    if(query_yes_no("Would you like to overwrite it?")):
+        # Check if csv and txt versions already exist
+        if os.path.exists(csv_out):
+                # Open it and determine if we created it. If we did, then I'm sure it's
+                # fine to overwrite it. Otherwise, we probably shouldn't just overwrite
+                # other people's files.
+                with open(csv_out, 'r') as f:
+                    print('Found existing {}'.format(csv_out));
+                    if query_yes_no("Would you like to overwrite it?"):
                         pass
                     else:
                         print("Okay, exiting");
                         sys.exit(1)
 
-	# Convert the bom to csv
-	bom_tries = 3
-	while bom_tries > 0:
-		try:
-			unoconv('-f', 'csv', '-o', csv, b)
-			break
-		except sh.ErrorReturnCode:
-			print('Unable to convert bom on this go. Will try again \
-because that seems to fix it.')
-		bom_tries -= 1
-		if bom_tries == 0:
-			# Failed to convert bom. Exclude it
-			print('Converting bom to csv failed. Not much we can do now.')
-			sys.exit(1)
-
-	# Read in CSV
-	csv_contents = ''
-	with open(csv, 'r') as f:
-		csv_contents = f.read()
-
-	with open(csv, 'r') as f:
-	        # Figure out where all the columns are there are
-		csvreader = csvr.reader(f)
-		columns = next(csvreader);
+        parts = {};
+        qtys = {}
+        parts_with_refs = {}
+        with open(csv_in, 'r') as f:
+                # Figure out where all the columns are there are
+                csvreader = csvr.reader(f)
+                columns = next(csvreader);
+                columns = next(csvreader);
+                columns = next(csvreader);
+                columns = next(csvreader);
+                columns = next(csvreader);
                 try:
                     parts_column = columns.index('Part');
                 except ValueError:
@@ -156,8 +145,6 @@ because that seems to fix it.')
                 #process the columns into a dictionary where digikey part is
                 #the key and a list of part number is the value
                 #keep another dictionary of qtys for each part
-                parts = {};
-                qtys = {}
                 for part in csvreader:
                     for col in digikey_columns:
                         if part[col] in parts:
@@ -169,8 +156,7 @@ because that seems to fix it.')
 
                 #for each part in the dictionary compress the part numbers
                 #to put in the digikey reference field
-                parts_with_refs = {}
-                for part, ref_list in parts.iteritems():
+                for part, ref_list in parts.items():
                     #sort the list alphabetically
                     #this should group all the prefixes together
                     ref_list = natsort.natsorted(ref_list);
@@ -180,13 +166,15 @@ because that seems to fix it.')
                     first_num = 0;
                     for ref in ref_list:
                         #we are already processing that prefix, just add the number
-                        print(ref);
-                        if re.match("[[a-z]*0-9]*",ref).group(0) is cur_prefix:
+                        if re.match("[a-zA-Z]+",ref).group(0) == cur_prefix:
                             num = int(re.match(".*?([0-9]+)$",ref).group(1));
                             if cur_num + 1 is num:
                                 cur_num = num;
                             else:
-                                ref_string = ref_string + (str(first_num)+"-"+str(cur_num)+",")
+                                if first_num == cur_num:
+                                    ref_string = ref_string + (str(first_num)+",")
+                                else:
+                                    ref_string = ref_string + (str(first_num)+"-"+str(cur_num)+",")
                                 cur_num = num;
                                 first_num = num;
 
@@ -200,8 +188,8 @@ because that seems to fix it.')
                                 else:
                                     ref_string = ref_string+(str(first_num)+"-"+str(cur_num)+" ");
                             #we need to start a new prefix
-                            cur_prefix = re.match("[^0-9]*",ref).group(0);
-                            ref_string = ref_string +  re.match("[^0-9]*",ref).group(0);
+                            cur_prefix = re.match("[a-zA-Z]+",ref).group(0);
+                            ref_string = ref_string +  re.match("[a-zA-Z]+",ref).group(0);
                             cur_num = int(re.match(".*?([0-9]+)$",ref).group(1));
                             first_num = int(re.match(".*?([0-9]+)$",ref).group(1));
 
@@ -213,20 +201,21 @@ because that seems to fix it.')
 
                     parts_with_refs[part] = ref_string;
 
-                print(parts_with_refs);
-                raw_input("waiting");
+        print("How many of each resistor would you like to buy?:");
+        res_qty = int(input());
+        print("How many of each capacitor would you like to buy?:");
+        cap_qty = int(input());
+        print("How many of every other part would you like to buy?:");
+        board_qty = int(input());
 
-
-
-
-	## Make header block comply with github by adding commas
-	#newheader = ""
-	#for line in header.split('\n')[0:-1]:
-	#	newheader += line + ','*(columns-1) + '\n'
-
-	## Write back CSV
-	#with open(csv, 'w') as f:
-	#	# Add header to csv
-	#	f.write(newheader.format(b))
-	#	f.write(csv_contents)
-
+        # Write back CSV
+        with open(csv_out, 'w') as f:
+               # Add header to csv
+            for part, ref_list in parts_with_refs.items():
+                if(ref_list[0] == "R"):
+                    f.write(part + "," + ref_list + "," + str(qtys[part]*res_qty) + "\n");
+                elif ref_list[0] == "C":
+                    f.write(part + "," + ref_list + "," + str(qtys[part]*cap_qty)+ "\n");
+                else:
+                    f.write(part + "," + ref_list + "," + str(qtys[part]*board_qty)+ "\n");
+            f.close();
