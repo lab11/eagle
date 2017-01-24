@@ -126,15 +126,18 @@ for b in boms:
                 except ValueError:
                     print("There must be a column called \"Part\" to execute this script. Exiting");
                     sys.exit(1);
+
                 digikey_columns = [];
                 try:
                     digikey_columns.append(columns.index('DIGIKEY'));
+                    digikey_columns.append(columns.index('DIGIKEY1'));
                 except ValueError:
-                    try:
-                        digikey_columns.append(columns.index('DIGIKEY1'));
-                    except ValueError:
-                        print("There must be at least one column of \"DIGIKEY\" part numbers. Exiting");
-                        sys.exit(1);
+                    pass
+
+                if(len(digikey_columns) < 1):
+                    print("There must a column called \"DIGIKEY*\" to execute this script. Exiting");
+                    sys.exit(1);
+
                 try:
                     digikey_columns.append(columns.index('DIGIKEY2'));
                     digikey_columns.append(columns.index('DIGIKEY3'));
