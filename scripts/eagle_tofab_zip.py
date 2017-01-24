@@ -31,7 +31,7 @@ revision     = ''
 project_name = ''
 project_date = ''
 
-fab_extensions = ['bot', 'bsk', 'drd', 'oln', 'slk', 'smb', 'smt', 'top',
+fab_extensions = ['bot', 'bsk', 'drd','0102','0116','1516','0216','0215','0115', 'oln', 'slk', 'smb', 'smt', 'top',
                   'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10',
                   'GBL', 'GBO', 'GBS', 'GTL', 'GTO', 'GTS', 'TXT', 'DIM', 'mil',
                   'gbs', 'gts']
