@@ -295,8 +295,8 @@ for line in schematic:
                continue
          old_name = prefix + number
          old_value = value + unit_prefix + suffix
-         line = line.replace(old_name, rename[old_name]['new_name'], 1)
-         line = line.replace(old_value, rename[old_name]['new_value'], 1)
+         line = line.replace("name=\"" + old_name, "name=\"" + rename[old_name]['new_name'], 1)
+         line = line.replace("value=\"" + old_value,"value=\"" + rename[old_name]['new_value'], 1)
          continue
       result = sch_instance_tag_re.match(line)
       if result is not None:
@@ -339,8 +339,8 @@ if board:
                   continue
             old_name = prefix + number
             old_value = value + unit_prefix + suffix
-            line = line.replace(old_name, rename[old_name]['new_name'], 1)
-            line = line.replace(old_value, rename[old_name]['new_value'], 1)
+            line = line.replace("name=\"" + old_name, "name=\"" + rename[old_name]['new_name'], 1)
+            line = line.replace("value=\"" + old_value, "value=\"" + rename[old_name]['new_value'], 1)
             continue
          result = brd_contactref_tag_re.match(line)
          if result is not None:
