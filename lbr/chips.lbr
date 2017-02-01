@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -2743,6 +2743,22 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <text x="-3" y="3" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3" y="-4" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="SC70-8">
+<smd name="8" x="-0.75" y="0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="1" x="-0.75" y="-0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="7" x="-0.25" y="0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="2" x="-0.25" y="-0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="3" x="0.25" y="-0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="6" x="0.25" y="0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="5" x="0.75" y="0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<smd name="4" x="0.75" y="-0.9" dx="1" dy="0.3" layer="1" rot="R90"/>
+<wire x1="-1" y1="-0.7" x2="-1" y2="0.7" width="0.127" layer="21"/>
+<wire x1="-1" y1="0.7" x2="1" y2="0.7" width="0.127" layer="21"/>
+<wire x1="1" y1="0.7" x2="1" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="1" y1="-0.7" x2="-1" y2="-0.7" width="0.127" layer="21"/>
+<circle x="-1.5" y="-1" radius="0.2" width="0.127" layer="21"/>
+<text x="0" y="1.8" size="0.889" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -5142,6 +5158,19 @@ MICROPHONE</text>
 <pin name="!WP" x="12.7" y="-5.08" length="middle" rot="R180"/>
 <text x="-10.16" y="10.668" size="1.778" layer="95">&gt;NAME</text>
 <text x="-10.16" y="-12.192" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="LTC4360">
+<wire x1="-10.16" y1="-2.54" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-2.54" x2="-10.16" y2="-2.54" width="0.254" layer="94"/>
+<pin name="IN" x="-15.24" y="10.16" visible="pin" length="middle"/>
+<pin name="OUT" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="GATE" x="15.24" y="10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="GND" x="-15.24" y="0" visible="pin" length="middle"/>
+<text x="-5.08" y="12.7" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<pin name="!ON" x="-15.24" y="5.08" visible="pin" length="middle"/>
+<pin name="!PWRGD" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -8405,6 +8434,29 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="AT45DB641E-MHN-TCT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LTC4360" prefix="U">
+<description>An overvoltage protection IC. Clamps at 5.5V</description>
+<gates>
+<gate name="G$1" symbol="LTC4360" x="0" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="SC70-8">
+<connects>
+<connect gate="G$1" pin="!ON" pad="6"/>
+<connect gate="G$1" pin="!PWRGD" pad="5"/>
+<connect gate="G$1" pin="GATE" pad="8"/>
+<connect gate="G$1" pin="GND" pad="2 3 4"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="7"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="LTC4360CSC8-1#TRMPBFCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
