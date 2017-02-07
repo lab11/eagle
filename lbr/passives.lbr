@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="8.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -63,6 +63,7 @@
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
@@ -71,6 +72,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="no" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="no" active="yes"/>
@@ -82,16 +84,28 @@
 <layer number="108" name="fp8" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="109" name="fp9" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="113" name="IDFDebug" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="124" name="bTestmark" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
 <layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
@@ -117,6 +131,8 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
@@ -538,6 +554,49 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <wire x1="-0.3" y1="0.6" x2="0.3" y2="0" width="0.1524" layer="21"/>
 <wire x1="0.3" y1="0" x2="-0.3" y2="-0.6" width="0.1524" layer="21"/>
 </package>
+<package name="SMA">
+<smd name="P$1" x="-2.25" y="0" dx="2" dy="2" layer="1"/>
+<smd name="P$2" x="2.25" y="0" dx="2" dy="2" layer="1"/>
+<text x="-3" y="1.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3" y="-3" size="1.27" layer="25">&gt;VALUE</text>
+<wire x1="-0.75" y1="1" x2="-0.75" y2="-1" width="0.127" layer="25"/>
+</package>
+<package name="WURTH744777910">
+<smd name="P$1" x="-3" y="0" dx="2" dy="1.7" layer="1"/>
+<smd name="P$2" x="3" y="0" dx="2" dy="1.7" layer="1"/>
+<text x="-4" y="2" size="1.27" layer="25">&gt;NAME</text>
+<text x="-4" y="-3" size="1.27" layer="27">10 uH</text>
+</package>
+<package name="SOD323">
+<smd name="P$1" x="-1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
+<smd name="P$2" x="1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
+<text x="0" y="1.5" size="1.27" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="-1.05" y1="0.825" x2="1.05" y2="0.825" width="0.127" layer="25"/>
+<wire x1="1.05" y1="0.825" x2="1.05" y2="-0.825" width="0.127" layer="25"/>
+<wire x1="1.05" y1="-0.825" x2="-1.05" y2="-0.825" width="0.127" layer="25"/>
+<wire x1="-1.05" y1="-0.825" x2="-1.05" y2="0.825" width="0.127" layer="25"/>
+<wire x1="-0.635" y1="0.825" x2="-0.635" y2="-0.825" width="0.127" layer="21"/>
+</package>
+<package name="SOT-23F">
+<smd name="P$3" x="0" y="1.05" dx="0.8" dy="0.9" layer="1"/>
+<smd name="P$1" x="-0.95" y="-1.05" dx="0.8" dy="0.9" layer="1"/>
+<smd name="P$2" x="0.95" y="-1.05" dx="0.8" dy="0.9" layer="1"/>
+<wire x1="-1.45" y1="0.9" x2="-1.45" y2="-0.9" width="0.127" layer="21"/>
+<wire x1="-1.45" y1="-0.9" x2="1.45" y2="-0.9" width="0.127" layer="21"/>
+<wire x1="1.45" y1="-0.9" x2="1.45" y2="0.9" width="0.127" layer="21"/>
+<wire x1="1.45" y1="0.9" x2="-1.45" y2="0.9" width="0.127" layer="21"/>
+<text x="0" y="2" size="1.27" layer="21" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="IHL2525CZ-11">
+<smd name="P$1" x="-2.921" y="0" dx="2.413" dy="3.429" layer="1"/>
+<smd name="P$2" x="2.921" y="0" dx="2.413" dy="3.429" layer="1"/>
+<wire x1="-3.2385" y1="3.2385" x2="3.2385" y2="3.2385" width="0.127" layer="21"/>
+<wire x1="3.2385" y1="3.2385" x2="3.2385" y2="-3.2385" width="0.127" layer="21"/>
+<wire x1="3.2385" y1="-3.2385" x2="-3.2385" y2="-3.2385" width="0.127" layer="21"/>
+<wire x1="-3.2385" y1="-3.2385" x2="-3.2385" y2="3.2385" width="0.127" layer="21"/>
+<text x="-3.175" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.175" y="-5.08" size="1.27" layer="21">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -673,6 +732,23 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <text x="0" y="1.524" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
 <wire x1="1.27" y1="1.27" x2="0.508" y2="1.778" width="0.254" layer="94"/>
 <wire x1="1.27" y1="-1.27" x2="2.032" y2="-1.778" width="0.254" layer="94"/>
+</symbol>
+<symbol name="DIODE_SCHOTTKY">
+<pin name="ANODE" x="-5.08" y="0" visible="off" length="short"/>
+<pin name="CATHODE" x="5.08" y="0" visible="off" length="short" rot="R180"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.032" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-2.032" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+<text x="0" y="1.524" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="1.27" y1="2.032" x2="0.508" y2="2.032" width="0.254" layer="94"/>
+<wire x1="0.508" y1="2.032" x2="0.508" y2="1.524" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.032" x2="2.032" y2="-2.032" width="0.254" layer="94"/>
+<wire x1="2.032" y1="-2.032" x2="2.032" y2="-1.524" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -839,6 +915,15 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </technologies>
 </device>
 <device name="DFE322512C" package="DFE322512C">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="IHL2525CZ-11" package="IHL2525CZ-11">
 <connects>
 <connect gate="G$1" pin="1" pad="P$1"/>
 <connect gate="G$1" pin="2" pad="P$2"/>
@@ -1030,10 +1115,44 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 <gate name="G$1" symbol="DIODE_ZENER" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="0402_DIODE">
+<device name="0402" package="0402_DIODE">
 <connects>
 <connect gate="G$1" pin="ANODE" pad="ANODE"/>
 <connect gate="G$1" pin="CATHODE" pad="CATHODE"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOT323" package="SOD323">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="P$2"/>
+<connect gate="G$1" pin="CATHODE" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIODE_SCHOTTKY" prefix="D">
+<gates>
+<gate name="G$1" symbol="DIODE_SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="CMSH1" package="SMA">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="P$2"/>
+<connect gate="G$1" pin="CATHODE" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SOT-23F" package="SOT-23F">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="P$1"/>
+<connect gate="G$1" pin="CATHODE" pad="P$3"/>
 </connects>
 <technologies>
 <technology name=""/>
