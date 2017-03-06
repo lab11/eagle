@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.0">
+<eagle version="8.0.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5243,7 +5243,43 @@ RF Switch</text>
 <wire x1="22.86" y1="0" x2="22.86" y2="17.78" width="0.254" layer="94"/>
 <wire x1="22.86" y1="17.78" x2="0" y2="17.78" width="0.254" layer="94"/>
 <wire x1="0" y1="17.78" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="0" y="20.32" size="1.778" layer="94">&gt;NAME</text>
+<text x="0" y="20.32" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="BQ34Z100-G1">
+<pin name="P2" x="-5.08" y="17.78" length="middle"/>
+<pin name="VEN" x="-5.08" y="15.24" length="middle"/>
+<pin name="P1" x="-5.08" y="12.7" length="middle"/>
+<pin name="BAT" x="-5.08" y="10.16" length="middle"/>
+<pin name="CE" x="-5.08" y="7.62" length="middle"/>
+<pin name="REGIN" x="-5.08" y="5.08" length="middle"/>
+<pin name="REG25" x="-5.08" y="2.54" length="middle"/>
+<pin name="VSS" x="25.4" y="2.54" length="middle" rot="R180"/>
+<pin name="SRP" x="25.4" y="5.08" length="middle" rot="R180"/>
+<pin name="SRN" x="25.4" y="7.62" length="middle" rot="R180"/>
+<pin name="P6/TS" x="25.4" y="10.16" length="middle" rot="R180"/>
+<pin name="P5/HDQ" x="25.4" y="12.7" length="middle" rot="R180"/>
+<pin name="P4/SCL" x="25.4" y="15.24" length="middle" rot="R180"/>
+<pin name="P3/SDA" x="25.4" y="17.78" length="middle" rot="R180"/>
+<wire x1="0" y1="0" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="20.32" y2="20.32" width="0.254" layer="94"/>
+<wire x1="20.32" y1="20.32" x2="0" y2="20.32" width="0.254" layer="94"/>
+<wire x1="0" y1="20.32" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="0" y="22.86" size="1.778" layer="94">&gt;NAME</text>
+<text x="0" y="-5.08" size="1.778" layer="94">&gt;VALUE</text>
+</symbol>
+<symbol name="LM234">
+<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<pin name="R" x="7.62" y="0" length="short" rot="R180"/>
+<pin name="V+" x="0" y="7.62" length="short" rot="R270"/>
+<pin name="V-" x="0" y="-7.62" length="short" rot="R90"/>
+<text x="-7.62" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -8584,6 +8620,57 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="LT3652EDD#PBF-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BQ34Z100-G1">
+<description>multi-chemistry wide range fuel gauge</description>
+<gates>
+<gate name="G$1" symbol="BQ34Z100-G1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TSSOP-14/5MM">
+<connects>
+<connect gate="G$1" pin="BAT" pad="4"/>
+<connect gate="G$1" pin="CE" pad="5"/>
+<connect gate="G$1" pin="P1" pad="3"/>
+<connect gate="G$1" pin="P2" pad="1"/>
+<connect gate="G$1" pin="P3/SDA" pad="14"/>
+<connect gate="G$1" pin="P4/SCL" pad="13"/>
+<connect gate="G$1" pin="P5/HDQ" pad="12"/>
+<connect gate="G$1" pin="P6/TS" pad="11"/>
+<connect gate="G$1" pin="REG25" pad="7"/>
+<connect gate="G$1" pin="REGIN" pad="6"/>
+<connect gate="G$1" pin="SRN" pad="10"/>
+<connect gate="G$1" pin="SRP" pad="9"/>
+<connect gate="G$1" pin="VEN" pad="2"/>
+<connect gate="G$1" pin="VSS" pad="8"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-39949-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LM234" prefix="U">
+<description>3-terminal temperature sensor</description>
+<gates>
+<gate name="G$1" symbol="LM234" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOIC-8">
+<connects>
+<connect gate="G$1" pin="R" pad="1"/>
+<connect gate="G$1" pin="V+" pad="4"/>
+<connect gate="G$1" pin="V-" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="497-1549-1-ND"/>
 </technology>
 </technologies>
 </device>
