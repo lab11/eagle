@@ -5245,6 +5245,7 @@ RF Switch</text>
 <wire x1="0" y1="17.78" x2="0" y2="0" width="0.254" layer="94"/>
 <text x="0" y="20.32" size="1.778" layer="95">&gt;NAME</text>
 <pin name="GND" x="12.7" y="-2.54" length="short" rot="R90"/>
+<text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 <symbol name="BQ34Z100-G1">
 <pin name="P2" x="-5.08" y="17.78" length="middle"/>
@@ -5265,8 +5266,8 @@ RF Switch</text>
 <wire x1="20.32" y1="0" x2="20.32" y2="20.32" width="0.254" layer="94"/>
 <wire x1="20.32" y1="20.32" x2="0" y2="20.32" width="0.254" layer="94"/>
 <wire x1="0" y1="20.32" x2="0" y2="0" width="0.254" layer="94"/>
-<text x="0" y="22.86" size="1.778" layer="94">&gt;NAME</text>
-<text x="0" y="-5.08" size="1.778" layer="94">&gt;VALUE</text>
+<text x="0" y="22.86" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-5.08" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 <symbol name="LM234">
 <wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
@@ -5281,6 +5282,19 @@ RF Switch</text>
 <pin name="V+" x="0" y="7.62" length="short" rot="R270"/>
 <pin name="V-" x="0" y="-7.62" length="short" rot="R90"/>
 <text x="-7.62" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+</symbol>
+<symbol name="MAX9910">
+<wire x1="-7.62" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
+<pin name="IN+" x="-10.16" y="2.54" length="short"/>
+<pin name="VSS" x="-10.16" y="-7.62" length="short"/>
+<pin name="IN-" x="-10.16" y="-2.54" length="short"/>
+<pin name="OUT" x="10.16" y="0" length="short" rot="R180"/>
+<pin name="VDD" x="-10.16" y="7.62" length="short"/>
+<text x="-7.62" y="11.176" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-12.7" size="1.778" layer="97">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -8627,7 +8641,7 @@ even at very small sense voltages.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="BQ34Z100-G1">
+<deviceset name="BQ34Z100-G1" prefix="U">
 <description>multi-chemistry wide range fuel gauge</description>
 <gates>
 <gate name="G$1" symbol="BQ34Z100-G1" x="0" y="0"/>
@@ -8673,6 +8687,28 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="497-1549-1-ND"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAX9910" prefix="U">
+<description>Operational Amplifiers - Op Amps 200kHz 4uA Rail-Rail Op Amp</description>
+<gates>
+<gate name="G$1" symbol="MAX9910" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SC70">
+<connects>
+<connect gate="G$1" pin="IN+" pad="1"/>
+<connect gate="G$1" pin="IN-" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="5"/>
+<connect gate="G$1" pin="VSS" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MOUSER" value="700-MAX9910EXKT"/>
 </technology>
 </technologies>
 </device>
