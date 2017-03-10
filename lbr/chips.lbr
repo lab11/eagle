@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5547,6 +5547,17 @@ RF Switch</text>
 <text x="-7.62" y="17.78" size="1.778" layer="95" align="bottom-center">&gt;NAME</text>
 <text x="0" y="15.24" size="1.778" layer="95" rot="R180" align="bottom-center">MAX6752</text>
 </symbol>
+<symbol name="LM3480">
+<wire x1="-10.16" y1="5.08" x2="-10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-5.08" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="10.16" y2="5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="5.08" x2="-10.16" y2="5.08" width="0.254" layer="94"/>
+<pin name="IN" x="-15.24" y="2.54" visible="pin" length="middle"/>
+<pin name="OUT" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="GND" x="0" y="-10.16" visible="pin" length="middle" rot="R90"/>
+<text x="-5.08" y="5.08" size="1.778" layer="95" align="bottom-center">&gt;NAME</text>
+<text x="7.62" y="5.08" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BQ25504" prefix="U">
@@ -9135,6 +9146,26 @@ with External Sense Resistor</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="MAX6752KA31+TCT-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TILM3480" prefix="U">
+<description>Very simple LDO 100ma 3v3</description>
+<gates>
+<gate name="G$1" symbol="LM3480" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-23">
+<connects>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="IN" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="3.3V">
+<attribute name="DIGIKEY" value="LM3480IM3-3.3/NOPBCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
