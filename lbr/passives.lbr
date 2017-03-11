@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -681,8 +681,8 @@ Digikey part Y9102CT-ND</description>
 <smd name="B2" x="-0.4" y="-0.8" dx="0.5" dy="0.35" layer="1"/>
 <smd name="C2" x="0.4" y="-0.8" dx="0.5" dy="0.35" layer="1"/>
 <text x="0" y="0" size="0.3" layer="47" font="vector" ratio="12" align="bottom-center">0.50 mm tall</text>
-<text x="-2.032" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="2.032" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;VALUE</text>
+<text x="-1.778" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.778" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;VALUE</text>
 <polygon width="0.01" layer="41">
 <vertex x="-0.9" y="0.9"/>
 <vertex x="-0.7" y="0.9"/>
