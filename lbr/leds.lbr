@@ -341,7 +341,7 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="LED" prefix="LED">
+<deviceset name="LED" prefix="D">
 <description>LED</description>
 <gates>
 <gate name="G$1" symbol="LED" x="0" y="0"/>
