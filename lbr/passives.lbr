@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -720,6 +720,39 @@ Digikey part Y9102CT-ND</description>
 <vertex x="-0.9" y="-0.9"/>
 </polygon>
 </package>
+<package name="HMD8">
+<description>HMD8
+
+Possibly ROHM-specific pacakge
+Drawn from http://rohmfs.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb521zs8a30.pdf
+DigiKey RB521ZS8A30TE61CT-ND</description>
+<smd name="2K" x="-0.2" y="0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="1K" x="-0.6" y="0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="1A" x="-0.6" y="-0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="2A" x="-0.2" y="-0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="3A" x="0.2" y="-0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="4A" x="0.6" y="-0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="4K" x="0.6" y="0.25" dx="0.25" dy="0.3" layer="1"/>
+<smd name="3K" x="0.2" y="0.25" dx="0.25" dy="0.3" layer="1"/>
+<wire x1="-0.8" y1="0.4" x2="0.8" y2="0.4" width="0.1" layer="21"/>
+<wire x1="0.8" y1="0.4" x2="0.8" y2="-0.4" width="0.1" layer="21"/>
+<wire x1="0.8" y1="-0.4" x2="-0.8" y2="-0.4" width="0.1" layer="21"/>
+<wire x1="-0.8" y1="-0.4" x2="-0.8" y2="0.4" width="0.1" layer="21"/>
+<polygon width="0.1" layer="21">
+<vertex x="-0.6" y="0.2"/>
+<vertex x="-0.4" y="0.2"/>
+<vertex x="-0.4" y="-0.2"/>
+<vertex x="-0.6" y="-0.2"/>
+</polygon>
+<polygon width="0.1" layer="21">
+<vertex x="-1" y="0.2"/>
+<vertex x="-1.2" y="0.2"/>
+<vertex x="-1.2" y="-0.2"/>
+<vertex x="-1" y="-0.2"/>
+</polygon>
+<text x="0" y="0.508" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.508" size="1.016" layer="27" font="vector" ratio="12" rot="R180" align="bottom-center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -1328,6 +1361,34 @@ Example part: 1K array Digikey Y7102CT-ND</description>
 <connect gate="C" pin="2" pad="C2"/>
 <connect gate="D" pin="1" pad="D1"/>
 <connect gate="D" pin="2" pad="D2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DIODE_SCHOTTKY_ARRAY-4" prefix="D">
+<description>Array of 4 Schottky Diodes
+
+Example part: RB521ZS8A30TE61CT-ND</description>
+<gates>
+<gate name="A" symbol="DIODE_SCHOTTKY" x="0" y="10.16"/>
+<gate name="B" symbol="DIODE_SCHOTTKY" x="0" y="2.54"/>
+<gate name="C" symbol="DIODE_SCHOTTKY" x="0" y="-5.08"/>
+<gate name="D" symbol="DIODE_SCHOTTKY" x="0" y="-12.7"/>
+</gates>
+<devices>
+<device name="HMD8" package="HMD8">
+<connects>
+<connect gate="A" pin="ANODE" pad="1A"/>
+<connect gate="A" pin="CATHODE" pad="1K"/>
+<connect gate="B" pin="ANODE" pad="2A"/>
+<connect gate="B" pin="CATHODE" pad="2K"/>
+<connect gate="C" pin="ANODE" pad="3A"/>
+<connect gate="C" pin="CATHODE" pad="3K"/>
+<connect gate="D" pin="ANODE" pad="4A"/>
+<connect gate="D" pin="CATHODE" pad="4K"/>
 </connects>
 <technologies>
 <technology name=""/>
