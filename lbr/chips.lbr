@@ -8381,7 +8381,7 @@ DS RMS-to-DC Converter</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SAM4LC8BA">
+<deviceset name="SAM4LC8BA" prefix="U">
 <description>SAM4L Microcontroller. 64QFN Package. 512 Flash.</description>
 <gates>
 <gate name="U1" symbol="SAM4LC8BA" x="0" y="7.62"/>
