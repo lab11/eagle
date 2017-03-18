@@ -1,0 +1,502 @@
+if (board) board(B) {
+
+    //File names for output.
+    string fileName_XYRS = filesetext(B.name, ".XYRS");
+    string fileName_PASTE = filesetext(B.name, ".PASTE");
+
+    //Vars for finding max size of board.
+    int Board_maxX = INT_MIN;
+    int Board_minX = INT_MAX;
+    int Board_maxY = INT_MIN;
+    int Board_minY = INT_MAX;
+
+	int temp_maxX = INT_MIN;
+    int temp_minX = INT_MAX;
+    int temp_maxY = INT_MIN;
+    int temp_minY = INT_MAX;
+
+
+	real w2 = 0;
+	real wkeep = 0;
+
+    B.wires(W)
+    {
+        if (W.layer == 20)
+        {
+			//w2 = W.width/2;
+
+			temp_minX = min(W.x1 - w2, W.x2 - w2);
+			temp_minY = min(W.y1 - w2, W.y2 - w2);
+			temp_maxX = max(W.x1 + w2, W.x2 + w2);
+			temp_maxY = max(W.y1 + w2, W.y2 + w2);
+
+			if (W.arc)
+			{
+				if (W.arc.angle2 > 360)
+				{
+					temp_maxX = W.arc.xc + W.arc.radius + w2;
+				}
+				if (((W.arc.angle1 <  90) && (W.arc.angle2 >  90)) || (W.arc.angle2 > 450))
+				{
+					temp_maxY = W.arc.yc + W.arc.radius + w2;
+				}
+				if (((W.arc.angle1 < 180) && (W.arc.angle2 > 180)) || (W.arc.angle2 > 540))
+				{
+					temp_minX = W.arc.xc - W.arc.radius - w2;
+				}
+				if (((W.arc.angle1 < 270) && (W.arc.angle2 > 270)) || (W.arc.angle2 > 630))
+				{
+					temp_minY = W.arc.yc - W.arc.radius - w2;
+				}
+			}
+			Board_minX = min(Board_minX, temp_minX);
+			Board_maxX = max(Board_maxX, temp_maxX);
+			Board_minY = min(Board_minY, temp_minY);
+			Board_maxY = max(Board_maxY, temp_maxY);
+        }
+    }
+	//Check for circle dimension layer
+	B.circles(C)
+	{
+		if(C.layer == 20)
+		{
+			//w2 = C.width / 2;
+			temp_maxX = C.x + C.radius + w2;
+			temp_minX = C.x - C.radius - w2;
+			temp_maxY = C.y + C.radius + w2;
+			temp_minY = C.y - C.radius - w2;
+
+			Board_minX = min(Board_minX, temp_minX);
+			Board_maxX = max(Board_maxX, temp_maxX);
+			Board_minY = min(Board_minY, temp_minY);
+			Board_maxY = max(Board_maxY, temp_maxY);
+		}
+	}
+	//Check parts
+	B.elements(T)
+	{
+		T.package.wires(Y)
+		{
+			if (Y.layer == 20)
+			{
+				temp_minX = min(Y.x1 - w2, Y.x2 - w2);
+				temp_minY = min(Y.y1 - w2, Y.y2 - w2);
+				temp_maxX = max(Y.x1 + w2, Y.x2 + w2);
+				temp_maxY = max(Y.y1 + w2, Y.y2 + w2);
+
+				if (Y.arc)
+				{
+					if (Y.arc.angle2 > 360)
+					{
+						temp_maxX = Y.arc.xc + Y.arc.radius + w2;
+					}
+					if (((Y.arc.angle1 <  90) && (Y.arc.angle2 >  90)) || (Y.arc.angle2 > 450))
+					{
+						temp_maxY = Y.arc.yc + Y.arc.radius + w2;
+					}
+					if (((Y.arc.angle1 < 180) && (Y.arc.angle2 > 180)) || (Y.arc.angle2 > 540))
+					{
+						temp_minX = Y.arc.xc - Y.arc.radius - w2;
+					}
+					if (((Y.arc.angle1 < 270) && (Y.arc.angle2 > 270)) || (Y.arc.angle2 > 630))
+					{
+						temp_minY = Y.arc.yc - Y.arc.radius - w2;
+					}
+				}
+				Board_minX = min(Board_minX, temp_minX);
+				Board_maxX = max(Board_maxX, temp_maxX);
+				Board_minY = min(Board_minY, temp_minY);
+				Board_maxY = max(Board_maxY, temp_maxY);
+			}
+		}
+
+		T.package.circles(P)
+		{
+			if(P.layer == 20)
+			{
+				//w2 = P.width / 2;
+				temp_maxX = P.x + P.radius + w2;
+				temp_minX = P.x - P.radius - w2;
+				temp_maxY = P.y + P.radius + w2;
+				temp_minY = P.y - P.radius - w2;
+
+				Board_minX = min(Board_minX, temp_minX);
+				Board_maxX = max(Board_maxX, temp_maxX);
+				Board_minY = min(Board_minY, temp_minY);
+				Board_maxY = max(Board_maxY, temp_maxY);
+			}
+		}
+
+	}
+
+    //Build XYRS Data
+    output(fileName_XYRS)
+    {
+        //Build File Header
+        printf("#MacroFab, INC. XYRS data for %s.\n",B.name);
+		printf("#Board Size is %f x %f.\n#\n",u2mil(Board_maxX - Board_minX),u2mil(Board_maxY - Board_minY));
+        printf("#Placement Data:\n");
+        printf("#Designator\tX-Loc\tY-Loc\tRotation\tSide\tType\tX-Size\tY-Size\tValue\tFootprint\tPopulate\tMPN\tMPN1\tMPN2\tMPN3\n");
+		//printf("#Designator\tX-Loc\tY-Loc\tRotation\tSide\tType\tX-Size\tY-Size\tValue\tFootprint\tPopulate\tMPN\tSMT Pins\tPTH Pins\n"); //Outputs number of SMT and PTH Pins
+        //Part level
+
+		B.elements(E) if (E.populate)
+		{
+			int type = 0;
+
+            int side = 0;
+
+			int x_cen = 0;
+			int y_cen = 0;
+
+			int xmax = INT_MIN;
+            int xmin = INT_MAX;
+            int ymax = INT_MIN;
+			int ymin = INT_MAX;
+
+            int footprint_xmax = INT_MIN;
+            int footprint_xmin = INT_MAX;
+            int footprint_ymax = INT_MIN;
+            int footprint_ymin = INT_MAX;
+
+			int x_offset = 0;
+			int y_offset = 0;
+
+			int x_correction = 0;
+			int y_correction = 0;
+
+            int smd_cnt = 0;
+            int pth_cnt = 0;
+
+			real p_angle = 0;
+
+			string footprint = "";
+
+			string MPN_Value = "";
+			string MPN1_Value = "";
+			string MPN2_Value = "";
+			string MPN3_Value = "";
+			string Populate_Value = "1";
+			int Ignore_Value = 0;
+
+			footprint = E.package.name;
+
+			//First find the all the meta data.
+			E.package.contacts(C)
+            {
+				if (C.x > xmax) xmax = C.x;
+                if (C.y > ymax) ymax = C.y;
+                if (C.x < xmin) xmin = C.x;
+				if (C.y < ymin) ymin = C.y;
+
+                if (C.smd)
+                {
+                    smd_cnt++;
+                }
+                else
+                {
+                    pth_cnt++;
+                }
+            }
+
+			//Rotate if on backside and set side variable.
+			if(E.mirror == 0)
+			{
+				side = 1;
+				p_angle = E.angle;
+			}
+			else
+			{
+				side = 2;
+				p_angle = 360 - E.angle;
+				if(p_angle == 360)
+				{
+					p_angle = 0;
+				}
+			}
+
+            //SMD or PTH part?
+            if(pth_cnt == 0)
+            {
+                type = 1;
+            }
+            else
+            {
+                type = 2;
+            }
+
+			//Find offset.
+			x_offset = E.x;
+			y_offset = E.y;
+
+			x_cen = ((xmin + xmax)/2);
+			y_cen = ((ymin + ymax)/2);
+
+
+			//Get Attributes MPN and POPULATE if they exist
+			E.attributes(A)
+			{
+				if(A.name == "MPN")
+				{
+					MPN_Value = A.value;
+				}
+				if(A.name == "MPN1")
+				{
+					MPN1_Value = A.value;
+				}
+				if(A.name == "MPN2")
+				{
+					MPN2_Value = A.value;
+				}
+				if(A.name == "MPN3")
+				{
+					MPN3_Value = A.value;
+				}
+				if(A.name == "POPULATE")
+				{
+					if(A.value == "0" || A.value == "1")
+					{
+						Populate_Value = A.value;
+					}
+				}
+				if(A.name == "IGNORE")
+				{
+					if(A.value == "1")
+					{
+						Ignore_Value = 1;
+					}
+				}
+
+			}
+
+			//Look through the board's library for the footprint.
+			B.libraries(L)
+			{
+				L.packages(PAC)
+				{
+					//Match element footprint to libary footprint
+					if(footprint == PAC.name)
+					{
+						//Calculate the size of the footprint.
+						PAC.contacts(FC)
+						{
+							//Find Boundry on SMD pads
+							if (FC.smd)
+							{
+								real diangonal_length = 0;
+								real diangonal_angle0 = 0;
+								real diangonal_angle1 = 0;
+								real diangonal_X0 = 0;
+								real diangonal_Y0 = 0;
+								real diangonal_X1 = 0;
+								real diangonal_Y1 = 0;
+
+								if(FC.smd.angle == 0 || FC.smd.angle == 180)
+								{
+									if ((FC.x + (FC.smd.dx / 2)) > footprint_xmax) footprint_xmax = (FC.x + (FC.smd.dx / 2));
+									if ((FC.y + (FC.smd.dy / 2)) > footprint_ymax) footprint_ymax = (FC.y + (FC.smd.dy / 2));
+									if ((FC.x - (FC.smd.dx / 2)) < footprint_xmin) footprint_xmin = (FC.x - (FC.smd.dx / 2));
+									if ((FC.y - (FC.smd.dy / 2)) < footprint_ymin) footprint_ymin = (FC.y - (FC.smd.dy / 2));
+								}
+								else if(FC.smd.angle == 90 || FC.smd.angle == 270)
+								{
+									if ((FC.x + (FC.smd.dy / 2)) > footprint_xmax) footprint_xmax = (FC.x + (FC.smd.dy / 2));
+									if ((FC.y + (FC.smd.dx / 2)) > footprint_ymax) footprint_ymax = (FC.y + (FC.smd.dx / 2));
+									if ((FC.x - (FC.smd.dy / 2)) < footprint_xmin) footprint_xmin = (FC.x - (FC.smd.dy / 2));
+									if ((FC.y - (FC.smd.dx / 2)) < footprint_ymin) footprint_ymin = (FC.y - (FC.smd.dx / 2));
+								}
+								//Non normal SMD angles. One else to rule them all and keep the code that binds them clean. Trig time.
+								else
+								{
+									//Find half of the diangonal of the rectangle SMD pad.
+									diangonal_length = sqrt(pow((FC.smd.dx / 2),2)+pow((FC.smd.dy / 2),2));
+
+									//Find the angle of the dianonal in relation to the X-Y plane. atan() returns with radians.
+									diangonal_angle0 = FC.smd.angle - (90 - (atan((u2mil(FC.smd.dx) / 2)/(u2mil(FC.smd.dy) / 2)))*(180/PI));
+									diangonal_angle1 = FC.smd.angle + (atan((u2mil(FC.smd.dy) / 2)/(u2mil(FC.smd.dx) / 2))*(180/PI));
+
+									//printf("length = %5.3f\tangle0 = %5.3f\tangle1 = %5.3f\n", u2mil(int(diangonal_length)), diangonal_angle0, diangonal_angle1);
+
+									diangonal_X0 = abs(diangonal_length * cos(diangonal_angle0*((PI/180))));
+									diangonal_Y0 = abs(diangonal_length * sin(diangonal_angle0*((PI/180))));
+
+									diangonal_X1 = abs(diangonal_length * cos(diangonal_angle1*((PI/180))));
+									diangonal_Y1 = abs(diangonal_length * sin(diangonal_angle1*((PI/180))));
+
+									//printf("X0 = %5.3f\tY0 = %5.3f\tX1 = %5.3f\tY1 = %5.3f\n", u2mil(int(diangonal_X0)), u2mil(int(diangonal_Y0)), u2mil(int(diangonal_X1)), u2mil(int(diangonal_Y1)));
+
+									if ((FC.x + diangonal_X0) > footprint_xmax) footprint_xmax = (FC.x + diangonal_X0);
+									if ((FC.y + diangonal_Y0) > footprint_ymax) footprint_ymax = (FC.y + diangonal_Y0);
+									if ((FC.x - diangonal_X0) < footprint_xmin) footprint_xmin = (FC.x - diangonal_X0);
+									if ((FC.y - diangonal_Y0) < footprint_ymin) footprint_ymin = (FC.y - diangonal_Y0);
+
+									if ((FC.x + diangonal_X1) > footprint_xmax) footprint_xmax = (FC.x + diangonal_X1);
+									if ((FC.y + diangonal_Y1) > footprint_ymax) footprint_ymax = (FC.y + diangonal_Y1);
+									if ((FC.x - diangonal_X1) < footprint_xmin) footprint_xmin = (FC.x - diangonal_X1);
+									if ((FC.y - diangonal_Y1) < footprint_ymin) footprint_ymin = (FC.y - diangonal_Y1);
+								}
+							}
+							//Find Boundry on PTH pads. Does not take in account annular ring.
+							else
+							{
+								if ((FC.x + (FC.pad.drill / 2)) > footprint_xmax) footprint_xmax = (FC.x + (FC.pad.drill / 2));
+								if ((FC.y + (FC.pad.drill / 2)) > footprint_ymax) footprint_ymax = (FC.y + (FC.pad.drill / 2));
+								if ((FC.x - (FC.pad.drill / 2)) < footprint_xmin) footprint_xmin = (FC.x - (FC.pad.drill / 2));
+								if ((FC.y - (FC.pad.drill / 2)) < footprint_ymin) footprint_ymin = (FC.y - (FC.pad.drill / 2));
+							}
+						}
+						//Check footprint for polygons and the like.
+						PAC.polygons(Poly)
+						{
+							Poly.wires(Y)
+							{
+								if (Y.layer == 1 || Y.layer == 16)
+								{
+									temp_minX = min(Y.x1 - w2, Y.x2 - w2);
+									temp_minY = min(Y.y1 - w2, Y.y2 - w2);
+									temp_maxX = max(Y.x1 + w2, Y.x2 + w2);
+									temp_maxY = max(Y.y1 + w2, Y.y2 + w2);
+
+									if (Y.arc)
+									{
+										if (Y.arc.angle2 > 360)
+										{
+											temp_maxX = Y.arc.xc + Y.arc.radius + w2;
+										}
+										if (((Y.arc.angle1 <  90) && (Y.arc.angle2 >  90)) || (Y.arc.angle2 > 450))
+										{
+											temp_maxY = Y.arc.yc + Y.arc.radius + w2;
+										}
+										if (((Y.arc.angle1 < 180) && (Y.arc.angle2 > 180)) || (Y.arc.angle2 > 540))
+										{
+											temp_minX = Y.arc.xc - Y.arc.radius - w2;
+										}
+										if (((Y.arc.angle1 < 270) && (Y.arc.angle2 > 270)) || (Y.arc.angle2 > 630))
+										{
+											temp_minY = Y.arc.yc - Y.arc.radius - w2;
+										}
+									}
+									footprint_xmin = min(footprint_xmin, temp_minX);
+									footprint_xmax = max(footprint_xmax, temp_maxX);
+									footprint_ymin = min(footprint_ymin, temp_minY);
+									footprint_ymax = max(footprint_ymax, temp_maxY);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			//Check for non centered origin parts!
+			//offset in the X direction
+			if((abs(footprint_xmax) != abs(footprint_xmin)) && (abs(footprint_ymax) == abs(footprint_ymin)))
+			{
+				if(side == 1)
+				{
+					x_correction = cos(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2);
+					x_cen = x_offset + x_correction;
+
+					y_correction = sin(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2);
+					y_cen = y_offset + y_correction;
+				}
+				else
+				{
+					x_correction = cos(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2);
+					x_cen = x_offset - x_correction;
+
+					y_correction = sin(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2);
+					y_cen = y_offset - y_correction;
+				}
+			}
+
+			//offset in the Y direction
+			else if((abs(footprint_xmax) == abs(footprint_xmin)) && abs(footprint_ymax) != abs(footprint_ymin))
+			{
+				x_correction = sin(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2);
+				x_cen = x_offset - x_correction;
+
+				y_correction = cos(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2);
+				y_cen = y_offset + y_correction;
+			}
+
+			//offset in the X and Y direction
+			else if((abs(footprint_xmax) != abs(footprint_xmin)) && (abs(footprint_ymax) != abs(footprint_ymin)))
+			{
+				if(side == 1)
+				{
+					x_correction = (cos(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2)) - (sin(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2));
+					x_cen = x_offset + x_correction;
+
+					y_correction = (sin(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2)) + (cos(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2));
+					y_cen = y_offset + y_correction;
+				}
+				else
+				{
+					x_correction = (cos(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2)) + (sin(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2));
+					x_cen = x_offset - x_correction;
+
+					y_correction = (sin(p_angle*(PI/180)) * ((footprint_xmax + footprint_xmin)/2)) - (cos(p_angle*(PI/180)) * ((footprint_ymax + footprint_ymin)/2));
+					y_cen = y_offset - y_correction;
+				}
+			}
+			//Below is for debugging.
+			//printf("F_xmax = %5.2f\tF_xmin = %5.2f\tF_ymax = %5.2f\tF_ymin = %5.2f\tx_offset = %5.2f\ty_offset = %5.2f\n", u2mil(footprint_xmax), u2mil(footprint_xmin), u2mil(footprint_ymax), u2mil(footprint_ymin), u2mil(x_offset), u2mil(y_offset));
+
+			//Data built time to print.
+			if (!Ignore_Value) {
+				printf("%s\t%5.2f\t%5.2f\t%.0f\t%d\t%d\t%5.2f\t%5.2f\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",E.name, u2mil(x_cen-Board_minX), u2mil(y_cen-Board_minY),p_angle, side, type, u2mil(footprint_xmax - footprint_xmin), u2mil(footprint_ymax - footprint_ymin), E.value, E.package.name, Populate_Value, MPN_Value, MPN1_Value, MPN2_Value, MPN3_Value);
+			}
+			//Outputs number of SMT and PTH Pins
+			//printf("%s\t%5.2f\t%5.2f\t%.0f\t%d\t%d\t%5.2f\t%5.2f\t%s\t%s\t%s\t%s\t%d\t%d\n",E.name, u2mil(x_cen-Board_minX), u2mil(y_cen-Board_minY),p_angle, side, type, u2mil(footprint_xmax - footprint_xmin), u2mil(footprint_ymax - footprint_ymin), E.value, E.package.name, Populate_Value, MPN_Value, smd_cnt, pth_cnt);
+		}
+	}
+
+    //Build Paste Top Files
+	//These are not used anymore but we will keep it around.
+    output(fileName_PASTE)
+    {
+        //Build File Header
+        printf("#MacroFab, INC. PASTE data for %s.\n#\n",B.name);
+        printf("#PASTE Data:\n");
+        printf("#Designator\tX-Loc\tY-Loc\tSide\tType\tX-Size\tY-Size\n");
+
+        B.elements(E) if (E.populate)
+        {
+            E.package.contacts(C)
+            {
+                int type = 0;
+                int side = 0;
+
+                int x_cen = C.x;
+                int y_cen = C.y;
+
+                int x_size = 0;
+                int y_size = 0;
+
+                if (C.smd)
+                {
+                    type = 1;
+                    x_size = C.smd.dx;
+                    y_size = C.smd.dy;
+                }
+                else
+                {
+                    type = 2;
+                    x_size = C.pad.drill;
+                    y_size = C.pad.drill;
+                }
+
+                if(E.mirror == 0)
+                {
+                    side = 1;
+                }
+                else
+                {
+                    side = 2;
+                }
+
+                printf("%s\t%5.2f\t%5.2f\t%d\t%d\t%5.2f\t%5.2f\n", E.name, u2mil(x_cen-Board_minX), u2mil(y_cen-Board_minY), side, type, u2mil(x_size), u2mil(y_size));
+            }
+        }
+    }
+}
