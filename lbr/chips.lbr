@@ -2910,7 +2910,7 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <text x="0" y="2" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 <smd name="NC" x="0" y="0" dx="1.35" dy="1.65" layer="1"/>
 </package>
-<package name="SOT-23-8-MAXIM">
+<package name="SOT-23-8">
 <wire x1="-1.172" y1="-1.01" x2="-1.172" y2="1.01" width="0.1524" layer="21"/>
 <wire x1="-1.078" y1="-1.01" x2="-1.172" y2="-1.01" width="0.1524" layer="21"/>
 <wire x1="-1.172" y1="1.01" x2="-1.078" y2="1.01" width="0.1524" layer="21"/>
@@ -9167,7 +9167,7 @@ with External Sense Resistor</description>
 <gate name="G$1" symbol="MAX6746" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT-23-8-MAXIM">
+<device name="" package="SOT-23-8">
 <connects>
 <connect gate="G$1" pin="!MR" pad="1"/>
 <connect gate="G$1" pin="!RESET" pad="7"/>
