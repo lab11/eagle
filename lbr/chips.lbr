@@ -2863,7 +2863,7 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <wire x1="-0.5" y1="-0.6" x2="-0.5" y2="0.6" width="0.1" layer="21"/>
 <text x="-0.5" y="1" size="0.6096" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <text x="-0.5" y="-1.5" size="0.6096" layer="27" font="vector" ratio="12">&gt;VALUE</text>
-<circle x="-0.75" y="0.75" radius="0.125" width="0.1" layer="27"/>
+<circle x="-0.75" y="0.75" radius="0.125" width="0.1" layer="21"/>
 </package>
 <package name="U-DFN2020-6">
 <smd name="1" x="-0.65" y="-0.825" dx="0.37" dy="0.45" layer="1"/>
