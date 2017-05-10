@@ -66,6 +66,3 @@ Display Pads Vias Unrouted Dimension;
 Ratsnest;
 Print FILE %N_layer_test.pdf -MIRROR -ROTATE -UPSIDEDOWN -BLACK -SOLID -CAPTION PORTRAIT PAPER letter 100 -1;
 
-SCH:
-
-Print FILE %N_schematic.pdf -CAPTION LANDSCAPE SHEETS ALL;

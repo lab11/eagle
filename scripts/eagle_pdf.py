@@ -83,20 +83,35 @@ if len(sys.argv) > 1:
 
 # Determine the location of this script and the .scr file
 here      = os.path.dirname(os.path.realpath(__file__))
-pdfscr    = os.path.join(here, '..', 'scr', 'pdf.scr')
+pdfscrSch = os.path.join(here, '..', 'scr', 'pdf-sch.scr')
+pdfscrBrd = os.path.join(here, '..', 'scr', 'pdf-brd.scr')
 scr       = os.path.join(here, '..', 'scr', 'script.scr')
-tmpscr    = os.path.join('/', 'tmp', 'script.scr')
+tmpscrSch = os.path.join('/', 'tmp', 'script-sch.scr')
+tmpscrBrd = os.path.join('/', 'tmp', 'script-brd.scr')
 numberpdf = os.path.join(here, 'number_pdf.sh')
 titlepdf  = os.path.join(here, 'pdf_titles.py')
 
-# Create script to run the pdf script
+# Create script to run the pdf script, schematic version
+# We had to split these up because for some reason Eagle > 8.0 doesn't like
+# running schematic and board commands in the same file and would just silently
+# fail to produce output from the board commands
 contents = ''
 with open(scr, 'r') as f:
 	contents = f.read()
 
-contents = contents.replace('%SCRIPT_PATH%', pdfscr)
+contents = contents.replace('%SCRIPT_PATH%', pdfscrSch)
 
-with open(tmpscr, 'w') as f:
+with open(tmpscrSch, 'w') as f:
+	f.write(contents)
+
+# Create script to run the pdf script, board version
+contents = ''
+with open(scr, 'r') as f:
+	contents = f.read()
+
+contents = contents.replace('%SCRIPT_PATH%', pdfscrBrd)
+
+with open(tmpscrBrd, 'w') as f:
 	f.write(contents)
 
 # Figure out the name of the schematic to run this on.
@@ -104,14 +119,17 @@ for sch in glob('*.sch'):
 	sch_name, sch_ext = os.path.splitext(sch)
 
 	# Delete the old pdfs if they exist
-	for pdf in pdf_files + ['layer_test']:
+	for pdf, title in pdf_files + [('layer_test', '~')]:
 		rm('-f', '{}_{}.pdf'.format(sch_name, pdf))
 
 	# Delete the merged version
 	rm ('-f', '{}.pdf'.format(sch))
 
-	# Generate the pdfs
-	eagle('-S', tmpscr, sch)
+	# Generate the schematic pdfs
+	eagle('-S', tmpscrSch, sch)
+
+	# Generate the board pdfs
+	eagle('-S', tmpscrBrd, sch)
 
 	# If a bom is present also convert it to pdf
 	if include_bom:

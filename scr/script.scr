@@ -3,6 +3,6 @@
 
 SCRIPT %SCRIPT_PATH%;
 
-SCH:
+BRD:
 
 quit;

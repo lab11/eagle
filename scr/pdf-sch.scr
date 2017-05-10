@@ -1,0 +1,6 @@
+
+# Create pdfs of a 2 layer board
+
+SCH:
+
+Print FILE %N_schematic.pdf -CAPTION LANDSCAPE SHEETS ALL;
