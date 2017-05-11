@@ -25,10 +25,10 @@ except:
 	sys.exit(1)
 
 try:
-	from sh import pdftk
+	import PyPDF2
 except:
-	print("You need to install pdftk.")
-	print("sudo apt-get install pdftk")
+	print("You need to install pypdf2")
+	print("(sudo) pip install pypdf2")
 	sys.exit(1)
 
 try:
@@ -100,6 +100,8 @@ for sch in glob('*.sch'):
 	if not os.path.exists(brd):
 		print("ERR: No .brd file for {}?".format(sch))
 
+	print("Running for {}".format(sch_name))
+
 	# Delete the old pdfs if they exist
 	for pdf, title in pdf_files + [('layer_test', '~')]:
 		rm('-f', '{}_{}.pdf'.format(sch_name, pdf))
@@ -109,6 +111,7 @@ for sch in glob('*.sch'):
 
 	# Something broke in Eagle with the section specifiers and command blocking,
 	# so work around by just making new scr files that includes a traling quit
+	print("  Generating schematic pdf")
 	with tempfile.NamedTemporaryFile() as temp_scr:
 		with open(pdfscrSch) as source:
 			for line in source:
@@ -119,6 +122,7 @@ for sch in glob('*.sch'):
 		# Generate the schematic pdfs
 		eagle('-S', temp_scr.name, sch)
 
+	print("  Generating board pdf")
 	with tempfile.NamedTemporaryFile() as temp_scr:
 		with open(pdfscrBrd) as source:
 			for line in source:
@@ -131,6 +135,7 @@ for sch in glob('*.sch'):
 
 	# If a bom is present also convert it to pdf
 	if include_bom:
+		print("  Generating BOM pdf")
 		boms = glob('*bom*xls*')
 		if len(boms) > 0:
 			bom_tries = 3
@@ -177,22 +182,21 @@ for sch in glob('*.sch'):
 			continue
 		pdfname = '{}_{}.pdf'.format(sch_name, pdf)
 		if os.path.exists(pdfname):
-			pdfinfo = pdftk(pdfname, 'dump_data')
-			pdfinfol = pdfinfo.strip().split('\n')
-			for line in pdfinfol:
-				items = line.split(':')
-				if len(items) == 2 and items[0] == 'NumberOfPages':
-					numpages = int(items[1].strip())
-					break
+			reader = PyPDF2.PdfFileReader(pdfname)
+			numpages = reader.getNumPages()
 			titles += [title]*numpages
 			pdfs.append(pdfname)
 	if include_bom:
 		pdfs.append('{}_bom.pdf'.format(sch_name))
 
-	args = pdfs + ['cat', 'output', '{}.pdf'.format(sch_name)]
-	pdftk(*args)
+	print("  Merging PDFs...")
+	merger = PyPDF2.PdfFileMerger()
+	for pdf in pdfs:
+		merger.append(pdf)
+	merger.write('{}.pdf'.format(sch_name))
 
 	# Delete the generated pdfs if they exist
+	print("  Cleaning up temporary PDF files")
 	for pdf, title in pdf_files + [('layer_test', '~')]:
 		try:
 			rm('{}_{}.pdf'.format(sch_name, pdf))
@@ -205,15 +209,19 @@ for sch in glob('*.sch'):
 		pass
 
 	# Add page numbers to the generated pdf
+	print("  Add page numbers to pdf")
 	os.system(numberpdf + ' {}.pdf'.format(sch_name))
 
 	# Add titles to generated pdf
+	print("  Add titles to pdf")
 	os.system(titlepdf + ' {}_numbered.pdf "'.format(sch_name) + \
 		'" "'.join(titles) + '"')
 
 	rm('{}.pdf'.format(sch_name))
 	rm('{}_numbered.pdf'.format(sch_name))
 	mv('{}_numbered_titles.pdf'.format(sch_name), '{}.pdf'.format(sch_name))
+
+	print("  Done!")
 
 # Delete doc_data.txt if it was created
 rm('-f', 'doc_data.txt')
