@@ -10,11 +10,12 @@ Before generating your BOM, you should renumber your passives so that
 like values are grouped together and are sorted by value (e.g. all
 22 pF caps are C1-C4, 10 µF are C5-12, etc). The
 [eagle_renumber.py](../scripts/eagle_renumber.py) script will do this
-correctly for you.
+correctly for you. Parts set with a value of DNP will be numbered last in
+order.
 
-_Tip:_ If you have sometimes DNP components (like resistors for
-debugging LEDs), give them a part number in the thousands (i.e.
-D1000 and R1000) and the renumber script will ignore those parts.
+_Tip:_ If you don't want the renumber script to touch a certain part, give
+it apart number in the thousands (i.e. D1000 and R1000) and the renumber
+script will ignore those parts.
 
 
 ## Add Part Attributes
