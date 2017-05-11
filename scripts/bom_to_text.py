@@ -52,7 +52,14 @@ header = """\"# Bill of Materials\"
 boms = glob('*bom*xls*')
 
 if len(boms) == 0:
-	print("Could not find a bom to convert.")
+	path = os.path.dirname(os.path.realpath(__file__))
+	for l in open(os.path.join(path, '..', 'doc', 'BOM.md')):
+		sys.stdout.write(l)
+	print('')
+	print('-' * 60)
+	print('ERR: Could not find a bom to convert.')
+	print('     You need to generate a bill of materials.')
+	print('     The above directions may be helpful.')
 	sys.exit(1)
 
 for b in boms:
