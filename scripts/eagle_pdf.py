@@ -9,7 +9,11 @@ reference for others to use.
 Simply run this script in a folder containing a .sch and .brd file to
 generate the pdfs.
 """
-import sys, os, platform
+
+import os
+import platform
+import sys
+import tempfile
 
 # Get all of the tricky packages out of the way
 try:
@@ -85,38 +89,16 @@ if len(sys.argv) > 1:
 here      = os.path.dirname(os.path.realpath(__file__))
 pdfscrSch = os.path.join(here, '..', 'scr', 'pdf-sch.scr')
 pdfscrBrd = os.path.join(here, '..', 'scr', 'pdf-brd.scr')
-scr       = os.path.join(here, '..', 'scr', 'script.scr')
-tmpscrSch = os.path.join('/', 'tmp', 'script-sch.scr')
-tmpscrBrd = os.path.join('/', 'tmp', 'script-brd.scr')
 numberpdf = os.path.join(here, 'number_pdf.sh')
 titlepdf  = os.path.join(here, 'pdf_titles.py')
 
-# Create script to run the pdf script, schematic version
-# We had to split these up because for some reason Eagle > 8.0 doesn't like
-# running schematic and board commands in the same file and would just silently
-# fail to produce output from the board commands
-contents = ''
-with open(scr, 'r') as f:
-	contents = f.read()
-
-contents = contents.replace('%SCRIPT_PATH%', pdfscrSch)
-
-with open(tmpscrSch, 'w') as f:
-	f.write(contents)
-
-# Create script to run the pdf script, board version
-contents = ''
-with open(scr, 'r') as f:
-	contents = f.read()
-
-contents = contents.replace('%SCRIPT_PATH%', pdfscrBrd)
-
-with open(tmpscrBrd, 'w') as f:
-	f.write(contents)
 
 # Figure out the name of the schematic to run this on.
 for sch in glob('*.sch'):
 	sch_name, sch_ext = os.path.splitext(sch)
+	brd = sch_name + '.brd'
+	if not os.path.exists(brd):
+		print("ERR: No .brd file for {}?".format(sch))
 
 	# Delete the old pdfs if they exist
 	for pdf, title in pdf_files + [('layer_test', '~')]:
@@ -125,11 +107,27 @@ for sch in glob('*.sch'):
 	# Delete the merged version
 	rm ('-f', '{}.pdf'.format(sch))
 
-	# Generate the schematic pdfs
-	eagle('-S', tmpscrSch, sch)
+	# Something broke in Eagle with the section specifiers and command blocking,
+	# so work around by just making new scr files that includes a traling quit
+	with tempfile.NamedTemporaryFile() as temp_scr:
+		with open(pdfscrSch) as source:
+			for line in source:
+				temp_scr.write(line)
+		temp_scr.write('\nquit;')
+		temp_scr.flush()
 
-	# Generate the board pdfs
-	eagle('-S', tmpscrBrd, sch)
+		# Generate the schematic pdfs
+		eagle('-S', temp_scr.name, sch)
+
+	with tempfile.NamedTemporaryFile() as temp_scr:
+		with open(pdfscrBrd) as source:
+			for line in source:
+				temp_scr.write(line)
+		temp_scr.write('\nquit;')
+		temp_scr.flush()
+
+		# Generate the board pdfs
+		eagle('-S', temp_scr.name, brd)
 
 	# If a bom is present also convert it to pdf
 	if include_bom:
