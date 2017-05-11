@@ -14,7 +14,7 @@ correctly for you. Parts set with a value of DNP will be numbered last in
 order.
 
 _Tip:_ If you don't want the renumber script to touch a certain part, give
-it apart number in the thousands (i.e. D1000 and R1000) and the renumber
+it a part number in the thousands (i.e. D1000 and R1000) and the renumber
 script will ignore those parts.
 
 
