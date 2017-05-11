@@ -55,6 +55,16 @@ Save the bom as `board-name_bom.xlsx`. Yes, it's a little weird to use
 Excel format, but it is the industry standard. All assemblers will accept
 and understand it and that just makes everything easier.
 
+#### Using LibreOffice
+
+Counter-intuitively, LibreOffice is actually the best at converting the "csv"
+into an "xlsx" file. Just open the "csv" file directly, use the "Semicolon"
+separator, and hit okay. Then run `Sort` on column "Parts" with the options
+"Range contains Column labels", "Include formats", and "Enable natural sort".
+This will leave you with a properly sorted BOM which you should "Save As..." an
+"xlsx" file.
+
+
 #### Handling `;`-separated "csv" in Excel
 
 Eagle's "csv" export tool gives semicolon-separated values, not comma-separated.
