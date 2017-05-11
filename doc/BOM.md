@@ -54,3 +54,16 @@ part number in that column.
 Save the bom as `board-name_bom.xlsx`. Yes, it's a little weird to use
 Excel format, but it is the industry standard. All assemblers will accept
 and understand it and that just makes everything easier.
+
+#### Handling `;`-separated "csv" in Excel
+
+Eagle's "csv" export tool gives semicolon-separated values, not comma-separated.
+*Do not* open this "csv" in Excel directly, rather:
+
+  1. Open a new instance of Excel and choose `File > Import` then `CSV file`.
+  2. Make sure `Delimited` is selected
+  3. Change the `File origin` to `Unicode (UTF-8)`
+  4. Click Next
+  5. Choose the right delimiters so the data in the preview looks right,
+     probably just have the `Semicolon` box checked
+  6. Click Finish, you want the data in the `Existing Sheet` at the default place
