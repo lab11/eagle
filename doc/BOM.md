@@ -43,17 +43,23 @@ In Eagle Schematic mode go File → Export → BOM. Change "List Type" to
 
 ### Cleaning up the BOM
 
-Open that CSV file in Libre Office or Excel. Now you want to clean it up.
-I always start by sorting by the "Parts" column.  Make sure all the parts
-are accurately represented in the BOM.  There should be a DIGIKEY column
-that contains the digikey part numbers for all of the parts. If a different
-place carries the part then add that as a column as well. For instance
-maybe only mouser sells a part. Then add a column called MOUSER and put the
-part number in that column.
+Open that CSV file in Libre Office or Excel (see below). Now you want to clean it up.
+
+  1. I always start by sorting by the "Parts" column.
+  2. Delete the things that aren't actually parts (e.g. LOGOs)
+  3. Make sure all the parts are accurately represented in the BOM.
+     - There should be a DIGIKEY column that contains the digikey part numbers
+       for all of the parts.
+     - If a different place carries the part then add that as a column as well.
+       For instance maybe only mouser sells a part. Then add a column called
+       MOUSER and put the part number in that column.
 
 Save the bom as `board-name_bom.xlsx`. Yes, it's a little weird to use
 Excel format, but it is the industry standard. All assemblers will accept
 and understand it and that just makes everything easier.
+
+**Delete the original csv file** as the packaging scripts will convert the
+new xlsx file to an updated csv for you.
 
 #### Using LibreOffice
 
