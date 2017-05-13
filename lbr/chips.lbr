@@ -5642,7 +5642,7 @@ RF Switch</text>
 <pin name="PA11" x="22.86" y="-12.7" visible="pin" length="middle" rot="R180"/>
 <pin name="PA12" x="22.86" y="-15.24" visible="pin" length="middle" rot="R180"/>
 <pin name="PA13/SWDIO" x="22.86" y="-17.78" visible="pin" length="middle" rot="R180"/>
-<pin name="PA14/SWCLK" x="22.86" y="-20.32" visible="pin" length="middle" rot="R180"/>
+<pin name="PA14/SWDCLK" x="22.86" y="-20.32" visible="pin" length="middle" rot="R180"/>
 <pin name="PB0" x="-22.86" y="2.54" visible="pin" length="middle"/>
 <pin name="PB1" x="-22.86" y="0" visible="pin" length="middle"/>
 <pin name="PB3/JTDO/SWO" x="-22.86" y="-2.54" visible="pin" length="middle"/>
@@ -9307,7 +9307,7 @@ with External Sense Resistor</description>
 <connect gate="G$1" pin="PA11" pad="P$21"/>
 <connect gate="G$1" pin="PA12" pad="P$22"/>
 <connect gate="G$1" pin="PA13/SWDIO" pad="P$23"/>
-<connect gate="G$1" pin="PA14/SWCLK" pad="P$24"/>
+<connect gate="G$1" pin="PA14/SWDCLK" pad="P$24"/>
 <connect gate="G$1" pin="PA15/JTDI" pad="P$25"/>
 <connect gate="G$1" pin="PA2" pad="P$8"/>
 <connect gate="G$1" pin="PA3" pad="P$9"/>
