@@ -908,7 +908,7 @@ DigiKey RB521ZS8A30TE61CT-ND</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RESISTOR" prefix="R" uservalue="yes">
+<deviceset name="RESISTOR" prefix="R">
 <description>&lt;b&gt;Resistor&lt;/b&gt;
 Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</description>
 <gates>
