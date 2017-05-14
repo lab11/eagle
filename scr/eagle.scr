@@ -4,8 +4,10 @@
 
 BRD:
 
-Grid Default On;
+Grid On;
+Grid Inch
 Grid .1;
+Grid Alt Inch
 Grid Alt .01;
 Change Width 0.010;
 Change Font vector;
