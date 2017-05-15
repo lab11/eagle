@@ -51,6 +51,15 @@ scripts = [('eagle_centroid.py',   False),
 
 here = os.path.dirname(os.path.realpath(__file__))
 
+
+if platform.system() == 'Darwin':
+	print("")
+	print("Heads up. If you're on a mac and this script seems to hang during PDF")
+	print("generation, you may need to install an updated version of pdftk, here:")
+	print("  http://stackoverflow.com/questions/39750883/pdftk-hanging-on-macos-sierra")
+	print("")
+
+
 for s, args in scripts:
 	print("Running {}...".format(s))
 
