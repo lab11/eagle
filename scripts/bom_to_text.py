@@ -24,14 +24,14 @@ try:
 	import openpyxl
 except:
 	print("You need the openpyxl module.")
-	print("(sudo) pip install openpyxl")
+	print("(sudo) pip3 install openpyxl")
 	sys.exit(1)
 
 try:
 	import dataprint
 except:
 	print("You need to install the dataprint module.")
-	print("(sudo) pip install dataprint")
+	print("(sudo) pip3 install dataprint")
 	sys.exit(1)
 
 
