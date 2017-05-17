@@ -248,12 +248,24 @@ if len(suffixes) > 1:
    if not( len(resp) and resp[0] == 'N' ):
       fix_suffixes = True
 
+
+any_changes = False
+
 counter = 1
 for value_unit,partlist in parts.items():
    for part in partlist:
       part['new_number'] = str(counter)
       part['new_suffix'] = new_suffix if fix_suffixes else part['suffix']
       counter += 1
+      if part['number'] != part['new_number']:
+         any_changes = True
+      if part['suffix'] != part['new_suffix']:
+         any_changes = True
+
+if not any_changes:
+   print("")
+   print("Parts are already numbered correctly. Quitting")
+   sys.exit()
 
 rename = dict()
 
