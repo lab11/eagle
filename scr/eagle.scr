@@ -5,18 +5,18 @@
 BRD:
 
 Grid On;
-Grid Inch
-Grid .1;
-Grid Alt Inch
-Grid Alt .01;
-Change Width 0.010;
+Grid mil
+Grid 100;
+Grid Alt mil
+Grid Alt 10;
+Change Width 10;
 Change Font vector;
 Change Align bottom-center;
 
 Change Ratio 12%;
 Change Shape round;
-Change Drill .016;
-Change Isolate .012;
+Change Drill 16;
+Change Isolate 12;
 
 #Menu Add Change Copy Delete Display Grid Group Move Name Quit Rect \
 #     Route Script Show Signal Split Text Value Via Window ';'  Wire Write Edit;
