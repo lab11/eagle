@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.0">
+<eagle version="8.2.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2974,6 +2974,20 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <rectangle x1="0.2" y1="0.2" x2="1.5" y2="1.6" layer="31"/>
 <rectangle x1="0.2" y1="-1.6" x2="1.5" y2="-0.2" layer="31"/>
 </package>
+<package name="UDFN-6-MAXIM">
+<smd name="1" x="-0.915" y="0.65" dx="0.8" dy="0.35" layer="1"/>
+<smd name="2" x="-0.915" y="0" dx="0.8" dy="0.35" layer="1"/>
+<smd name="3" x="-0.915" y="-0.65" dx="0.8" dy="0.35" layer="1"/>
+<smd name="4" x="0.915" y="-0.65" dx="0.8" dy="0.35" layer="1"/>
+<smd name="5" x="0.915" y="0" dx="0.8" dy="0.35" layer="1"/>
+<smd name="6" x="0.915" y="0.65" dx="0.8" dy="0.35" layer="1"/>
+<wire x1="-1" y1="1" x2="1" y2="1" width="0.1" layer="21"/>
+<wire x1="1" y1="1" x2="1" y2="-1" width="0.1" layer="21"/>
+<wire x1="1" y1="-1" x2="-1" y2="-1" width="0.1" layer="21"/>
+<wire x1="-1" y1="-1" x2="-1" y2="1" width="0.1" layer="21"/>
+<circle x="-1.52" y="1.23" radius="0.13038125" width="0.1" layer="21"/>
+<text x="1" y="1.13" size="0.889" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -5653,6 +5667,20 @@ RF Switch</text>
 <pin name="PA15/JTDI" x="22.86" y="-22.86" length="middle" rot="R180"/>
 <text x="-7.62" y="-27.94" size="1.778" layer="96" ratio="12" align="bottom-center">STM32L432KC</text>
 <text x="-12.7" y="25.4" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+</symbol>
+<symbol name="MAX17222">
+<wire x1="-15.24" y1="10.16" x2="17.78" y2="10.16" width="0.254" layer="94"/>
+<wire x1="17.78" y1="10.16" x2="17.78" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-10.16" x2="-15.24" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-10.16" x2="-15.24" y2="10.16" width="0.254" layer="94"/>
+<pin name="SEL" x="-10.16" y="-15.24" visible="pin" length="middle" rot="R90"/>
+<pin name="GND" x="12.7" y="-15.24" visible="pin" length="middle" rot="R90"/>
+<pin name="EN" x="-10.16" y="15.24" visible="pin" length="middle" rot="R270"/>
+<pin name="IN" x="-2.54" y="15.24" visible="pin" length="middle" rot="R270"/>
+<pin name="LX" x="5.08" y="15.24" visible="pin" length="middle" rot="R270"/>
+<pin name="OUT" x="12.7" y="15.24" visible="pin" length="middle" rot="R270"/>
+<text x="-20.32" y="5.08" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="95" ratio="12" align="bottom-center">MAX17222</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -9341,6 +9369,31 @@ with External Sense Resistor</description>
 <technology name="">
 <attribute name="DIGIKEY" value="497-16578-ND" constant="no"/>
 <attribute name="MFN" value="STM32L432KCU6" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAX17222" prefix="U">
+<description>Very high efficiency, very low power boost converter suitable for EH applications</description>
+<gates>
+<gate name="G$1" symbol="MAX17222" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="UDFN-6-MAXIM">
+<connects>
+<connect gate="G$1" pin="EN" pad="6"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="IN" pad="5"/>
+<connect gate="G$1" pin="LX" pad="2"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+<connect gate="G$1" pin="SEL" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="MAX17222ELT+TCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="MAXIM INTEGRATED" constant="no"/>
+<attribute name="MANUFACTURER_PN" value="MAX17222ELT+T" constant="no"/>
 </technology>
 </technologies>
 </device>
