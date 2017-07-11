@@ -10,12 +10,14 @@ import pickle
 from pprint import pprint
 import re
 import sys
+import tempfile
 import time
 import urllib.request, urllib.parse, urllib.error
 
 # Third Party Libraries (i.e. need pip install)
 import bidict
 import dataprint
+import icdiff
 import Swoop
 
 sch_file = glob.glob('*.sch')[0]
@@ -23,9 +25,6 @@ brd_file = glob.glob('*.brd')[0]
 
 brd = Swoop.EagleFile.from_file(brd_file)
 sch = Swoop.EagleFile.from_file(sch_file)
-
-#old_brd = Swoop.EagleFile.from_file(brd_file)
-#old_sch = Swoop.EagleFile.from_file(sch_file)
 
 
 ##############################################################################
@@ -328,57 +327,91 @@ for part in parts:
         kinds[kind][v][number] = part
 
 
-def handle_attrs(attrs):
-    if 'DIGIKEY' in attrs:
-        attrs['DIGIKEY'] = attrs['DIGIKEY'].strip()
-        mpn = digikey_to_MPN(attrs['DIGIKEY'])
-        if 'MPN' in attrs:
-            attrs['MPN'] = attrs['MPN'].strip()
-            if mpn != attrs['MPN']:
-                raise NotImplementedError('Mismatch MPN?? {} != {}'.format(mpn, attrs['MPN']))
-        attrs['MPN'] = mpn
-    elif 'MPN' in attrs:
-        attrs['MPN'] = attrs['MPN'].strip()
-        mpn = attrs['MPN']
-        attrs['DIGIKEY'] = MPN_to_digikey(attrs['MPN'])
+def handle_attrs(part):
+    # Load existing attributes and clean up whitespace if needed:
+    MPN = part.get_attribute('MPN')
+    MPN = MPN.get_value() if MPN else None
+    if MPN and MPN != MPN.strip():
+        part.set_attribute('MPN', MPN.strip())
+        MPN = part.get_attribute('MPN').get_value()
+
+    DIGIKEY = part.get_attribute('DIGIKEY')
+    DIGIKEY = DIGIKEY.get_value() if DIGIKEY else None
+    if DIGIKEY and DIGIKEY != DIGIKEY.strip():
+        part.set_attribute('DIGIKEY', DIGIKEY.strip())
+        DIGIKEY = part.get_attribute('DIGIKEY').get_value()
+
+    Manufacturer = part.get_attribute('Manufacturer')
+    Manufacturer = Manufacturer.get_value() if Manufacturer else None
+    if Manufacturer and Manufacturer != Manufacturer.strip():
+        part.set_attribute('Manufacturer', Manufacturer.strip())
+        Manufacturer = part.get_attribute('Manufacturer').get_value()
+
+    # Fill out missing attributes
+    if DIGIKEY:
+        mpn = digikey_to_MPN(DIGIKEY)
+        # If MPN already exists, validate it matches, o/w add it
+        if MPN:
+            if mpn != MPN:
+                raise NotImplementedError('Mismatch MPN?? {} != {}'.format(mpn, MPN))
+        else:
+            part.set_attribute('MPN', mpn)
+    elif MPN:
+        # No DigiKey, but have MPN
+        DIGIKEY = MPN_to_digikey(MPN)
+        part.set_attribute('DIGIKEY', DIGIKEY)
     else:
         # No attrs to look anything up with
         return
 
     manufacturer = MPN_to_manufacturer(mpn)
-    if 'Manufacturer' in attrs:
-        attrs['Manufacturer'] = attrs['Manufacturer'].strip()
-        if manufacturer != attrs['Manufacturer']:
+    # If Manufacturer exists, validate it matched, o/w add it
+    if Manufacturer:
+        if manufacturer != Manufacturer:
             raise NotImplementedError('Mismatch Manufacturer?? {} != {}'.\
-                    format(manufacturer, attrs['Manufacturer']))
+                    format(manufacturer, Manufacturer))
     else:
-        attrs['Manufacturer'] = manufacturer
+        part.set_attribute('Manufacturer', manufacturer)
 
+
+def attr_row_helper(kind, value, number, part, rows):
+    row = ['' for x in range(len(rows[0]))]
+    row[0] = number
+    row[1] = str(value)
+
+    attrs = part.get_all_attributes()
+
+    for attr,val in attrs.items():
+        try:
+            idx = rows[0].index(attr)
+            row[idx] = val
+        except ValueError:
+            row[-1] += '!{}:{}!'.format(attr, val)
+
+    return row
 
 for kind in kinds:
     print('== {} '.format(kind) + '='*60)
     values = kinds[kind]
     rows = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
+    rows_before = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
     for value in sorted(values, key=lambda v: v.normalized):
         idents = collapse_range(kinds[kind][value].keys())
         for number in sorted(kinds[kind][value], key=lambda n: int(n)):
-            row = ['' for x in range(len(rows[0]))]
-            row[0] = number
-            row[1] = str(value)
-
             part = kinds[kind][value][number]
-            attrs = part.get_all_attributes()
 
-            handle_attrs(attrs)
+            before = attr_row_helper(kind, value, number, part, rows_before)
+            rows_before.append(before)
 
-            for attr,val in attrs.items():
-                try:
-                    idx = rows[0].index(attr)
-                    row[idx] = val
-                except ValueError:
-                    row[-1] += '!{}:{}!'.format(attr, val)
+            handle_attrs(part)
 
+            row = attr_row_helper(kind, value, number, part, rows)
             rows.append(row)
-    print(dataprint.to_string(rows))
+    with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
+        dataprint.to_file(before, rows_before)
+        dataprint.to_file(after, rows)
+        before.flush()
+        after.flush()
+        icdiff.diff(before.name, after.name)
     print('')
 
