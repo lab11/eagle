@@ -392,21 +392,57 @@ def attr_row_helper(kind, value, number, part, rows):
 
     return row
 
+
+
+# Iterating 'C', 'R', 'Q', etc
 for kind in kinds:
     print('== {} '.format(kind) + '='*60)
     values = kinds[kind]
     rows = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
     rows_before = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
+
+    # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
         idents = collapse_range(kinds[kind][value].keys())
+
+        # Grab the state of the world before we've done anything
+        # Iterating C10, C11, C12, etc
         for number in sorted(kinds[kind][value], key=lambda n: int(n)):
             part = kinds[kind][value][number]
 
             before = attr_row_helper(kind, value, number, part, rows_before)
             rows_before.append(before)
 
-            handle_attrs(part)
 
+
+        # First check if there are any conflicts in existing attributes
+        existing_attrs = []
+        no_attrs = []
+        # Iterating C10, C11, C12, etc
+        for number in sorted(kinds[kind][value], key=lambda n: int(n)):
+            part = kinds[kind][value][number]
+            attrs = part.get_all_attributes()
+            if attrs:
+                if attrs not in existing_attrs:
+                    existing_attrs.append(attrs)
+            else:
+                no_attrs.append(part)
+
+        if len(existing_attrs) > 1:
+            raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
+
+        if len(existing_attrs) == 1:
+            # Add attributes from one part to all identical parts
+            for part in no_attrs:
+                for attr_name,attr_value in existing_attrs[0].items():
+                    part.set_attribute(attr_name, attr_value)
+
+
+
+        # Next iterate parts to flesh out all attributes
+        # Iterating C10, C11, C12, etc
+        for number in sorted(kinds[kind][value], key=lambda n: int(n)):
+            handle_attrs(part)
             row = attr_row_helper(kind, value, number, part, rows)
             rows.append(row)
     if rows_before == rows:
