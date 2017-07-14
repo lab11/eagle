@@ -323,6 +323,8 @@ for part in parts:
         value = None
 
     if value is not None:
+        if 'dnp' in value.lower():
+            continue
         v = Value_from_string(value)
         if v not in kinds[kind]:
             kinds[kind][v] = {}
