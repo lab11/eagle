@@ -9,6 +9,7 @@ import os
 import pickle
 from pprint import pprint
 import re
+import shutil
 import sys
 import tempfile
 import time
@@ -19,6 +20,7 @@ import bidict
 import dataprint
 import icdiff
 import Swoop
+import termcolor
 
 sch_file = glob.glob('*.sch')[0]
 brd_file = glob.glob('*.brd')[0]
@@ -407,11 +409,60 @@ for kind in kinds:
 
             row = attr_row_helper(kind, value, number, part, rows)
             rows.append(row)
-    with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
-        dataprint.to_file(before, rows_before)
-        dataprint.to_file(after, rows)
-        before.flush()
-        after.flush()
-        icdiff.diff(before.name, after.name)
+    if rows_before == rows:
+        termcolor.cprint('No changes', attrs=['bold'])
+        print(dataprint.to_string(rows))
+    else:
+        with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
+            dataprint.to_file(before, rows_before)
+            dataprint.to_file(after, rows)
+            before.flush()
+            after.flush()
+            icdiff.diff(before.name, after.name)
     print('')
 
+print()
+r = input('Write updated Eagle files? [Y/n] ')
+if len(r) and r[0].lower() == 'n':
+    sys.exit()
+
+sch.write(sch_file)
+brd.write(brd_file)
+
+
+###############################################################################
+## Try to reduce the Eagle file diff churn a little
+
+# This is a bit obnoxious, but worth doing:
+#
+# When the lxml library internal to Swoop writes back the Eagle file, it
+# consistently treats all float fields as floats, whereas Eagle will round off
+# whole integers when it writes the fields, i.e.:
+#  - Eagle:  <instance gate="G$2" part="FRAME9" x="152.4" y="0"/>
+#  -  lxml:  <instance gate="G$2" part="FRAME9" x="152.4" y="0.0"/>
+# In practice, these are the same, and Eagle handles them appropriately, but
+# they make for a really noisy diff.
+#
+# While we're at it, Eagle will strip the nice indentation the next time it
+# saves the file, so let's just do it ourselves now
+
+r = re.compile('("-?[0-9]+)\.0(")')
+for eagle_file in (sch_file, brd_file):
+    with tempfile.NamedTemporaryFile(mode="w", delete=False) as tmpfile:
+        with open(eagle_file) as ifile:
+            for line in ifile:
+                if 'version="1.0"' in line:
+                    # Need to protect the first line:
+                    # <?xml version="1.0" encoding="utf-8"?>
+                    tmpfile.write(line)
+                    continue
+                line = r.sub(r'\1\2', line)
+                # Try not to mess with multi-line text elements
+                if len(line.strip()) and line.strip()[0] == '<':
+                    line = line.strip() + '\n'
+                tmpfile.write(line)
+    # https://stackoverflow.com/a/31499114/358675
+    # Overwrite the original file with the munged temporary file in a
+    # manner preserving file attributes (e.g., permissions).
+    shutil.copystat(eagle_file, tmpfile.name)
+    shutil.move(tmpfile.name, eagle_file)
