@@ -148,6 +148,7 @@ def _do_queries(queries):
     print("OctoPart Query: {}".format(queries))
 
     url = 'http://octopart.com/api/v3/parts/match?queries=%s' % urllib.parse.quote(json.dumps(queries))
+    url += '&exact_only=true'
     url += '&apikey=1f14f7be'
 
     data = urllib.request.urlopen(url).read()
