@@ -397,7 +397,7 @@ def attr_row_helper(kind, value, number, part, rows):
 
 
 # Iterating 'C', 'R', 'Q', etc
-for kind in kinds:
+for kind in sorted(kinds):
     print('== {} '.format(kind) + '='*60)
     values = kinds[kind]
     rows = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
