@@ -401,8 +401,8 @@ def attr_row_helper(kind, value, number, part, rows):
 for kind in sorted(kinds):
     print('== {} '.format(kind) + '='*60)
     values = kinds[kind]
-    rows = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
-    rows_before = [('Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!')]
+    rows = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
+    rows_before = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
@@ -455,6 +455,10 @@ for kind in sorted(kinds):
         print(dataprint.to_string(rows))
     else:
         with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
+            # HACK for space of MPN entry on diff
+            rows_before[0][3] = '.' * 8 + 'MPN' + '.' * 8
+            rows[0][3] = '.' * 8 + 'MPN' + '.' * 8
+
             dataprint.to_file(before, rows_before)
             dataprint.to_file(after, rows)
             before.flush()
