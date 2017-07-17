@@ -445,6 +445,8 @@ for kind in sorted(kinds):
         # Next iterate parts to flesh out all attributes
         # Iterating C10, C11, C12, etc
         for number in sorted(kinds[kind][value], key=lambda n: int(n)):
+            part = kinds[kind][value][number]
+
             handle_attrs(part)
             row = attr_row_helper(kind, value, number, part, rows)
             rows.append(row)
