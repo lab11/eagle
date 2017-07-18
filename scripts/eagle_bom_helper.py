@@ -249,13 +249,17 @@ def resolve_unit(value, unit_prefix):
         return float(value) * known_unit_prefixes[unit_prefix]
 
 Value = collections.namedtuple('Value', ('magnitude', 'prefix', 'unit', 'normalized'))
-Value.__str__ = lambda x: '{}{}{}'.format(x.magnitude, x.prefix, x.unit)
+Value.__str__ = lambda x: '{}{}{}'.format(x.magnitude, x.prefix, x.unit) if x.magnitude is not None else '<No Value>'
 def Value_from_string(string):
+    # Create a null "value" for parts with no value
+    if string is None:
+        return Value(magnitude=None, prefix=None, unit=None, normalized=None)
+
     # Split 0.5kΩ into `0.5` and `kΩ`
     try:
         r = re.compile("([0-9.]+)[ ]*([{}]?)([^ ]+)".\
                 format(''.join(known_unit_prefixes.keys())))
-        m = r.match(value)
+        m = r.match(string)
         magnitude = m.group(1)
         prefix = m.group(2)
         unit = m.group(3)
@@ -295,44 +299,79 @@ def collapse_range(numbers):
 ##############################################################################
 ## File parsing / building up internal data structures
 
-kinds = {}
+# In swoop, schmatics are made of "parts"
+def parts_to_kinds(parts):
+    kinds = {}
+    name_to_part = {}
+    name_re = re.compile("([a-zA-Z$]+)([0-9]+)")
+    for part in parts:
+        name = part.get_name()
 
-parts = Swoop.From(sch).get_parts()
-for part in parts:
-    name = part.get_name()
-    # Split C12 into `C` and `12`
-    r = re.compile("([a-zA-Z$]+)([0-9]+)")
-    m = r.match(name)
-    kind = m.group(1)
-    number = m.group(2)
+        name_to_part[name] = part
 
-    # Skip over some of the stuff we don't care about
-    if kind in ('FRAME', 'GND'):
-        continue
+        # Split C12 into `C` and `12`
+        m = name_re.match(name)
+        kind = m.group(1)
+        number = m.group(2)
 
-    if kind not in kinds:
-        kinds[kind] = {}
-
-    value = part.get_value()
-    if kind[0] == 'U':
-        # It seems that parts with "no value" according to the library
-        # editor will end up with a "value" key if it's got multiple package
-        # options, for example:
-        # <part name="U28" library="signpost" deviceset="MCP23008" device="QFN" value="MCP23008QFN"/>
-        # This makes an educated guess that it'll only happen for ICs, so we
-        # skip the U family of components and hope that works
-        value = None
-
-    if value is not None:
-        if 'dnp' in value.lower():
+        # Skip over some of the stuff we don't care about
+        if kind in ('FRAME', 'GND'):
             continue
+
+        if kind not in kinds:
+            kinds[kind] = {}
+
+        value = part.get_value()
+        if kind[0] == 'U':
+            # It seems that parts with "no value" according to the library
+            # editor will end up with a "value" key if it's got multiple package
+            # options, for example:
+            # <part name="U28" library="signpost" deviceset="MCP23008" device="QFN" value="MCP23008QFN"/>
+            # This makes an educated guess that it'll only happen for ICs, so we
+            # skip the U family of components and hope that works
+            value = None
+
+        if value is not None and 'dnp' in value.lower():
+            continue
+
         v = Value_from_string(value)
         if v not in kinds[kind]:
             kinds[kind][v] = {}
         kinds[kind][v][number] = part
+    return kinds, name_to_part
+
+# In swoop, boards are made of "elements"
+def build_element_map(elements):
+    sch_to_brd = {}
+    orphans = []
+    for element in elements:
+        name = element.get_name()
+
+        try:
+            sch_to_brd[name_to_sch_part[name]] = element
+        except KeyError:
+            # Logos are frequently added to boards w/out a schematic part, this
+            # is fine, ignore those
+            if element.get_library() != 'logos':
+                orphans.append(element)
+
+    if len(orphans):
+        termcolor.cprint('WARN: The following board elements have no corresponding schematic part:', attrs=['bold'])
+        for orphan in orphans:
+            print(orphan)
+
+        r = input("Continue ignoring orphan elements? [Y/n] ")
+        if len(r) and r.lower()[0] == 'n':
+            sys.exit(1)
+    return sch_to_brd
+
+sch_kinds, name_to_sch_part = parts_to_kinds(Swoop.From(sch).get_parts())
+sch_part_to_brd_element = build_element_map(Swoop.From(brd).get_elements())
 
 
-def handle_attrs(part):
+
+
+def handle_attrs_for_part(part):
     # Load existing attributes and clean up whitespace if needed:
     MPN = part.get_attribute('MPN')
     MPN = MPN.get_value() if MPN else None
@@ -379,77 +418,168 @@ def handle_attrs(part):
         part.set_attribute('Manufacturer', manufacturer)
 
 
+# Copy all attributes from part to element (sch -> brd)
+def handle_attrs_update_element(part, element):
+    _debug = False
+
+    if _debug:
+        print("_"*80)
+        print(part)
+        print(get_Attributes_from_part(part))
+        print("")
+        print(element)
+        print(element.get_attributes())
+        print(get_Attributes_from_part(element))
+        print("")
+        for a in element.get_attributes():
+            print(a.get_name(), a.get_value())
+        print(' ...... ')
+
+    for attr in get_Attributes_from_part(part):
+        if _debug:
+            print(">{}<".format(attr))
+
+        # Eagle requires that attributes have a bunch of info that's already in
+        # the enclosing element tag, but it'll barf w/out them, so here goes
+        #
+        # <attribute name="DIGIKEY" value="490-10451-1-ND" x="32.512" y="81.28" size="1.778" layer="27" display="off"/>
+        new_attr = Swoop.Attribute()
+        new_attr.set_name(attr.name)
+        new_attr.set_value(attr.value)
+        new_attr.set_x(element.get_x())
+        new_attr.set_y(element.get_y())
+        # Attributes need a size, but we never show them, so arbitrary is fine
+        new_attr.set_size(1.778)
+        new_attr.set_layer('tValues') # seems to be where Eagle puts misc attributes
+                                      # [our "cloned" name attr is on 25, tNames]
+        new_attr.set_display("off")
+        element.add_attribute(new_attr)
+
+    if _debug:
+        print("- - - - - "*5)
+        print(part)
+        print(element)
+        print(get_Attributes_from_part(element))
+        print("")
+        for a in element.get_attributes():
+            print(a.get_name(), a.get_value())
+
+
+Attribute = collections.namedtuple('Attribute', ('name', 'value'))
+def swoop_attribute_to_Attribute(swoop_attribute):
+    return Attribute(
+            name=swoop_attribute.get_name(),
+            value=swoop_attribute.get_value(),
+            )
+
+def get_Attributes_from_part(part):
+    return [swoop_attribute_to_Attribute(a) for a in part.get_attributes()]
+
 def attr_row_helper(kind, value, number, part, rows):
     row = ['' for x in range(len(rows[0]))]
     row[0] = number
     row[1] = str(value)
 
-    attrs = part.get_all_attributes()
+    attrs = get_Attributes_from_part(part)
 
-    for attr,val in attrs.items():
+    for attr in attrs:
         try:
-            idx = rows[0].index(attr)
-            row[idx] = val
+            idx = rows[0].index(attr.name)
+            row[idx] = attr.value
         except ValueError:
-            row[-1] += '!{}:{}!'.format(attr, val)
+            row[-1] += '!{}:{}!'.format(attr.name, attr.value)
 
     return row
 
 
+def handle_orphan_parts(orphan_parts):
+    real_orphans = []
+
+    for orphan in orphan_parts:
+        # We create custom supplies sometimes, can safely ignore those
+        deviceset = orphan.get_deviceset()
+        if 'VCC_' in deviceset:
+            pass
+        else:
+            real_orphans.append(orphan)
+
+    if len(real_orphans):
+        termcolor.cprint('WARN: The following schematic parts have no corresponding board elements:', attrs=['bold'])
+        for orphan in real_orphans:
+            print(orphan)
+
+        r = input("Continue ignoring orphan elements? [Y/n] ")
+        if len(r) and r.lower()[0] == 'n':
+            sys.exit(1)
+
 
 # Iterating 'C', 'R', 'Q', etc
-for kind in sorted(kinds):
+for kind in sorted(sch_kinds):
     print('== {} '.format(kind) + '='*60)
-    values = kinds[kind]
+    values = sch_kinds[kind]
     rows = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
     rows_before = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
-        idents = collapse_range(kinds[kind][value].keys())
+        idents = collapse_range(sch_kinds[kind][value].keys())
 
         # Grab the state of the world before we've done anything
         # Iterating C10, C11, C12, etc
-        for number in sorted(kinds[kind][value], key=lambda n: int(n)):
-            part = kinds[kind][value][number]
+        for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
+            sch_part = sch_kinds[kind][value][number]
 
-            before = attr_row_helper(kind, value, number, part, rows_before)
+            before = attr_row_helper(kind, value, number, sch_part, rows_before)
             rows_before.append(before)
 
 
 
-        # First check if there are any conflicts in existing attributes
-        existing_attrs = []
-        no_attrs = []
-        # Iterating C10, C11, C12, etc
-        for number in sorted(kinds[kind][value], key=lambda n: int(n)):
-            part = kinds[kind][value][number]
-            attrs = part.get_all_attributes()
-            if attrs:
-                if attrs not in existing_attrs:
-                    existing_attrs.append(attrs)
-            else:
-                no_attrs.append(part)
+        if value.magnitude is not None:
+            # For parts with values, all parts with the same value (i.e. all the
+            # 1k resistors) should have the same attributes, this makes that
+            # happen. For stuff without values (i.e. ICs, LEDs), skip this step
 
-        if len(existing_attrs) > 1:
-            raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
+            # First check if there are any conflicts in existing attributes
+            existing_attrs = []
+            no_attrs = []
+            # Iterating C10, C11, C12, etc
+            for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
+                sch_part = sch_kinds[kind][value][number]
+                attrs = get_Attributes_from_part(sch_part)
+                if attrs:
+                    if attrs not in existing_attrs:
+                        existing_attrs.append(attrs)
+                else:
+                    no_attrs.append(sch_part)
 
-        if len(existing_attrs) == 1:
-            # Add attributes from one part to all identical parts
-            for part in no_attrs:
-                for attr_name,attr_value in existing_attrs[0].items():
-                    part.set_attribute(attr_name, attr_value)
+            if len(existing_attrs) > 1:
+                raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
+
+            if len(existing_attrs) == 1:
+                # Add attributes from one part to all identical parts
+                for sch_part in no_attrs:
+                    for attr in existing_attrs[0]:
+                        sch_part.set_attribute(attr.name, attr.value)
 
 
 
         # Next iterate parts to flesh out all attributes
         # Iterating C10, C11, C12, etc
-        for number in sorted(kinds[kind][value], key=lambda n: int(n)):
-            part = kinds[kind][value][number]
+        orphan_parts = []
+        for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
+            sch_part = sch_kinds[kind][value][number]
+            handle_attrs_for_part(sch_part)
 
-            handle_attrs(part)
-            row = attr_row_helper(kind, value, number, part, rows)
+            try:
+                brd_element = sch_part_to_brd_element[sch_part]
+                handle_attrs_update_element(sch_part, brd_element)
+            except KeyError:
+                orphan_parts.append(sch_part)
+
+            row = attr_row_helper(kind, value, number, sch_part, rows)
             rows.append(row)
+        handle_orphan_parts(orphan_parts)
+
     if rows_before == rows:
         termcolor.cprint('No changes', attrs=['bold'])
         print(dataprint.to_string(rows))
