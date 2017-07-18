@@ -406,8 +406,16 @@ sch_part_to_brd_element = build_element_map(Swoop.From(brd).get_elements())
 
 
 
-
 def handle_attrs_for_part(part):
+    try:
+        return _handle_attrs_for_part(part)
+    except:
+        print('')
+        termcolor.cprint('Exception handling: {}'.format(part), attrs=['bold'])
+        print('')
+        raise
+
+def _handle_attrs_for_part(part):
     # Load existing attributes and clean up whitespace if needed:
     MPN = part.get_attribute('MPN')
     MPN = MPN.get_value() if MPN else None
