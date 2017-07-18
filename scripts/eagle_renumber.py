@@ -69,7 +69,7 @@ print('')
 try:
    prefix = sys.argv[1]
    print("Will renumber prefix {}".format(prefix))
-except KeyError:
+except IndexError:
    prefix = input("What part prefix to renumber ({})? ".format(valid_prefixes))
 
 
