@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.0.2">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -6719,7 +6719,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_100MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.55105" y="0.065025"/>
 <vertex x="1.55105" y="0.348234375"/>
 <vertex x="1.52996875" y="0.349503125"/>
@@ -6780,7 +6780,7 @@
 <vertex x="1.516253125" y="0.066803125"/>
 <vertex x="1.550796875" y="0.065025"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.72529375" y="2.052065625"/>
 <vertex x="2.72529375" y="1.713484375"/>
 <vertex x="2.7456125" y="1.75056875"/>
@@ -6839,7 +6839,7 @@
 <vertex x="2.7385" y="2.06730625"/>
 <vertex x="2.7250375" y="2.0533375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.72529375" y="2.052065625"/>
 <vertex x="2.6932875" y="2.018790625"/>
 <vertex x="2.64985625" y="1.969515625"/>
@@ -6973,7 +6973,7 @@
 <vertex x="2.7250375" y="1.713484375"/>
 <vertex x="2.7250375" y="2.052065625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.72529375" y="0.60045625"/>
 <vertex x="2.72529375" y="0.446025"/>
 <vertex x="2.74993125" y="0.443484375"/>
@@ -6999,7 +6999,7 @@
 <vertex x="2.7440875" y="0.5842"/>
 <vertex x="2.7258" y="0.600203125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.72529375" y="0.14401875"/>
 <vertex x="2.72529375" y="0.35051875"/>
 <vertex x="2.6724625" y="0.328421875"/>
@@ -7044,7 +7044,7 @@
 <vertex x="2.68008125" y="0.12573125"/>
 <vertex x="2.7258" y="0.14401875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.55105" y="0.593090625"/>
 <vertex x="1.55105" y="0.74726875"/>
 <vertex x="1.548765625" y="0.743965625"/>
@@ -7193,7 +7193,7 @@
 <vertex x="1.52438125" y="0.5707375"/>
 <vertex x="1.5502875" y="0.593090625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.55105" y="2.543809375"/>
 <vertex x="1.55105" y="2.423159375"/>
 <vertex x="1.56095625" y="2.42138125"/>
@@ -7218,7 +7218,7 @@
 <vertex x="1.554353125" y="2.543809375"/>
 <vertex x="1.55130625" y="2.54355625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.55105" y="2.00380625"/>
 <vertex x="1.55105" y="2.179065625"/>
 <vertex x="1.5137125" y="2.155953125"/>
@@ -7238,7 +7238,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_200MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="3.126865625" y="0.1483375"/>
 <vertex x="3.126865625" y="0.716534375"/>
 <vertex x="3.08445" y="0.71881875"/>
@@ -7298,7 +7298,7 @@
 <vertex x="3.058034375" y="0.1516375"/>
 <vertex x="3.127375" y="0.14808125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.482209375" y="4.13385"/>
 <vertex x="5.482209375" y="3.454653125"/>
 <vertex x="5.52285" y="3.529075"/>
@@ -7357,7 +7357,7 @@
 <vertex x="5.509640625" y="4.162553125"/>
 <vertex x="5.482715625" y="4.134359375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.482209375" y="4.13385"/>
 <vertex x="5.4182" y="4.067046875"/>
 <vertex x="5.331078125" y="3.968496875"/>
@@ -7491,7 +7491,7 @@
 <vertex x="5.482971875" y="3.4544"/>
 <vertex x="5.482971875" y="4.133596875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.482209375" y="1.222246875"/>
 <vertex x="5.482209375" y="0.91236875"/>
 <vertex x="5.531484375" y="0.9072875"/>
@@ -7517,7 +7517,7 @@
 <vertex x="5.51853125" y="1.190496875"/>
 <vertex x="5.48195625" y="1.22275625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.482209375" y="0.306578125"/>
 <vertex x="5.482209375" y="0.720596875"/>
 <vertex x="5.376290625" y="0.676403125"/>
@@ -7562,7 +7562,7 @@
 <vertex x="5.39076875" y="0.270509375"/>
 <vertex x="5.4824625" y="0.307340625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="3.126865625" y="1.207515625"/>
 <vertex x="3.126865625" y="1.5168875"/>
 <vertex x="3.122040625" y="1.510284375"/>
@@ -7711,7 +7711,7 @@
 <vertex x="3.074034375" y="1.162559375"/>
 <vertex x="3.12610625" y="1.207515625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="3.126865625" y="5.12013125"/>
 <vertex x="3.126865625" y="4.878325"/>
 <vertex x="3.146934375" y="4.87476875"/>
@@ -7736,7 +7736,7 @@
 <vertex x="3.133215625" y="5.120640625"/>
 <vertex x="3.127121875" y="5.12013125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="3.126865625" y="4.037075"/>
 <vertex x="3.126865625" y="4.388359375"/>
 <vertex x="3.051684375" y="4.34213125"/>
@@ -7756,7 +7756,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_75MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.182115625" y="0.058675"/>
 <vertex x="1.182115625" y="0.27178125"/>
 <vertex x="1.1661125" y="0.272540625"/>
@@ -7815,7 +7815,7 @@
 <vertex x="1.155190625" y="0.0594375"/>
 <vertex x="1.1811" y="0.058165625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.065275" y="1.553209375"/>
 <vertex x="2.065275" y="1.298446875"/>
 <vertex x="2.0805125" y="1.3263875"/>
@@ -7874,7 +7874,7 @@
 <vertex x="2.0756875" y="1.56413125"/>
 <vertex x="2.065528125" y="1.5534625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.065275" y="1.553209375"/>
 <vertex x="2.041396875" y="1.5280625"/>
 <vertex x="2.00863125" y="1.49098125"/>
@@ -8008,7 +8008,7 @@
 <vertex x="2.064003125" y="1.2994625"/>
 <vertex x="2.064003125" y="1.554225"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.065275" y="0.461771875"/>
 <vertex x="2.065275" y="0.3451875"/>
 <vertex x="2.083815625" y="0.343409375"/>
@@ -8033,7 +8033,7 @@
 <vertex x="2.11734375" y="0.425196875"/>
 <vertex x="2.078990625" y="0.44958125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="2.065275" y="0.11785625"/>
 <vertex x="2.065275" y="0.27305"/>
 <vertex x="2.025396875" y="0.256540625"/>
@@ -8075,7 +8075,7 @@
 <vertex x="2.030475" y="0.1038875"/>
 <vertex x="2.064765625" y="0.117603125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.182115625" y="0.45593125"/>
 <vertex x="1.182115625" y="0.572009375"/>
 <vertex x="1.1803375" y="0.56946875"/>
@@ -8224,7 +8224,7 @@
 <vertex x="1.163828125" y="0.43941875"/>
 <vertex x="1.1833875" y="0.456184375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.182115625" y="1.923034375"/>
 <vertex x="1.182115625" y="1.83235625"/>
 <vertex x="1.1897375" y="1.8310875"/>
@@ -8249,7 +8249,7 @@
 <vertex x="1.18465625" y="1.92278125"/>
 <vertex x="1.18236875" y="1.922525"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.182115625" y="1.5168875"/>
 <vertex x="1.182115625" y="1.6487125"/>
 <vertex x="1.153921875" y="1.631440625"/>
@@ -8269,7 +8269,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_350MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.4650625" y="0.2404125"/>
 <vertex x="5.4650625" y="1.234565625"/>
 <vertex x="5.390896875" y="1.23863125"/>
@@ -8330,7 +8330,7 @@
 <vertex x="5.344921875" y="0.2467625"/>
 <vertex x="5.466334375" y="0.240665625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="9.586975" y="7.214996875"/>
 <vertex x="9.586975" y="6.026278125"/>
 <vertex x="9.657840625" y="6.156325"/>
@@ -8389,7 +8389,7 @@
 <vertex x="9.634728125" y="7.26401875"/>
 <vertex x="9.587484375" y="7.21474375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="9.586975" y="7.214996875"/>
 <vertex x="9.4749625" y="7.09815625"/>
 <vertex x="9.3225625" y="6.925690625"/>
@@ -8523,7 +8523,7 @@
 <vertex x="9.587990625" y="6.026784375"/>
 <vertex x="9.587990625" y="7.21550625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="9.586975" y="2.11975625"/>
 <vertex x="9.586975" y="1.577465625"/>
 <vertex x="9.6733375" y="1.568578125"/>
@@ -8549,7 +8549,7 @@
 <vertex x="9.650475" y="2.063115625"/>
 <vertex x="9.58646875" y="2.11975625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="9.586975" y="0.516509375"/>
 <vertex x="9.586975" y="1.241678125"/>
 <vertex x="9.40155625" y="1.164209375"/>
@@ -8592,7 +8592,7 @@
 <vertex x="9.20876875" y="0.38265"/>
 <vertex x="9.426446875" y="0.452246875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.4650625" y="2.094103125"/>
 <vertex x="5.4650625" y="2.63563125"/>
 <vertex x="5.4569375" y="2.623946875"/>
@@ -8741,7 +8741,7 @@
 <vertex x="5.373878125" y="2.016634375"/>
 <vertex x="5.4650625" y="2.095371875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.4650625" y="8.941434375"/>
 <vertex x="5.4650625" y="8.518015625"/>
 <vertex x="5.500115625" y="8.511665625"/>
@@ -8765,7 +8765,7 @@
 <vertex x="5.68121875" y="8.924925"/>
 <vertex x="5.4759875" y="8.942196875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="5.4650625" y="7.045578125"/>
 <vertex x="5.4650625" y="7.6605125"/>
 <vertex x="5.333746875" y="7.5794875"/>
@@ -8785,7 +8785,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_50MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="0.7882875" y="0.0308625"/>
 <vertex x="0.7882875" y="0.172846875"/>
 <vertex x="0.777621875" y="0.17335625"/>
@@ -8843,7 +8843,7 @@
 <vertex x="0.77025625" y="0.031878125"/>
 <vertex x="0.787528125" y="0.031115625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.3770625" y="1.027303125"/>
 <vertex x="1.3770625" y="0.857378125"/>
 <vertex x="1.387221875" y="0.87591875"/>
@@ -8902,7 +8902,7 @@
 <vertex x="1.383665625" y="1.033653125"/>
 <vertex x="1.37680625" y="1.026540625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.3770625" y="1.027303125"/>
 <vertex x="1.361059375" y="1.0105375"/>
 <vertex x="1.339215625" y="0.9859"/>
@@ -9036,7 +9036,7 @@
 <vertex x="1.37604375" y="0.856615625"/>
 <vertex x="1.37604375" y="1.026540625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.3770625" y="0.2993375"/>
 <vertex x="1.3770625" y="0.22186875"/>
 <vertex x="1.38950625" y="0.2206"/>
@@ -9062,7 +9062,7 @@
 <vertex x="1.3867125" y="0.29171875"/>
 <vertex x="1.37756875" y="0.299846875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="1.3770625" y="0.070484375"/>
 <vertex x="1.3770625" y="0.1738625"/>
 <vertex x="1.35064375" y="0.1626875"/>
@@ -9102,7 +9102,7 @@
 <vertex x="1.3534375" y="0.061340625"/>
 <vertex x="1.3763" y="0.070484375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="0.7882875" y="0.295528125"/>
 <vertex x="0.7882875" y="0.373"/>
 <vertex x="0.78701875" y="0.371221875"/>
@@ -9251,7 +9251,7 @@
 <vertex x="0.7755875" y="0.28460625"/>
 <vertex x="0.78854375" y="0.295784375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="0.7882875" y="1.273684375"/>
 <vertex x="0.7882875" y="1.21323125"/>
 <vertex x="0.79336875" y="1.212215625"/>
@@ -9275,7 +9275,7 @@
 <vertex x="0.819278125" y="1.27114375"/>
 <vertex x="0.790065625" y="1.273684375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="0.7882875" y="1.00291875"/>
 <vertex x="0.7882875" y="1.090803125"/>
 <vertex x="0.76949375" y="1.07911875"/>
@@ -9295,7 +9295,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_500MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="7.829803125" y="0.35839375"/>
 <vertex x="7.829803125" y="1.778509375"/>
 <vertex x="7.72363125" y="1.78435"/>
@@ -9356,7 +9356,7 @@
 <vertex x="7.655559375" y="0.36703125"/>
 <vertex x="7.829040625" y="0.35839375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="13.7182875" y="10.321796875"/>
 <vertex x="13.7182875" y="8.623553125"/>
 <vertex x="13.81963125" y="8.80948125"/>
@@ -9415,7 +9415,7 @@
 <vertex x="13.784834375" y="10.391903125"/>
 <vertex x="13.71726875" y="10.321290625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="13.7182875" y="10.321796875"/>
 <vertex x="13.558265625" y="10.15491875"/>
 <vertex x="13.3405875" y="9.908540625"/>
@@ -9549,7 +9549,7 @@
 <vertex x="13.7182875" y="8.62456875"/>
 <vertex x="13.7182875" y="10.3228125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="13.7182875" y="3.04291875"/>
 <vertex x="13.7182875" y="2.268475"/>
 <vertex x="13.84173125" y="2.256028125"/>
@@ -9574,7 +9574,7 @@
 <vertex x="14.064740625" y="2.799334375"/>
 <vertex x="13.809725" y="2.962146875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="13.7182875" y="0.75361875"/>
 <vertex x="13.7182875" y="1.78866875"/>
 <vertex x="13.4533625" y="1.678178125"/>
@@ -9619,7 +9619,7 @@
 <vertex x="13.489940625" y="0.66243125"/>
 <vertex x="13.719046875" y="0.75438125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="7.829803125" y="3.00634375"/>
 <vertex x="7.829803125" y="3.779775"/>
 <vertex x="7.81811875" y="3.7632625"/>
@@ -9768,7 +9768,7 @@
 <vertex x="7.700009375" y="2.894075"/>
 <vertex x="7.830059375" y="3.00634375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="7.829803125" y="12.7881375"/>
 <vertex x="7.829803125" y="12.1833625"/>
 <vertex x="7.879840625" y="12.174475"/>
@@ -9792,7 +9792,7 @@
 <vertex x="8.1384125" y="12.764515625"/>
 <vertex x="7.845296875" y="12.789153125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="7.829803125" y="10.079990625"/>
 <vertex x="7.829803125" y="10.958321875"/>
 <vertex x="7.642096875" y="10.842496875"/>
@@ -9812,7 +9812,7 @@
 </polygon>
 </package>
 <package name="UCB_CAL_1000MIL">
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="15.633190625" y="0.691134375"/>
 <vertex x="15.633190625" y="3.531615625"/>
 <vertex x="15.421103125" y="3.543046875"/>
@@ -9873,7 +9873,7 @@
 <vertex x="15.287496875" y="0.708659375"/>
 <vertex x="15.6344625" y="0.691134375"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="27.4106625" y="20.61845"/>
 <vertex x="27.4106625" y="17.2219625"/>
 <vertex x="27.61335625" y="17.59381875"/>
@@ -9932,7 +9932,7 @@
 <vertex x="27.5463" y="20.759165625"/>
 <vertex x="27.411171875" y="20.617940625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="27.4106625" y="20.61845"/>
 <vertex x="27.090878125" y="20.28469375"/>
 <vertex x="26.655521875" y="19.79168125"/>
@@ -10066,7 +10066,7 @@
 <vertex x="27.411425" y="17.221709375"/>
 <vertex x="27.411425" y="20.618196875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="27.4106625" y="6.060946875"/>
 <vertex x="27.4106625" y="4.511546875"/>
 <vertex x="27.657296875" y="4.486403125"/>
@@ -10091,7 +10091,7 @@
 <vertex x="28.103321875" y="5.573521875"/>
 <vertex x="27.593290625" y="5.899403125"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="27.4106625" y="1.482090625"/>
 <vertex x="27.4106625" y="3.552190625"/>
 <vertex x="26.880565625" y="3.33095625"/>
@@ -10136,7 +10136,7 @@
 <vertex x="26.9516875" y="1.298446875"/>
 <vertex x="27.41015625" y="1.482090625"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="15.633190625" y="5.987034375"/>
 <vertex x="15.633190625" y="7.534146875"/>
 <vertex x="15.60956875" y="7.501128125"/>
@@ -10285,7 +10285,7 @@
 <vertex x="15.372840625" y="5.762496875"/>
 <vertex x="15.633190625" y="5.9872875"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="15.633190625" y="25.55036875"/>
 <vertex x="15.633190625" y="24.341075"/>
 <vertex x="15.73326875" y="24.323040625"/>
@@ -10309,7 +10309,7 @@
 <vertex x="16.250159375" y="25.503378125"/>
 <vertex x="15.66418125" y="25.5524"/>
 </polygon>
-<polygon width="0" layer="21">
+<polygon width="0.0254" layer="21">
 <vertex x="15.633190625" y="20.134325"/>
 <vertex x="15.633190625" y="21.890990625"/>
 <vertex x="15.25778125" y="21.659340625"/>
