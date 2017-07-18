@@ -96,6 +96,7 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
     new_mpn = item['mpn']
     if new_mpn != mpn:
         # Not the same part, just return the original
+        print("WARN: differing MPN looking up high moq: {} != {}".format(new_mpn, mpn))
         return digikey_high_moq_sku
 
     for offer in item['offers']:
