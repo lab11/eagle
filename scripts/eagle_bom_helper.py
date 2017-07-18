@@ -485,6 +485,7 @@ def attr_row_helper(kind, value, number, part, rows):
     row = ['' for x in range(len(rows[0]))]
     row[0] = number
     row[1] = str(value)
+    row[2] = sch_part_to_brd_element[part].get_package()
 
     attrs = get_Attributes_from_part(part)
 
@@ -523,8 +524,8 @@ def handle_orphan_parts(orphan_parts):
 for kind in sorted(sch_kinds):
     print('== {} '.format(kind) + '='*60)
     values = sch_kinds[kind]
-    rows = [['Name', 'Value', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
-    rows_before = [['Name', 'Value', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
+    rows = [['Name', 'Value', 'Package', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
+    rows_before = [['Name', 'Value', 'Package', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
