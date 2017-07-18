@@ -662,7 +662,9 @@ for kind in sorted(sch_kinds):
             dataprint.to_file(after, rows)
             before.flush()
             after.flush()
-            icdiff.diff(before.name, after.name)
+            options = icdiff.get_options()[0]
+            options.no_headers = True
+            icdiff.diff_files(options, before.name, after.name)
     print('')
 
 print()
