@@ -192,6 +192,7 @@ for line in schematic:
          numbers.add(number)
          values['DNP'] += 1
 
+         unit_package_insert('DNP','','')
          if ('DNP','','') not in parts:
             parts[('DNP','','')] = []
          parts[('DNP','','')].append({'number': number, 'suffix': ''})
@@ -215,6 +216,7 @@ for line in schematic:
             numbers.add(number)
             values[deviceset] += 1
 
+            unit_package_insert(deviceset,'','')
             if (deviceset,'','') not in parts:
                parts[(deviceset,'','')] = []
             parts[(deviceset,'','')].append({'number': number, 'suffix': ''})
@@ -306,12 +308,12 @@ else:
    for value_unit_device,partlist in parts.items():
       value,unit,device = value_unit_device
       for part in partlist:
-         old = "{}{} : {}{}{}\t{}".format(prefix, part['number'], value, unit, part['suffix'], device)
-         new = "{}{} : {}{}{}\t{}".format(prefix, part['new_number'], value, unit, part['new_suffix'], device)
+         old = "{}{} : {}{}{}   {}".format(prefix, part['number'], value, unit, part['suffix'], device)
+         new = "{}{} : {}{}{}   {}".format(prefix, part['new_number'], value, unit, part['new_suffix'], device)
          if old == new:
-            print("{:20}\t=>\t{:20}".format(old, new))
+            print("{:30} => {:30}".format(old, new))
          else:
-            print_attn("{:20}\t=>\t{:20}".format(old, new))
+            print_attn("{:30} => {:30}".format(old, new))
 
          rename[prefix + part['number']] = {
                'old_value': value + unit + part['suffix'],
@@ -330,7 +332,7 @@ for line in schematic:
    try:
       result = sch_part_tag_re.match(line)
       if result is not None:
-         number, value, unit_prefix, suffix = result.groups()
+         number, device, value, unit_prefix, suffix = result.groups()
          if int(number) >= 1000:
             if ignore_high_parts:
                continue
