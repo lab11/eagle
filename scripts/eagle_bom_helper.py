@@ -151,8 +151,8 @@ def _do_queries(queries):
     url += '&exact_only=true'
     url += '&apikey=1f14f7be'
 
-    data = urllib.request.urlopen(url).read()
     try:
+        data = urllib.request.urlopen(url).read()
         response = json.loads(data)
     except urllib.error.HTTPError as e:
         if e.code == 429:
