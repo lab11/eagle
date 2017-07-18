@@ -302,6 +302,7 @@ if len(parts) == 0:
    sys.exit(1);
 else:
    print("This script will relabel parts as follows:")
+   print('')
    for value_unit_device,partlist in parts.items():
       value,unit,device = value_unit_device
       for part in partlist:
@@ -317,6 +318,7 @@ else:
                'new_value': value + unit + part['new_suffix'],
                'new_name': prefix + part['new_number'],
                }
+      print('')
 
    r = input("Write new names to eagle files? [Y/n] ").upper()
    if len(r) and r[0] == 'N':
