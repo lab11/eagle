@@ -1703,8 +1703,8 @@ This package flares out only on the right side.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="WM9357-ND" constant="no"/>
-<attribute name="MF" value="Molex" constant="no"/>
-<attribute name="MFN" value="0732511350" constant="no"/>
+<attribute name="MANUFACTURER" value="Molex" constant="no"/>
+<attribute name="MPN" value="0732511350" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2181,8 +2181,8 @@ Mid mount</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="H122041-ND" constant="no"/>
-<attribute name="MF" value="Hirose" constant="no"/>
-<attribute name="MFN" value="U.FL-R-SMT-1(01)" constant="no"/>
+<attribute name="MANUFACTURER" value="Hirose" constant="no"/>
+<attribute name="MPN" value="U.FL-R-SMT-1(01)" constant="no"/>
 </technology>
 </technologies>
 </device>

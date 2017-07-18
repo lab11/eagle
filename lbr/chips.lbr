@@ -8142,8 +8142,8 @@ DS RMS-to-DC Converter</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="max417esa+" constant="no"/>
-<attribute name="VENDOR" value="MAXIM" constant="no"/>
+<attribute name="MPN" value="max417esa+" constant="no"/>
+<attribute name="MANUFACTURER" value="MAXIM" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -8383,8 +8383,8 @@ DS RMS-to-DC Converter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="296-35978-1-ND" constant="no"/>
-<attribute name="MF" value="Texas Instruments" constant="no"/>
-<attribute name="MFN" value="TLV62130RGTR" constant="no"/>
+<attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
+<attribute name="MPN" value="TLV62130RGTR" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -9008,8 +9008,8 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="863-1056-1-ND" constant="no"/>
-<attribute name="MF" value="Skworks Solutions" constant="no"/>
-<attribute name="MFN" value="SKY13317-373LF" constant="no"/>
+<attribute name="MANUFACTURER" value="Skworks Solutions" constant="no"/>
+<attribute name="MPN" value="SKY13317-373LF" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -9380,7 +9380,7 @@ with External Sense Resistor</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="497-16578-ND" constant="no"/>
-<attribute name="MFN" value="STM32L432KCU6" constant="no"/>
+<attribute name="MPN" value="STM32L432KCU6" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -9405,7 +9405,7 @@ with External Sense Resistor</description>
 <technology name="">
 <attribute name="DIGIKEY" value="MAX17222ELT+TCT-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="MAXIM INTEGRATED" constant="no"/>
-<attribute name="MANUFACTURER_PN" value="MAX17222ELT+T" constant="no"/>
+<attribute name="MPN" value="MAX17222ELT+T" constant="no"/>
 </technology>
 </technologies>
 </device>

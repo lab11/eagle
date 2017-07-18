@@ -397,8 +397,8 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="535-11899-1-ND" constant="no"/>
-<attribute name="MF" value="Abracon" constant="no"/>
-<attribute name="MFN" value="ABS05-32.768KHZ-T" constant="no"/>
+<attribute name="MANUFACTURER" value="Abracon" constant="no"/>
+<attribute name="MPN" value="ABS05-32.768KHZ-T" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -410,8 +410,8 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="535-11897-1-ND" constant="no"/>
-<attribute name="MF" value="Abracon" constant="no"/>
-<attribute name="MFN" value="ABS05-32.768KHZ-9-T" constant="no"/>
+<attribute name="MANUFACTURER" value="Abracon" constant="no"/>
+<attribute name="MPN" value="ABS05-32.768KHZ-9-T" constant="no"/>
 </technology>
 </technologies>
 </device>
