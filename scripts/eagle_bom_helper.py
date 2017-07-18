@@ -315,7 +315,7 @@ def parts_to_kinds(parts):
         number = m.group(2)
 
         # Skip over some of the stuff we don't care about
-        if kind in ('FRAME', 'GND'):
+        if kind in ('FRAME', 'GND', 'U$'):
             continue
 
         if kind not in kinds:
