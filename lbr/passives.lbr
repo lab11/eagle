@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1402,7 +1402,9 @@ Example part: RB521ZS8A30TE61CT-ND</description>
 <connect gate="D" pin="CATHODE" pad="4K"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="RB521ZS8A30TE61CT-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
