@@ -597,7 +597,19 @@ for kind in sorted(sch_kinds):
                     no_attrs.append(sch_part)
 
             if len(existing_attrs) > 1:
-                print(sch_kinds[kind][value])
+                print('')
+                termcolor.cprint('Error: Conflicting attributes', attrs=['bold'])
+                print('Parts of the same kind and same value have differing attributes')
+                print('This is probably a bad thing that you should fix up')
+                print('Caveat: This script does not handle multiple packages yet')
+                print('        i.e. if you have 0402 and 0603 0.1uF caps, this will fail')
+                print('')
+                for attrs in existing_attrs:
+                    print(attrs)
+                    for number,part in sch_kinds[kind][value].items():
+                        if attrs == get_Attributes_from_part(part):
+                            print("{} ".format(number), end='')
+                    print('')
                 raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
 
             if len(existing_attrs) == 1:
