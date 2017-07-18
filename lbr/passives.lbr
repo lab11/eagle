@@ -1404,6 +1404,8 @@ Example part: RB521ZS8A30TE61CT-ND</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="RB521ZS8A30TE61CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Rohm Semiconductor" constant="no"/>
+<attribute name="MPN" value="RB521ZS8A30TE61" constant="no"/>
 </technology>
 </technologies>
 </device>
