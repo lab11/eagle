@@ -473,7 +473,12 @@ def swoop_attribute_to_Attribute(swoop_attribute):
             )
 
 def get_Attributes_from_part(part):
-    return [swoop_attribute_to_Attribute(a) for a in part.get_attributes()]
+    #return [swoop_attribute_to_Attribute(a) for a in part.get_attributes()]
+    # get_all_attributes will grab attributes from libraries as well
+    r = []
+    for name,value in part.get_all_attributes().items():
+        r.append(Attribute(name=name, value=value))
+    return r
 
 def attr_row_helper(kind, value, number, part, rows):
     row = ['' for x in range(len(rows[0]))]
