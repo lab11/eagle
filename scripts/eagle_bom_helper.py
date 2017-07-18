@@ -39,6 +39,7 @@ script_path = os.path.dirname(os.path.realpath(__file__))
 digikey_MPN_db_file = os.path.join(script_path, 'db', 'digikey-mpn.pickle')
 digikey_moq_aliases_db_file = os.path.join(script_path, 'db', 'digikey-moq-aliases.pickle')
 MPN_manufacturer_db_file = os.path.join(script_path, 'db', 'mpn-manufacturer.pickle')
+MPN_description_db_file = os.path.join(script_path, 'db', 'mpn-description.pickle')
 
 try:
     with open(digikey_MPN_db_file, 'rb') as f:
@@ -58,6 +59,11 @@ try:
 except IOError:
     _MPN_manufacturer = dict()
 
+try:
+    with open(MPN_description_db_file, 'rb') as f:
+        _MPN_description = pickle.load(f)
+except IOError:
+    _MPN_description = dict()
 
 def _sync_digikey_MPN():
     with open(digikey_MPN_db_file, 'wb') as f:
@@ -71,10 +77,15 @@ def _sync_MPN_manufacturer():
     with open(MPN_manufacturer_db_file, 'wb') as f:
         pickle.dump(_MPN_manufacturer, f, pickle.HIGHEST_PROTOCOL)
 
+def _sync_MPN_description():
+    with open(MPN_description_db_file, 'wb') as f:
+        pickle.dump(_MPN_description, f, pickle.HIGHEST_PROTOCOL)
+
 def _sync():
     _sync_digikey_MPN()
     _sync_digikey_moq_aliases()
     _sync_MPN_manufacturer()
+    _sync_MPN_description()
 
 
 def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
@@ -144,12 +155,23 @@ def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
     _MPN_manufacturer[mpn] = manufacturer
     _sync_MPN_manufacturer()
 
+    # Prefer Digi-Key's description, but take anything we can get
+    for description in item['descriptions']:
+        if description['attribution']['sources'][0]['name'] == 'Digi-Key':
+            text = description['value']
+            break
+    else:
+        text = item['descriptions'][0]['value']
+    _MPN_description[mpn] = text
+    _sync_MPN_description()
+
 
 def _do_queries(queries):
     print("OctoPart Query: {}".format(queries))
 
     url = 'http://octopart.com/api/v3/parts/match?queries=%s' % urllib.parse.quote(json.dumps(queries))
     url += '&exact_only=true'
+    url += '&include[]=descriptions'
     url += '&apikey=1f14f7be'
 
     try:
@@ -215,6 +237,14 @@ def MPN_to_manufacturer(mpn):
         pass
     fetch_from_mpn(mpn)
     return MPN_to_manufacturer(mpn)
+
+def MPN_to_description(mpn):
+    try:
+        return _MPN_description[mpn]
+    except KeyError:
+        pass
+    fetch_from_mpn(mpn)
+    return MPN_to_description(mpn)
 
 
 ##############################################################################
@@ -392,6 +422,9 @@ def handle_attrs_for_part(part):
         part.set_attribute('MANUFACTURER', MANUFACTURER.strip())
         MANUFACTURER = part.get_attribute('MANUFACTURER').get_value()
 
+    DESCRIPTION = part.get_attribute('DESCRIPTION')
+    DESCRIPTION = DESCRIPTION.get_value() if DESCRIPTION else None
+
     # Fill out missing attributes
     if DIGIKEY:
         mpn = digikey_to_MPN(DIGIKEY)
@@ -417,6 +450,10 @@ def handle_attrs_for_part(part):
                     format(manufacturer, MANUFACTURER))
     else:
         part.set_attribute('MANUFACTURER', manufacturer)
+
+    # Only add DESCRIPTION if there's not one there
+    if not DESCRIPTION:
+        part.set_attribute('DESCRIPTION', MPN_to_description(mpn))
 
 
 # Copy all attributes from part to element (sch -> brd)
@@ -524,8 +561,8 @@ def handle_orphan_parts(orphan_parts):
 for kind in sorted(sch_kinds):
     print('== {} '.format(kind) + '='*60)
     values = sch_kinds[kind]
-    rows = [['Name', 'Value', 'Package', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
-    rows_before = [['Name', 'Value', 'Package', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
+    rows = [['Name', 'Value', 'Package', 'DESCRIPTION', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
+    rows_before = [['Name', 'Value', 'Package', 'DESCRIPTION', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
@@ -560,6 +597,7 @@ for kind in sorted(sch_kinds):
                     no_attrs.append(sch_part)
 
             if len(existing_attrs) > 1:
+                print(sch_kinds[kind][value])
                 raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
 
             if len(existing_attrs) == 1:
@@ -593,8 +631,8 @@ for kind in sorted(sch_kinds):
     else:
         with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
             # HACK for space of MPN entry on diff
-            rows_before[0][3] = '.' * 8 + 'MPN' + '.' * 8
-            rows[0][3] = '.' * 8 + 'MPN' + '.' * 8
+            rows_before[0][rows_before[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
+            rows[0][rows[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
 
             dataprint.to_file(before, rows_before)
             dataprint.to_file(after, rows)
