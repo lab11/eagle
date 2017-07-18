@@ -66,7 +66,11 @@ for line in schematic:
 valid_prefixes = ', '.join(sorted(set(valid_prefixes)))
 
 print('')
-prefix = input("What part prefix to renumber ({})? ".format(valid_prefixes))
+try:
+   prefix = sys.argv[1]
+   print("Will renumber prefix {}".format(prefix))
+except KeyError:
+   prefix = input("What part prefix to renumber ({})? ".format(valid_prefixes))
 
 
 known_unit_prefixes = {
