@@ -626,15 +626,19 @@ for eagle_file in (sch_file, brd_file):
     with tempfile.NamedTemporaryFile(mode="w", delete=False) as tmpfile:
         with open(eagle_file) as ifile:
             for line in ifile:
+                # x.0 -> x
                 if 'version="1.0"' in line:
                     # Need to protect the first line:
                     # <?xml version="1.0" encoding="utf-8"?>
                     tmpfile.write(line)
                     continue
                 line = r.sub(r'\1\2', line)
+
+                # Strip leading whitespace
                 # Try not to mess with multi-line text elements
                 if len(line.strip()) and line.strip()[0] == '<':
                     line = line.strip() + '\n'
+
                 tmpfile.write(line)
     # https://stackoverflow.com/a/31499114/358675
     # Overwrite the original file with the munged temporary file in a
