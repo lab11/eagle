@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -524,6 +524,8 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="535-10156-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Abracon LLC" constant="no"/>
+<attribute name="MPN" value="ABMM-6.000MHZ-B2-T" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -564,7 +566,7 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 </device>
 </devices>
 </deviceset>
-<deviceset name="FH1600015" prefix="X" uservalue="yes">
+<deviceset name="FH1600015" prefix="Y">
 <description>Pericom Type FH 16 MHz 2.5 x 2.0 mm</description>
 <gates>
 <gate name="G$1" symbol="CRYSTAL-GND" x="0" y="0"/>
@@ -579,6 +581,8 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="FH1600015CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Diodes Incorporated" constant="no"/>
+<attribute name="MPN" value="FH1600015" constant="no"/>
 </technology>
 </technologies>
 </device>
