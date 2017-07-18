@@ -103,8 +103,29 @@ def resolve_unit(value, unit_prefix):
    else:
       return float(value) * known_unit_prefixes[unit_prefix]
 
+_unit_package_list = []
+def unit_package_insert(value, unit_prefixes, device):
+   normalized = resolve_unit(value, unit_prefixes)
+   if (normalized, device) in _unit_package_list:
+      return
+   for up in _unit_package_list:
+      if normalized > up[0]:
+         continue
+      if normalized == up[0]:
+         if device > up[1]:
+            continue
+      at = _unit_package_list.index(up)
+      break
+   else:
+      at = len(_unit_package_list)
+   _unit_package_list.insert(at, (normalized, device))
+
+def unit_package_sort(value, unit_prefixes, device):
+   normalized = resolve_unit(value, unit_prefixes)
+   return _unit_package_list.index((normalized, device))
+
 sch_part_tag_re = re.compile(
-      '<part name="{}(.+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
+      '<part name="{}(.+?)".*device="([0-9A-Z_]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
 sch_part_tag_dnp_re = re.compile(
@@ -131,7 +152,8 @@ ignore_high_parts = None
 for line in schematic:
    result = sch_part_tag_re.match(line)
    if result is not None:
-      number, value, unit_prefix, suffix = result.groups()
+      # n.b. "device" is effectively the sch term for package
+      number, device, value, unit_prefix, suffix = result.groups()
       if int(number) >= 1000:
          if ignore_high_parts is None:
             print("")
@@ -147,9 +169,10 @@ for line in schematic:
       unit_prefixes[unit_prefix] += 1
       suffixes[suffix] += 1
 
-      if (value,unit_prefix) not in parts:
-         parts[(value,unit_prefix)] = []
-      parts[(value,unit_prefix)].append({'number': number, 'suffix': suffix})
+      unit_package_insert(value, unit_prefix, device)
+      if (value,unit_prefix,device) not in parts:
+         parts[(value,unit_prefix,device)] = []
+      parts[(value,unit_prefix,device)].append({'number': number, 'suffix': suffix})
 
    else:
       # Check if the part is marked as DNP (do not populate)
@@ -169,9 +192,9 @@ for line in schematic:
          numbers.add(number)
          values['DNP'] += 1
 
-         if ('DNP','') not in parts:
-            parts[('DNP','')] = []
-         parts[('DNP','')].append({'number': number, 'suffix': ''})
+         if ('DNP','','') not in parts:
+            parts[('DNP','','')] = []
+         parts[('DNP','','')].append({'number': number, 'suffix': ''})
 
       else:
          # This isn't a part with a value, check if it still matches. We want to
@@ -192,16 +215,16 @@ for line in schematic:
             numbers.add(number)
             values[deviceset] += 1
 
-            if (deviceset,'') not in parts:
-               parts[(deviceset,'')] = []
-            parts[(deviceset,'')].append({'number': number, 'suffix': ''})
+            if (deviceset,'','') not in parts:
+               parts[(deviceset,'','')] = []
+            parts[(deviceset,'','')].append({'number': number, 'suffix': ''})
 
 try:
-   parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: resolve_unit(*t[0])))
+   parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: unit_package_sort(*t[0])))
 except TypeError:
    type_unit = {}
    for part in parts.items():
-      unit = resolve_unit(*part[0])
+      unit = resolve_unit(part[0][0], part[0][1])
       if type(unit) not in type_unit:
          type_unit[type(unit)] = []
       type_unit[type(unit)].append(part)
@@ -279,15 +302,15 @@ if len(parts) == 0:
    sys.exit(1);
 else:
    print("This script will relabel parts as follows:")
-   for value_unit,partlist in parts.items():
-      value,unit = value_unit
+   for value_unit_device,partlist in parts.items():
+      value,unit,device = value_unit_device
       for part in partlist:
-         old = "{}{} : {}{}{}".format(prefix, part['number'], value, unit, part['suffix'])
-         new = "{}{} : {}{}{}".format(prefix, part['new_number'], value, unit, part['new_suffix'])
+         old = "{}{} : {}{}{}\t{}".format(prefix, part['number'], value, unit, part['suffix'], device)
+         new = "{}{} : {}{}{}\t{}".format(prefix, part['new_number'], value, unit, part['new_suffix'], device)
          if old == new:
-            print("{:10} => {:10}".format(old, new))
+            print("{:20}\t=>\t{:20}".format(old, new))
          else:
-            print_attn("{:10} => {:10}".format(old, new))
+            print_attn("{:20}\t=>\t{:20}".format(old, new))
 
          rename[prefix + part['number']] = {
                'old_value': value + unit + part['suffix'],
