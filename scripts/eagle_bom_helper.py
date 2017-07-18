@@ -385,11 +385,11 @@ def handle_attrs_for_part(part):
         part.set_attribute('DIGIKEY', DIGIKEY.strip())
         DIGIKEY = part.get_attribute('DIGIKEY').get_value()
 
-    Manufacturer = part.get_attribute('Manufacturer')
-    Manufacturer = Manufacturer.get_value() if Manufacturer else None
-    if Manufacturer and Manufacturer != Manufacturer.strip():
-        part.set_attribute('Manufacturer', Manufacturer.strip())
-        Manufacturer = part.get_attribute('Manufacturer').get_value()
+    MANUFACTURER = part.get_attribute('MANUFACTURER')
+    MANUFACTURER = MANUFACTURER.get_value() if MANUFACTURER else None
+    if MANUFACTURER and MANUFACTURER != MANUFACTURER.strip():
+        part.set_attribute('MANUFACTURER', MANUFACTURER.strip())
+        MANUFACTURER = part.get_attribute('MANUFACTURER').get_value()
 
     # Fill out missing attributes
     if DIGIKEY:
@@ -409,13 +409,13 @@ def handle_attrs_for_part(part):
         return
 
     manufacturer = MPN_to_manufacturer(mpn)
-    # If Manufacturer exists, validate it matched, o/w add it
-    if Manufacturer:
-        if manufacturer != Manufacturer:
-            raise NotImplementedError('Mismatch Manufacturer?? {} != {}'.\
-                    format(manufacturer, Manufacturer))
+    # If MANUFACTURER exists, validate it matched, o/w add it
+    if MANUFACTURER:
+        if manufacturer != MANUFACTURER:
+            raise NotImplementedError('Mismatch MANUFACTURER?? {} != {}'.\
+                    format(manufacturer, MANUFACTURER))
     else:
-        part.set_attribute('Manufacturer', manufacturer)
+        part.set_attribute('MANUFACTURER', manufacturer)
 
 
 # Copy all attributes from part to element (sch -> brd)
@@ -517,8 +517,8 @@ def handle_orphan_parts(orphan_parts):
 for kind in sorted(sch_kinds):
     print('== {} '.format(kind) + '='*60)
     values = sch_kinds[kind]
-    rows = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
-    rows_before = [['Name', 'Value', 'DIGIKEY', 'MPN', 'Manufacturer', '!Other!']]
+    rows = [['Name', 'Value', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
+    rows_before = [['Name', 'Value', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
