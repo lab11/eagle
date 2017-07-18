@@ -368,7 +368,12 @@ def parts_to_kinds(parts):
         v = Value_from_string(value)
         if v not in kinds[kind]:
             kinds[kind][v] = {}
-        kinds[kind][v][number] = part
+
+        device = part.get_device()
+        if device not in kinds[kind][v]:
+            kinds[kind][v][device] = {}
+
+        kinds[kind][v][device][number] = part
     return kinds, name_to_part
 
 # In swoop, boards are made of "elements"
@@ -518,11 +523,11 @@ def get_Attributes_from_part(part):
         r.append(Attribute(name=name, value=value))
     return r
 
-def attr_row_helper(kind, value, number, part, rows):
+def attr_row_helper(kind, value, device, number, part, rows):
     row = ['' for x in range(len(rows[0]))]
     row[0] = number
     row[1] = str(value)
-    row[2] = sch_part_to_brd_element[part].get_package()
+    row[2] = device
 
     attrs = get_Attributes_from_part(part)
 
@@ -566,76 +571,75 @@ for kind in sorted(sch_kinds):
 
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
-        idents = collapse_range(sch_kinds[kind][value].keys())
-
-        # Grab the state of the world before we've done anything
-        # Iterating C10, C11, C12, etc
-        for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
-            sch_part = sch_kinds[kind][value][number]
-
-            before = attr_row_helper(kind, value, number, sch_part, rows_before)
-            rows_before.append(before)
-
-
-
-        if value.magnitude is not None:
-            # For parts with values, all parts with the same value (i.e. all the
-            # 1k resistors) should have the same attributes, this makes that
-            # happen. For stuff without values (i.e. ICs, LEDs), skip this step
-
-            # First check if there are any conflicts in existing attributes
-            existing_attrs = []
-            no_attrs = []
+        for device in sorted(sch_kinds[kind][value]):
+            # Grab the state of the world before we've done anything
             # Iterating C10, C11, C12, etc
-            for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
-                sch_part = sch_kinds[kind][value][number]
-                attrs = get_Attributes_from_part(sch_part)
-                if attrs:
-                    if attrs not in existing_attrs:
-                        existing_attrs.append(attrs)
-                else:
-                    no_attrs.append(sch_part)
+            for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
+                sch_part = sch_kinds[kind][value][device][number]
 
-            if len(existing_attrs) > 1:
-                print('')
-                termcolor.cprint('Error: Conflicting attributes', attrs=['bold'])
-                print('Parts of the same kind and same value have differing attributes')
-                print('This is probably a bad thing that you should fix up')
-                print('Caveat: This script does not handle multiple packages yet')
-                print('        i.e. if you have 0402 and 0603 0.1uF caps, this will fail')
-                print('')
-                for attrs in existing_attrs:
-                    print(attrs)
-                    for number,part in sch_kinds[kind][value].items():
-                        if attrs == get_Attributes_from_part(part):
-                            print("{} ".format(number), end='')
+                before = attr_row_helper(kind, value, device, number, sch_part, rows_before)
+                rows_before.append(before)
+
+
+
+            if value.magnitude is not None:
+                # For parts with values, all parts with the same value (i.e. all the
+                # 1k resistors) should have the same attributes, this makes that
+                # happen. For stuff without values (i.e. ICs, LEDs), skip this step
+
+                # First check if there are any conflicts in existing attributes
+                existing_attrs = []
+                no_attrs = []
+                # Iterating C10, C11, C12, etc
+                for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
+                    sch_part = sch_kinds[kind][value][device][number]
+                    attrs = get_Attributes_from_part(sch_part)
+                    if attrs:
+                        if attrs not in existing_attrs:
+                            existing_attrs.append(attrs)
+                    else:
+                        no_attrs.append(sch_part)
+
+                if len(existing_attrs) > 1:
                     print('')
-                raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
+                    termcolor.cprint('Error: Conflicting attributes', attrs=['bold'])
+                    print('Parts of the same kind and same value have differing attributes')
+                    print('This is probably a bad thing that you should fix up')
+                    print('Caveat: This script does not handle multiple packages yet')
+                    print('        i.e. if you have 0402 and 0603 0.1uF caps, this will fail')
+                    print('')
+                    for attrs in existing_attrs:
+                        print(attrs)
+                        for number,part in sch_kinds[kind][value][device].items():
+                            if attrs == get_Attributes_from_part(part):
+                                print("{} ".format(number), end='')
+                        print('')
+                    raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
 
-            if len(existing_attrs) == 1:
-                # Add attributes from one part to all identical parts
-                for sch_part in no_attrs:
-                    for attr in existing_attrs[0]:
-                        sch_part.set_attribute(attr.name, attr.value)
+                if len(existing_attrs) == 1:
+                    # Add attributes from one part to all identical parts
+                    for sch_part in no_attrs:
+                        for attr in existing_attrs[0]:
+                            sch_part.set_attribute(attr.name, attr.value)
 
 
 
-        # Next iterate parts to flesh out all attributes
-        # Iterating C10, C11, C12, etc
-        orphan_parts = []
-        for number in sorted(sch_kinds[kind][value], key=lambda n: int(n)):
-            sch_part = sch_kinds[kind][value][number]
-            handle_attrs_for_part(sch_part)
+            # Next iterate parts to flesh out all attributes
+            # Iterating C10, C11, C12, etc
+            orphan_parts = []
+            for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
+                sch_part = sch_kinds[kind][value][device][number]
+                handle_attrs_for_part(sch_part)
 
-            try:
-                brd_element = sch_part_to_brd_element[sch_part]
-                handle_attrs_update_element(sch_part, brd_element)
-            except KeyError:
-                orphan_parts.append(sch_part)
+                try:
+                    brd_element = sch_part_to_brd_element[sch_part]
+                    handle_attrs_update_element(sch_part, brd_element)
+                except KeyError:
+                    orphan_parts.append(sch_part)
 
-            row = attr_row_helper(kind, value, number, sch_part, rows)
-            rows.append(row)
-        handle_orphan_parts(orphan_parts)
+                row = attr_row_helper(kind, value, device, number, sch_part, rows)
+                rows.append(row)
+            handle_orphan_parts(orphan_parts)
 
     if rows_before == rows:
         termcolor.cprint('No changes', attrs=['bold'])
