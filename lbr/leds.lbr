@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
+<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -38,7 +38,7 @@
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
@@ -162,6 +162,65 @@
 <smd name="A" x="0" y="-0.75" dx="0.8" dy="0.8" layer="1"/>
 <text x="-0.6985" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="0.8255" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R90" align="top-center">&gt;VALUE</text>
+</package>
+<package name="VSMY7850">
+<description>VSMY7850 LED</description>
+<smd name="A" x="0" y="-1.5" dx="6.2" dy="3" layer="1"/>
+<smd name="K" x="0" y="2.2" dx="6.2" dy="2" layer="1"/>
+<polygon width="0.127" layer="21">
+<vertex x="3.5" y="-3.5"/>
+<vertex x="3.5" y="-1.5"/>
+<vertex x="1.5" y="-3.5"/>
+</polygon>
+<polygon width="0.2" layer="21">
+<vertex x="0" y="0.2"/>
+<vertex x="0.8" y="0.2"/>
+<vertex x="0" y="1"/>
+<vertex x="-0.8" y="0.2"/>
+</polygon>
+<text x="0" y="-3.81" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="CREE-XT-E">
+<description>CREE XLamp XT-E LED</description>
+<smd name="A1" x="-1.4" y="0" dx="0.5" dy="3.3" layer="1"/>
+<smd name="A2" x="1.4" y="0" dx="0.5" dy="3.3" layer="1"/>
+<smd name="K" x="0" y="0" dx="1.3" dy="3.3" layer="1" cream="no"/>
+<polygon width="0.1" layer="31">
+<vertex x="-0.4" y="-0.8"/>
+<vertex x="-0.4" y="-1.4"/>
+<vertex x="0.4" y="-1.4"/>
+<vertex x="0.4" y="-0.8"/>
+</polygon>
+<polygon width="0.1" layer="31">
+<vertex x="-0.4" y="0"/>
+<vertex x="-0.4" y="0.4"/>
+<vertex x="0.4" y="0.4"/>
+<vertex x="0.4" y="-0.4"/>
+<vertex x="-0.4" y="-0.4"/>
+</polygon>
+<polygon width="0.1" layer="31">
+<vertex x="-0.4" y="0.8"/>
+<vertex x="-0.4" y="1.4"/>
+<vertex x="0.4" y="1.4"/>
+<vertex x="0.4" y="0.8"/>
+</polygon>
+<polygon width="0.05" layer="21">
+<vertex x="-1.1" y="0"/>
+<vertex x="-1.1" y="0.4"/>
+<vertex x="-0.7" y="0"/>
+<vertex x="-1.1" y="-0.4"/>
+</polygon>
+<polygon width="0.05" layer="21">
+<vertex x="1.1" y="0"/>
+<vertex x="1.1" y="0.4"/>
+<vertex x="0.7" y="0"/>
+<vertex x="1.1" y="-0.4"/>
+</polygon>
+<text x="0" y="2.032" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="-1.725" y1="1.725" x2="1.725" y2="1.725" width="0.254" layer="21"/>
+<wire x1="1.725" y1="1.725" x2="1.725" y2="-1.725" width="0.254" layer="21"/>
+<wire x1="1.725" y1="-1.725" x2="-1.725" y2="-1.725" width="0.254" layer="21"/>
+<wire x1="-1.725" y1="-1.725" x2="-1.725" y2="1.725" width="0.254" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -354,6 +413,48 @@
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="VSMY7850" prefix="D">
+<description>EMITTER IR 850NM 1A SMD</description>
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="VSMY7850">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="A"/>
+<connect gate="G$1" pin="CATHODE" pad="K"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="VSMY7850X01-GS08CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Vishay" constant="no"/>
+<attribute name="MPN" value="VSMY7850X01-GS08" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CREE-XT-E" prefix="D">
+<description>Cree LED Lighting XLamp XT-E</description>
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-WHITE" package="CREE-XT-E">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="A1 A2"/>
+<connect gate="G$1" pin="CATHODE" pad="K"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="XTEAWT-00-0000-000000G51CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Cree" constant="no"/>
+<attribute name="MPN" value="XTEAWT-00-0000-000000G51" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

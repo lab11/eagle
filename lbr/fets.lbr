@@ -308,6 +308,21 @@ High-power, low thermal resistance package.</description>
 <text x="-1.278" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="1.7905" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R90" align="top-center">&gt;VALUE</text>
 </package>
+<package name="SOT363">
+<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.127" layer="21"/>
+<wire x1="-1" y1="0.625" x2="-1" y2="-0.625" width="0.127" layer="21"/>
+<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.127" layer="21"/>
+<wire x1="-1" y1="-0.625" x2="1" y2="-0.625" width="0.127" layer="21"/>
+<smd name="4" x="0.65" y="0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<smd name="5" x="0" y="0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<smd name="2" x="0" y="-0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<smd name="6" x="-0.65" y="0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<smd name="1" x="-0.65" y="-0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<smd name="3" x="0.65" y="-0.95" dx="0.6" dy="0.42" layer="1" rot="R90"/>
+<text x="-1.532" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.2825" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R90" align="top-center">&gt;VALUE</text>
+<circle x="-1.27" y="-1.016" radius="0.08255" width="0.254" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MOSFET-N">
@@ -788,6 +803,32 @@ High-power, low thermal resistance package.</description>
 <attribute name="DIGIKEY" value="DMN32D2LDF-7DICT-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Diodes Incorporated" constant="no"/>
 <attribute name="MPN" value="DMN32D2LDF-7" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SI1922EDH-T1-GE3" prefix="Q">
+<description>MOSFET 2N-CH 20V 1.3A SOT-363</description>
+<gates>
+<gate name="G$1" symbol="N_MOSFET" x="0" y="10.16"/>
+<gate name="G$2" symbol="N_MOSFET" x="0" y="-7.62"/>
+</gates>
+<devices>
+<device name="" package="SOT363">
+<connects>
+<connect gate="G$1" pin="D" pad="6"/>
+<connect gate="G$1" pin="G" pad="2"/>
+<connect gate="G$1" pin="S" pad="1"/>
+<connect gate="G$2" pin="D" pad="3"/>
+<connect gate="G$2" pin="G" pad="5"/>
+<connect gate="G$2" pin="S" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="SI1922EDH-T1-GE3CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Vishay Siliconix" constant="no"/>
+<attribute name="MPN" value="SI1922EDH-T1-GE3" constant="no"/>
 </technology>
 </technologies>
 </device>

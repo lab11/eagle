@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -88,6 +88,24 @@
 <wire x1="-1.524" y1="1.524" x2="-1.524" y2="0.889" width="0.127" layer="21"/>
 <wire x1="-1.524" y1="1.524" x2="-0.889" y2="1.524" width="0.127" layer="21"/>
 </package>
+<package name="TSOT23-6">
+<description>TSOT23-6
+drawn from http://www.skyworksinc.com/uploads/documents/AAT1217_202050B.pdf
+Digi-Key Part 863-1495-1-ND</description>
+<smd name="5" x="0" y="1.2" dx="0.5" dy="0.7" layer="1"/>
+<smd name="4" x="0.95" y="1.2" dx="0.5" dy="0.7" layer="1"/>
+<smd name="6" x="-0.95" y="1.2" dx="0.5" dy="0.7" layer="1"/>
+<smd name="1" x="-0.95" y="-1.2" dx="0.5" dy="0.7" layer="1"/>
+<smd name="2" x="0" y="-1.2" dx="0.5" dy="0.7" layer="1"/>
+<smd name="3" x="0.95" y="-1.2" dx="0.5" dy="0.7" layer="1"/>
+<wire x1="-1.45" y1="0.8" x2="-1.45" y2="-0.8" width="0.127" layer="21"/>
+<wire x1="-1.45" y1="-0.8" x2="1.45" y2="-0.8" width="0.127" layer="21"/>
+<wire x1="1.45" y1="-0.8" x2="1.45" y2="0.8" width="0.127" layer="21"/>
+<wire x1="1.45" y1="0.8" x2="-1.45" y2="0.8" width="0.127" layer="21"/>
+<circle x="-1.778" y="-1.016" radius="0.130759375" width="0.127" layer="21"/>
+<text x="-2.032" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.778" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS6208X">
@@ -104,6 +122,23 @@
 <wire x1="-7.62" y1="-5.08" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
 <text x="-7.62" y="8.128" size="1.778" layer="95">&gt;NAME</text>
 <text x="-7.62" y="-7.366" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="AAT1217">
+<description>The AAT1217 is a high efficiency, synchronous, fixed
+frequency, step-up converter designed for single-cell or
+dual-cell alkaline, NiMH, or NiCd battery-powered applications.</description>
+<pin name="VIN" x="-12.7" y="2.54" visible="pin" length="short"/>
+<pin name="!SHDN" x="-12.7" y="-5.08" visible="pin" length="short"/>
+<pin name="GND" x="10.16" y="-5.08" visible="pin" length="short" rot="R180"/>
+<pin name="SW" x="-2.54" y="7.62" visible="pin" length="short" rot="R270"/>
+<pin name="VOUT" x="10.16" y="0" visible="pin" length="short" rot="R180"/>
+<pin name="FB" x="10.16" y="-2.54" visible="pin" length="short" rot="R180"/>
+<wire x1="-10.16" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="5.08" width="0.254" layer="94"/>
+<text x="7.62" y="7.62" size="1.778" layer="95" align="top-right">&gt;NAME</text>
+<text x="-2.54" y="-10.16" size="1.778" layer="96" align="bottom-center">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -126,6 +161,33 @@
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="296-40831-1-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="AAT1217" prefix="VR">
+<description>IC REG BST ADJ 0.75A SYNC TSOT23
+
+Boost Switching Regulator IC Positive Adjustable 2.5V 1 Output 750mA (Switch) SOT-23-6 Thin, TSOT-23-6</description>
+<gates>
+<gate name="G$1" symbol="AAT1217" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-1.2" package="TSOT23-6">
+<connects>
+<connect gate="G$1" pin="!SHDN" pad="4"/>
+<connect gate="G$1" pin="FB" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="SW" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="6"/>
+<connect gate="G$1" pin="VOUT" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="863-1495-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Skyworks Solutions Inc" constant="no"/>
+<attribute name="MPN" value="AAT1217ICA-1.2-T1" constant="no"/>
 </technology>
 </technologies>
 </device>
