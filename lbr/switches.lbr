@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.0">
+<eagle version="8.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -793,6 +793,30 @@ http://www.nidec-copal-electronics.com/e/catalog/switch/mfs.pdf</description>
 <text x="-5.08" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="5.08" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R270" align="bottom-center">&gt;VALUE</text>
 </package>
+<package name="6-UFBGA">
+<description>6-Ball, 1.0 x 1.5 mm , Wafter-Level Chip-Scale Package (WLCSP)
+
+Drawn from https://www.fairchildsemi.com/datasheets/FP/FPF1321.pdf
+Digi-Key FPF1320UCXCT-ND</description>
+<smd name="A1" x="-0.25" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<smd name="A2" x="0.25" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<smd name="B1" x="-0.25" y="0" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<smd name="B2" x="0.25" y="0" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<smd name="C1" x="-0.25" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<smd name="C2" x="0.25" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100" cream="no"/>
+<wire x1="-0.48" y1="0.73" x2="0.48" y2="0.73" width="0.05" layer="21"/>
+<wire x1="0.48" y1="0.73" x2="0.48" y2="-0.73" width="0.05" layer="21"/>
+<wire x1="0.48" y1="-0.73" x2="-0.48" y2="-0.73" width="0.05" layer="21"/>
+<wire x1="-0.48" y1="-0.73" x2="-0.48" y2="0.73" width="0.05" layer="21"/>
+<circle x="-0.25" y="0.5" radius="0.175" width="0" layer="31"/>
+<circle x="0.25" y="0.5" radius="0.175" width="0" layer="31"/>
+<circle x="0.25" y="0" radius="0.175" width="0" layer="31"/>
+<circle x="-0.25" y="0" radius="0.175" width="0" layer="31"/>
+<circle x="-0.25" y="-0.5" radius="0.175" width="0" layer="31"/>
+<circle x="0.25" y="-0.5" radius="0.175" width="0" layer="31"/>
+<circle x="-0.63" y="0.75" radius="0" width="0.2" layer="21"/>
+<text x="0" y="1.016" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="8X_SPST">
@@ -1168,6 +1192,25 @@ http://www.nidec-copal-electronics.com/e/catalog/switch/mfs.pdf</description>
 <pin name="F" x="5.08" y="-7.62" visible="off" length="short" rot="R180"/>
 <text x="3.81" y="-7.366" size="1.016" layer="95" ratio="12" align="bottom-center">F</text>
 <circle x="2.54" y="-7.62" radius="0.381" width="0.254" layer="94"/>
+</symbol>
+<symbol name="FPF132X">
+<pin name="VIN_A" x="-12.7" y="5.08" visible="pin" length="middle"/>
+<pin name="VIN_B" x="-12.7" y="2.54" visible="pin" length="middle"/>
+<pin name="SEL" x="-12.7" y="0" visible="pin" length="middle"/>
+<pin name="EN" x="-12.7" y="-2.54" visible="pin" length="middle"/>
+<pin name="VOUT" x="15.24" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="GND" x="15.24" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<text x="-5.08" y="-3.556" size="0.6096" layer="97" align="top-left">Internal Pull Down</text>
+<text x="-5.08" y="-1.016" size="0.6096" layer="97" align="top-left">Internal Pull Down</text>
+<text x="2.54" y="3.81" size="0.6096" layer="97" align="top-left">SEL &lt;- Low
+  X=0 Float
+  X=1 GND</text>
+<text x="-7.62" y="10.16" size="1.778" layer="95" align="top-left">&gt;NAME</text>
+<text x="-7.62" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1898,7 +1941,59 @@ GH7366-ND</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FPF132X" prefix="S">
+<description>Digital Power Switch to select between two supply voltages
+
+1.5-5.5V, 1.5A
+
+X=0/1 chooses whether Vout floats or is grounded when EN is low</description>
+<gates>
+<gate name="G$1" symbol="FPF132X" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-X=0" package="6-UFBGA">
+<connects>
+<connect gate="G$1" pin="EN" pad="A1"/>
+<connect gate="G$1" pin="GND" pad="C1"/>
+<connect gate="G$1" pin="SEL" pad="B1"/>
+<connect gate="G$1" pin="VIN_A" pad="A2"/>
+<connect gate="G$1" pin="VIN_B" pad="C2"/>
+<connect gate="G$1" pin="VOUT" pad="B2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="FPF1320UCXCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Fairchild/ON Semiconductor" constant="no"/>
+<attribute name="MPN" value="FPF1320UCX" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-X=1" package="6-UFBGA">
+<connects>
+<connect gate="G$1" pin="EN" pad="A1"/>
+<connect gate="G$1" pin="GND" pad="C1"/>
+<connect gate="G$1" pin="SEL" pad="B1"/>
+<connect gate="G$1" pin="VIN_A" pad="A2"/>
+<connect gate="G$1" pin="VIN_B" pad="C2"/>
+<connect gate="G$1" pin="VOUT" pad="B2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="FPF1321UCXTR-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Fairchild/ON Semiconductor" constant="no"/>
+<attribute name="MPN" value="FPF1321UCX" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
