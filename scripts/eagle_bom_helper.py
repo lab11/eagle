@@ -200,10 +200,17 @@ def fetch_from_digikey(digikey_part):
         if hits > 1:
             pprint(response['results'][0])
             raise NotImplementedError('Ambiguous Digikey SKU (multiple results)')
+        if hits == 0:
+            raise NotImplementedError('Lookup failed for DigiKey part {}'.format(digikey_part))
     except KeyError:
         raise NotImplementedError('Lookup failed for DigiKey part {}'.format(digikey_part))
 
-    _update_from_response(response['results'][0]['items'][0], _looked_up_digikey=digikey_part)
+    try:
+        item = response['results'][0]['items'][0]
+    except:
+        pprint(response['results'][0])
+        raise
+    _update_from_response(item, _looked_up_digikey=digikey_part)
 
 
 def fetch_from_mpn(mpn):
