@@ -341,46 +341,50 @@ def parts_to_kinds(parts):
     name_to_part = {}
     name_re = re.compile("([a-zA-Z$]+)([0-9]+)")
     for part in parts:
-        name = part.get_name()
+        try:
+            name = part.get_name()
 
-        name_to_part[name] = part
+            name_to_part[name] = part
 
-        # Split C12 into `C` and `12`
-        m = name_re.match(name)
-        if m is None:
-            raise NotImplementedError("Invalid name? Part {} with name: {}".format(part, name))
-        kind = m.group(1)
-        number = m.group(2)
+            # Split C12 into `C` and `12`
+            m = name_re.match(name)
+            if m is None:
+                raise NotImplementedError("Invalid name? Part {} with name: {}".format(part, name))
+            kind = m.group(1)
+            number = m.group(2)
 
-        # Skip over some of the stuff we don't care about
-        if kind in ('FRAME', 'GND', 'U$'):
-            continue
+            # Skip over some of the stuff we don't care about
+            if kind in ('FRAME', 'GND', 'U$'):
+                continue
 
-        if kind not in kinds:
-            kinds[kind] = {}
+            if kind not in kinds:
+                kinds[kind] = {}
 
-        value = part.get_value()
-        if kind[0] == 'U':
-            # It seems that parts with "no value" according to the library
-            # editor will end up with a "value" key if it's got multiple package
-            # options, for example:
-            # <part name="U28" library="signpost" deviceset="MCP23008" device="QFN" value="MCP23008QFN"/>
-            # This makes an educated guess that it'll only happen for ICs, so we
-            # skip the U family of components and hope that works
-            value = None
+            value = part.get_value()
+            if kind[0] == 'U':
+                # It seems that parts with "no value" according to the library
+                # editor will end up with a "value" key if it's got multiple package
+                # options, for example:
+                # <part name="U28" library="signpost" deviceset="MCP23008" device="QFN" value="MCP23008QFN"/>
+                # This makes an educated guess that it'll only happen for ICs, so we
+                # skip the U family of components and hope that works
+                value = None
 
-        if value is not None and 'dnp' in value.lower():
-            continue
+            if value is not None and 'dnp' in value.lower():
+                continue
 
-        v = Value_from_string(value)
-        if v not in kinds[kind]:
-            kinds[kind][v] = {}
+            v = Value_from_string(value)
+            if v not in kinds[kind]:
+                kinds[kind][v] = {}
 
-        device = part.get_device()
-        if device not in kinds[kind][v]:
-            kinds[kind][v][device] = {}
+            device = part.get_device()
+            if device not in kinds[kind][v]:
+                kinds[kind][v][device] = {}
 
-        kinds[kind][v][device][number] = part
+            kinds[kind][v][device][number] = part
+        except:
+            print("Error raised handling part: {}".format(part))
+            raise
     return kinds, name_to_part
 
 # In swoop, boards are made of "elements"
