@@ -295,7 +295,7 @@ def Value_from_string(string):
 
     # Split 0.5kΩ into `0.5` and `kΩ`
     try:
-        r = re.compile("([0-9.]+)[ ]*([{}]?)([^ ]+)".\
+        r = re.compile("([0-9.]+)[ ]*([{}]?)([^ ]*)".\
                 format(''.join(known_unit_prefixes.keys())))
         m = r.match(string)
         magnitude = m.group(1)
@@ -306,10 +306,8 @@ def Value_from_string(string):
         print("Often this means that the value is incorrect")
         print("Consider fixing the board before hacking this script")
         print("")
-        print("Problematic part:")
-        print("  Part: {}".format(part))
-        print("  Name: {}".format(name))
-        print(" Value: {}".format(value))
+        print("Problematic value string:")
+        print("  Value: {}".format(string))
         print("")
         raise
 
