@@ -342,6 +342,8 @@ def parts_to_kinds(parts):
 
         # Split C12 into `C` and `12`
         m = name_re.match(name)
+        if m is None:
+            raise NotImplementedError("Invalid name? Part {} with name: {}".format(part, name))
         kind = m.group(1)
         number = m.group(2)
 
