@@ -153,7 +153,7 @@ def unit_package_sort(value, unit_prefixes, device):
    return _unit_package_list.index((normalized, device))
 
 sch_part_tag_re = re.compile(
-      '<part name="{}(.+?)".*device="([0-9A-Z_]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
+      '<part name="{}(.+?)".*device[set]*="([0-9A-Z_]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
 sch_part_tag_dnp_re = re.compile(
@@ -244,10 +244,10 @@ for line in schematic:
             numbers.add(number)
             values[deviceset] += 1
 
-            unit_package_insert(deviceset,'','')
-            if (deviceset,'','') not in parts:
-               parts[(deviceset,'','')] = []
-            parts[(deviceset,'','')].append({'number': number, 'suffix': ''})
+            unit_package_insert('','',deviceset)
+            if ('','',deviceset) not in parts:
+               parts[('','',deviceset)] = []
+            parts[('','',deviceset)].append({'number': number, 'suffix': ''})
 
 try:
    parts = collections.OrderedDict(sorted(parts.items(), key=lambda t: unit_package_sort(*t[0])))
