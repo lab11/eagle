@@ -44,25 +44,25 @@ MPN_description_db_file = os.path.join(script_path, 'db', 'mpn-description.pickl
 try:
     with open(digikey_MPN_db_file, 'rb') as f:
         _digikey_MPN = pickle.load(f)
-except IOError:
+except OSError:
     _digikey_MPN = bidict.bidict()
 
 try:
     with open(digikey_moq_aliases_db_file, 'rb') as f:
         _digikey_moq_aliases = pickle.load(f)
-except IOError:
+except OSError:
     _digikey_moq_aliases = dict()
 
 try:
     with open(MPN_manufacturer_db_file, 'rb') as f:
         _MPN_manufacturer = pickle.load(f)
-except IOError:
+except OSError:
     _MPN_manufacturer = dict()
 
 try:
     with open(MPN_description_db_file, 'rb') as f:
         _MPN_description = pickle.load(f)
-except IOError:
+except OSError:
     _MPN_description = dict()
 
 def _sync_digikey_MPN():
