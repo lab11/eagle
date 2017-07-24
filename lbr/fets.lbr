@@ -779,6 +779,8 @@ High-power, low thermal resistance package.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="SI2333DDS-T1-GE3CT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Vishay Siliconix" constant="no"/>
+<attribute name="MPN" value="SI2333DDS-T1-GE3" constant="no"/>
 </technology>
 </technologies>
 </device>
