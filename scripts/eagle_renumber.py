@@ -106,16 +106,44 @@ def resolve_unit(value, unit_prefix):
 _unit_package_list = []
 def unit_package_insert(value, unit_prefixes, device):
    normalized = resolve_unit(value, unit_prefixes)
+   if type(normalized) != float:
+      if normalized != '':
+         print('')
+         print_err("Non-numeric value?")
+         print(type(normalized))
+         print(normalized)
+         print(unit_prefixes)
+         print(device)
+         print('')
+         raise NotImplementedError
    if (normalized, device) in _unit_package_list:
       return
-   for up in _unit_package_list:
-      if normalized > up[0]:
-         continue
-      if normalized == up[0]:
-         if device > up[1]:
+   for existing in _unit_package_list:
+      existing_normalized_value = existing[0]
+      existing_device = existing[1]
+      try:
+         if normalized > existing_normalized_value:
             continue
-      at = _unit_package_list.index(up)
-      break
+         if normalized == existing_normalized_value:
+            if device > existing_device:
+               continue
+         at = _unit_package_list.index(existing)
+         break
+      except:
+         print('')
+         print_err("Error: Internal error sorting:")
+         print(value)
+         print(unit_prefixes)
+         print(device)
+         print('')
+         print('-->')
+         print(normalized)
+         print(existing)
+         print('<--')
+         print('If one of these is a number and the other is a string, you probably')
+         print('have a mixture of parts with and without values, which is not supported.')
+         print('')
+         raise
    else:
       at = len(_unit_package_list)
    _unit_package_list.insert(at, (normalized, device))
