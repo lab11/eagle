@@ -96,6 +96,8 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
         single_sku = digikey_high_moq_sku[:-4] + '1-ND'
     elif digikey_high_moq_sku[-5:] == 'TR-ND':
         single_sku = digikey_high_moq_sku[:-5] + 'CT-ND'
+    elif digikey_high_moq_sku[-6:] == 'DKR-ND':
+        single_sku = digikey_high_moq_sku[:-6] + 'CT-ND'
     else:
         raise NotImplementedError("High MOQ SKU? {}".format(digikey_high_moq_sku))
 
@@ -176,6 +178,8 @@ def _do_queries(queries):
 
     try:
         data = urllib.request.urlopen(url).read()
+        if type(data) != str:
+            data = data.decode('utf-8')
         response = json.loads(data)
     except urllib.error.HTTPError as e:
         if e.code == 429:
@@ -290,7 +294,7 @@ Value = collections.namedtuple('Value', ('magnitude', 'prefix', 'unit', 'normali
 Value.__str__ = lambda x: '{}{}{}'.format(x.magnitude, x.prefix, x.unit) if x.magnitude is not None else '<No Value>'
 def Value_from_string(string):
     # Create a null "value" for parts with no value
-    if string is None:
+    if not string or string is None or string == 'None':
         return Value(magnitude=None, prefix=None, unit=None, normalized=None)
 
     # Split 0.5kΩ into `0.5` and `kΩ`
