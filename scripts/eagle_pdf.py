@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 HELP = """
@@ -115,8 +115,8 @@ for sch in glob('*.sch'):
 	with tempfile.NamedTemporaryFile() as temp_scr:
 		with open(pdfscrSch) as source:
 			for line in source:
-				temp_scr.write(line)
-		temp_scr.write('\nquit;')
+				temp_scr.write(line.encode('utf-8'))
+		temp_scr.write('\nquit;'.encode('utf-8'))
 		temp_scr.flush()
 
 		# Generate the schematic pdfs
@@ -126,8 +126,8 @@ for sch in glob('*.sch'):
 	with tempfile.NamedTemporaryFile() as temp_scr:
 		with open(pdfscrBrd) as source:
 			for line in source:
-				temp_scr.write(line)
-		temp_scr.write('\nquit;')
+				temp_scr.write(line.encode('utf-8'))
+		temp_scr.write('\nquit;'.encode('utf-8'))
 		temp_scr.flush()
 
 		# Generate the board pdfs
