@@ -8663,6 +8663,8 @@ DS RMS-to-DC Converter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="497-14947-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
+<attribute name="MPN" value="MP23AB02BTR" constant="no"/>
 </technology>
 </technologies>
 </device>
