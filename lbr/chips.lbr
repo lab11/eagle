@@ -2638,11 +2638,9 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 </package>
 <package name="DIP-8">
 <wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-1.524" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-2.54" width="0.2032" layer="21"/>
 <wire x1="5.08" y1="2.54" x2="5.08" y2="-2.54" width="0.2032" layer="21"/>
 <wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="-1.524" width="0.2032" layer="21"/>
-<wire x1="-5.08" y1="-1.524" x2="-5.08" y2="-1.016" width="0.2032" layer="21"/>
 <circle x="-3.81" y="-1.27" radius="0.7184" width="0.254" layer="21"/>
 <pad name="1" x="-3.81" y="-3.81" drill="0.8128" diameter="1.7272" shape="octagon"/>
 <pad name="2" x="-1.27" y="-3.81" drill="0.8128" diameter="1.7272" shape="octagon"/>
@@ -2653,7 +2651,8 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <pad name="7" x="-1.27" y="3.81" drill="0.8128" diameter="1.7272" shape="octagon"/>
 <pad name="8" x="-3.81" y="3.81" drill="0.8128" diameter="1.7272" shape="octagon"/>
 <text x="-3.175" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-5.715" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="6.90118125" y="-3.5687" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<circle x="-5.9182" y="-3.8608" radius="0.254" width="0.254" layer="21"/>
 </package>
 <package name="MP23AB02B">
 <wire x1="-1.4" y1="1.7" x2="1.4" y2="1.7" width="0.127" layer="21"/>
@@ -9391,6 +9390,7 @@ with External Sense Resistor</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="497-16578-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
 <attribute name="MPN" value="STM32L432KCU6" constant="no"/>
 </technology>
 </technologies>
