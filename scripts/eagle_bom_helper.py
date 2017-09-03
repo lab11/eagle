@@ -138,13 +138,26 @@ def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
                 digikey = check_digikey_moq_alias(digikey, mpn)
 
             if _looked_up_digikey and _looked_up_digikey != digikey:
-                raise NotImplementedError("Internal Error: Digi-Key returned doesn't match query? {} != {}".\
+                if offer['packaging'] == 'Custom Reel':
+                    #if the only difference between the two is the package identifier move forward
+                    return_splits = digikey.split('-')
+                    return_splits[2] = '1'
+                    try_digikey = "-".join(return_splits)
+                    #did that one change fix it?
+                    if(try_digikey == _looked_up_digikey):
+                        digikey = try_digikey
+                    else:
+                        raise NotImplementedError("Internal Error: Digi-Key returned doesn't match query? {} != {}".\
+                        format(_looked_up_digikey, digikey))
+                else:
+                    raise NotImplementedError("Internal Error: Digi-Key returned doesn't match query? {} != {}".\
                         format(_looked_up_digikey, digikey))
             break
     else:
         raise NotImplementedError("No Digi-Key part number: {}".format(item['offers']))
 
     try:
+        print("Adding mpn {} for digikey {}".format(mpn,digikey))
         _digikey_MPN[digikey] = mpn
     except bidict.BidictException:
         print("digikey: {}".format(digikey))
@@ -306,25 +319,34 @@ def Value_from_string(string):
         prefix = m.group(2)
         unit = m.group(3)
     except:
-        print("Error parsing value?")
+        print("Error parsing value: {}".format(string))
         print("Often this means that the value is incorrect")
-        print("Consider fixing the board before hacking this script")
-        print("")
-        print("Problematic value string:")
-        print("  Value: {}".format(string))
-        print("")
-        raise
+        print("Attempting to continue anyways with value string as literal")
+        magnitude = ""
+        prefix = string.upper()
+        unit = ""
 
-    magnitude = float(magnitude)
-    if int(magnitude) == magnitude:
-        magnitude = int(magnitude)
 
-    v = Value(
+    if not magnitude == "":
+        magnitude = float(magnitude)
+        if int(magnitude) == magnitude:
+            magnitude = int(magnitude)
+        v = Value(
             magnitude=magnitude,
             prefix=prefix,
             unit=unit,
             normalized=resolve_unit(magnitude, prefix)
             )
+    else:
+        magnitude = 0
+        v = Value(
+            magnitude=magnitude,
+            prefix=prefix,
+            unit=unit,
+            normalized=0
+            )
+
+
     return v
 
 def collapse_range(numbers):
@@ -428,7 +450,7 @@ def handle_attrs_for_part(part):
         print('')
         termcolor.cprint('Exception handling: {}'.format(part), attrs=['bold'])
         print('')
-        raise
+        #raise
 
 def _handle_attrs_for_part(part):
     # Load existing attributes and clean up whitespace if needed:
@@ -593,94 +615,97 @@ for kind in sorted(sch_kinds):
     rows_before = [['Name', 'Value', 'Package', 'DESCRIPTION', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
 
     # Iterating '10uF', '100uF', etc
-    for value in sorted(values, key=lambda v: v.normalized):
-        for device in sorted(sch_kinds[kind][value]):
-            # Grab the state of the world before we've done anything
-            # Iterating C10, C11, C12, etc
-            for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
-                sch_part = sch_kinds[kind][value][device][number]
-
-                before = attr_row_helper(kind, value, device, number, sch_part, rows_before)
-                rows_before.append(before)
-
-
-
-            if value.magnitude is not None:
-                # For parts with values, all parts with the same value (i.e. all the
-                # 1k resistors) should have the same attributes, this makes that
-                # happen. For stuff without values (i.e. ICs, LEDs), skip this step
-
-                # First check if there are any conflicts in existing attributes
-                existing_attrs = []
-                no_attrs = []
+    try:
+        for value in sorted(values, key=lambda v: v.normalized):
+            for device in sorted(sch_kinds[kind][value]):
+                # Grab the state of the world before we've done anything
                 # Iterating C10, C11, C12, etc
                 for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
                     sch_part = sch_kinds[kind][value][device][number]
-                    attrs = get_Attributes_from_part(sch_part)
-                    if attrs:
-                        if attrs not in existing_attrs:
-                            existing_attrs.append(attrs)
-                    else:
-                        no_attrs.append(sch_part)
 
-                if len(existing_attrs) > 1:
-                    print('')
-                    termcolor.cprint('Error: Conflicting attributes', attrs=['bold'])
-                    print('Parts of the same kind and same value have differing attributes')
-                    print('This is probably a bad thing that you should fix up')
-                    print('Caveat: This script does not handle multiple packages yet')
-                    print('        i.e. if you have 0402 and 0603 0.1uF caps, this will fail')
-                    print('')
-                    for attrs in existing_attrs:
-                        print(attrs)
-                        for number,part in sch_kinds[kind][value][device].items():
-                            if attrs == get_Attributes_from_part(part):
-                                print("{} ".format(number), end='')
+                    before = attr_row_helper(kind, value, device, number, sch_part, rows_before)
+                    rows_before.append(before)
+
+
+
+                if value.magnitude is not None:
+                    # For parts with values, all parts with the same value (i.e. all the
+                    # 1k resistors) should have the same attributes, this makes that
+                    # happen. For stuff without values (i.e. ICs, LEDs), skip this step
+
+                    # First check if there are any conflicts in existing attributes
+                    existing_attrs = []
+                    no_attrs = []
+                    # Iterating C10, C11, C12, etc
+                    for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
+                        sch_part = sch_kinds[kind][value][device][number]
+                        attrs = get_Attributes_from_part(sch_part)
+                        if attrs:
+                            if attrs not in existing_attrs:
+                                existing_attrs.append(attrs)
+                        else:
+                            no_attrs.append(sch_part)
+
+                    if len(existing_attrs) > 1:
                         print('')
-                    raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
+                        termcolor.cprint('Error: Conflicting attributes', attrs=['bold'])
+                        print('Parts of the same kind and same value have differing attributes')
+                        print('This is probably a bad thing that you should fix up')
+                        print('Caveat: This script does not handle multiple packages yet')
+                        print('        i.e. if you have 0402 and 0603 0.1uF caps, this will fail')
+                        print('')
+                        for attrs in existing_attrs:
+                            print(attrs)
+                            for number,part in sch_kinds[kind][value][device].items():
+                                if attrs == get_Attributes_from_part(part):
+                                    print("{} ".format(number), end='')
+                            print('')
+                        raise NotImplementedError("Conflicting existing attrs: {}".format(existing_attrs))
 
-                if len(existing_attrs) == 1:
-                    # Add attributes from one part to all identical parts
-                    for sch_part in no_attrs:
-                        for attr in existing_attrs[0]:
-                            sch_part.set_attribute(attr.name, attr.value)
+                    if len(existing_attrs) == 1:
+                        # Add attributes from one part to all identical parts
+                        for sch_part in no_attrs:
+                            for attr in existing_attrs[0]:
+                                sch_part.set_attribute(attr.name, attr.value)
 
 
 
-            # Next iterate parts to flesh out all attributes
-            # Iterating C10, C11, C12, etc
-            orphan_parts = []
-            for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
-                sch_part = sch_kinds[kind][value][device][number]
-                handle_attrs_for_part(sch_part)
+                # Next iterate parts to flesh out all attributes
+                # Iterating C10, C11, C12, etc
+                orphan_parts = []
+                for number in sorted(sch_kinds[kind][value][device], key=lambda n: int(n)):
+                    sch_part = sch_kinds[kind][value][device][number]
+                    handle_attrs_for_part(sch_part)
 
-                try:
-                    brd_element = sch_part_to_brd_element[sch_part]
-                    handle_attrs_update_element(sch_part, brd_element)
-                except KeyError:
-                    orphan_parts.append(sch_part)
+                    try:
+                        brd_element = sch_part_to_brd_element[sch_part]
+                        handle_attrs_update_element(sch_part, brd_element)
+                    except KeyError:
+                        orphan_parts.append(sch_part)
 
-                row = attr_row_helper(kind, value, device, number, sch_part, rows)
-                rows.append(row)
-            handle_orphan_parts(orphan_parts)
+                    row = attr_row_helper(kind, value, device, number, sch_part, rows)
+                    rows.append(row)
+                handle_orphan_parts(orphan_parts)
 
-    if rows_before == rows:
-        termcolor.cprint('No changes', attrs=['bold'])
-        print(dataprint.to_string(rows))
-    else:
-        with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
-            # HACK for space of MPN entry on diff
-            rows_before[0][rows_before[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
-            rows[0][rows[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
+        if rows_before == rows:
+            termcolor.cprint('No changes', attrs=['bold'])
+            print(dataprint.to_string(rows))
+        else:
+            with tempfile.NamedTemporaryFile(mode='w+t') as before, tempfile.NamedTemporaryFile(mode='w+t') as after:
+                # HACK for space of MPN entry on diff
+                rows_before[0][rows_before[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
+                rows[0][rows[0].index('MPN')] = '.' * 8 + 'MPN' + '.' * 8
 
-            dataprint.to_file(before, rows_before)
-            dataprint.to_file(after, rows)
-            before.flush()
-            after.flush()
-            options = icdiff.get_options()[0]
-            options.no_headers = True
-            icdiff.diff_files(options, before.name, after.name)
-    print('')
+                dataprint.to_file(before, rows_before)
+                dataprint.to_file(after, rows)
+                before.flush()
+                after.flush()
+                options = icdiff.get_options()[0]
+                options.no_headers = True
+                icdiff.diff_files(options, before.name, after.name)
+        print('')
+    except:
+        pass
 
 print()
 r = input('Write updated Eagle files? [Y/n] ')
