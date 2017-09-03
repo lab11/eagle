@@ -8967,6 +8967,8 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="AT45DB641E-MHN-TCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Adesto" constant="no"/>
+<attribute name="MPN" value="AT45DB641E-MHN-T" constant="no"/>
 </technology>
 </technologies>
 </device>
