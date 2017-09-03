@@ -362,6 +362,8 @@ nom 1.3 x 3.3</text>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="67-2125-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Lumex Opto" constant="no"/>
+<attribute name="MPN" value="SML-LX0404SIUPGUSB" constant="no"/>
 </technology>
 </technologies>
 </device>

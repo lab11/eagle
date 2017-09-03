@@ -6509,6 +6509,8 @@ the functionality of your wireless devices.</description>
 </connects>
 <technologies>
 <technology name="">
+<attribute name="MANUFACTURER" value="Fractus" constant="no"/>
+<attribute name="MPN" value="FR05-S1-N-0-102" constant="no"/>
 <attribute name="RICHARDSON_RFPD" value="FR05-S1-N-0102B" constant="no"/>
 </technology>
 </technologies>
@@ -6777,7 +6779,9 @@ Interface) and offers temperature compensated time.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="1490-1049-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Nordic Semi" constant="no"/>
 <attribute name="MOUSER" value="949-NRF51822-QFAC-R7" constant="no"/>
+<attribute name="MPN" value="NRF51822-QFAC-R7 " constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -6824,7 +6828,9 @@ nRF24LE1, nRF51822-QFAA/AB, with integrated harmonic filter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="497-13637-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
 <attribute name="MOUSER" value="511-BAL-NRF01D3" constant="no"/>
+<attribute name="MPN" value="BAL-NRF01D3" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -8327,6 +8333,8 @@ DS RMS-to-DC Converter</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="296-25888-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TI" constant="no"/>
+<attribute name="MPN" value="TXB0104RUTR" constant="no"/>
 </technology>
 </technologies>
 </device>
