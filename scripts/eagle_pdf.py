@@ -28,7 +28,7 @@ try:
 	import PyPDF2
 except:
 	print("You need to install pypdf2")
-	print("(sudo) pip install pypdf2")
+	print("(sudo) pip3 install pypdf2")
 	sys.exit(1)
 
 try:
