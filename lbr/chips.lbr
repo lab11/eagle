@@ -8928,7 +8928,9 @@ even at very small sense voltages.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="296-44599-5-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TI" constant="no"/>
 <attribute name="MOUSER" value="595-BQ7790503PW" constant="no"/>
+<attribute name="MPN" value="BQ7790503PW" constant="no"/>
 </technology>
 </technologies>
 </device>
