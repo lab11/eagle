@@ -2692,7 +2692,7 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <wire x1="-1.143" y1="1.143" x2="-1.143" y2="0.762" width="0.127" layer="21"/>
 <wire x1="-1.143" y1="1.143" x2="-0.762" y2="1.143" width="0.127" layer="21"/>
 </package>
-<package name="QFN-16-3MM">
+<package name="QFN-16-3MM_NOPAD">
 <smd name="1" x="-1.4" y="1" dx="0.8" dy="0.3" layer="1"/>
 <wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
 <wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.127" layer="21"/>
@@ -3068,8 +3068,34 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <wire x1="3.5" y1="3.5" x2="3.5" y2="-3.5" width="0.1" layer="21"/>
 <wire x1="3.5" y1="-3.5" x2="-3.5" y2="-3.5" width="0.1" layer="21"/>
 <wire x1="-3.5" y1="-3.5" x2="-3.5" y2="3.5" width="0.1" layer="21"/>
-<text x="-3.5" y="3.75" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
-<text x="-3.5" y="-3.75" size="1.016" layer="21" font="vector" ratio="12" align="top-left">&gt;VALUE</text>
+<text x="-2.9" y="3.75" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
+<circle x="-3.8" y="3.8" radius="0.22360625" width="0.127" layer="21"/>
+</package>
+<package name="QFN-16-3MM">
+<smd name="16" x="-0.75" y="1.4" dx="0.25" dy="0.7" layer="1"/>
+<smd name="15" x="-0.25" y="1.4" dx="0.25" dy="0.7" layer="1"/>
+<smd name="14" x="0.25" y="1.4" dx="0.25" dy="0.7" layer="1"/>
+<smd name="13" x="0.75" y="1.4" dx="0.25" dy="0.7" layer="1"/>
+<smd name="4" x="-1.4" y="-0.75" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="3" x="-1.4" y="-0.25" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="2" x="-1.4" y="0.25" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="1" x="-1.4" y="0.75" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="8" x="0.75" y="-1.4" dx="0.25" dy="0.7" layer="1" rot="R180"/>
+<smd name="7" x="0.25" y="-1.4" dx="0.25" dy="0.7" layer="1" rot="R180"/>
+<smd name="6" x="-0.25" y="-1.4" dx="0.25" dy="0.7" layer="1" rot="R180"/>
+<smd name="5" x="-0.75" y="-1.4" dx="0.25" dy="0.7" layer="1" rot="R180"/>
+<smd name="9" x="1.35" y="-0.75" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="10" x="1.35" y="-0.25" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="11" x="1.35" y="0.25" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="12" x="1.35" y="0.75" dx="0.25" dy="0.7" layer="1" rot="R90"/>
+<smd name="GND" x="0" y="0" dx="1.45" dy="1.45" layer="1" cream="no"/>
+<rectangle x1="-0.5" y1="-0.5" x2="0.5" y2="0.5" layer="31"/>
+<wire x1="-1.5" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-1.5" x2="-1.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-1.5" x2="-1.5" y2="1.5" width="0.127" layer="21"/>
+<circle x="-1.7" y="1.7" radius="0.1" width="0.2" layer="21"/>
+<text x="-1.7" y="2.1" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -5855,6 +5881,31 @@ RF Switch</text>
 <pin name="VDD_FLASH" x="22.86" y="78.74" length="short" rot="R90"/>
 <text x="0" y="83.82" size="1.778" layer="95">&gt;NAME</text>
 <text x="30.48" y="83.82" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="AB1815-T3">
+<wire x1="0" y1="0" x2="0" y2="33.02" width="0.254" layer="94"/>
+<wire x1="0" y1="33.02" x2="27.94" y2="33.02" width="0.254" layer="94"/>
+<wire x1="27.94" y1="33.02" x2="27.94" y2="0" width="0.254" layer="94"/>
+<wire x1="27.94" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VSS" x="15.24" y="-2.54" length="short" rot="R90"/>
+<pin name="VCC" x="-2.54" y="30.48" length="short"/>
+<pin name="XI" x="-2.54" y="22.86" length="short"/>
+<pin name="XO" x="-2.54" y="20.32" length="short"/>
+<pin name="AF" x="-2.54" y="15.24" length="short"/>
+<pin name="VBAT" x="-2.54" y="27.94" length="short"/>
+<pin name="SCL" x="-2.54" y="10.16" length="short"/>
+<pin name="SDO" x="-2.54" y="7.62" length="short"/>
+<pin name="SDI" x="-2.54" y="5.08" length="short"/>
+<pin name="!CS" x="-2.54" y="2.54" length="short"/>
+<pin name="EXTI" x="30.48" y="30.48" length="short" rot="R180"/>
+<pin name="WDI" x="30.48" y="27.94" length="short" rot="R180"/>
+<pin name="!EXTR" x="30.48" y="5.08" length="short" rot="R180"/>
+<pin name="FOUT/!IRQ1" x="30.48" y="20.32" length="short" rot="R180"/>
+<pin name="!IRQ2" x="30.48" y="17.78" length="short" rot="R180"/>
+<pin name="!RST" x="30.48" y="7.62" length="short" rot="R180"/>
+<pin name="CLKOUT/!IRQ3" x="30.48" y="15.24" length="short" rot="R180"/>
+<text x="0" y="35.56" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -9011,7 +9062,7 @@ even at very small sense voltages.</description>
 <gate name="G$1" symbol="FXOS8700CQ" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="QFN-16-3MM">
+<device name="" package="QFN-16-3MM_NOPAD">
 <connects>
 <connect gate="G$1" pin="BYP" pad="2"/>
 <connect gate="G$1" pin="CRST" pad="8"/>
@@ -9694,6 +9745,38 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="VSS_PA" pad="F23"/>
 <connect gate="G$1" pin="XC1" pad="B24"/>
 <connect gate="G$1" pin="XC2" pad="A23"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="AB1815-T3" prefix="U">
+<description>Ultra-low current RTC. 55nA quiescent @ 3V. 1.5-3.6V input.</description>
+<gates>
+<gate name="G$1" symbol="AB1815-T3" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="QFN-16-3MM">
+<connects>
+<connect gate="G$1" pin="!CS" pad="12"/>
+<connect gate="G$1" pin="!EXTR" pad="3"/>
+<connect gate="G$1" pin="!IRQ2" pad="4"/>
+<connect gate="G$1" pin="!RST" pad="1"/>
+<connect gate="G$1" pin="AF" pad="14"/>
+<connect gate="G$1" pin="CLKOUT/!IRQ3" pad="8"/>
+<connect gate="G$1" pin="EXTI" pad="10"/>
+<connect gate="G$1" pin="FOUT/!IRQ1" pad="11"/>
+<connect gate="G$1" pin="SCL" pad="7"/>
+<connect gate="G$1" pin="SDI" pad="9"/>
+<connect gate="G$1" pin="SDO" pad="6"/>
+<connect gate="G$1" pin="VBAT" pad="5"/>
+<connect gate="G$1" pin="VCC" pad="13"/>
+<connect gate="G$1" pin="VSS" pad="GND"/>
+<connect gate="G$1" pin="WDI" pad="2"/>
+<connect gate="G$1" pin="XI" pad="16"/>
+<connect gate="G$1" pin="XO" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
