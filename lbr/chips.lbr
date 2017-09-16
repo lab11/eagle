@@ -9747,7 +9747,10 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="XC2" pad="A23"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="MANUFACTURER" value="NORIDIC SEMICONDUCTOR" constant="no"/>
+<attribute name="MPN" value="NRF52840" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -9779,7 +9782,11 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="XO" pad="15"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="535-11936-2-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Abracon" constant="no"/>
+<attribute name="MPN" value="AB1815-T3" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
