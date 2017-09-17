@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5805,82 +5805,81 @@ RF Switch</text>
 </symbol>
 <symbol name="NRF52840">
 <description>NRF52840 AQFN73</description>
-<wire x1="0" y1="-17.78" x2="0" y2="81.28" width="0.254" layer="94"/>
-<wire x1="0" y1="81.28" x2="40.64" y2="81.28" width="0.254" layer="94"/>
-<wire x1="40.64" y1="81.28" x2="40.64" y2="-17.78" width="0.254" layer="94"/>
-<wire x1="40.64" y1="-17.78" x2="0" y2="-17.78" width="0.254" layer="94"/>
-<pin name="P0.29/AIN5" x="43.18" y="66.04" length="short" rot="R180"/>
-<pin name="P0.30/AIN6" x="43.18" y="63.5" length="short" rot="R180"/>
-<pin name="P0.31/AIN7" x="43.18" y="60.96" length="short" rot="R180"/>
-<pin name="P0.02/AIN0" x="43.18" y="78.74" length="short" rot="R180"/>
-<pin name="P1.15" x="43.18" y="17.78" length="short" rot="R180"/>
-<pin name="P1.13" x="43.18" y="22.86" length="short" rot="R180"/>
-<pin name="DEC2" x="-2.54" y="68.58" length="short"/>
-<pin name="P1.10" x="43.18" y="30.48" length="short" rot="R180"/>
-<pin name="VDD" x="20.32" y="78.74" length="short" rot="R90"/>
-<pin name="XC2" x="43.18" y="2.54" length="short" rot="R180"/>
-<pin name="DCC" x="-2.54" y="76.2" length="short"/>
-<pin name="DEC4" x="-2.54" y="63.5" length="short"/>
-<pin name="VSS" x="20.32" y="-20.32" length="short" rot="R90"/>
-<pin name="P0.28/AIN4" x="43.18" y="68.58" length="short" rot="R180"/>
-<pin name="P0.03/AIN1" x="43.18" y="76.2" length="short" rot="R180"/>
-<pin name="P1.14" x="43.18" y="20.32" length="short" rot="R180"/>
-<pin name="P1.12" x="43.18" y="25.4" length="short" rot="R180"/>
-<pin name="P1.11" x="43.18" y="27.94" length="short" rot="R180"/>
-<pin name="XC1" x="43.18" y="5.08" length="short" rot="R180"/>
-<pin name="DEC1" x="-2.54" y="71.12" length="short"/>
-<pin name="P0.00/XL1" x="43.18" y="-2.54" length="short" rot="R180"/>
-<pin name="DEC3" x="-2.54" y="66.04" length="short"/>
-<pin name="DEC6" x="-2.54" y="58.42" length="short"/>
-<pin name="P0.01/XL2" x="43.18" y="-5.08" length="short" rot="R180"/>
-<pin name="VSS_PA" x="22.86" y="-20.32" length="short" rot="R90"/>
-<pin name="P0.26" x="43.18" y="12.7" length="short" rot="R180"/>
-<pin name="P0.27" x="43.18" y="15.24" length="short" rot="R180"/>
-<pin name="ANT" x="43.18" y="-12.7" length="short" rot="R180"/>
-<pin name="P0.04/AIN2" x="43.18" y="73.66" length="short" rot="R180"/>
-<pin name="P0.10/NFC2" x="-2.54" y="38.1" length="short"/>
-<pin name="P0.05/AIN3" x="43.18" y="71.12" length="short" rot="R180"/>
-<pin name="P0.06" x="-2.54" y="33.02" length="short"/>
-<pin name="P0.09/NFC1" x="-2.54" y="40.64" length="short"/>
-<pin name="P0.07" x="-2.54" y="30.48" length="short"/>
-<pin name="P0.08" x="-2.54" y="27.94" length="short"/>
-<pin name="DEC5" x="-2.54" y="60.96" length="short"/>
-<pin name="P1.08" x="43.18" y="35.56" length="short" rot="R180"/>
-<pin name="P1.07" x="43.18" y="38.1" length="short" rot="R180"/>
-<pin name="P1.09" x="43.18" y="33.02" length="short" rot="R180"/>
-<pin name="P1.06" x="43.18" y="40.64" length="short" rot="R180"/>
-<pin name="P0.11" x="-2.54" y="25.4" length="short"/>
-<pin name="P1.05" x="43.18" y="43.18" length="short" rot="R180"/>
-<pin name="P0.12" x="-2.54" y="22.86" length="short"/>
-<pin name="P1.04" x="43.18" y="45.72" length="short" rot="R180"/>
-<pin name="P1.03" x="43.18" y="48.26" length="short" rot="R180"/>
-<pin name="P1.02" x="43.18" y="50.8" length="short" rot="R180"/>
-<pin name="VDDH" x="17.78" y="78.74" length="short" rot="R90"/>
-<pin name="P1.01" x="43.18" y="53.34" length="short" rot="R180"/>
-<pin name="SWDCLK" x="-2.54" y="-15.24" length="short"/>
-<pin name="DCCH" x="-2.54" y="78.74" length="short"/>
-<pin name="DECUSB" x="-2.54" y="53.34" length="short"/>
-<pin name="P0.14" x="-2.54" y="17.78" length="short"/>
-<pin name="P0.16" x="-2.54" y="12.7" length="short"/>
-<pin name="P0.18" x="-2.54" y="7.62" length="short"/>
-<pin name="P0.19" x="-2.54" y="5.08" length="short"/>
-<pin name="P0.21" x="-2.54" y="0" length="short"/>
-<pin name="P0.23" x="-2.54" y="-5.08" length="short"/>
-<pin name="P0.25" x="43.18" y="10.16" length="short" rot="R180"/>
-<pin name="SWDIO" x="-2.54" y="-12.7" length="short"/>
-<pin name="VBUS" x="-2.54" y="50.8" length="short"/>
-<pin name="D-" x="-2.54" y="48.26" length="short"/>
-<pin name="D+" x="-2.54" y="45.72" length="short"/>
-<pin name="P0.13" x="-2.54" y="20.32" length="short"/>
-<pin name="P0.15" x="-2.54" y="15.24" length="short"/>
-<pin name="P0.17" x="-2.54" y="10.16" length="short"/>
-<pin name="P0.20" x="-2.54" y="2.54" length="short"/>
-<pin name="P0.22" x="-2.54" y="-2.54" length="short"/>
-<pin name="P0.24" x="-2.54" y="-7.62" length="short"/>
-<pin name="P1.00" x="43.18" y="55.88" length="short" rot="R180"/>
-<pin name="VDD_FLASH" x="22.86" y="78.74" length="short" rot="R90"/>
-<text x="0" y="83.82" size="1.778" layer="95">&gt;NAME</text>
-<text x="30.48" y="83.82" size="1.778" layer="95">&gt;VALUE</text>
+<wire x1="0" y1="0" x2="0" y2="99.06" width="0.254" layer="94"/>
+<wire x1="0" y1="99.06" x2="40.64" y2="99.06" width="0.254" layer="94"/>
+<wire x1="40.64" y1="99.06" x2="40.64" y2="0" width="0.254" layer="94"/>
+<wire x1="40.64" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="P0.29/AIN5" x="43.18" y="83.82" length="short" rot="R180"/>
+<pin name="P0.30/AIN6" x="43.18" y="81.28" length="short" rot="R180"/>
+<pin name="P0.31/AIN7" x="43.18" y="78.74" length="short" rot="R180"/>
+<pin name="P0.02/AIN0" x="43.18" y="96.52" length="short" rot="R180"/>
+<pin name="P1.15" x="43.18" y="35.56" length="short" rot="R180"/>
+<pin name="P1.13" x="43.18" y="40.64" length="short" rot="R180"/>
+<pin name="DEC2" x="-2.54" y="86.36" length="short"/>
+<pin name="P1.10" x="43.18" y="48.26" length="short" rot="R180"/>
+<pin name="VDD" x="20.32" y="96.52" length="short" rot="R90"/>
+<pin name="XC2" x="43.18" y="20.32" length="short" rot="R180"/>
+<pin name="DCC" x="-2.54" y="93.98" length="short"/>
+<pin name="DEC4" x="-2.54" y="81.28" length="short"/>
+<pin name="VSS" x="20.32" y="-2.54" length="short" rot="R90"/>
+<pin name="P0.28/AIN4" x="43.18" y="86.36" length="short" rot="R180"/>
+<pin name="P0.03/AIN1" x="43.18" y="93.98" length="short" rot="R180"/>
+<pin name="P1.14" x="43.18" y="38.1" length="short" rot="R180"/>
+<pin name="P1.12" x="43.18" y="43.18" length="short" rot="R180"/>
+<pin name="P1.11" x="43.18" y="45.72" length="short" rot="R180"/>
+<pin name="XC1" x="43.18" y="22.86" length="short" rot="R180"/>
+<pin name="DEC1" x="-2.54" y="88.9" length="short"/>
+<pin name="P0.00/XL1" x="43.18" y="15.24" length="short" rot="R180"/>
+<pin name="DEC3" x="-2.54" y="83.82" length="short"/>
+<pin name="DEC6" x="-2.54" y="76.2" length="short"/>
+<pin name="P0.01/XL2" x="43.18" y="12.7" length="short" rot="R180"/>
+<pin name="VSS_PA" x="22.86" y="-2.54" length="short" rot="R90"/>
+<pin name="P0.26" x="43.18" y="30.48" length="short" rot="R180"/>
+<pin name="P0.27" x="43.18" y="33.02" length="short" rot="R180"/>
+<pin name="ANT" x="43.18" y="5.08" length="short" rot="R180"/>
+<pin name="P0.04/AIN2" x="43.18" y="91.44" length="short" rot="R180"/>
+<pin name="P0.10/NFC2" x="-2.54" y="55.88" length="short"/>
+<pin name="P0.05/AIN3" x="43.18" y="88.9" length="short" rot="R180"/>
+<pin name="P0.06" x="-2.54" y="50.8" length="short"/>
+<pin name="P0.09/NFC1" x="-2.54" y="58.42" length="short"/>
+<pin name="P0.07" x="-2.54" y="48.26" length="short"/>
+<pin name="P0.08" x="-2.54" y="45.72" length="short"/>
+<pin name="DEC5" x="-2.54" y="78.74" length="short"/>
+<pin name="P1.08" x="43.18" y="53.34" length="short" rot="R180"/>
+<pin name="P1.07" x="43.18" y="55.88" length="short" rot="R180"/>
+<pin name="P1.09" x="43.18" y="50.8" length="short" rot="R180"/>
+<pin name="P1.06" x="43.18" y="58.42" length="short" rot="R180"/>
+<pin name="P0.11" x="-2.54" y="43.18" length="short"/>
+<pin name="P1.05" x="43.18" y="60.96" length="short" rot="R180"/>
+<pin name="P0.12" x="-2.54" y="40.64" length="short"/>
+<pin name="P1.04" x="43.18" y="63.5" length="short" rot="R180"/>
+<pin name="P1.03" x="43.18" y="66.04" length="short" rot="R180"/>
+<pin name="P1.02" x="43.18" y="68.58" length="short" rot="R180"/>
+<pin name="VDDH" x="17.78" y="96.52" length="short" rot="R90"/>
+<pin name="P1.01" x="43.18" y="71.12" length="short" rot="R180"/>
+<pin name="SWDCLK" x="-2.54" y="2.54" length="short"/>
+<pin name="DCCH" x="-2.54" y="96.52" length="short"/>
+<pin name="DECUSB" x="-2.54" y="71.12" length="short"/>
+<pin name="P0.14" x="-2.54" y="35.56" length="short"/>
+<pin name="P0.16" x="-2.54" y="30.48" length="short"/>
+<pin name="P0.18" x="-2.54" y="25.4" length="short"/>
+<pin name="P0.19" x="-2.54" y="22.86" length="short"/>
+<pin name="P0.21" x="-2.54" y="17.78" length="short"/>
+<pin name="P0.23" x="-2.54" y="12.7" length="short"/>
+<pin name="P0.25" x="43.18" y="27.94" length="short" rot="R180"/>
+<pin name="SWDIO" x="-2.54" y="5.08" length="short"/>
+<pin name="VBUS" x="-2.54" y="68.58" length="short"/>
+<pin name="D-" x="-2.54" y="66.04" length="short"/>
+<pin name="D+" x="-2.54" y="63.5" length="short"/>
+<pin name="P0.13" x="-2.54" y="38.1" length="short"/>
+<pin name="P0.15" x="-2.54" y="33.02" length="short"/>
+<pin name="P0.17" x="-2.54" y="27.94" length="short"/>
+<pin name="P0.20" x="-2.54" y="20.32" length="short"/>
+<pin name="P0.22" x="-2.54" y="15.24" length="short"/>
+<pin name="P0.24" x="-2.54" y="10.16" length="short"/>
+<pin name="P1.00" x="43.18" y="73.66" length="short" rot="R180"/>
+<text x="0" y="101.6" size="1.778" layer="95">&gt;NAME</text>
+<text x="30.48" y="101.6" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 <symbol name="AB1815-T3">
 <wire x1="0" y1="0" x2="0" y2="33.02" width="0.254" layer="94"/>
@@ -9738,9 +9737,8 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="SWDCLK" pad="AA24"/>
 <connect gate="G$1" pin="SWDIO" pad="AC24"/>
 <connect gate="G$1" pin="VBUS" pad="AD2"/>
-<connect gate="G$1" pin="VDD" pad="A22 AD14 B1 W1"/>
+<connect gate="G$1" pin="VDD" pad="A22 AD14 AD23 B1 W1"/>
 <connect gate="G$1" pin="VDDH" pad="Y2"/>
-<connect gate="G$1" pin="VDD_FLASH" pad="AD23"/>
 <connect gate="G$1" pin="VSS" pad="B7 GND"/>
 <connect gate="G$1" pin="VSS_PA" pad="F23"/>
 <connect gate="G$1" pin="XC1" pad="B24"/>
