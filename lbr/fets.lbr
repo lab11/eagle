@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.1">
+<eagle version="8.3.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -323,6 +323,23 @@ High-power, low thermal resistance package.</description>
 <text x="-1.532" y="0" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center">&gt;NAME</text>
 <text x="1.2825" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R90" align="top-center">&gt;VALUE</text>
 <circle x="-1.27" y="-1.016" radius="0.08255" width="0.254" layer="21"/>
+</package>
+<package name="CSD22206W">
+<smd name="B2" x="0" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="B3" x="0.5" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="B1" x="-0.5" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A1" x="-0.5" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A2" x="0" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A3" x="0.5" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="C3" x="0.5" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="C2" x="0" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="C1" x="-0.5" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<wire x1="-0.75" y1="0.75" x2="0.75" y2="0.75" width="0.1016" layer="21"/>
+<wire x1="0.75" y1="0.75" x2="0.75" y2="-0.75" width="0.1016" layer="21"/>
+<wire x1="0.75" y1="-0.75" x2="-0.75" y2="-0.75" width="0.1016" layer="21"/>
+<wire x1="-0.75" y1="-0.75" x2="-0.75" y2="0.75" width="0.1016" layer="21"/>
+<circle x="-0.891" y="0.891" radius="0.1016" width="0.1016" layer="21"/>
+<text x="-1.016" y="1.27" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -834,6 +851,28 @@ High-power, low thermal resistance package.</description>
 <attribute name="DIGIKEY" value="SI1922EDH-T1-GE3CT-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Vishay Siliconix" constant="no"/>
 <attribute name="MPN" value="SI1922EDH-T1-GE3" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CSD" prefix="Q">
+<description>P-Channel NexFet</description>
+<gates>
+<gate name="G$1" symbol="P_MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="22206W" package="CSD22206W">
+<connects>
+<connect gate="G$1" pin="D" pad="C1 C2 C3"/>
+<connect gate="G$1" pin="G" pad="A1"/>
+<connect gate="G$1" pin="S" pad="A2 A3 B1 B2 B3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-47005-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MPN" value="CSD22206WT" constant="no"/>
 </technology>
 </technologies>
 </device>
