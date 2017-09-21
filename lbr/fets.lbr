@@ -324,7 +324,7 @@ High-power, low thermal resistance package.</description>
 <text x="1.2825" y="0" size="1.016" layer="27" font="vector" ratio="12" rot="R90" align="top-center">&gt;VALUE</text>
 <circle x="-1.27" y="-1.016" radius="0.08255" width="0.254" layer="21"/>
 </package>
-<package name="CSD22206W">
+<package name="DSBGA">
 <smd name="B2" x="0" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
 <smd name="B3" x="0.5" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
 <smd name="B1" x="-0.5" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
@@ -568,6 +568,81 @@ High-power, low thermal resistance package.</description>
 <vertex x="4.064" y="0"/>
 <vertex x="3.048" y="0.635"/>
 <vertex x="3.048" y="-0.635"/>
+</polygon>
+<polygon width="0.1016" layer="94">
+<vertex x="1.143" y="0.762"/>
+<vertex x="0.508" y="-0.254"/>
+<vertex x="1.778" y="-0.254"/>
+</polygon>
+<wire x1="2.54" y1="-2.159" x2="2.54" y2="-6.35" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-6.35" x2="-2.54" y2="-6.35" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-6.35" x2="-5.08" y2="-6.35" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-6.35" x2="-5.08" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.016" y2="0" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="0" x2="-1.016" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-1.016" y1="-5.08" x2="7.62" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="0" x2="7.62" y2="0" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-2.54" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-7.62" x2="7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="2.54" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="-5.08" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-7.62" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="2.159" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="5.08" x2="2.54" y2="2.159" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-7.62" x2="-2.54" y2="-6.35" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="DUAL_P_MOSFET">
+<wire x1="-3.556" y1="0" x2="-5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="-3.556" y1="-2.159" x2="-5.08" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="-6.477" y1="-0.254" x2="-6.477" y2="-3.048" width="0.1524" layer="94"/>
+<wire x1="-6.477" y1="-3.048" x2="-5.08" y2="-3.048" width="0.1524" layer="94"/>
+<wire x1="-3.556" y1="2.159" x2="-5.08" y2="2.159" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="3.048" x2="-6.477" y2="3.048" width="0.1524" layer="94"/>
+<wire x1="-6.477" y1="3.048" x2="-6.477" y2="0.762" width="0.1524" layer="94"/>
+<text x="-8.382" y="5.08" size="1.778" layer="96" rot="MR270">&gt;VALUE</text>
+<text x="7.62" y="-10.16" size="1.778" layer="95" rot="MR0">&gt;NAME</text>
+<rectangle x1="-3.556" y1="1.397" x2="-3.048" y2="2.921" layer="94" rot="R180"/>
+<rectangle x1="-3.556" y1="-0.762" x2="-3.048" y2="0.762" layer="94" rot="R180"/>
+<rectangle x1="-3.556" y1="-2.921" x2="-3.048" y2="-1.397" layer="94" rot="R180"/>
+<rectangle x1="-7.112" y1="0.762" x2="-5.842" y2="0.889" layer="94" rot="R180"/>
+<pin name="D2" x="-5.08" y="7.62" visible="off" length="short" rot="R270"/>
+<pin name="S" x="-2.54" y="-10.16" visible="off" length="short" rot="R90"/>
+<pin name="G2" x="10.16" y="-5.08" visible="off" length="short" direction="in" rot="R180"/>
+<polygon width="0.1016" layer="94">
+<vertex x="-4.826" y="0"/>
+<vertex x="-3.81" y="0.635"/>
+<vertex x="-3.81" y="-0.635"/>
+</polygon>
+<polygon width="0.1016" layer="94">
+<vertex x="-6.477" y="0.762"/>
+<vertex x="-7.112" y="-0.254"/>
+<vertex x="-5.842" y="-0.254"/>
+</polygon>
+<wire x1="4.064" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="4.064" y1="-2.159" x2="2.54" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="-2.54" x2="5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="1.143" y1="-0.254" x2="1.143" y2="-3.048" width="0.1524" layer="94"/>
+<wire x1="1.143" y1="-3.048" x2="2.54" y2="-3.048" width="0.1524" layer="94"/>
+<wire x1="4.064" y1="2.159" x2="2.54" y2="2.159" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="3.048" x2="1.143" y2="3.048" width="0.1524" layer="94"/>
+<wire x1="1.143" y1="3.048" x2="1.143" y2="0.762" width="0.1524" layer="94"/>
+<rectangle x1="4.064" y1="1.397" x2="4.572" y2="2.921" layer="94" rot="R180"/>
+<rectangle x1="4.064" y1="-0.762" x2="4.572" y2="0.762" layer="94" rot="R180"/>
+<rectangle x1="4.064" y1="-2.921" x2="4.572" y2="-1.397" layer="94" rot="R180"/>
+<rectangle x1="0.508" y1="0.762" x2="1.778" y2="0.889" layer="94" rot="R180"/>
+<pin name="D1" x="2.54" y="7.62" visible="off" length="short" rot="R270"/>
+<pin name="G1" x="10.16" y="0" visible="off" length="short" direction="in" rot="R180"/>
+<polygon width="0.1016" layer="94">
+<vertex x="2.794" y="0"/>
+<vertex x="3.81" y="0.635"/>
+<vertex x="3.81" y="-0.635"/>
 </polygon>
 <polygon width="0.1016" layer="94">
 <vertex x="1.143" y="0.762"/>
@@ -856,13 +931,13 @@ High-power, low thermal resistance package.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CSD" prefix="Q">
+<deviceset name="CSD22206" prefix="Q">
 <description>P-Channel NexFet</description>
 <gates>
 <gate name="G$1" symbol="P_MOSFET" x="0" y="0"/>
 </gates>
 <devices>
-<device name="22206W" package="CSD22206W">
+<device name="" package="DSBGA">
 <connects>
 <connect gate="G$1" pin="D" pad="C1 C2 C3"/>
 <connect gate="G$1" pin="G" pad="A1"/>
@@ -870,9 +945,34 @@ High-power, low thermal resistance package.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="296-47005-1-ND" constant="no"/>
+<attribute name="DIGIKEY" value="296-47005-1-ND
+" constant="no"/>
 <attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
 <attribute name="MPN" value="CSD22206WT" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CSD75207W15">
+<description>low on resistance, gate charge dual p-channel nexfet</description>
+<gates>
+<gate name="G$1" symbol="DUAL_P_MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DSBGA">
+<connects>
+<connect gate="G$1" pin="D1" pad="A2 A3 B3"/>
+<connect gate="G$1" pin="D2" pad="B2 C2 C3"/>
+<connect gate="G$1" pin="G1" pad="A1"/>
+<connect gate="G$1" pin="G2" pad="C1"/>
+<connect gate="G$1" pin="S" pad="B1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-40008-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MPN" value="CSD75207W15" constant="no"/>
 </technology>
 </technologies>
 </device>
