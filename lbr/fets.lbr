@@ -341,6 +341,20 @@ High-power, low thermal resistance package.</description>
 <circle x="-0.891" y="0.891" radius="0.1016" width="0.1016" layer="21"/>
 <text x="-1.016" y="1.27" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
+<package name="6DSBGA">
+<smd name="B2" x="0.25" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="B1" x="-0.25" y="0" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A1" x="-0.25" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A2" x="0.25" y="0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="C2" x="0.25" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="C1" x="-0.25" y="-0.5" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<wire x1="-0.5" y1="-0.75" x2="0.5" y2="-0.75" width="0.127" layer="21"/>
+<wire x1="0.5" y1="-0.75" x2="0.5" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.5" y1="0.75" x2="-0.5" y2="0.75" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="0.75" x2="-0.5" y2="-0.75" width="0.127" layer="21"/>
+<circle x="-0.75" y="1" radius="0.11610625" width="0.127" layer="21"/>
+<text x="-1.25" y="1.25" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="MOSFET-N">
@@ -931,7 +945,7 @@ High-power, low thermal resistance package.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CSD22206" prefix="Q">
+<deviceset name="CSD22206W" prefix="Q">
 <description>P-Channel NexFet</description>
 <gates>
 <gate name="G$1" symbol="P_MOSFET" x="0" y="0"/>
@@ -945,8 +959,7 @@ High-power, low thermal resistance package.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="296-47005-1-ND
-" constant="no"/>
+<attribute name="DIGIKEY" value="296-47005-1-ND " constant="no"/>
 <attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
 <attribute name="MPN" value="CSD22206WT" constant="no"/>
 </technology>
@@ -954,7 +967,7 @@ High-power, low thermal resistance package.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CSD75207W15">
+<deviceset name="CSD75207W15" prefix="Q">
 <description>low on resistance, gate charge dual p-channel nexfet</description>
 <gates>
 <gate name="G$1" symbol="DUAL_P_MOSFET" x="0" y="0"/>
@@ -973,6 +986,28 @@ High-power, low thermal resistance package.</description>
 <attribute name="DIGIKEY" value="296-40008-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
 <attribute name="MPN" value="CSD75207W15" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CSD13303W1015" prefix="Q">
+<description>low gate charge + rds nexfet n-mosfet</description>
+<gates>
+<gate name="G$1" symbol="N_MOSFET" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="6DSBGA">
+<connects>
+<connect gate="G$1" pin="D" pad="A1 B1 C1"/>
+<connect gate="G$1" pin="G" pad="A2"/>
+<connect gate="G$1" pin="S" pad="B2 C2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-39990-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
+<attribute name="MPN" value="CSD13303W1015" constant="no"/>
 </technology>
 </technologies>
 </device>
