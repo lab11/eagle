@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -294,6 +294,17 @@
 <text x="0" y="-3" size="1.016" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
 <wire x1="-0.41" y1="-1.57" x2="-1.71" y2="-1.57" width="0.127" layer="21"/>
 <wire x1="-1.71" y1="-1.57" x2="-1.71" y2="-0.27" width="0.127" layer="21"/>
+</package>
+<package name="2-SMD">
+<smd name="1" x="-1.2446" y="0" dx="1.0922" dy="1.905" layer="1"/>
+<smd name="2" x="1.2446" y="0" dx="1.0922" dy="1.905" layer="1"/>
+<wire x1="-1.6002" y1="0.7493" x2="-1.6002" y2="-0.7493" width="0.127" layer="21"/>
+<wire x1="-1.6002" y1="-0.7493" x2="1.6002" y2="-0.7493" width="0.127" layer="21"/>
+<wire x1="1.6002" y1="-0.7493" x2="1.6002" y2="0.7493" width="0.127" layer="21"/>
+<wire x1="1.6002" y1="0.7493" x2="-1.6002" y2="0.7493" width="0.127" layer="21"/>
+<wire x1="-1.397" y1="1.27" x2="-2.159" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-2.159" y1="1.27" x2="-2.159" y2="0.508" width="0.127" layer="21"/>
+<text x="-2.032" y="1.651" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -598,6 +609,28 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <attribute name="DIGIKEY" value="FH1600015CT-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Diodes Incorporated" constant="no"/>
 <attribute name="MPN" value="FH1600015" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ABS07-32.768KHZ" prefix="X">
+<description>32.768kHz Crystal</description>
+<gates>
+<gate name="G$1" symbol="CRYSTAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-7-T" package="2-SMD">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="535-9543-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="ABRACON" constant="no"/>
+<attribute name="MPN" value="ABS07-32.768KHZ-7-T
+" constant="no"/>
 </technology>
 </technologies>
 </device>
