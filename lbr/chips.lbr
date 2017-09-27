@@ -3097,6 +3097,38 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <circle x="-1.7" y="1.7" radius="0.1" width="0.2" layer="21"/>
 <text x="-1.7" y="2.1" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
+<package name="LGA-12">
+<rectangle x1="-0.475" y1="0.5125" x2="-0.025" y2="0.9875" layer="29"/>
+<smd name="12" x="-0.25" y="0.75" dx="0.35" dy="0.375" layer="1" rot="R180" stop="no"/>
+<smd name="11" x="0.25" y="0.75" dx="0.35" dy="0.375" layer="1" rot="R180" stop="no"/>
+<smd name="1" x="-0.75" y="0.75" dx="0.35" dy="0.375" layer="1" rot="R270" stop="no"/>
+<smd name="10" x="0.75" y="0.75" dx="0.35" dy="0.375" layer="1" rot="R90" stop="no"/>
+<smd name="2" x="-0.75" y="0.25" dx="0.35" dy="0.375" layer="1" rot="R90" stop="no"/>
+<smd name="3" x="-0.75" y="-0.25" dx="0.35" dy="0.375" layer="1" rot="R90" stop="no"/>
+<smd name="4" x="-0.75" y="-0.75" dx="0.35" dy="0.375" layer="1" rot="R90" stop="no"/>
+<smd name="5" x="-0.25" y="-0.75" dx="0.35" dy="0.375" layer="1" rot="R180" stop="no"/>
+<smd name="6" x="0.25" y="-0.75" dx="0.35" dy="0.375" layer="1" rot="R180" stop="no"/>
+<smd name="7" x="0.75" y="-0.75" dx="0.35" dy="0.375" layer="1" rot="R270" stop="no"/>
+<smd name="8" x="0.75" y="-0.25" dx="0.35" dy="0.375" layer="1" rot="R270" stop="no"/>
+<smd name="9" x="0.75" y="0.25" dx="0.35" dy="0.375" layer="1" rot="R270" stop="no"/>
+<rectangle x1="0.025" y1="0.5125" x2="0.475" y2="0.9875" layer="29"/>
+<rectangle x1="0.525" y1="0.5125" x2="0.975" y2="0.9875" layer="29" rot="R90"/>
+<rectangle x1="0.525" y1="0.0125" x2="0.975" y2="0.4875" layer="29" rot="R90"/>
+<rectangle x1="0.525" y1="-0.4875" x2="0.975" y2="-0.0125" layer="29" rot="R90"/>
+<rectangle x1="0.525" y1="-0.9875" x2="0.975" y2="-0.5125" layer="29" rot="R90"/>
+<rectangle x1="0.025" y1="-0.9875" x2="0.475" y2="-0.5125" layer="29" rot="R180"/>
+<rectangle x1="-0.475" y1="-0.9875" x2="-0.025" y2="-0.5125" layer="29" rot="R180"/>
+<rectangle x1="-0.975" y1="-0.9875" x2="-0.525" y2="-0.5125" layer="29" rot="R270"/>
+<rectangle x1="-0.975" y1="-0.4875" x2="-0.525" y2="-0.0125" layer="29" rot="R270"/>
+<rectangle x1="-0.975" y1="0.0125" x2="-0.525" y2="0.4875" layer="29" rot="R270"/>
+<rectangle x1="-0.975" y1="0.5125" x2="-0.525" y2="0.9875" layer="29" rot="R90"/>
+<wire x1="-1" y1="1" x2="1" y2="1" width="0.127" layer="21"/>
+<wire x1="1" y1="1" x2="1" y2="-1" width="0.127" layer="21"/>
+<wire x1="1" y1="-1" x2="-1" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1" x2="-1" y2="1" width="0.127" layer="21"/>
+<circle x="-1.15" y="1.15" radius="0.070709375" width="0.127" layer="21"/>
+<text x="0" y="1.27" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -5915,6 +5947,24 @@ RF Switch</text>
 <pin name="VDD" x="-2.54" y="7.62" length="short"/>
 <pin name="!RST" x="12.7" y="5.08" length="short" rot="R180"/>
 <text x="-0.254" y="11.176" size="1.27" layer="94">&gt;NAME</text>
+</symbol>
+<symbol name="LIS2DW12">
+<description>ultra low power 3-axis accelerometer</description>
+<wire x1="0" y1="2.54" x2="0" y2="22.86" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="27.94" y2="22.86" width="0.254" layer="94"/>
+<wire x1="27.94" y1="22.86" x2="27.94" y2="2.54" width="0.254" layer="94"/>
+<wire x1="27.94" y1="2.54" x2="0" y2="2.54" width="0.254" layer="94"/>
+<pin name="SCL/SPC" x="-2.54" y="12.7" length="short"/>
+<pin name="CS" x="-2.54" y="10.16" length="short"/>
+<pin name="MOSI/SA0" x="-2.54" y="7.62" length="short"/>
+<pin name="MISO/SDA" x="-2.54" y="5.08" length="short"/>
+<pin name="GND" x="17.78" y="0" length="short" rot="R90"/>
+<pin name="VCC" x="-2.54" y="20.32" length="short"/>
+<pin name="INT1" x="30.48" y="15.24" length="short" rot="R180"/>
+<pin name="INT2" x="30.48" y="12.7" length="short" rot="R180"/>
+<pin name="VDD_IO" x="-2.54" y="17.78" length="short"/>
+<text x="0" y="23.368" size="1.778" layer="94">&gt;NAME</text>
+<text x="0" y="0" size="1.778" layer="94">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -9816,6 +9866,34 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <attribute name="DIGIKEY" value="296-42522-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
 <attribute name="MPN" value="TPS3839G25DBZR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LIS2DW12" prefix="U">
+<description>ultra low power 3 axis accelerometer</description>
+<gates>
+<gate name="G$1" symbol="LIS2DW12" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="LGA-12">
+<connects>
+<connect gate="G$1" pin="CS" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5 6 7 8"/>
+<connect gate="G$1" pin="INT1" pad="12"/>
+<connect gate="G$1" pin="INT2" pad="11"/>
+<connect gate="G$1" pin="MISO/SDA" pad="4"/>
+<connect gate="G$1" pin="MOSI/SA0" pad="3"/>
+<connect gate="G$1" pin="SCL/SPC" pad="1"/>
+<connect gate="G$1" pin="VCC" pad="9"/>
+<connect gate="G$1" pin="VDD_IO" pad="10"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
+<attribute name="MOUSER" value="511-LIS2DW12TR" constant="no"/>
+<attribute name="MPN" value="LIS2DW12TR" constant="no"/>
 </technology>
 </technologies>
 </device>
