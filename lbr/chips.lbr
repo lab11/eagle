@@ -3129,6 +3129,22 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <circle x="-1.15" y="1.15" radius="0.070709375" width="0.127" layer="21"/>
 <text x="0" y="1.27" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="UDFN-6-EXPOSED">
+<smd name="2" x="-0.925" y="0" dx="0.48" dy="0.36" layer="1"/>
+<smd name="1" x="-0.925" y="0.65" dx="0.48" dy="0.36" layer="1"/>
+<smd name="3" x="-0.925" y="-0.65" dx="0.48" dy="0.36" layer="1"/>
+<smd name="5" x="0.925" y="0" dx="0.48" dy="0.36" layer="1"/>
+<smd name="6" x="0.925" y="0.65" dx="0.48" dy="0.36" layer="1"/>
+<smd name="4" x="0.925" y="-0.65" dx="0.48" dy="0.36" layer="1"/>
+<smd name="EP" x="0" y="0" dx="0.71" dy="1.4" layer="1"/>
+<wire x1="-1" y1="1" x2="1" y2="1" width="0.127" layer="21"/>
+<wire x1="1" y1="1" x2="1" y2="-1" width="0.127" layer="21"/>
+<wire x1="1" y1="-1" x2="-1" y2="-1" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1" x2="-1" y2="1" width="0.127" layer="21"/>
+<circle x="-1.25" y="1.25" radius="0.070709375" width="0.127" layer="21"/>
+<text x="0" y="1.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="1.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -5963,8 +5979,37 @@ RF Switch</text>
 <pin name="INT1" x="30.48" y="15.24" length="short" rot="R180"/>
 <pin name="INT2" x="30.48" y="12.7" length="short" rot="R180"/>
 <pin name="VDD_IO" x="-2.54" y="17.78" length="short"/>
-<text x="0" y="23.368" size="1.778" layer="94">&gt;NAME</text>
-<text x="0" y="0" size="1.778" layer="94">&gt;VALUE</text>
+<text x="0" y="23.368" size="1.778" layer="104">&gt;NAME</text>
+<text x="0" y="0" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="ISL29125">
+<wire x1="0" y1="0" x2="0" y2="12.7" width="0.254" layer="94"/>
+<wire x1="0" y1="12.7" x2="15.24" y2="12.7" width="0.254" layer="94"/>
+<wire x1="15.24" y1="12.7" x2="15.24" y2="0" width="0.254" layer="94"/>
+<wire x1="15.24" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VDD" x="-2.54" y="10.16" length="short"/>
+<pin name="GND" x="-2.54" y="2.54" length="short"/>
+<pin name="SCL" x="17.78" y="10.16" length="short" rot="R180"/>
+<pin name="!INT" x="17.78" y="2.54" length="short" rot="R180"/>
+<pin name="SDA" x="17.78" y="7.62" length="short" rot="R180"/>
+<text x="0" y="13.208" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="MAX44009">
+<wire x1="0" y1="0" x2="0" y2="10.16" width="0.254" layer="94"/>
+<wire x1="0" y1="10.16" x2="15.24" y2="10.16" width="0.254" layer="94"/>
+<wire x1="15.24" y1="10.16" x2="15.24" y2="0" width="0.254" layer="94"/>
+<wire x1="15.24" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="VCC" x="-2.54" y="7.62" length="short"/>
+<pin name="GND" x="-2.54" y="2.54" length="short"/>
+<pin name="A0" x="-2.54" y="5.08" length="short"/>
+<pin name="!INT" x="17.78" y="7.62" length="short" rot="R180"/>
+<pin name="SCL" x="17.78" y="5.08" length="short" rot="R180"/>
+<pin name="SDA" x="17.78" y="2.54" length="short" rot="R180"/>
+<text x="0.254" y="10.668" size="1.778" layer="104">&gt;NAME</text>
+<text x="0.254" y="10.668" size="1.778" layer="104">&gt;NAME</text>
+<text x="0.254" y="10.668" size="1.778" layer="104">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -9894,6 +9939,55 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
 <attribute name="MOUSER" value="511-LIS2DW12TR" constant="no"/>
 <attribute name="MPN" value="LIS2DW12TR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ISL29125" prefix="U">
+<description>low power i2c color sensor</description>
+<gates>
+<gate name="G$1" symbol="ISL29125" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ODFN-6-1.5MMX1.6MM">
+<connects>
+<connect gate="G$1" pin="!INT" pad="5"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="4"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="ISL29125IROZ-T7ACT-ND " constant="no"/>
+<attribute name="MANUFACTURER" value="INTERSIL" constant="no"/>
+<attribute name="MPN" value="ISL29125IROZ-T7A" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAX44009" prefix="U">
+<description>low power ambient light sensor</description>
+<gates>
+<gate name="G$1" symbol="MAX44009" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="UDFN-6-EXPOSED">
+<connects>
+<connect gate="G$1" pin="!INT" pad="4"/>
+<connect gate="G$1" pin="A0" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2 EP"/>
+<connect gate="G$1" pin="SCL" pad="5"/>
+<connect gate="G$1" pin="SDA" pad="6"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="MAX44009EDT+TCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="MAXIM" constant="no"/>
+<attribute name="MPN" value="MAX44009EDT+T" constant="no"/>
 </technology>
 </technologies>
 </device>
