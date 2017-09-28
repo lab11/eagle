@@ -10034,7 +10034,11 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="VDD" pad="1"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="223-1199-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="TE CONNECTIVITY" constant="no"/>
+<attribute name="MPN" value="MS563702BA03-50" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
