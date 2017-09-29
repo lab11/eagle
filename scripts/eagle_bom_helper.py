@@ -126,7 +126,27 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
     return digikey_high_moq_sku
 
 
+def _update_from_digikey(digikey, mpn, manufacturer, description):
+    # MPN
+    try:
+        _digikey_MPN[digikey] = mpn
+    except bidict.BidictException:
+        print("digikey: {}".format(digikey))
+        print("    mpn: {}".format(mpn))
+        pprint(_digikey_MPN)
+        raise
+    _sync_digikey_MPN()
+
+    # manufacturer
+    _MPN_manufacturer[mpn] = manufacturer
+    _sync_MPN_manufacturer()
+
+    # description
+    _MPN_description[mpn] = description
+    _sync_MPN_description()
+
 def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
+    # MPN
     mpn = item['mpn']
     if _looked_up_mpn and _looked_up_mpn != mpn:
         raise NotImplementedError("Internal Error: MPN returned doesn't match query? {} != {}".\
@@ -148,19 +168,10 @@ def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
     else:
         raise NotImplementedError("No Digi-Key part number: {}".format(item['offers']))
 
-    try:
-        _digikey_MPN[digikey] = mpn
-    except bidict.BidictException:
-        print("digikey: {}".format(digikey))
-        print("    mpn: {}".format(mpn))
-        pprint(_digikey_MPN)
-        raise
-    _sync_digikey_MPN()
-
+    # manufacturer
     manufacturer = item['manufacturer']['name']
-    _MPN_manufacturer[mpn] = manufacturer
-    _sync_MPN_manufacturer()
 
+    # description
     # Prefer Digi-Key's description, but take anything we can get
     for description in item['descriptions']:
         if description['attribution']['sources'][0]['name'] == 'Digi-Key':
@@ -168,9 +179,8 @@ def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
             break
     else:
         text = item['descriptions'][0]['value']
-    _MPN_description[mpn] = text
-    _sync_MPN_description()
 
+    _update_from_digikey(digikey, mpn, manufacturer, text)
 
 def _do_queries(queries):
     print("OctoPart Query: {}".format(queries))
@@ -209,9 +219,17 @@ def fetch_from_digikey(digikey_part):
             pprint(response['results'][0])
             raise NotImplementedError('Ambiguous Digikey SKU (multiple results)')
         if hits == 0:
-            raise NotImplementedError('Lookup failed for DigiKey part {}'.format(digikey_part))
+            raise KeyError
     except KeyError:
-        raise NotImplementedError('Lookup failed for DigiKey part {}'.format(digikey_part))
+        print_bold_yel('Lookup failed for DigiKey part {}'.format(digikey_part))
+        print('Please look up and supply the following information:')
+        print("(don't just hit enter and skip fields, stuff will break)")
+        mpn = input('MPN: ').strip()
+        manufacturer = input('Manufacturer: ').strip()
+        description = input('Description: ').strip()
+
+        _update_from_digikey(digikey_part, mpn, manufacturer, description)
+        return
 
     try:
         item = response['results'][0]['items'][0]
