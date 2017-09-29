@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Python Built-ins
+import argparse
 import collections
 import glob
 import json
@@ -29,6 +30,17 @@ brd_file = glob.glob('*.brd')[0]
 
 brd = Swoop.EagleFile.from_file(brd_file)
 sch = Swoop.EagleFile.from_file(sch_file)
+
+
+##############################################################################
+## Argument parsing
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--ignore-kind', action='append', default=[],
+        help='Ignore a kind of parts (e.g. --ignore-kind L). Can repeat.')
+parser.add_argument('--ignore-part', action='append', default=[],
+        help='Ignore specific part (e.g. --ignore-part L3). Can repeat.')
+args = parser.parse_args()
 
 
 ##############################################################################
@@ -360,12 +372,12 @@ def collapse_range(numbers):
 
 ##############################################################################
 ## File parsing / building up internal data structures
+name_re = re.compile("([a-zA-Z$]+)([0-9]+)")
 
 # In swoop, schmatics are made of "parts"
 def parts_to_kinds(parts):
     kinds = {}
     name_to_part = {}
-    name_re = re.compile("([a-zA-Z$]+)([0-9]+)")
     for part in parts:
         try:
             name = part.get_name()
@@ -392,6 +404,10 @@ def parts_to_kinds(parts):
 
             # Skip over some of the stuff we don't care about
             if kind in ('FRAME', 'GND', 'U$'):
+                continue
+            if kind in args.ignore_kind:
+                continue
+            if name in args.ignore_part:
                 continue
 
             if kind not in kinds:
@@ -431,6 +447,18 @@ def build_element_map(elements):
         name = element.get_name()
         value = element.get_value()
         package = element.get_package()
+
+        # Split C12 into `C` and `12`
+        m = name_re.match(name)
+        if m is None:
+            raise NotImplementedError("Invalid name? Part {} with name: {}".format(part, name))
+        kind = m.group(1)
+        number = m.group(2)
+
+        if kind in args.ignore_kind:
+            continue
+        if name in args.ignore_part:
+            continue
 
         if 'LED' in package:
             if value.lower() in ('red', 'green', 'blue', 'white'):
