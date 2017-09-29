@@ -21,6 +21,8 @@ import dataprint
 import icdiff
 import Swoop
 import termcolor
+print_bold_yel = lambda x: termcolor.cprint(x, 'yellow', attrs=['bold'])
+
 
 sch_file = glob.glob('*.sch')[0]
 brd_file = glob.glob('*.brd')[0]
@@ -109,7 +111,7 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
     new_mpn = item['mpn']
     if new_mpn != mpn:
         # Not the same part, just return the original
-        print("WARN: differing MPN looking up high moq: {} != {}".format(new_mpn, mpn))
+        print_bold_yel("WARN: differing MPN looking up high moq: {} != {}".format(new_mpn, mpn))
         return digikey_high_moq_sku
 
     for offer in item['offers']:
@@ -347,11 +349,17 @@ def parts_to_kinds(parts):
     for part in parts:
         try:
             name = part.get_name()
+            value = part.get_value()
 
             deviceset = part.get_deviceset()
             if 'VCC' in deviceset:
                 termcolor.cprint('INFO: Skipping supply part {}'.format(name), attrs=['bold'])
                 continue
+            if 'LED' in deviceset:
+                if value.lower() in ('red', 'green', 'blue', 'white'):
+                    print_bold_yel('WARN: (sch) Skipping LED with color value {} {}'.format(name, value))
+                    continue
+
 
             name_to_part[name] = part
 
@@ -369,7 +377,6 @@ def parts_to_kinds(parts):
             if kind not in kinds:
                 kinds[kind] = {}
 
-            value = part.get_value()
             if kind[0] == 'U':
                 # It seems that parts with "no value" according to the library
                 # editor will end up with a "value" key if it's got multiple package
@@ -402,6 +409,13 @@ def build_element_map(elements):
     orphans = []
     for element in elements:
         name = element.get_name()
+        value = element.get_value()
+        package = element.get_package()
+
+        if 'LED' in package:
+            if value.lower() in ('red', 'green', 'blue', 'white'):
+                print_bold_yel('WARN: (board) Skipping LED with color value {} {}'.format(name, value))
+                continue
 
         try:
             sch_to_brd[name_to_sch_part[name]] = element
@@ -412,7 +426,7 @@ def build_element_map(elements):
                 orphans.append(element)
 
     if len(orphans):
-        termcolor.cprint('WARN: The following board elements have no corresponding schematic part:', attrs=['bold'])
+        print_bold_yel('WARN: The following board elements have no corresponding schematic part:')
         for orphan in orphans:
             print(orphan)
 
@@ -581,7 +595,7 @@ def handle_orphan_parts(orphan_parts):
             real_orphans.append(orphan)
 
     if len(real_orphans):
-        termcolor.cprint('WARN: The following schematic parts have no corresponding board elements:', attrs=['bold'])
+        print_bold_yel('WARN: The following schematic parts have no corresponding board elements:')
         for orphan in real_orphans:
             print(orphan)
 
