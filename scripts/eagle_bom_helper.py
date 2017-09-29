@@ -348,6 +348,11 @@ def parts_to_kinds(parts):
         try:
             name = part.get_name()
 
+            deviceset = part.get_deviceset()
+            if 'VCC' in deviceset:
+                termcolor.cprint('INFO: Skipping supply part {}'.format(name), attrs=['bold'])
+                continue
+
             name_to_part[name] = part
 
             # Split C12 into `C` and `12`
