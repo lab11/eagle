@@ -460,7 +460,12 @@
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="6S-2-3A-ND
+" constant="no"/>
+<attribute name="MANUFACTURER" value="MPD" constant="no"/>
+<attribute name="MPN" value="6S-2-3A" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="CR123A" package="BH123A">
@@ -469,7 +474,11 @@
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="BH123A-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="MPD" constant="no"/>
+<attribute name="MPN" value="BH123A" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="AA" package="BHAA-3">
@@ -478,7 +487,11 @@
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="BHAA-3-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="MPD" constant="no"/>
+<attribute name="MPN" value="BHAA-3" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
