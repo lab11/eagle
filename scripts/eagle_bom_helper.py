@@ -96,6 +96,8 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
 
     if digikey_high_moq_sku[-4:] == '2-ND':
         single_sku = digikey_high_moq_sku[:-4] + '1-ND'
+    elif digikey_high_moq_sku[-4:] == '6-ND':
+        single_sku = digikey_high_moq_sku[:-4] + '1-ND'
     elif digikey_high_moq_sku[-5:] == 'TR-ND':
         single_sku = digikey_high_moq_sku[:-5] + 'CT-ND'
     elif digikey_high_moq_sku[-6:] == 'DKR-ND':
@@ -136,7 +138,7 @@ def _update_from_response(item, _looked_up_digikey=None, _looked_up_mpn=None):
 
             # A bit of a hack here, OctoPart API prefers the large quantity choices, but
             # we prefer the `minimum order quantity` 1 parts from digi-key
-            if offer['moq'] > 1:
+            if offer['moq'] >= 1:
                 digikey = check_digikey_moq_alias(digikey, mpn)
 
             if _looked_up_digikey and _looked_up_digikey != digikey:
