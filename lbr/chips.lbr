@@ -4248,8 +4248,8 @@ I2C, clock output, interrupt output</description>
 <pin name="!DIS" x="-12.7" y="0" length="middle"/>
 <pin name="GND" x="0" y="-10.16" length="middle" rot="R90"/>
 <pin name="OUT" x="17.78" y="0" length="middle" rot="R180"/>
-<text x="-12.7" y="7.62" size="2.54" layer="104">&gt;NAME</text>
-<text x="5.08" y="5.08" size="1.27" layer="96">ADM8641</text>
+<text x="-10.16" y="7.62" size="2.54" layer="95">&gt;NAME</text>
+<text x="5.08" y="7.62" size="2.54" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="AP4400">
 <wire x1="-5.08" y1="7.62" x2="12.7" y2="7.62" width="0.254" layer="94"/>
@@ -5924,10 +5924,10 @@ RF Switch</text>
 <pin name="DECUSB" x="-2.54" y="71.12" length="short"/>
 <pin name="P0.14" x="-2.54" y="35.56" length="short"/>
 <pin name="P0.16" x="-2.54" y="30.48" length="short"/>
-<pin name="P0.18" x="-2.54" y="25.4" length="short"/>
-<pin name="P0.19" x="-2.54" y="22.86" length="short"/>
-<pin name="P0.21" x="-2.54" y="17.78" length="short"/>
-<pin name="P0.23" x="-2.54" y="12.7" length="short"/>
+<pin name="P0.18" x="-2.54" y="7.62" length="short"/>
+<pin name="P0.19" x="-2.54" y="25.4" length="short"/>
+<pin name="P0.21" x="-2.54" y="20.32" length="short"/>
+<pin name="P0.23" x="-2.54" y="15.24" length="short"/>
 <pin name="P0.25" x="43.18" y="27.94" length="short" rot="R180"/>
 <pin name="SWDIO" x="-2.54" y="5.08" length="short"/>
 <pin name="VBUS" x="-2.54" y="68.58" length="short"/>
@@ -5936,9 +5936,9 @@ RF Switch</text>
 <pin name="P0.13" x="-2.54" y="38.1" length="short"/>
 <pin name="P0.15" x="-2.54" y="33.02" length="short"/>
 <pin name="P0.17" x="-2.54" y="27.94" length="short"/>
-<pin name="P0.20" x="-2.54" y="20.32" length="short"/>
-<pin name="P0.22" x="-2.54" y="15.24" length="short"/>
-<pin name="P0.24" x="-2.54" y="10.16" length="short"/>
+<pin name="P0.20" x="-2.54" y="22.86" length="short"/>
+<pin name="P0.22" x="-2.54" y="17.78" length="short"/>
+<pin name="P0.24" x="-2.54" y="12.7" length="short"/>
 <pin name="P1.00" x="43.18" y="73.66" length="short" rot="R180"/>
 <text x="0" y="101.6" size="1.778" layer="95">&gt;NAME</text>
 <text x="30.48" y="101.6" size="1.778" layer="95">&gt;VALUE</text>
