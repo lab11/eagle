@@ -664,6 +664,18 @@ for kind in sorted(sch_kinds):
     rows = [['Name', 'Value', 'Package', 'DESCRIPTION', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
     rows_before = [['Name', 'Value', 'Package', 'DESCRIPTION', 'DIGIKEY', 'MPN', 'MANUFACTURER', '!Other!']]
 
+    # Catch value-related bugs early with nice errors
+    try:
+        for value in sorted(values, key=lambda v: v.normalized):
+            pass
+    except TypeError:
+        print_bold_yel("Mixture of one kind of part where some have values and some do not.")
+        print("Most likely, you need to add a missing value to one of the following:")
+        for value in values:
+            pprint(value)
+        print("If you don't want to bother, use the --ignore-part or --ignore-kind options")
+        sys.exit(-1)
+
     # Iterating '10uF', '100uF', etc
     for value in sorted(values, key=lambda v: v.normalized):
         for device in sorted(sch_kinds[kind][value]):
