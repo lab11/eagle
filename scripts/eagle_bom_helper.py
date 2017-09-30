@@ -106,6 +106,11 @@ def check_digikey_moq_alias(digikey_high_moq_sku, mpn):
     if digikey_high_moq_sku in _digikey_moq_aliases:
         return _digikey_moq_aliases[digikey_high_moq_sku]
 
+    # Ay yi yi, the hacks deepen, if this gets called for a
+    # not high moq, just return itself (everything aliases itself!)
+    if digikey_high_moq_sku[-4:] == '1-ND':
+        return digikey_high_moq_sku
+
     if digikey_high_moq_sku[-4:] == '2-ND':
         single_sku = digikey_high_moq_sku[:-4] + '1-ND'
     elif digikey_high_moq_sku[-4:] == '6-ND':
