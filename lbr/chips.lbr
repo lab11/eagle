@@ -10166,6 +10166,28 @@ Chip Antenna</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="EKMB" prefix="U">
+<description>Passive infrared human detection sensor with built-in amp.</description>
+<gates>
+<gate name="G$1" symbol="AMN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1101111" package="AMN2">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="255-3065-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="PANASONIC" constant="no"/>
+<attribute name="MPN" value="EKMB1101111" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
