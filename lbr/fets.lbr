@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="8.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -39,7 +39,7 @@
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
@@ -354,6 +354,33 @@ High-power, low thermal resistance package.</description>
 <wire x1="-0.5" y1="0.75" x2="-0.5" y2="-0.75" width="0.127" layer="21"/>
 <circle x="-0.75" y="1" radius="0.11610625" width="0.127" layer="21"/>
 <text x="-1.25" y="1.25" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
+</package>
+<package name="XDFN-6">
+<smd name="2" x="-0.425" y="0" dx="0.2" dy="0.35" layer="1" rot="R90" cream="no"/>
+<smd name="3" x="-0.425" y="-0.35" dx="0.2" dy="0.35" layer="1" rot="R90" cream="no"/>
+<smd name="1" x="-0.425" y="0.35" dx="0.2" dy="0.35" layer="1" rot="R90" cream="no"/>
+<smd name="5" x="0.425" y="0" dx="0.2" dy="0.35" layer="1" rot="R270" cream="no"/>
+<smd name="6" x="0.425" y="0.35" dx="0.2" dy="0.35" layer="1" rot="R270" cream="no"/>
+<smd name="4" x="0.425" y="-0.35" dx="0.2" dy="0.35" layer="1" rot="R270" cream="no"/>
+<wire x1="-0.65" y1="-0.65" x2="0.65" y2="-0.65" width="0.127" layer="21"/>
+<wire x1="0.65" y1="-0.65" x2="0.65" y2="0.65" width="0.127" layer="21"/>
+<wire x1="0.65" y1="0.65" x2="-0.65" y2="0.65" width="0.127" layer="21"/>
+<wire x1="-0.65" y1="0.65" x2="-0.65" y2="-0.65" width="0.127" layer="21"/>
+<circle x="-0.8" y="0.8" radius="0.1" width="0.127" layer="21"/>
+<text x="0" y="1" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1" size="1.016" layer="27" font="vector" ratio="12" align="top-center">&gt;VALUE</text>
+<rectangle x1="-0.55" y1="-0.45" x2="-0.3" y2="-0.25" layer="31"/>
+<rectangle x1="-0.55" y1="-0.1" x2="-0.3" y2="0.1" layer="31"/>
+<rectangle x1="-0.55" y1="0.25" x2="-0.3" y2="0.45" layer="31"/>
+<rectangle x1="0.3" y1="0.25" x2="0.55" y2="0.45" layer="31"/>
+<rectangle x1="0.3" y1="-0.1" x2="0.55" y2="0.1" layer="31"/>
+<rectangle x1="0.3" y1="-0.45" x2="0.55" y2="-0.25" layer="31"/>
+<polygon width="0.1016" layer="39">
+<vertex x="-0.15" y="0.45"/>
+<vertex x="0.15" y="0.45"/>
+<vertex x="0.15" y="-0.45"/>
+<vertex x="-0.15" y="-0.45"/>
+</polygon>
 </package>
 </packages>
 <symbols>
@@ -1008,6 +1035,32 @@ High-power, low thermal resistance package.</description>
 <attribute name="DIGIKEY" value="296-39990-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="TEXAS INSTRUMENTS" constant="no"/>
 <attribute name="MPN" value="CSD13303W1015" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PMDXB950UPEL" prefix="Q">
+<description>20 V 500mA, dual P-channel Trench MOSFET</description>
+<gates>
+<gate name=".1" symbol="P_MOSFET" x="-5.08" y="0"/>
+<gate name=".2" symbol="P_MOSFET" x="7.62" y="0"/>
+</gates>
+<devices>
+<device name="" package="XDFN-6">
+<connects>
+<connect gate=".1" pin="D" pad="6"/>
+<connect gate=".1" pin="G" pad="2"/>
+<connect gate=".1" pin="S" pad="1"/>
+<connect gate=".2" pin="D" pad="3"/>
+<connect gate=".2" pin="G" pad="5"/>
+<connect gate=".2" pin="S" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="1727-2601-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="NEXPERIA" constant="no"/>
+<attribute name="MPN" value="PMDXB950UPELZ" constant="no"/>
 </technology>
 </technologies>
 </device>
