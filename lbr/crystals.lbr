@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="8.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -119,10 +119,10 @@
 <wire x1="1.6" y1="1.25" x2="1.6" y2="-1.25" width="0.127" layer="21"/>
 <wire x1="1.6" y1="-1.25" x2="-1.6" y2="-1.25" width="0.127" layer="21"/>
 <wire x1="-1.6" y1="-1.25" x2="-1.6" y2="1.25" width="0.127" layer="21"/>
-<wire x1="-2" y1="0" x2="-2" y2="1.65" width="0.127" layer="21"/>
-<wire x1="-2" y1="1.65" x2="0" y2="1.65" width="0.127" layer="21"/>
 <text x="0" y="2" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 <text x="0" y="-3.175" size="1.016" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
+<wire x1="-0.762" y1="-1.778" x2="-2.159" y2="-1.778" width="0.127" layer="21"/>
+<wire x1="-2.159" y1="-1.778" x2="-2.159" y2="-0.508" width="0.127" layer="21"/>
 </package>
 <package name="ABS05">
 <smd name="B" x="0.55" y="0" dx="0.5" dy="1" layer="1"/>
@@ -629,8 +629,7 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <technology name="">
 <attribute name="DIGIKEY" value="535-9543-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="ABRACON" constant="no"/>
-<attribute name="MPN" value="ABS07-32.768KHZ-7-T
-" constant="no"/>
+<attribute name="MPN" value="ABS07-32.768KHZ-7-T " constant="no"/>
 </technology>
 </technologies>
 </device>
