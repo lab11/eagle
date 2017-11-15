@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -6129,9 +6129,9 @@ RF Switch</text>
 </symbol>
 <symbol name="BQ25505">
 <pin name="GND" x="17.78" y="-27.94" visible="pin" length="middle" rot="R90"/>
-<pin name="VIN_DC" x="-17.78" y="10.16" visible="pin" length="middle"/>
+<pin name="VIN_DC" x="-17.78" y="15.24" visible="pin" length="middle"/>
 <pin name="VOC_SAMP" x="-17.78" y="25.4" visible="pin" length="middle"/>
-<pin name="VREF_SAMP" x="-17.78" y="15.24" visible="pin" length="middle"/>
+<pin name="VREF_SAMP" x="-17.78" y="10.16" visible="pin" length="middle"/>
 <pin name="VBAT_OV" x="-2.54" y="-27.94" visible="pin" length="middle" rot="R90"/>
 <pin name="VRDIV" x="-7.62" y="-27.94" visible="pin" length="middle" rot="R90"/>
 <pin name="OK_HYST" x="7.62" y="-27.94" visible="pin" length="middle" rot="R90"/>
