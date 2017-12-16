@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.1">
+<eagle version="8.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1312,6 +1312,28 @@ Round side is up.</description>
 </polygon>
 <circle x="-1.27" y="-0.635" radius="0.635" width="0.127" layer="21"/>
 </package>
+<package name="USB_A_MALE_PLUG_CUI_UP2-AH">
+<description>Through hole USB A Plug</description>
+<wire x1="-6" y1="3.9" x2="6" y2="3.9" width="0.254" layer="21"/>
+<hole x="-2.3" y="2.9" drill="1.2"/>
+<hole x="2.3" y="2.9" drill="1.2"/>
+<pad name="P$1" x="3.5" y="5" drill="1"/>
+<pad name="P$2" x="1" y="5" drill="1"/>
+<pad name="P$3" x="-1" y="5" drill="1"/>
+<pad name="P$4" x="-3.5" y="5" drill="1"/>
+<wire x1="-5.85" y1="2.25" x2="-5.85" y2="3.65" width="0.127" layer="20"/>
+<wire x1="-5.85" y1="3.65" x2="-6.85" y2="3.7" width="0.127" layer="20" curve="174.289407"/>
+<wire x1="-5.85" y1="2.25" x2="-6.85" y2="2.25" width="0.127" layer="20" curve="-180"/>
+<wire x1="-6.85" y1="2.25" x2="-6.85" y2="3.7" width="0.127" layer="20"/>
+<wire x1="6.85" y1="2.25" x2="6.85" y2="3.65" width="0.127" layer="20"/>
+<wire x1="6.85" y1="3.65" x2="5.85" y2="3.7" width="0.127" layer="20" curve="174.289407"/>
+<wire x1="6.85" y1="2.25" x2="5.85" y2="2.25" width="0.127" layer="20" curve="-180"/>
+<wire x1="5.85" y1="2.25" x2="5.85" y2="3.7" width="0.127" layer="20"/>
+<wire x1="-6" y1="3.9" x2="-6" y2="-14.9" width="0.254" layer="21"/>
+<wire x1="6" y1="3.9" x2="6" y2="-14.9" width="0.254" layer="21"/>
+<wire x1="-6" y1="-14.9" x2="6" y2="-14.9" width="0.254" layer="21"/>
+<text x="-3.35" y="-14.45" size="0.889" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="USB-A">
@@ -2290,6 +2312,29 @@ Used to plug PCBs directly into USB sockets.</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="USB-A-MALE-PLUG" prefix="J">
+<description>USB A Male plug connector</description>
+<gates>
+<gate name="G$1" symbol="USB-A" x="-2.54" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="USB_A_MALE_PLUG_CUI_UP2-AH">
+<connects>
+<connect gate="G$1" pin="+5V" pad="P$1"/>
+<connect gate="G$1" pin="D+" pad="P$3"/>
+<connect gate="G$1" pin="D-" pad="P$2"/>
+<connect gate="G$1" pin="GND" pad="P$4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="102-3996-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="CUI" constant="no"/>
+<attribute name="MPN" value="UP2-AH-1-TH" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
