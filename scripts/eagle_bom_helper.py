@@ -23,6 +23,7 @@ import icdiff
 import Swoop
 import termcolor
 print_bold_yel = lambda x: termcolor.cprint(x, 'yellow', attrs=['bold'])
+print_bold_red = lambda x: termcolor.cprint(x, 'red', attrs=['bold'])
 
 
 sch_file = glob.glob('*.sch')[0]
@@ -30,6 +31,22 @@ brd_file = glob.glob('*.brd')[0]
 
 brd = Swoop.EagleFile.from_file(brd_file)
 sch = Swoop.EagleFile.from_file(sch_file)
+
+
+##############################################################################
+## Startup banner
+
+print('='*60)
+print()
+print('This works reasonably well at this point, but does expect your board')
+print('to be in pretty good shape -- that means everything that should have')
+print('values does have them, at least one part of a given kind has at least')
+print('one part attribute, etc.')
+print()
+print('When you first run this, probably easier to have Eagle open with your')
+print('board so you can address problems as they crop up.')
+print()
+print('='*60)
 
 
 ##############################################################################
@@ -393,6 +410,11 @@ def parts_to_kinds(parts):
                 termcolor.cprint('INFO: Skipping supply part {}'.format(name), attrs=['bold'])
                 continue
             if 'LED' in deviceset:
+                if value is None:
+                    print_bold_red(' ERR: (sch) LED with no value')
+                    print('To fix, assign a color value (e.g. RED, BLUE) to this LED:')
+                    print(part)
+                    sys.exit(-1)
                 if value.lower() in ('red', 'green', 'blue', 'white'):
                     print_bold_yel('WARN: (sch) Skipping LED with color value {} {}'.format(name, value))
                     continue
