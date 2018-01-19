@@ -244,7 +244,12 @@ for line in schematic:
             numbers.add(number)
             values[deviceset] += 1
 
-            unit_package_insert('','',deviceset)
+            try:
+               unit_package_insert('','',deviceset)
+            except:
+               print('---')
+               print('Troublesome line: ' + line)
+               raise
             if ('','',deviceset) not in parts:
                parts[('','',deviceset)] = []
             parts[('','',deviceset)].append({'number': number, 'suffix': ''})
