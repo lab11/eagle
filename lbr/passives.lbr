@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.4.0">
+<eagle version="8.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1234,6 +1234,15 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 <connects>
 <connect gate="G$1" pin="ANODE" pad="NEG"/>
 <connect gate="G$1" pin="CATHODE" pad="POS"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1206" package="1206">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="1"/>
+<connect gate="G$1" pin="CATHODE" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
