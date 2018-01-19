@@ -23,6 +23,7 @@ import icdiff
 import Swoop
 import termcolor
 print_bold_yel = lambda x: termcolor.cprint(x, 'yellow', attrs=['bold'])
+print_bold_red = lambda x: termcolor.cprint(x, 'red', attrs=['bold'])
 
 
 sch_file = glob.glob('*.sch')[0]
@@ -409,6 +410,11 @@ def parts_to_kinds(parts):
                 termcolor.cprint('INFO: Skipping supply part {}'.format(name), attrs=['bold'])
                 continue
             if 'LED' in deviceset:
+                if value is None:
+                    print_bold_red(' ERR: (sch) LED with no value')
+                    print('To fix, assign a color value (e.g. RED, BLUE) to this LED:')
+                    print(part)
+                    sys.exit(-1)
                 if value.lower() in ('red', 'green', 'blue', 'white'):
                     print_bold_yel('WARN: (sch) Skipping LED with color value {} {}'.format(name, value))
                     continue
