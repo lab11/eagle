@@ -33,6 +33,22 @@ sch = Swoop.EagleFile.from_file(sch_file)
 
 
 ##############################################################################
+## Startup banner
+
+print('='*60)
+print()
+print('This works reasonably well at this point, but does expect your board')
+print('to be in pretty good shape -- that means everything that should have')
+print('values does have them, at least one part of a given kind has at least')
+print('one part attribute, etc.')
+print()
+print('When you first run this, probably easier to have Eagle open with your')
+print('board so you can address problems as they crop up.')
+print()
+print('='*60)
+
+
+##############################################################################
 ## Argument parsing
 
 parser = argparse.ArgumentParser()
