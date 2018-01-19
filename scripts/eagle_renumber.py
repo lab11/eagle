@@ -288,8 +288,13 @@ if len(suffixes) > 1:
    print("          ", end='')
    temp1 = []
    temp2 = []
-   for value_unit,partlist in parts.items():
-      value,unit = value_unit
+   for value_unit_device,partlist in parts.items():
+      try:
+         value,unit,device = value_unit_device
+      except:
+         print("value_unit_device: {}".format(value_unit_device))
+         print(partlist)
+         raise
       for part in partlist:
          if part['suffix'] != new_suffix:
             s1 = "{}{} : {}{}{}".format(prefix, part['number'], value, unit, part['suffix'])
