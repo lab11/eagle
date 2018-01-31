@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.25" altunitdist="mm" altunit="mm"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -305,6 +305,18 @@
 <wire x1="-1.397" y1="1.27" x2="-2.159" y2="1.27" width="0.127" layer="21"/>
 <wire x1="-2.159" y1="1.27" x2="-2.159" y2="0.508" width="0.127" layer="21"/>
 <text x="-2.032" y="1.651" size="1.016" layer="21" font="vector" ratio="12">&gt;NAME</text>
+</package>
+<package name="FC-135">
+<smd name="1" x="-1.25" y="0" dx="1" dy="1.8" layer="1"/>
+<smd name="2" x="1.25" y="0" dx="1" dy="1.8" layer="1"/>
+<wire x1="-1.6" y1="0.75" x2="1.6" y2="0.75" width="0.1" layer="21"/>
+<wire x1="1.6" y1="0.75" x2="1.6" y2="-0.75" width="0.1" layer="21"/>
+<wire x1="1.6" y1="-0.75" x2="-1.6" y2="-0.75" width="0.1" layer="21"/>
+<wire x1="-1.6" y1="-0.75" x2="-1.6" y2="0.75" width="0.1" layer="21"/>
+<text x="0" y="1.5" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.25" size="1.016" layer="27" font="vector" ratio="12" rot="R180" align="bottom-center">&gt;VALUE</text>
+<wire x1="-2" y1="0.5" x2="-2" y2="1.25" width="0.127" layer="21"/>
+<wire x1="-2" y1="1.25" x2="-1.25" y2="1.25" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -631,6 +643,25 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 <attribute name="MANUFACTURER" value="ABRACON" constant="no"/>
 <attribute name="MPN" value="ABS07-32.768KHZ-7-T " constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FA-135" prefix="X">
+<description>Epson kHz RANGE CRYSTAL UNIT&lt;br&gt;
+ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
+&lt;a&gt;https://www.digikey.com/products/en/crystals-oscillators-resonators/crystals/171?k=fc-135&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="CRYSTAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FC-135">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
