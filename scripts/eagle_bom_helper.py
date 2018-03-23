@@ -256,7 +256,7 @@ def fetch_from_digikey(digikey_part):
             raise NotImplementedError('Ambiguous Digikey SKU (multiple results)')
         if hits == 0:
             raise KeyError
-    except KeyError:
+    except:
         print_bold_yel('Lookup failed for DigiKey part {}'.format(digikey_part))
         print('Please look up and supply the following information:')
         print("(don't just hit enter and skip fields, stuff will break)")
