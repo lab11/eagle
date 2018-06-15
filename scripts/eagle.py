@@ -52,6 +52,16 @@ scripts = [('eagle_centroid.py',   False),
 here = os.path.dirname(os.path.realpath(__file__))
 
 
+if platform.system() == 'Linux':
+    distro = platform.linux_distribution()
+    if distro[0] == 'Ubuntu' and float(distro[1]) > 18:
+	print("")
+	print("Heads up. If you're on Ubuntu 18+ and are missing pdftk,")
+	print("you may need to install a special version of pdftk, here:")
+	print("  https://askubuntu.com/questions/1029450/how-to-install-pdftk-on-ubuntu-18-04-bionic")
+	print("")
+
+
 if platform.system() == 'Darwin':
 	print("")
 	print("Heads up. If you're on a mac and this script seems to hang during PDF")
