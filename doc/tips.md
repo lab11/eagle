@@ -5,7 +5,9 @@ Eagle Tips
 
 ### Ubuntu Installation
 
-  - `sudo apt-get install ia32-libs`
+  - To use 32bit libraries, install the following:
+    - For *12.04* or earlier: `sudo apt-get install ia32-libs`
+    - For *13.04* or later: `sudo apt-get install lib32z1 lib32ncurses5`
 
 ### Standards for part names (e.g. Resistor –> R, Relay –> K)
 
