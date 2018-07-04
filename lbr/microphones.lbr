@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.5.2">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -36,9 +36,9 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
@@ -124,6 +124,20 @@
 <pad name="TERM+" x="1.25" y="2" drill="0.95"/>
 <circle x="0" y="0" radius="4.85" width="0.127" layer="21"/>
 </package>
+<package name="SPH0465">
+<wire x1="-1.33" y1="1.75" x2="-1.33" y2="-1.75" width="0.0508" layer="21"/>
+<wire x1="-1.33" y1="-1.75" x2="1.33" y2="-1.75" width="0.0508" layer="21"/>
+<wire x1="1.33" y1="-1.75" x2="1.33" y2="1.75" width="0.0508" layer="21"/>
+<wire x1="1.33" y1="1.75" x2="-1.33" y2="1.75" width="0.0508" layer="21"/>
+<smd name="1" x="-0.9" y="1.364" dx="0.6" dy="0.522" layer="1"/>
+<smd name="2" x="-0.9" y="0.542" dx="0.6" dy="0.522" layer="1"/>
+<smd name="4" x="0.9" y="0.542" dx="0.6" dy="0.522" layer="1"/>
+<smd name="5" x="0.9" y="1.364" dx="0.6" dy="0.522" layer="1"/>
+<smd name="6" x="0" y="1.364" dx="0.6" dy="0.522" layer="1"/>
+<pad name="3" x="0" y="-0.71" drill="1.024" diameter="1.624"/>
+<circle x="0" y="-0.71" radius="0.662" width="0.3" layer="31"/>
+<text x="0" y="1.9" size="0.889" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ELECTRET">
@@ -152,6 +166,20 @@
 <text x="1.27" y="-1.524" size="1.27" layer="97">+</text>
 <text x="6.35" y="-1.524" size="1.27" layer="97" rot="MR180" align="top-right">-</text>
 </symbol>
+<symbol name="I2S_MICROPHONE">
+<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-12.7" x2="7.62" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-12.7" x2="7.62" y2="12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="12.7" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<pin name="GND" x="0" y="-17.78" visible="pin" length="middle" rot="R90"/>
+<pin name="VDD" x="0" y="17.78" visible="pin" length="middle" rot="R270"/>
+<pin name="DATA" x="12.7" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="WS" x="-17.78" y="7.62" visible="pin" length="middle"/>
+<pin name="BCLK" x="-17.78" y="0" visible="pin" length="middle"/>
+<pin name="SELECT" x="-17.78" y="-7.62" visible="pin" length="middle"/>
+<text x="-10.16" y="15.24" size="1.778" layer="95" ratio="12" align="bottom-center">&gt;NAME</text>
+<text x="-7.62" y="-15.24" size="1.778" layer="96" align="bottom-center">I2S_MIC</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="AOM-4546P-R" prefix="MK">
@@ -168,6 +196,31 @@
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="668-1224-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SPH0645LM4H-B" prefix="U" uservalue="yes">
+<description>An I2S microphone down to 20hz</description>
+<gates>
+<gate name="G$1" symbol="I2S_MICROPHONE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SPH0465">
+<connects>
+<connect gate="G$1" pin="BCLK" pad="4"/>
+<connect gate="G$1" pin="DATA" pad="6"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="SELECT" pad="2"/>
+<connect gate="G$1" pin="VDD" pad="5"/>
+<connect gate="G$1" pin="WS" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Knowles" constant="no"/>
+<attribute name="MOUSER" value="721-SPH0645LM4H-B" constant="no"/>
+<attribute name="MPN" value="SPH0645LM4H-B" constant="no"/>
 </technology>
 </technologies>
 </device>
