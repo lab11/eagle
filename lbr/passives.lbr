@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -572,10 +572,10 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <smd name="P$1" x="-1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
 <smd name="P$2" x="1.1" y="0" dx="0.6" dy="0.6" layer="1"/>
 <text x="0" y="1.5" size="1.27" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
-<wire x1="-1.05" y1="0.825" x2="1.05" y2="0.825" width="0.127" layer="25"/>
-<wire x1="1.05" y1="0.825" x2="1.05" y2="-0.825" width="0.127" layer="25"/>
-<wire x1="1.05" y1="-0.825" x2="-1.05" y2="-0.825" width="0.127" layer="25"/>
-<wire x1="-1.05" y1="-0.825" x2="-1.05" y2="0.825" width="0.127" layer="25"/>
+<wire x1="-1.05" y1="0.825" x2="1.05" y2="0.825" width="0.127" layer="21"/>
+<wire x1="1.05" y1="0.825" x2="1.05" y2="-0.825" width="0.127" layer="21"/>
+<wire x1="1.05" y1="-0.825" x2="-1.05" y2="-0.825" width="0.127" layer="21"/>
+<wire x1="-1.05" y1="-0.825" x2="-1.05" y2="0.825" width="0.127" layer="21"/>
 <wire x1="-0.635" y1="0.825" x2="-0.635" y2="-0.825" width="0.127" layer="21"/>
 </package>
 <package name="SOT-23F">
@@ -774,6 +774,21 @@ DigiKey RB521ZS8A30TE61CT-ND</description>
 <text x="-2" y="2.5" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <text x="-2" y="-3.5" size="1.016" layer="27" font="vector" ratio="12">&gt;VALUE</text>
 </package>
+<package name="1206_RES_HIGH_CLEARANCE">
+<smd name="2" x="1.6" y="0" dx="1" dy="1.7" layer="1"/>
+<smd name="1" x="-1.6" y="0" dx="1" dy="1.7" layer="1"/>
+<text x="0" y="0.981" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="-1.6" y1="0.8" x2="-1.1" y2="0.8" width="0.0508" layer="21"/>
+<wire x1="-1.1" y1="0.8" x2="1.1" y2="0.8" width="0.0508" layer="21"/>
+<wire x1="1.1" y1="0.8" x2="1.6" y2="0.8" width="0.0508" layer="21"/>
+<wire x1="1.6" y1="0.8" x2="1.6" y2="-0.8" width="0.0508" layer="21"/>
+<wire x1="1.6" y1="-0.8" x2="1.1" y2="-0.8" width="0.0508" layer="21"/>
+<wire x1="1.1" y1="-0.8" x2="-1.1" y2="-0.8" width="0.0508" layer="21"/>
+<wire x1="-1.1" y1="-0.8" x2="-1.6" y2="-0.8" width="0.0508" layer="21"/>
+<wire x1="-1.6" y1="-0.8" x2="-1.6" y2="0.8" width="0.0508" layer="21"/>
+<wire x1="-1.1" y1="0.8" x2="-1.1" y2="-0.8" width="0.0508" layer="21"/>
+<wire x1="1.1" y1="0.8" x2="1.1" y2="-0.8" width="0.0508" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -957,6 +972,15 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </technologies>
 </device>
 <device name="0805_RES" package="0805_RES">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="1206_RES_HIGH_CLEARANCE" package="1206_RES_HIGH_CLEARANCE">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
