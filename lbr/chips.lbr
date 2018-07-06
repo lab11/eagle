@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.0">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -33,9 +33,9 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="14" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -3405,6 +3405,65 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <wire x1="-1" y1="-1.2" x2="-1" y2="1.2" width="0.127" layer="23"/>
 <text x="-1" y="1.4" size="1.016" layer="23" font="vector" ratio="12">&gt;NAME</text>
 </package>
+<package name="UFQFPN-48">
+<description>&lt;b&gt;Description:&lt;/b&gt; Footprint by STMicroelectronics for the &lt;a href='https://www.st.com/resource/en/datasheet/stm32f091cc.pdf'&gt;&lt;i&gt;STM32F091CC&lt;/i&gt;&lt;/a&gt;</description>
+<smd name="7" x="-3.375" y="-0.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="8" x="-3.375" y="-0.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="9" x="-3.375" y="-1.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="10" x="-3.375" y="-1.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="11" x="-3.375" y="-2.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="12" x="-3.375" y="-2.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="6" x="-3.375" y="0.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="5" x="-3.375" y="0.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="4" x="-3.375" y="1.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="3" x="-3.375" y="1.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="2" x="-3.375" y="2.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="1" x="-3.375" y="2.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="36" x="3.375" y="2.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="35" x="3.375" y="2.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="34" x="3.375" y="1.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="33" x="3.375" y="1.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="32" x="3.375" y="0.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="31" x="3.375" y="0.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="30" x="3.375" y="-0.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="29" x="3.375" y="-0.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="28" x="3.375" y="-1.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="27" x="3.375" y="-1.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="26" x="3.375" y="-2.25" dx="0.55" dy="0.3" layer="1"/>
+<smd name="25" x="3.375" y="-2.75" dx="0.55" dy="0.3" layer="1"/>
+<smd name="42" x="0.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="41" x="0.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="40" x="1.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="39" x="1.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="38" x="2.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="37" x="2.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="43" x="-0.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="44" x="-0.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="45" x="-1.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="46" x="-1.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="47" x="-2.25" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="48" x="-2.75" y="3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="18" x="-0.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="17" x="-0.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="16" x="-1.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="15" x="-1.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="14" x="-2.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="13" x="-2.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="19" x="0.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="20" x="0.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="21" x="1.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="22" x="1.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="23" x="2.25" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="24" x="2.75" y="-3.375" dx="0.55" dy="0.3" layer="1" rot="R90"/>
+<smd name="GND" x="0" y="0" dx="5.6" dy="5.6" layer="1"/>
+<wire x1="-3.5" y1="3.5" x2="-3.5" y2="-3.5" width="0.15" layer="21"/>
+<wire x1="-3.5" y1="-3.5" x2="3.5" y2="-3.5" width="0.15" layer="21"/>
+<wire x1="3.5" y1="-3.5" x2="3.5" y2="3.5" width="0.15" layer="21"/>
+<wire x1="3.5" y1="3.5" x2="-3.5" y2="3.5" width="0.15" layer="21"/>
+<circle x="-4" y="3.3" radius="0.22360625" width="0.127" layer="21"/>
+<text x="-3.5" y="4" size="1" layer="27">&gt;Value</text>
+<text x="-3.5" y="-5" size="1" layer="25">&gt;Name</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -6562,6 +6621,63 @@ RF Switch</text>
 <pin name="SDA" x="17.78" y="2.54" length="short" rot="R180"/>
 <text x="0" y="16.002" size="1.778" layer="95">&gt;NAME</text>
 <text x="0" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="STM32F091CC">
+<description>&lt;b&gt;Description:&lt;/b&gt; Schematic component for the &lt;a href='https://www.st.com/resource/en/datasheet/stm32f091cc.pdf'&gt;&lt;i&gt;STM32F091CC&lt;/i&gt;&lt;/a&gt; from STMicroelectronics, an ARM-based 32-bit MCU with 256kB Flash, 34 kB of SRAM and a Cortex-M0.</description>
+<wire x1="-27.94" y1="27.94" x2="-27.94" y2="-27.94" width="1.27" layer="94"/>
+<wire x1="-27.94" y1="-27.94" x2="27.94" y2="-27.94" width="1.27" layer="94"/>
+<wire x1="27.94" y1="-27.94" x2="27.94" y2="27.94" width="1.27" layer="94"/>
+<wire x1="27.94" y1="27.94" x2="-27.94" y2="27.94" width="1.27" layer="94"/>
+<pin name="VBAT" x="-33.02" y="25.4" visible="pin" length="middle" direction="pwr"/>
+<pin name="PC13" x="-33.02" y="-5.08" visible="pin" length="middle"/>
+<pin name="PC14-OSC32_IN" x="-33.02" y="-7.62" visible="pin" length="middle"/>
+<pin name="PC15-OSC32_OUT" x="-33.02" y="-10.16" visible="pin" length="middle"/>
+<pin name="PF0-OSC_IN" x="-33.02" y="-15.24" visible="pin" length="middle"/>
+<pin name="PF1-OSC_OUT" x="-33.02" y="-17.78" visible="pin" length="middle"/>
+<pin name="NRST" x="-33.02" y="-25.4" visible="pin" length="middle"/>
+<pin name="VSSA" x="-33.02" y="20.32" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDDA" x="-33.02" y="7.62" visible="pin" length="middle" direction="pwr"/>
+<pin name="PA0" x="-12.7" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA1" x="-10.16" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA2" x="-7.62" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA5" x="0" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA3" x="-5.08" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA4" x="-2.54" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA6" x="2.54" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA7" x="5.08" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PB0" x="33.02" y="15.24" visible="pin" length="middle" rot="R180"/>
+<pin name="PB1" x="33.02" y="12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="PB2" x="33.02" y="10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="PB10" x="33.02" y="-10.16" visible="pin" length="middle" rot="R180"/>
+<pin name="PB11" x="33.02" y="-12.7" visible="pin" length="middle" rot="R180"/>
+<pin name="VSS@23" x="-33.02" y="17.78" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDD@24" x="-33.02" y="2.54" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDDIO2" x="-33.02" y="5.08" visible="pin" length="middle" direction="pwr"/>
+<pin name="VSS@35" x="-33.02" y="15.24" visible="pin" length="middle" direction="pwr"/>
+<pin name="PA13" x="20.32" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA12" x="17.78" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA11" x="15.24" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA10" x="12.7" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA9" x="10.16" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA8" x="7.62" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PB15" x="33.02" y="-22.86" visible="pin" length="middle" rot="R180"/>
+<pin name="PB14" x="33.02" y="-20.32" visible="pin" length="middle" rot="R180"/>
+<pin name="PB13" x="33.02" y="-17.78" visible="pin" length="middle" rot="R180"/>
+<pin name="PB12" x="33.02" y="-15.24" visible="pin" length="middle" rot="R180"/>
+<pin name="PA14" x="22.86" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PA15" x="25.4" y="33.02" visible="pin" length="middle" rot="R270"/>
+<pin name="PB3" x="33.02" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="PB4" x="33.02" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="PB5" x="33.02" y="2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="PB6" x="33.02" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="PB7" x="33.02" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="PF11-BOOT0" x="-33.02" y="-20.32" visible="pin" length="middle"/>
+<pin name="PB8" x="33.02" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="PB9" x="33.02" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="VSS@47" x="-33.02" y="12.7" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDD@48" x="-33.02" y="0" visible="pin" length="middle" direction="pwr"/>
+<text x="-27.94" y="30.48" size="2.032" layer="95">&gt;Name</text>
+<text x="-27.94" y="-33.02" size="2.032" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -10954,6 +11070,73 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <technology name="">
 <attribute name="DIGIKEY" value="TCS34725FNCT-ND" constant="no"/>
 <attribute name="MPN" value="TCS34725FN" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="STM32F091CC" prefix="U">
+<description>&lt;b&gt;Description:&lt;/b&gt; &lt;a href='https://www.st.com/resource/en/datasheet/stm32f091cc.pdf'&gt;&lt;i&gt;STM32F091CC&lt;/i&gt;&lt;/a&gt; from STMicroelectronics, an ARM-based 32-bit MCU with 256 kB Flash, 32kB of SRAM and a Cortex M0</description>
+<gates>
+<gate name="U1" symbol="STM32F091CC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="UFQFPN-48">
+<connects>
+<connect gate="U1" pin="NRST" pad="7"/>
+<connect gate="U1" pin="PA0" pad="10"/>
+<connect gate="U1" pin="PA1" pad="11"/>
+<connect gate="U1" pin="PA10" pad="31"/>
+<connect gate="U1" pin="PA11" pad="32"/>
+<connect gate="U1" pin="PA12" pad="33"/>
+<connect gate="U1" pin="PA13" pad="34"/>
+<connect gate="U1" pin="PA14" pad="37"/>
+<connect gate="U1" pin="PA15" pad="38"/>
+<connect gate="U1" pin="PA2" pad="12"/>
+<connect gate="U1" pin="PA3" pad="13"/>
+<connect gate="U1" pin="PA4" pad="14"/>
+<connect gate="U1" pin="PA5" pad="15"/>
+<connect gate="U1" pin="PA6" pad="16"/>
+<connect gate="U1" pin="PA7" pad="17"/>
+<connect gate="U1" pin="PA8" pad="29"/>
+<connect gate="U1" pin="PA9" pad="30"/>
+<connect gate="U1" pin="PB0" pad="18"/>
+<connect gate="U1" pin="PB1" pad="19"/>
+<connect gate="U1" pin="PB10" pad="21"/>
+<connect gate="U1" pin="PB11" pad="22"/>
+<connect gate="U1" pin="PB12" pad="25"/>
+<connect gate="U1" pin="PB13" pad="26"/>
+<connect gate="U1" pin="PB14" pad="27"/>
+<connect gate="U1" pin="PB15" pad="28"/>
+<connect gate="U1" pin="PB2" pad="20"/>
+<connect gate="U1" pin="PB3" pad="39"/>
+<connect gate="U1" pin="PB4" pad="40"/>
+<connect gate="U1" pin="PB5" pad="41"/>
+<connect gate="U1" pin="PB6" pad="42"/>
+<connect gate="U1" pin="PB7" pad="43"/>
+<connect gate="U1" pin="PB8" pad="45"/>
+<connect gate="U1" pin="PB9" pad="46"/>
+<connect gate="U1" pin="PC13" pad="2"/>
+<connect gate="U1" pin="PC14-OSC32_IN" pad="3"/>
+<connect gate="U1" pin="PC15-OSC32_OUT" pad="4"/>
+<connect gate="U1" pin="PF0-OSC_IN" pad="5"/>
+<connect gate="U1" pin="PF1-OSC_OUT" pad="6"/>
+<connect gate="U1" pin="PF11-BOOT0" pad="44"/>
+<connect gate="U1" pin="VBAT" pad="1"/>
+<connect gate="U1" pin="VDD@24" pad="24"/>
+<connect gate="U1" pin="VDD@48" pad="48"/>
+<connect gate="U1" pin="VDDA" pad="9"/>
+<connect gate="U1" pin="VDDIO2" pad="36"/>
+<connect gate="U1" pin="VSS@23" pad="23"/>
+<connect gate="U1" pin="VSS@35" pad="35"/>
+<connect gate="U1" pin="VSS@47" pad="47"/>
+<connect gate="U1" pin="VSSA" pad="8"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="https://www.st.com/resource/en/datasheet/stm32f091cc.pdf" constant="no"/>
+<attribute name="DIGIKEY" value="https://www.digikey.com/product-detail/en/stmicroelectronics/STM32F091CCU6/497-15813-ND/5287172" constant="no"/>
+<attribute name="MOUSER" value="https://www.mouser.com/ProductDetail/STMicroelectronics/STM32F091CCU6?qs=sGAEpiMZZMuoKKEcg8mMKGHUAmntboesBxIZvpdZ7rUgGYh2kl5%252bUQ%3d%3d" constant="no"/>
 </technology>
 </technologies>
 </device>
