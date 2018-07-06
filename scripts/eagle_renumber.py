@@ -153,7 +153,7 @@ def unit_package_sort(value, unit_prefixes, device):
    return _unit_package_list.index((normalized, device))
 
 sch_part_tag_re = re.compile(
-      '<part name="{}(.+?)".*device[set]*="([0-9A-Z_]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
+      '<part name="{}(.+?)".*device[set]*="([0-9A-Z_-]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
 sch_part_tag_dnp_re = re.compile(
