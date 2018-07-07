@@ -1,0 +1,152 @@
+#usage "<b>Add attribute to group selected part(s) in a schematic</b><p>"
+       "A number of predefined attributes are defined for use with bom-ex.ulp<p>"
+
+string Version = "1.09";
+
+string fileName;
+
+int fDisplay = 1;
+
+string strCmd;     // script command text
+
+string strAttrDigikey;
+string strAttrManufacturer;
+string strAttrMPN;
+string strAttrOtherName;
+string strAttrOtherValue;
+string strAttrDescription;
+string strList;
+
+
+//////////////////////////////////////////////////////////////////////////////
+// Script Entry Point
+
+if (schematic)
+{
+    schematic(SCH)
+    {
+        strCmd = "";
+        strAttrDigikey = "";
+        strAttrManufacturer = "";
+        strAttrMPN = "";
+        strAttrOtherName = "";
+        strAttrOtherValue = "";
+        strAttrDescription = "";
+        strList = "";
+
+        fileName = filesetext(SCH.name, "_AddAttrib.scr");
+
+        string title = "Add Attribute - v" + Version;
+
+        int nResult = dlgDialog(title)
+        {
+            dlgHBoxLayout
+            {
+                dlgGroup("Attribute")
+                {
+                    dlgGridLayout
+                    {
+                        dlgCell(1,0) dlgLabel("Part List");
+                        dlgCell(1,1) dlgStringEdit(strList);
+
+                        dlgCell(3,0) dlgLabel("Attribute Name");
+                        dlgCell(3,1) dlgLabel("Attribute Value");
+
+                        dlgCell(5,0) dlgLabel("Digikey");
+                        dlgCell(5,1) dlgStringEdit(strAttrDigikey);
+
+                        dlgCell(7,0) dlgLabel("Manufacturer");
+                        dlgCell(7,1) dlgStringEdit(strAttrManufacturer);
+
+                        dlgCell(9,0) dlgLabel("MPN");
+                        dlgCell(9,1) dlgStringEdit(strAttrMPN);
+
+                        dlgCell(11,0) dlgLabel("Description");
+                        dlgCell(11,1) dlgStringEdit(strAttrDescription);
+
+                        dlgCell(13,0) dlgStringEdit(strAttrOtherName);
+                        dlgCell(13,1) dlgStringEdit(strAttrOtherValue);
+                    }
+                }
+            }
+            dlgHBoxLayout
+            {
+                dlgPushButton("Add") dlgAccept(1);
+            }
+        };
+
+        if (!nResult)
+            exit(0);
+
+        int cnt = 0;
+        int sheetswitched; 
+        
+        // Get the list of parts split
+        string parts[];
+        cnt += strsplit(parts, strList, ',');
+
+        SCH.sheets(S)
+        {
+            sheetswitched = 0;
+            S.parts(P)
+            {
+                for(int i = 0; i < cnt; i++) {
+                    if(parts[i] == P.name && P.device.package) {
+                        // Add attribute to group
+                        if (nResult == 1)
+                        {
+                            string tmp;
+                            if (sheetswitched == 0)
+                            {
+                                sprintf(tmp, "EDIT .s%d;\n", S.number);
+                                strCmd += tmp;
+                                sheetswitched = 1;
+                            }
+
+                            if(strAttrDigikey != "")
+                            {
+                                sprintf(tmp, "ATTRIBUTE %s DIGIKEY '%s';\n", P.name, strAttrDigikey);
+                                strCmd += tmp;
+                            }
+
+                            if(strAttrManufacturer != "")
+                            {
+                                sprintf(tmp, "ATTRIBUTE %s MANUFACTURER '%s';\n", P.name, strAttrManufacturer);
+                                strCmd += tmp;
+                            }
+
+                            if(strAttrMPN != "")
+                            {
+                                sprintf(tmp, "ATTRIBUTE %s MPN '%s';\n", P.name, strAttrMPN);
+                                strCmd += tmp;
+                            }
+
+                            if(strAttrOtherName != "" && strAttrOtherValue != "")
+                            {
+                                sprintf(tmp, "ATTRIBUTE %s %s '%s';\n", P.name, strAttrOtherName, strAttrOtherValue);
+                                strCmd += tmp;
+                            }
+
+                            if(strAttrDescription == "")
+                            {
+                                sprintf(tmp, "ATTRIBUTE %s DESCRIPTION DELETE;\n", P.name);
+                                strCmd += tmp;
+                            } else {
+                                sprintf(tmp, "ATTRIBUTE %s DESCRIPTION '%s';\n", P.name, strAttrDescription);
+                                strCmd += tmp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        exit(strCmd);
+    }
+}
+else
+{
+    dlgMessageBox("Start this ULP in Schematic!", "OK");
+}
+
+// End-Of-File
