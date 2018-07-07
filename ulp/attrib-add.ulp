@@ -46,7 +46,7 @@ if (schematic)
                 {
                     dlgGridLayout
                     {
-                        dlgCell(1,0) dlgLabel("Part List");
+                        dlgCell(1,0) dlgLabel("Part List (comma separated!!)");
                         dlgCell(1,1) dlgStringEdit(strList);
 
                         dlgCell(3,0) dlgLabel("Attribute Name");
