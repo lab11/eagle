@@ -569,7 +569,7 @@ def _handle_attrs_for_part(part):
     manufacturer = MPN_to_manufacturer(mpn)
     # If MANUFACTURER exists, validate it matched, o/w add it
     if MANUFACTURER:
-        if manufacturer != MANUFACTURER:
+        if manufacturer.lower() != MANUFACTURER.lower():
             raise NotImplementedError('Mismatch MANUFACTURER?? {} != {}'.\
                     format(manufacturer, MANUFACTURER))
     else:
