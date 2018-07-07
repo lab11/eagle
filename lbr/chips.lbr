@@ -6195,7 +6195,7 @@ RF Switch</text>
 <pin name="WDI" x="-17.78" y="7.62" visible="pin" length="middle"/>
 <pin name="WDS" x="17.78" y="-12.7" visible="pin" length="middle" rot="R180"/>
 <text x="-7.62" y="15.24" size="1.778" layer="95" align="bottom-center">&gt;NAME</text>
-<text x="0" y="12.7" size="1.778" layer="95" rot="R180" align="bottom-center">MAX6746</text>
+<text x="0" y="12.7" size="1.778" layer="95" rot="R180" align="bottom-center">MAX67XX</text>
 </symbol>
 <symbol name="M24">
 <pin name="SDA" x="10.16" y="7.62" length="short" rot="R180"/>
@@ -10477,13 +10477,13 @@ with External Sense Resistor</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MAX6746" prefix="U">
+<deviceset name="MAX67XX" prefix="U">
 <description>A simple watchdog timer with adjustable timeouts and reset time</description>
 <gates>
 <gate name="G$1" symbol="MAX6746" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT-23-8">
+<device name="MAX67XX" package="SOT-23-8">
 <connects>
 <connect gate="G$1" pin="!MR" pad="1"/>
 <connect gate="G$1" pin="!RESET" pad="7"/>
@@ -10495,8 +10495,15 @@ with External Sense Resistor</description>
 <connect gate="G$1" pin="WDS" pad="5"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="DIGIKEY" value="MAX6746KA29+TCT-ND" constant="no"/>
+<technology name="MAX6746">
+<attribute name="DIGIKEY" value="MAX6746KA26+TCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Maxim Integrated" constant="no"/>
+<attribute name="MPN" value="MAX6746KA26+T" constant="no"/>
+</technology>
+<technology name="MAX6749">
+<attribute name="DIGIKEY" value="MAX6749KA+TCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Maxim Integrated" constant="no"/>
+<attribute name="MPN" value="MAX6749KA+T" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -10789,6 +10796,7 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 </connects>
 <technologies>
 <technology name="">
+<attribute name="DIGIKEY" value="497-17718-6-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
 <attribute name="MOUSER" value="511-LIS2DW12TR" constant="no"/>
 <attribute name="MPN" value="LIS2DW12TR" constant="no"/>
