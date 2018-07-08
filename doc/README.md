@@ -52,10 +52,12 @@ are worth reading over:
 
 There are some additional resources online that may be useful:
 
-  - https://www.sparkfun.com/tutorials/108
-  - https://www.sparkfun.com/tutorials/109
-  - https://www.sparkfun.com/tutorials/110
-  - http://www.eecs.umich.edu/hub/lessons.html
+  - [Sparkfun: Installing EAGLE](https://learn.sparkfun.com/tutorials/how-to-install-and-setup-eagle)
+  - [Sparkfun: EAGLE schematics](https://learn.sparkfun.com/tutorials/using-eagle-schematic) ([old version](https://www.sparkfun.com/tutorials/108))
+  - [Sparkfun: EAGLE board layout](https://learn.sparkfun.com/tutorials/using-eagle-board-layout) ([old version](https://www.sparkfun.com/tutorials/109))
+  - [Sparkfun: How to create SMD based PCBs](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd)
+  - [Sparkfun: Designing PCBs with SMB footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints) ([old version](https://www.sparkfun.com/tutorials/110))
+  - [UMich Embedded systems information](http://www.eecs.umich.edu/hub/lessons.html)
 
 
 ## Design Review
