@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -11324,8 +11324,11 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="https://www.st.com/resource/en/datasheet/stm32f091cc.pdf" constant="no"/>
-<attribute name="DIGIKEY" value="https://www.digikey.com/product-detail/en/stmicroelectronics/STM32F091CCU6/497-15813-ND/5287172" constant="no"/>
-<attribute name="MOUSER" value="https://www.mouser.com/ProductDetail/STMicroelectronics/STM32F091CCU6?qs=sGAEpiMZZMuoKKEcg8mMKGHUAmntboesBxIZvpdZ7rUgGYh2kl5%252bUQ%3d%3d" constant="no"/>
+<attribute name="DESCRIPTION" value="IC MCU 32BIT 256KB FLASH 48QFPN" constant="no"/>
+<attribute name="DIGIKEY" value="497-15813-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="STMicroelectronics" constant="no"/>
+<attribute name="MOUSER" value="511-STM32F091CCU6" constant="no"/>
+<attribute name="MPN" value="STM32F091CCU6" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -11391,7 +11394,10 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="https://www.decawave.com/sites/default/files/resources/dw1000-datasheet-v2.13.pdf" constant="no"/>
-<attribute name="DIGIKEY" value="https://www.digikey.com/product-detail/en/decawave-limited/DW1000-I-TR13/1479-1001-1-ND/4499860" constant="no"/>
+<attribute name="DESCRIPTION" value="IC RF TXRX 802.15.4 48-QFN" constant="no"/>
+<attribute name="DIGIKEY" value="1479-1001-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Decawave Limited" constant="no"/>
+<attribute name="MPN" value="DW1000-I-TR13" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -11417,8 +11423,11 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <technologies>
 <technology name="">
 <attribute name="DATASHEET" value="http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf" constant="no"/>
-<attribute name="DIGIKEY" value="https://www.digikey.com/product-detail/en/microchip-technology/MCP73831T-2ACI-MC/MCP73831T-2ACI-MCCT-ND/7065590" constant="no"/>
-<attribute name="MOUSER" value="https://www.mouser.com/ProductDetail/Microchip-Technology/MCP73832T-2ACI-MC?qs=sGAEpiMZZMsfD%252bbMpEGFJbfJoD52oiVFmG5kyGDRD%2fI%3d" constant="no"/>
+<attribute name="DESCRIPTION" value="IC CONTROLLER LI-ION 4.2V 8DFN" constant="no"/>
+<attribute name="DIGIKEY" value="MCP73831T-2ACI/MCCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Microchip Technology" constant="no"/>
+<attribute name="MOUSER" value="579-MCP73832T-2ACIMC" constant="no"/>
+<attribute name="MPN" value="MCP73831T-2ACI/MC" constant="no"/>
 </technology>
 </technologies>
 </device>
