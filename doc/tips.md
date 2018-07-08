@@ -81,7 +81,13 @@ Eagle Tips
      looks more like a URL than a button.
    - When you add a "New" attribute, set its `Name` to a vendor (e.g.
      DIGIKEY) and its `Value` to the vendor part number.
-   - Useful Attributes are: _DIGIKEY_, _MOUSER_, _DATASHEET_
+   - Useful Attributes are:
+     - _DATASHEET_ (link)
+     - _DESCRIPTION_ (string from Digikey)
+     - _DIGIKEY_
+     - _MOUSER_
+     - _MANUFACTURER_
+     - _MPN_ (*Manufacturer Part Number*)
  - Change the symbol name (usually `G$1$`) to something nicer-looking, e.g. `U1`, using the *name* tool.
 
 ## Legacy Tips
