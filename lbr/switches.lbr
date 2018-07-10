@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.1">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -818,6 +818,25 @@ Digi-Key FPF1320UCXCT-ND</description>
 <circle x="-0.63" y="0.75" radius="0" width="0.2" layer="21"/>
 <text x="0" y="1.016" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
+<package name="MLPQ-UT-8">
+<description>MLP 8-pin 1.5 x 1.5mm</description>
+<smd name="GND" x="0" y="0" dx="1.2" dy="0.7" layer="1" rot="R90"/>
+<smd name="4" x="-0.725" y="-0.6" dx="0.35" dy="0.2" layer="1"/>
+<smd name="2" x="-0.725" y="0.2" dx="0.35" dy="0.2" layer="1"/>
+<smd name="1" x="-0.725" y="0.6" dx="0.35" dy="0.2" layer="1"/>
+<smd name="3" x="-0.725" y="-0.2" dx="0.35" dy="0.2" layer="1"/>
+<smd name="8" x="0.725" y="0.6" dx="0.35" dy="0.2" layer="1"/>
+<smd name="6" x="0.725" y="-0.2" dx="0.35" dy="0.2" layer="1"/>
+<smd name="5" x="0.725" y="-0.6" dx="0.35" dy="0.2" layer="1"/>
+<smd name="7" x="0.725" y="0.2" dx="0.35" dy="0.2" layer="1"/>
+<wire x1="-0.75" y1="0.75" x2="-0.75" y2="-0.75" width="0.127" layer="21"/>
+<wire x1="-0.75" y1="-0.75" x2="0.75" y2="-0.75" width="0.127" layer="21"/>
+<wire x1="0.75" y1="-0.75" x2="0.75" y2="0.75" width="0.127" layer="21"/>
+<wire x1="0.75" y1="0.75" x2="-0.75" y2="0.75" width="0.127" layer="21"/>
+<circle x="-1" y="1" radius="0.14141875" width="0.127" layer="21"/>
+<text x="-0.7" y="1" size="0.5" layer="25">&gt;NAME</text>
+<text x="-0.7" y="-1.5" size="0.5" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="8X_SPST">
@@ -1212,6 +1231,24 @@ Digi-Key FPF1320UCXCT-ND</description>
   X=1 GND</text>
 <text x="-7.62" y="10.16" size="1.778" layer="95" align="top-left">&gt;NAME</text>
 <text x="-7.62" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="SKY13317">
+<description>&lt;b&gt;Description:&lt;/b&gt; Symbol for &lt;a href='http://www.skyworksinc.com/uploads/documents/SKY13317_373LF_200914K.pdf'&gt;&lt;i&gt;SKY13317&lt;/i&gt;&lt;/a&gt;, an RF switch from Skyworks Inc.</description>
+<wire x1="-7.62" y1="10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
+<pin name="RFC" x="-12.7" y="7.62" visible="pin" length="middle"/>
+<pin name="N/C" x="-12.7" y="-5.08" visible="pin" length="middle" direction="nc"/>
+<pin name="V1" x="-12.7" y="2.54" visible="pin" length="middle"/>
+<pin name="RF1" x="-12.7" y="0" visible="pin" length="middle"/>
+<pin name="RF3" x="12.7" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="V3" x="12.7" y="5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="V2" x="12.7" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="RF2" x="12.7" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<text x="-7.62" y="11.43" size="2.54" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-13.97" size="2.54" layer="96">&gt;VALUE</text>
+<pin name="GND" x="-12.7" y="-7.62" visible="pin" length="middle" direction="pwr"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1985,6 +2022,36 @@ X=0/1 chooses whether Vout floats or is grounded when EN is low</description>
 <attribute name="DIGIKEY" value="FPF1321UCXTR-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Fairchild/ON Semiconductor" constant="no"/>
 <attribute name="MPN" value="FPF1321UCX" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SKY13317" prefix="U">
+<description>&lt;b&gt;Description:&lt;/b&gt; Device for &lt;a href='http://www.skyworksinc.com/uploads/documents/SKY13317_373LF_200914K.pdf'&gt;&lt;i&gt;SKY13317-373LF&lt;/i&gt;&lt;/a&gt;, an RF switch from Skyworks Inc.</description>
+<gates>
+<gate name="U1" symbol="SKY13317" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MLPQ-UT-8">
+<connects>
+<connect gate="U1" pin="GND" pad="GND"/>
+<connect gate="U1" pin="N/C" pad="2"/>
+<connect gate="U1" pin="RF1" pad="4"/>
+<connect gate="U1" pin="RF2" pad="5"/>
+<connect gate="U1" pin="RF3" pad="8"/>
+<connect gate="U1" pin="RFC" pad="1"/>
+<connect gate="U1" pin="V1" pad="3"/>
+<connect gate="U1" pin="V2" pad="6"/>
+<connect gate="U1" pin="V3" pad="7"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.skyworksinc.com/uploads/documents/SKY13317_373LF_200914K.pdf" constant="no"/>
+<attribute name="DESCRIPTION" value="IC SWITCH RF SP3T 8-MLP" constant="no"/>
+<attribute name="DIGIKEY" value="863-1056-1-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Skyworks Solutions Inc." constant="no"/>
+<attribute name="MPN" value="SKY13317-373LF" constant="no"/>
 </technology>
 </technologies>
 </device>
