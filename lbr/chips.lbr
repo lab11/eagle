@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -6793,8 +6793,6 @@ RF Switch</text>
 <wire x1="-17.78" y1="-50.8" x2="17.78" y2="-50.8" width="0.762" layer="94"/>
 <wire x1="17.78" y1="-50.8" x2="17.78" y2="45.72" width="0.762" layer="94"/>
 <wire x1="17.78" y1="45.72" x2="-17.78" y2="45.72" width="0.762" layer="94"/>
-<pin name="NC/1" x="22.86" y="-15.24" visible="pin" length="middle" direction="nc" rot="R180"/>
-<pin name="NC/2" x="22.86" y="-17.78" visible="pin" length="middle" direction="nc" rot="R180"/>
 <pin name="XTAL1" x="-22.86" y="-22.86" visible="pin" length="middle" direction="in"/>
 <pin name="XTAL2" x="-22.86" y="-25.4" visible="pin" length="middle" direction="in"/>
 <pin name="VREF" x="-22.86" y="-38.1" visible="pin" length="middle"/>
@@ -6815,10 +6813,8 @@ RF Switch</text>
 <pin name="SYNC/GPIO7" x="22.86" y="25.4" visible="pin" length="middle" rot="R180"/>
 <pin name="VDDIOA" x="-22.86" y="40.64" visible="pin" length="middle" direction="pwr"/>
 <pin name="!RST" x="22.86" y="0" visible="pin" length="middle" rot="R180"/>
-<pin name="VDDLDOD" x="-22.86" y="43.18" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDDLDOD" x="-22.86" y="25.4" visible="pin" length="middle" direction="pwr"/>
 <pin name="VDDAON" x="-22.86" y="38.1" visible="pin" length="middle" direction="pwr"/>
-<pin name="NC/13" x="22.86" y="-20.32" visible="pin" length="middle" direction="nc" rot="R180"/>
-<pin name="NC/14" x="22.86" y="-22.86" visible="pin" length="middle" direction="nc" rot="R180"/>
 <pin name="VDDLNA" x="-22.86" y="30.48" visible="pin" length="middle" direction="pwr"/>
 <pin name="RF_P" x="22.86" y="17.78" visible="pin" length="middle" rot="R180"/>
 <pin name="RF_N" x="22.86" y="15.24" visible="pin" length="middle" rot="R180"/>
@@ -6830,7 +6826,7 @@ RF Switch</text>
 <pin name="WAKEUP" x="-22.86" y="-7.62" visible="pin" length="middle" direction="in"/>
 <pin name="!SPICS" x="-22.86" y="-12.7" visible="pin" length="middle" direction="in"/>
 <pin name="VDDLDOA" x="-22.86" y="27.94" visible="pin" length="middle" direction="pwr"/>
-<pin name="VDDBAT" x="-22.86" y="25.4" visible="pin" length="middle" direction="pwr"/>
+<pin name="VDDBAT" x="-22.86" y="43.18" visible="pin" length="middle" direction="pwr"/>
 <pin name="TESTMODE" x="-22.86" y="-17.78" visible="pin" length="middle" direction="in"/>
 <pin name="IRQ/GPIO8" x="22.86" y="22.86" visible="pin" length="middle" rot="R180"/>
 <pin name="VDDDIG" x="-22.86" y="7.62" visible="pin" length="middle" direction="pwr"/>
@@ -11360,10 +11356,6 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <connect gate="U1" pin="GPIO5" pad="33"/>
 <connect gate="U1" pin="GPIO6" pad="30"/>
 <connect gate="U1" pin="IRQ/GPIO8" pad="45"/>
-<connect gate="U1" pin="NC/1" pad="1"/>
-<connect gate="U1" pin="NC/13" pad="13"/>
-<connect gate="U1" pin="NC/14" pad="14"/>
-<connect gate="U1" pin="NC/2" pad="2"/>
 <connect gate="U1" pin="RF_N" pad="17"/>
 <connect gate="U1" pin="RF_P" pad="16"/>
 <connect gate="U1" pin="SPICLK" pad="41"/>
