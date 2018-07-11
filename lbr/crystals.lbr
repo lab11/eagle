@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.0">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -317,6 +317,20 @@
 <text x="0" y="-1.25" size="1.016" layer="27" font="vector" ratio="12" rot="R180" align="bottom-center">&gt;VALUE</text>
 <wire x1="-2" y1="0.5" x2="-2" y2="1.25" width="0.127" layer="21"/>
 <wire x1="-2" y1="1.25" x2="-1.25" y2="1.25" width="0.127" layer="21"/>
+</package>
+<package name="FA-20H">
+<description>FA-20H 2.5x2.0mm</description>
+<smd name="2" x="-0.7" y="-0.85" dx="1.2" dy="1.1" layer="1" rot="R90"/>
+<smd name="3" x="0.7" y="-0.85" dx="1.2" dy="1.1" layer="1" rot="R90"/>
+<smd name="1" x="-0.7" y="0.85" dx="1.2" dy="1.1" layer="1" rot="R90"/>
+<smd name="4" x="0.7" y="0.85" dx="1.2" dy="1.1" layer="1" rot="R90"/>
+<wire x1="-1" y1="1.25" x2="-1" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="-1" y1="-1.25" x2="1" y2="-1.25" width="0.127" layer="21"/>
+<wire x1="1" y1="-1.25" x2="1" y2="1.25" width="0.127" layer="21"/>
+<wire x1="1" y1="1.25" x2="-1" y2="1.25" width="0.127" layer="21"/>
+<circle x="-1.6" y="1.2" radius="0.14141875" width="0.127" layer="21"/>
+<text x="-1" y="1.6" size="0.5" layer="25">&gt;NAME</text>
+<text x="-1" y="-2.07" size="0.5" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -662,6 +676,27 @@ ULTRA MINIATURE SIZE LOW PROFILE SMD&lt;br&gt;&lt;br&gt;
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FA-20H" prefix="X">
+<description>&lt;b&gt;Description:&lt;/b&gt; Oscillator by EPSON from 12MHz to 54 MHz</description>
+<gates>
+<gate name="X1" symbol="CRYSTAL-GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FA-20H">
+<connects>
+<connect gate="X1" pin="1" pad="1"/>
+<connect gate="X1" pin="2" pad="3"/>
+<connect gate="X1" pin="GND" pad="2 4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DATASHEET" value="https://support.epson.biz/td/api/doc_check.php?dl=brief_FA-20H_en.pdf" constant="no"/>
+<attribute name="MANUFACTURER" value="EPSON" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
