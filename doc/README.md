@@ -59,6 +59,10 @@ There are some additional resources online that may be useful:
   - [Sparkfun: Designing PCBs with SMB footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints) ([old version](https://www.sparkfun.com/tutorials/110))
   - [UMich Embedded systems information](http://www.eecs.umich.edu/hub/lessons.html)
 
+For PCB design which contain RF traces ( > 100 MHz), there are some general rules of thumb:
+
+  - [General Layout Guidelines for RF and Mixed-signal PCBs](https://www.maximintegrated.com/en/app-notes/index.mvp/id/5100)
+  - [Layout for Low Power RF Designs](http://www.ti.com/lit/an/swra367a/swra367a.pdf)
 
 ## Design Review
 
