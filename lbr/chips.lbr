@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -6783,8 +6783,8 @@ RF Switch</text>
 <pin name="PB9" x="33.02" y="-7.62" visible="pin" length="middle" rot="R180"/>
 <pin name="VSS/47" x="-33.02" y="-25.4" visible="pin" length="middle" direction="pwr"/>
 <pin name="VDD/48" x="-33.02" y="12.7" visible="pin" length="middle" direction="pwr"/>
-<text x="-27.94" y="30.48" size="2.032" layer="95">&gt;Name</text>
-<text x="-27.94" y="-33.02" size="2.032" layer="96">&gt;Value</text>
+<text x="-27.94" y="29.21" size="2.54" layer="95">&gt;Name</text>
+<text x="-27.94" y="-31.75" size="2.54" layer="96">&gt;Value</text>
 <pin name="GND" x="15.24" y="-30.48" visible="pin" length="short" direction="pwr" rot="R90"/>
 </symbol>
 <symbol name="DW1000">
@@ -6841,8 +6841,8 @@ RF Switch</text>
 <pin name="SPIMOSI" x="-22.86" y="-30.48" visible="pin" length="middle" direction="in"/>
 <pin name="GPIO0" x="22.86" y="43.18" visible="pin" length="middle" rot="R180"/>
 <pin name="GPIO1" x="22.86" y="40.64" visible="pin" length="middle" rot="R180"/>
-<text x="-17.78" y="48.26" size="2.54" layer="95">&gt;Name</text>
-<text x="-17.78" y="-55.88" size="2.54" layer="96">&gt;Value</text>
+<text x="-17.78" y="46.99" size="2.54" layer="95">&gt;Name</text>
+<text x="-17.78" y="-54.61" size="2.54" layer="96">&gt;Value</text>
 <pin name="GND" x="-22.86" y="-48.26" visible="pin" length="middle" direction="pwr"/>
 </symbol>
 <symbol name="MCP73831">
@@ -6859,8 +6859,8 @@ RF Switch</text>
 <pin name="NC" x="-17.78" y="-2.54" visible="pin" length="middle" direction="nc"/>
 <pin name="VSS" x="17.78" y="-7.62" visible="pin" length="middle" direction="pwr" rot="R180"/>
 <pin name="STAT" x="-17.78" y="-7.62" visible="pin" length="middle"/>
-<text x="-12.7" y="8.636" size="2.286" layer="95">&gt;Name</text>
-<text x="-12.7" y="-16.256" size="2.286" layer="96">&gt;Value</text>
+<text x="-12.7" y="8.89" size="2.54" layer="95">&gt;Name</text>
+<text x="-12.7" y="-16.51" size="2.54" layer="96">&gt;Value</text>
 <pin name="GND" x="17.78" y="-10.16" visible="pin" length="middle" direction="pwr" rot="R180"/>
 </symbol>
 </symbols>

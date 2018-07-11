@@ -1234,20 +1234,20 @@ Digi-Key FPF1320UCXCT-ND</description>
 </symbol>
 <symbol name="SKY13317">
 <description>&lt;b&gt;Description:&lt;/b&gt; Symbol for &lt;a href='http://www.skyworksinc.com/uploads/documents/SKY13317_373LF_200914K.pdf'&gt;&lt;i&gt;SKY13317&lt;/i&gt;&lt;/a&gt;, an RF switch from Skyworks Inc.</description>
-<wire x1="-7.62" y1="10.16" x2="-7.62" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-12.7" x2="7.62" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-12.7" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
 <wire x1="7.62" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
 <pin name="RFC" x="-12.7" y="7.62" visible="pin" length="middle"/>
-<pin name="V1" x="12.7" y="7.62" visible="pin" length="middle" rot="R180"/>
-<pin name="RF1" x="12.7" y="5.08" visible="pin" length="middle" rot="R180"/>
-<pin name="RF3" x="12.7" y="-10.16" visible="pin" length="middle" rot="R180"/>
-<pin name="V3" x="12.7" y="-7.62" visible="pin" length="middle" rot="R180"/>
-<pin name="V2" x="12.7" y="0" visible="pin" length="middle" rot="R180"/>
-<pin name="RF2" x="12.7" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="V1" x="-12.7" y="2.54" visible="pin" length="middle"/>
+<pin name="RF1" x="12.7" y="7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="RF3" x="12.7" y="-7.62" visible="pin" length="middle" rot="R180"/>
+<pin name="V3" x="-12.7" y="-2.54" visible="pin" length="middle"/>
+<pin name="V2" x="-12.7" y="0" visible="pin" length="middle"/>
+<pin name="RF2" x="12.7" y="0" visible="pin" length="middle" rot="R180"/>
 <text x="-7.62" y="11.43" size="2.54" layer="95">&gt;NAME</text>
-<text x="-7.62" y="-16.51" size="2.54" layer="96">&gt;VALUE</text>
-<pin name="GND" x="-12.7" y="-10.16" visible="pin" length="middle" direction="pwr"/>
+<text x="-7.62" y="-13.97" size="2.54" layer="96">&gt;VALUE</text>
+<pin name="GND" x="-12.7" y="-7.62" visible="pin" length="middle" direction="pwr"/>
 </symbol>
 </symbols>
 <devicesets>
