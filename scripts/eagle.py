@@ -58,7 +58,7 @@ if platform.system() == 'Linux':
 	print("")
 	print("Heads up. If you're on Ubuntu 18+ and are missing pdftk,")
 	print("you may need to install a special version of pdftk, here:")
-	print("  https://askubuntu.com/questions/1029450/how-to-install-pdftk-on-ubuntu-18-04-bionic")
+	print("https://askubuntu.com/questions/1028522/how-can-i-install-pdftk-in-ubuntu-18-04-bionic")
 	print("")
 
 
