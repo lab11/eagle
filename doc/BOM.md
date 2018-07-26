@@ -17,6 +17,7 @@ _Tip:_ If you don't want the renumber script to touch a certain part, give
 it a part number in the thousands (i.e. D1000 and R1000) and the renumber
 script will ignore those parts.
 
+**Attention:** You'll want to do this step *before* sending the board off to the manufacturer, as it will also change the reference designators on the boards directly and with it the silk screen. Therefore, we suggest you to do this before you start finalizing the silk screen, as you might otherwise have to take a look at it and re-align names again as the names might change their lengths.
 
 ## Add Part Attributes
 
