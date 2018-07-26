@@ -7,7 +7,7 @@ There are Lab accounts for all sites mentioned below; you can find them on the [
 
 We currently like [Quick Turn PCB](http://quickturnpcb.co.kr/). They will do the panelization for you, so just tell them the number of boards and they will work it out.
 
-For custom boards, you can use their [contact email](gthanuni@quickturnpcb.co.kr) to order special stack-ups.
+For custom boards, you can use their [contact email](mailto:gthanuni@quickturnpcb.co.kr) to order special stack-ups.
 
 You generally want the "Special Offer". Be sure to login to the site before starting or you'll have to start over.
 
