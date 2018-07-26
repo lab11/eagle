@@ -11,7 +11,8 @@ Eagle Tips
 
 ### Standards for part names (e.g. Resistor &rarr; R, Relay &rarr; K)
 
-  - http://electronics.stackexchange.com/questions/36008/pcb-part-naming-for-leds
+  - [PCB part naming](http://electronics.stackexchange.com/questions/36008/pcb-part-naming-for-leds)
+  - [Reference designators - Wikipedia](https://en.wikipedia.org/wiki/Reference_designator)
 
 ### Hide certain airwires:
 
@@ -89,6 +90,47 @@ Eagle Tips
      - _MANUFACTURER_
      - _MPN_ (*Manufacturer Part Number*)
  - Change the symbol name (usually `G$1$`) to something nicer-looking, e.g. `U1`, using the *name* tool.
+
+
+## Board design
+
+From the beginning, you should consider whether you will be hand-assembling parts or use machines. For hand assembly, only use passives with a package of 0402 or larger (no 0201 if possible).
+
+### Schematic
+
+Some tips to be followed:
+
+- People tend to read circuits left to right and top to bottom; try to keep anything with labels or other text oriented that way.
+- Use flag labels only as terminators; standard ones are more readable when labeling a wire, especially printed.
+- If you use flag labels, **don't** use them for signals which are also connected by wires. Either you use flags for all instances of the signals, or you draw wires. Connecting parts with wires implies that it is the only connection; a mixture with flags will cause you to forget about some references and will make the schematic less readable.
+- Add Descriptions to your schematic sheets (`Right click`&rarr;`Description`)
+- Add tolerance values directly in the value of passives (e.g. `1k 1%`) so you'll remember them when creating the BOM.
+- Make sure to add enough debugging options (test pads, debug headers, FTDI) so that you can test all buses (SPI, I2C). 
+- Add enough ground pins (logic analyser, oscilloscope, serial for debugging) for debugging.
+
+
+### PCB layout
+
+Some tips to be followed:
+
+- Leave enough space between parts, especially around ICs. We recommend at least 12mils on space-constraint boards between caps, and 20mils between caps and ICs.
+- Try to keep all components on the same side of the board; it will make your life easier during assembly as you can only heat up one side with the hot plate.
+- Dont put labels on vias; they tend to become unreadable (overlapping traces is fine).
+- Keep traces to crystals short and straight (they *are* RF traces due to their MHz frequency!). Decaps for the crystals must not be in-between crystals and pins.
+- Label all testpoints; it is annoying having to open EAGLE every time you want to test something, and other people might not have that possibility.
+- Exclusively use vector font.
+- To create the silk screen: Only enable *tNames* (25), then group all the names, use the `Reposition attributes` and apply it to the group by right-clicking  onto `Reposition: Group`. Do the same thing with the `Change` tool and use `Size: 20`, `Ratio: 18` as well as `Font: vector`.
+- Make the ground pour polygons have a lesser rank (usually 6) so that your keepouts and similar polygons are not of the same rank.
+- Add version number, date (YYYY-MM-DD) and your name; it will help people to identify who and when somebody designed the board and helps you keep track of different version numbers.
+- Make sure that physical components (such as screw heads) have enough space (it might make sense to draw dimensions in silk).
+
+### Check-list
+
+- How do you power it? Did you consider current and voltage levels?
+- How do you programm it?
+- How do you debug / test it and make sure things are working? Did you add test pads, headers and LEDs?
+- What are you most worried about? (*Go read the datasheet again*)
+
 
 ## Legacy Tips
 
