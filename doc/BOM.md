@@ -21,18 +21,19 @@ script will ignore those parts.
 ## Add Part Attributes
 
 Eagle allows you to add attributes to parts. We primarily use this to
-add a DIGIKEY attribute to facilitate ordering. All parts in the Lab11
-part libraries should already have a DIGIKEY attribute.
+add a `DIGIKEY` attribute to facilitate ordering. All parts in the Lab11
+part libraries should already have a `DIGIKEY` attribute.
 
 > If a _specific part_ (e.g. an IC, specific inductor, etc) doesn't have
 > an attribute, please edit it in the library, add it there, and update
 > the part on your board
 
 For passives, we don't want to update the library with a specific 10 kΩ
-resistor, because it really doesn't matter that much. Some of us like to
-add attributes to all the parts in the schematic, some of us hold off
+resistor, because it really doesn't matter that much (and they are currently sold out in a matter of weeks most of the time). Some of us like to add attributes to all the parts in the schematic, some of us hold off
 until the BOM is made and add the part purchased for that run there. It's
 a bit of a fuzzier personal taste here.
+
+**Attention:** If you copy parts of your schematic from other boards, it can easily happen that you include parts (such as passives) which already contain a `DIGIKEY` attribute. This becomes dangerous when you start *copying* those parts around and change the value of them, as the attribute does not correspond to the correct value anymore and you end up order the wrong components. Always double-check your passives before ordering!
 
 
 ## Export BOM from Eagle
@@ -47,12 +48,13 @@ Open that CSV file in Libre Office or Excel (see below). Now you want to clean i
 
   1. I always start by sorting by the "Parts" column.
   2. Delete the things that aren't actually parts (e.g. LOGOs)
-  3. Make sure all the parts are accurately represented in the BOM.
-     - There should be a DIGIKEY column that contains the digikey part numbers
+  3. Merge rows displaying the same components; this should usually be done directly by EAGLE when exporting parts, but does not happen when one variant of the component already contains attributes and others do not (such as when you copied parts and changed their value).
+  4. Make sure all the parts are accurately represented in the BOM.
+     - There should be a `DIGIKEY` column that contains the digikey part numbers
        for all of the parts.
      - If a different place carries the part then add that as a column as well.
        For instance maybe only mouser sells a part. Then add a column called
-       MOUSER and put the part number in that column.
+       `MOUSER` and put the part number in that column.
 
 Save the bom as `board-name_bom.xlsx`. Yes, it's a little weird to use
 Excel format, but it is the industry standard. All assemblers will accept
