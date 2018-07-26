@@ -112,8 +112,9 @@ These scripts will do several things:
     - These are not as useful but are good for using grep.
   - Package everything into several a master zips.
     - `board-name_REV_DATE.zip` - an archive of everything, good for posting online or sharing with others
-    - `board-name_REV_to_fab_DATE.zip` - files needs for PCB fabrication, good for uploading to board houses
+    - `board-name_REV_to_fab_DATE.zip` - files needed for PCB fabrication, good for uploading to board houses
     - `board-name_REV_to_assembler_DATE.zip` - files needed for assembly, good for upload to an assembly shop
+    - `board-name_REV_to_stencil_DATE.zip` - files needed for stencil production, good for upload to a stencil producer
 
 To run, simply invoke the meta-script:
 
