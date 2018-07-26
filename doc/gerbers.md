@@ -20,11 +20,12 @@ TODO: CAM job selection (other board houses)
 ## NC files
 Gerbers only contain information about the different layers. For vias and other holes requiring drilling, you will also need to run the drill job, which for historic reason is referred to as *Excellon*. You can find the job in the same folder ([excellon](../cam/excellon.cam)). This will generate additional NC (Numeric Controlled) Drill files which tell the manufacturer where he should drill the holes for vias, screws etc.
 
-
 # Gerber inspection
 
-To make sure that the Gerber files actually represent the board as you intended, we use a separate Gerber viewer to inspect it before shipping. For this, we recommend the free & open source tools [gerbv](http://gerbv.geda-project.org/) ([direct download](https://sourceforge.net/projects/gerbv/)).
+To make sure that the Gerber files actually represent the board as you intended, we use a separate Gerber viewer to inspect it before shipping. For this, we recommend the free & open source tools [gerbv](http://gerbv.geda-project.org/) ([direct download](https://sourceforge.net/projects/gerbv/)). There are also online tools available to quickly have a look at Gerbers such as the [Online Gerber Viewer](http://www.gerber-viewer.com/).
+
+When inspecting the NC drill file (.drd), make sure that you *first* add another layer (such as L1) and *then* add the drilling information; otherwise, the files might not overlay and seem incorrect due to some dimension information missing in the drill file.
 
 # Panelizing
 
-TODO
+In order to produce more prize-efficient boards, you can panelize your boards to fit multiple ones onto the same panel. While we generally do not do this ourselves (it is often done by the board manufacturer directly), feel free to try out EAGLE's new *design block* feature and add multiple versions of your board to the design.
