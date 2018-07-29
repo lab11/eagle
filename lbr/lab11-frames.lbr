@@ -2332,7 +2332,7 @@ LETTER landscape - UC Berkeley
 To use, set global attributes TITLE, AUTHOR and REV in your schematic.</description>
 <gates>
 <gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
-<gate name="G$2" symbol="DOCFIELD_CAL" x="152.4" y="0"/>
+<gate name="G$2" symbol="DOCFIELD_CAL" x="152.4" y="0" addlevel="must"/>
 </gates>
 <devices>
 <device name="">
