@@ -1644,6 +1644,37 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <text x="24.892" y="-39.4843" size="1.016" layer="21" font="vector" ratio="15" rot="R270">(P1.13) MOSI</text>
 <text x="22.352" y="-39.4843" size="1.016" layer="21" font="vector" ratio="15" rot="R270">GND</text>
 </package>
+<package name="NHD-0216KZW">
+<wire x1="0" y1="0" x2="0" y2="-36" width="0.127" layer="51"/>
+<wire x1="0" y1="-36" x2="80" y2="-36" width="0.127" layer="51"/>
+<wire x1="80" y1="-36" x2="80" y2="0" width="0.127" layer="51"/>
+<wire x1="80" y1="0" x2="0" y2="0" width="0.127" layer="51"/>
+<text x="5.62" y="1.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<pad name="1" x="8" y="-2" drill="1.016" shape="octagon"/>
+<pad name="2" x="10.54" y="-2" drill="1.016" shape="octagon"/>
+<circle x="6.618" y="-0.834" radius="0.254" width="0.127" layer="21"/>
+<pad name="3" x="13.08" y="-2" drill="1.016" shape="octagon"/>
+<pad name="4" x="15.62" y="-2" drill="1.016" shape="octagon"/>
+<pad name="5" x="18.16" y="-2" drill="1.016" shape="octagon"/>
+<pad name="6" x="20.7" y="-2" drill="1.016" shape="octagon"/>
+<pad name="7" x="23.24" y="-2" drill="1.016" shape="octagon"/>
+<pad name="8" x="25.78" y="-2" drill="1.016" shape="octagon"/>
+<pad name="9" x="28.32" y="-2" drill="1.016" shape="octagon"/>
+<pad name="10" x="30.86" y="-2" drill="1.016" shape="octagon"/>
+<pad name="11" x="33.4" y="-2" drill="1.016" shape="octagon"/>
+<pad name="12" x="35.94" y="-2" drill="1.016" shape="octagon"/>
+<pad name="13" x="38.48" y="-2" drill="1.016" shape="octagon"/>
+<pad name="14" x="41.02" y="-2" drill="1.016" shape="octagon"/>
+<pad name="15" x="43.56" y="-2" drill="1.016" shape="octagon"/>
+<pad name="16" x="46.1" y="-2" drill="1.016" shape="octagon"/>
+<hole x="2.5" y="-2.5" drill="2.5"/>
+<hole x="2.5" y="-33.5" drill="2.5"/>
+<hole x="77.5" y="-33.5" drill="2.5"/>
+<hole x="77.5" y="-2.5" drill="2.5"/>
+<rectangle x1="0" y1="-36" x2="80" y2="0" layer="39"/>
+<text x="7" y="-5" size="1.27" layer="21">1</text>
+<text x="46" y="-5" size="1.27" layer="21">16</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -2223,6 +2254,20 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <text x="-2.54" y="-5.08" size="1.524" layer="97" rot="R180" align="center-left">P1.15</text>
 <text x="-2.54" y="-15.24" size="1.524" layer="97" rot="R180" align="center-left">P0.26</text>
 <text x="-2.54" y="-17.78" size="1.524" layer="97" rot="R180" align="center-left">P0.27</text>
+</symbol>
+<symbol name="NHD-0216KZW-SERIAL">
+<wire x1="-10.16" y1="5.08" x2="10.16" y2="5.08" width="0.3048" layer="94"/>
+<wire x1="10.16" y1="5.08" x2="10.16" y2="-7.62" width="0.3048" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-10.16" y2="-7.62" width="0.3048" layer="94"/>
+<wire x1="-10.16" y1="-7.62" x2="-10.16" y2="5.08" width="0.3048" layer="94"/>
+<pin name="VCC" x="-15.24" y="2.54" visible="pin" length="middle"/>
+<pin name="!CS" x="15.24" y="-5.08" visible="pin" length="middle" rot="R180"/>
+<pin name="GND" x="-15.24" y="-5.08" visible="pin" length="middle"/>
+<pin name="MOSI" x="15.24" y="-2.54" visible="pin" length="middle" rot="R180"/>
+<pin name="MISO" x="15.24" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="SCLK" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
+<text x="-10.16" y="5.842" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -3203,6 +3248,28 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="NHD-0216KZW" prefix="A">
+<gates>
+<gate name="A1" symbol="NHD-0216KZW-SERIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SERIAL" package="NHD-0216KZW">
+<connects>
+<connect gate="A1" pin="!CS" pad="16"/>
+<connect gate="A1" pin="GND" pad="1"/>
+<connect gate="A1" pin="MISO" pad="13"/>
+<connect gate="A1" pin="MOSI" pad="14"/>
+<connect gate="A1" pin="SCLK" pad="12"/>
+<connect gate="A1" pin="VCC" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="NHD-0216KZW-AG5-ND,952-3305-ND" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
