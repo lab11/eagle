@@ -800,6 +800,18 @@ Source: https://www.ibselectronics.com/pdf/pa/walsin/smt_notes.pdf</description>
 <rectangle x1="0.15" y1="-0.15" x2="0.3" y2="0.15" layer="51"/>
 <rectangle x1="-0.15" y1="-0.15" x2="0.15" y2="0.15" layer="21"/>
 </package>
+<package name="SOD923">
+<smd name="P$1" x="-0.42" y="0" dx="0.36" dy="0.25" layer="1"/>
+<smd name="P$2" x="0.42" y="0" dx="0.36" dy="0.25" layer="1"/>
+<text x="0" y="1.5" size="1.27" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="-0.4" y1="0.3" x2="-0.15" y2="0.3" width="0.127" layer="21"/>
+<wire x1="-0.15" y1="0.3" x2="0.4" y2="0.3" width="0.127" layer="21"/>
+<wire x1="0.4" y1="0.3" x2="0.4" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="0.4" y1="-0.3" x2="-0.15" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="-0.15" y1="-0.3" x2="-0.4" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="-0.4" y1="-0.3" x2="-0.4" y2="0.3" width="0.127" layer="21"/>
+<wire x1="-0.15" y1="0.3" x2="-0.15" y2="-0.3" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -1433,6 +1445,17 @@ Shielded SMT Power Inductors – LPS4018 Series</description>
 <attribute name="DIGIKEY" value="MBR0520LT1GOSCT-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="ON Semiconductor" constant="no"/>
 <attribute name="MPN" value="MBR0520LT1G" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="NSR0620P2T5G" package="SOD923">
+<connects>
+<connect gate="G$1" pin="ANODE" pad="P$2"/>
+<connect gate="G$1" pin="CATHODE" pad="P$1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="NSR0620P2T5GOSCT-ND" constant="no"/>
 </technology>
 </technologies>
 </device>
