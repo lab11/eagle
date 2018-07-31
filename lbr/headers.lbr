@@ -68,6 +68,8 @@
 <layer number="59" name="Invisible" color="7" fill="1" visible="no" active="no"/>
 <layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="61" name="stand" color="7" fill="1" visible="no" active="no"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -95,7 +97,10 @@
 <layer number="114" name="Badge_Outline" color="11" fill="1" visible="no" active="no"/>
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="no"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
+<layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="120" name="KAP_MAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="yes" active="yes"/>
@@ -108,6 +113,7 @@
 <layer number="130" name="bLogo" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="131" name="tAdjust" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="132" name="bAdjust" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="133" name="bottom_silk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="150" name="Notes" color="7" fill="1" visible="no" active="no"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
@@ -1675,6 +1681,55 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <text x="7" y="-5" size="1.27" layer="21">1</text>
 <text x="46" y="-5" size="1.27" layer="21">16</text>
 </package>
+<package name="DB25_5747846" urn="urn:adsk.eagle:footprint:10107/1" locally_modified="yes">
+<description>&lt;b&gt;SUB-D&lt;/b&gt;</description>
+<circle x="-6.9596" y="1.27" radius="1.651" width="0.1524" layer="21"/>
+<circle x="40.0812" y="1.27" radius="1.651" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<pad name="2" x="2.760140625" y="0" drill="1.016" shape="octagon"/>
+<pad name="3" x="5.520284375" y="0" drill="1.016" shape="octagon"/>
+<pad name="4" x="8.280425" y="0" drill="1.016" shape="octagon"/>
+<pad name="5" x="11.04056875" y="0" drill="1.016" shape="octagon"/>
+<pad name="6" x="13.800709375" y="0" drill="1.016" shape="octagon"/>
+<pad name="7" x="16.56085" y="0" drill="1.016" shape="octagon"/>
+<pad name="8" x="19.32099375" y="0" drill="1.016" shape="octagon"/>
+<pad name="9" x="22.081134375" y="0" drill="1.016" shape="octagon"/>
+<pad name="10" x="24.841275" y="0" drill="1.016" shape="octagon"/>
+<pad name="11" x="27.60141875" y="0" drill="1.016" shape="octagon"/>
+<pad name="12" x="30.361559375" y="0" drill="1.016" shape="octagon"/>
+<pad name="13" x="33.1216" y="0" drill="1.016" shape="octagon"/>
+<pad name="14" x="1.37921875" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="15" x="4.138575" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="16" x="6.897928125" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="17" x="9.65728125" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="18" x="12.4166375" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="19" x="15.175990625" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="20" x="17.93534375" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="21" x="20.6947" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="22" x="23.45405625" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="23" x="26.213409375" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="24" x="28.9727625" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="25" x="31.73221875" y="2.8448" drill="1.016" shape="octagon"/>
+<pad name="G1" x="-6.9596" y="1.4224" drill="3.302" diameter="5.08"/>
+<pad name="G2" x="40.0812" y="1.4224" drill="3.302" diameter="5.08"/>
+<text x="-9.7282" y="-5.08" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-0.635" size="1.27" layer="21" ratio="10" align="bottom-right">1</text>
+<text x="34.3408" y="-0.635" size="1.27" layer="21" ratio="10">13</text>
+<text x="-1.27" y="2.2098" size="1.27" layer="21" ratio="10" align="bottom-right">14</text>
+<text x="34.3408" y="2.2098" size="1.27" layer="21" ratio="10">25</text>
+<wire x1="-9.9568" y1="-1.7018" x2="-9.9568" y2="17.0942" width="0.127" layer="51"/>
+<wire x1="-9.9568" y1="17.0942" x2="43.0784" y2="17.0942" width="0.127" layer="51"/>
+<wire x1="43.0784" y1="17.0942" x2="43.0784" y2="-1.7018" width="0.127" layer="51"/>
+<wire x1="-9.9568" y1="-1.7018" x2="43.0784" y2="-1.7018" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="16.51" x2="38.1" y2="16.51" width="0.127" layer="51"/>
+<wire x1="38.1" y1="16.51" x2="38.1" y2="12.7" width="0.127" layer="51" curve="-180"/>
+<wire x1="38.1" y1="12.7" x2="-5.08" y2="12.7" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="12.7" x2="-5.08" y2="16.51" width="0.127" layer="51" curve="-180"/>
+<wire x1="16.51" y1="11.43" x2="15.24" y2="10.16" width="0.127" layer="51"/>
+<wire x1="16.51" y1="11.43" x2="17.78" y2="10.16" width="0.127" layer="51"/>
+<wire x1="16.51" y1="11.43" x2="16.51" y2="6.35" width="0.127" layer="51"/>
+<text x="16.51" y="14.605" size="1.27" layer="51" align="center">Mating Face</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PINH2X13">
@@ -2268,6 +2323,68 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <pin name="SCLK" x="15.24" y="2.54" visible="pin" length="middle" rot="R180"/>
 <text x="-10.16" y="5.842" size="1.778" layer="95">&gt;NAME</text>
 <text x="-10.16" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="DB-25">
+<wire x1="-1.651" y1="16.129" x2="-1.651" y2="14.351" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="14.351" x2="1.524" y2="16.129" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="13.589" x2="-1.651" y2="11.811" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="11.811" x2="1.524" y2="13.589" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="11.049" x2="-1.651" y2="9.271" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="9.271" x2="1.524" y2="11.049" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="8.509" x2="-1.651" y2="6.731" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="6.731" x2="1.524" y2="8.509" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="5.969" x2="-1.651" y2="4.191" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="4.191" x2="1.524" y2="5.969" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="3.429" x2="-1.651" y2="1.651" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="1.651" x2="1.524" y2="3.429" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="0.889" x2="-1.651" y2="-0.889" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-0.889" x2="1.524" y2="0.889" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-1.651" x2="-1.651" y2="-3.429" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-3.429" x2="1.524" y2="-1.651" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-4.191" x2="-1.651" y2="-5.969" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-5.969" x2="1.524" y2="-4.191" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-6.731" x2="-1.651" y2="-8.509" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-8.509" x2="1.524" y2="-6.731" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-9.271" x2="-1.651" y2="-11.049" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-11.049" x2="1.524" y2="-9.271" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-11.811" x2="-1.651" y2="-13.589" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="1.524" y1="-13.589" x2="1.524" y2="-11.811" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-1.651" y1="-14.351" x2="-1.651" y2="-16.129" width="0.254" layer="94" curve="180" cap="flat"/>
+<wire x1="-4.064" y1="17.7262" x2="-2.5226" y2="18.967" width="0.4064" layer="94" curve="-102.324066" cap="flat"/>
+<wire x1="-2.5226" y1="18.9668" x2="3.0654" y2="17.7444" width="0.4064" layer="94"/>
+<wire x1="3.0654" y1="17.7445" x2="4.0642" y2="16.5038" width="0.4064" layer="94" curve="-77.655139" cap="flat"/>
+<wire x1="4.064" y1="-16.5038" x2="4.064" y2="16.5038" width="0.4064" layer="94"/>
+<wire x1="3.0654" y1="-17.7444" x2="4.064" y2="-16.5038" width="0.4064" layer="94" curve="77.657889"/>
+<wire x1="-4.064" y1="-17.7262" x2="-4.064" y2="17.7262" width="0.4064" layer="94"/>
+<wire x1="-2.5226" y1="-18.9668" x2="3.0654" y2="-17.7444" width="0.4064" layer="94"/>
+<wire x1="-4.064" y1="-17.7262" x2="-2.5226" y2="-18.9669" width="0.4064" layer="94" curve="102.337599" cap="flat"/>
+<text x="-3.81" y="-21.59" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-3.81" y="19.685" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="-7.62" y="15.24" visible="pad" length="middle" direction="pas"/>
+<pin name="14" x="7.62" y="15.24" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="2" x="-7.62" y="12.7" visible="pad" length="middle" direction="pas"/>
+<pin name="15" x="7.62" y="12.7" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="3" x="-7.62" y="10.16" visible="pad" length="middle" direction="pas"/>
+<pin name="16" x="7.62" y="10.16" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="4" x="-7.62" y="7.62" visible="pad" length="middle" direction="pas"/>
+<pin name="17" x="7.62" y="7.62" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="5" x="-7.62" y="5.08" visible="pad" length="middle" direction="pas"/>
+<pin name="18" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="6" x="-7.62" y="2.54" visible="pad" length="middle" direction="pas"/>
+<pin name="19" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="7" x="-7.62" y="0" visible="pad" length="middle" direction="pas"/>
+<pin name="20" x="7.62" y="0" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="8" x="-7.62" y="-2.54" visible="pad" length="middle" direction="pas"/>
+<pin name="21" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="9" x="-7.62" y="-5.08" visible="pad" length="middle" direction="pas"/>
+<pin name="22" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="10" x="-7.62" y="-7.62" visible="pad" length="middle" direction="pas"/>
+<pin name="23" x="7.62" y="-7.62" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="11" x="-7.62" y="-10.16" visible="pad" length="middle" direction="pas"/>
+<pin name="24" x="7.62" y="-10.16" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="12" x="-7.62" y="-12.7" visible="pad" length="middle" direction="pas"/>
+<pin name="25" x="7.62" y="-12.7" visible="pad" length="middle" direction="pas" rot="R180"/>
+<pin name="13" x="-7.62" y="-15.24" visible="pad" length="middle" direction="pas"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3274,7 +3391,55 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 </device>
 </devices>
 </deviceset>
+<deviceset name="DB25_5747846" prefix="J">
+<gates>
+<gate name="J1" symbol="DB-25" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DB25_5747846">
+<connects>
+<connect gate="J1" pin="1" pad="1"/>
+<connect gate="J1" pin="10" pad="10"/>
+<connect gate="J1" pin="11" pad="11"/>
+<connect gate="J1" pin="12" pad="12"/>
+<connect gate="J1" pin="13" pad="13"/>
+<connect gate="J1" pin="14" pad="14"/>
+<connect gate="J1" pin="15" pad="15"/>
+<connect gate="J1" pin="16" pad="16"/>
+<connect gate="J1" pin="17" pad="17"/>
+<connect gate="J1" pin="18" pad="18"/>
+<connect gate="J1" pin="19" pad="19"/>
+<connect gate="J1" pin="2" pad="2"/>
+<connect gate="J1" pin="20" pad="20"/>
+<connect gate="J1" pin="21" pad="21"/>
+<connect gate="J1" pin="22" pad="22"/>
+<connect gate="J1" pin="23" pad="23"/>
+<connect gate="J1" pin="24" pad="24"/>
+<connect gate="J1" pin="25" pad="25"/>
+<connect gate="J1" pin="3" pad="3"/>
+<connect gate="J1" pin="4" pad="4"/>
+<connect gate="J1" pin="5" pad="5"/>
+<connect gate="J1" pin="6" pad="6"/>
+<connect gate="J1" pin="7" pad="7"/>
+<connect gate="J1" pin="8" pad="8"/>
+<connect gate="J1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="A32126-ND" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </drawing>
+<compatibility>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+</compatibility>
 </eagle>
