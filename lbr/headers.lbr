@@ -1609,7 +1609,7 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <text x="46.99" y="-0.508" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.15) D13</text>
 <text x="46.99" y="-3.048" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.14) D12</text>
 <text x="46.99" y="-5.588" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.13) D11</text>
-<text x="46.99" y="4.572" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P0.02) AREF</text>
+<text x="46.99" y="4.572" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P0.02) A-1</text>
 <text x="46.99" y="-8.128" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.12) D10</text>
 <text x="46.99" y="-10.668" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.11) D9</text>
 <text x="46.99" y="-13.208" size="1.016" layer="21" font="vector" ratio="15" rot="R180">(P1.10) D8</text>
@@ -2275,7 +2275,7 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <pin name="A5" x="20.32" y="12.7" visible="pin" length="short" rot="R180"/>
 <pin name="!RESET" x="-20.32" y="17.78" visible="pin" length="short"/>
 <pin name="5V" x="-20.32" y="27.94" visible="pin" length="short"/>
-<pin name="AREF" x="20.32" y="27.94" visible="pin" length="short" rot="R180"/>
+<pin name="A-1" x="20.32" y="27.94" visible="pin" length="short" rot="R180"/>
 <pin name="3.3V" x="-20.32" y="25.4" visible="pin" length="short"/>
 <pin name="SDA" x="-20.32" y="-15.24" visible="pin" length="short"/>
 <pin name="SCL" x="-20.32" y="-17.78" visible="pin" length="short"/>
@@ -3335,13 +3335,13 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <connect gate="G$1" pin="!RESET" pad="RESET RST_ICSP"/>
 <connect gate="G$1" pin="3.3V" pad="3.3V IOREF"/>
 <connect gate="G$1" pin="5V" pad="5V 5V_ICSP"/>
+<connect gate="G$1" pin="A-1" pad="AREF"/>
 <connect gate="G$1" pin="A0" pad="A0"/>
 <connect gate="G$1" pin="A1" pad="A1"/>
 <connect gate="G$1" pin="A2" pad="A2"/>
 <connect gate="G$1" pin="A3" pad="A3"/>
 <connect gate="G$1" pin="A4" pad="A4"/>
 <connect gate="G$1" pin="A5" pad="A5"/>
-<connect gate="G$1" pin="AREF" pad="AREF"/>
 <connect gate="G$1" pin="D0" pad="D0"/>
 <connect gate="G$1" pin="D1" pad="D1"/>
 <connect gate="G$1" pin="D10" pad="D10"/>
