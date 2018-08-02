@@ -2528,17 +2528,17 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <pin name="13" x="-7.62" y="-15.24" visible="pad" length="middle" direction="pas"/>
 </symbol>
 <symbol name="GROVE-CONNECTOR-DIP">
-<wire x1="-1.27" y1="5.08" x2="6.35" y2="5.08" width="0.254" layer="94"/>
-<wire x1="6.35" y1="5.08" x2="6.35" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="6.35" y1="-5.08" x2="-1.27" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-5.08" x2="-1.27" y2="5.08" width="0.254" layer="94"/>
-<text x="0" y="6.096" size="1.27" layer="95" ratio="10">&gt;NAME</text>
-<pin name="1" x="-3.81" y="3.81" length="middle" function="dotclk"/>
-<pin name="2" x="-3.81" y="1.27" length="middle" function="dot"/>
-<pin name="3" x="-3.81" y="-1.27" length="middle" function="dot"/>
-<pin name="4" x="-3.81" y="-3.81" length="middle" function="dot"/>
-<text x="7.62" y="-3.81" size="1.27" layer="95" align="center-left">GND</text>
-<text x="7.62" y="-1.27" size="1.27" layer="95" align="center-left">VCC</text>
+<wire x1="0" y1="0" x2="15.24" y2="0" width="0.254" layer="94"/>
+<wire x1="15.24" y1="0" x2="15.24" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-12.7" x2="0" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="0" y1="-12.7" x2="0" y2="0" width="0.254" layer="94"/>
+<text x="2.54" y="1.016" size="1.27" layer="95" ratio="10">&gt;NAME</text>
+<pin name="1" x="0" y="-2.54" length="middle" function="dotclk"/>
+<pin name="2" x="0" y="-5.08" length="middle" function="dot"/>
+<pin name="3" x="0" y="-7.62" length="middle" function="dot"/>
+<pin name="4" x="0" y="-10.16" length="middle" function="dot"/>
+<text x="10.16" y="-10.16" size="1.27" layer="95" align="center-left">GND</text>
+<text x="10.16" y="-7.62" size="1.27" layer="95" align="center-left">VCC</text>
 </symbol>
 </symbols>
 <devicesets>
