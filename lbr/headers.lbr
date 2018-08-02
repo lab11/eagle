@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1794,7 +1794,6 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <hole x="2.5" y="-33.5" drill="2.5"/>
 <hole x="77.5" y="-33.5" drill="2.5"/>
 <hole x="77.5" y="-2.5" drill="2.5"/>
-<rectangle x1="0" y1="-36" x2="80" y2="0" layer="39"/>
 <text x="7" y="-5" size="1.27" layer="21">1</text>
 <text x="46" y="-5" size="1.27" layer="21">16</text>
 </package>
@@ -3593,7 +3592,7 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 </device>
 </devices>
 </deviceset>
-<deviceset name="GROVE-CONNECTOR-DIP(4P-2.0)" prefix="J" uservalue="yes">
+<deviceset name="GROVE-CONNECTOR-DIP(4P-2.0)" prefix="J">
 <description>320110033</description>
 <gates>
 <gate name="G$1" symbol="GROVE-CONNECTOR-DIP" x="0" y="0"/>
