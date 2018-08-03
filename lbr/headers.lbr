@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1878,8 +1878,11 @@ Copied from https://github.com/sparkfun/SparkFun-Eagle-Libraries</description>
 <pad name="2" x="-1" y="0" drill="0.8" diameter="1.27"/>
 <pad name="3" x="1" y="0" drill="0.8" diameter="1.27"/>
 <pad name="4" x="3" y="0" drill="0.8" diameter="1.27"/>
-<text x="3" y="-3.556" size="1.27" layer="22" rot="SR270" align="center-left">GND</text>
-<text x="1" y="-3.556" size="1.27" layer="22" rot="SR270" align="center-left">VCC</text>
+</package>
+<package name="TESTPOINT_0.078IN">
+<pad name="1" x="0" y="0" drill="2.0828"/>
+<circle x="0" y="0" radius="1.778" width="0.127" layer="21"/>
+<text x="0" y="2.54" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -3609,6 +3612,21 @@ Standard SMD solder jumper. Used to automate production. Two varients : Normally
 <technology name="">
 <attribute name="VALUE" value="4P-2.0" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TEST_POINT_0.078IN" prefix="TP">
+<gates>
+<gate name="G$1" symbol="TEST_POINT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TESTPOINT_0.078IN">
+<connects>
+<connect gate="G$1" pin="TESTPOINT" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
