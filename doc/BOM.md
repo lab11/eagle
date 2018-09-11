@@ -48,7 +48,7 @@ In Eagle Schematic mode go File → Export → BOM. Change "List Type" to
 Open that CSV file in Libre Office or Excel (see below). Now you want to clean it up.
 
   1. I always start by sorting by the "Parts" column.
-  2. Delete the things that aren't actually parts (e.g. LOGOs)
+  2. Delete the things that aren't actually parts (e.g. LOGOs). In case you are using an assembler, make sure that all physical parts listed by EAGLE (including testpoints, battery connectors, TagConnects etc.) remain in the BOM but are specified as DNP (_Do Not Place_) to prevent confusion due to "missing" parts.
   3. Merge rows displaying the same components; this should usually be done directly by EAGLE when exporting parts, but does not happen when one variant of the component already contains attributes and others do not (such as when you copied parts and changed their value).
   4. Make sure all the parts are accurately represented in the BOM.
      - There should be a `DIGIKEY` column that contains the digikey part numbers
