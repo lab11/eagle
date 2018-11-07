@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -1339,8 +1339,8 @@ Round side is up.</description>
 <text x="0" y="-1.2" size="0.889" layer="51" font="vector" ratio="12" align="bottom-center">PCB Edge</text>
 </package>
 <package name="360272-TERMINAL-BLOCK">
-<pad name="P$1" x="-1.5" y="0" drill="1.2"/>
-<pad name="P$2" x="1.5" y="0" drill="1.2"/>
+<pad name="P$1" x="-1.5" y="0" drill="1.4986"/>
+<pad name="P$2" x="1.5" y="0" drill="1.4986"/>
 <wire x1="-2" y1="2" x2="-2" y2="-2" width="0.254" layer="21"/>
 <wire x1="-2" y1="-2" x2="2" y2="-2" width="0.254" layer="21"/>
 <wire x1="2" y1="-2" x2="2" y2="2" width="0.254" layer="21"/>
