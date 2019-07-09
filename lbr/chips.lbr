@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -3264,6 +3264,7 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.0762" layer="21"/>
 <wire x1="1.5" y1="-1.5" x2="-1.5" y2="-1.5" width="0.0762" layer="21"/>
 <text x="0.05" y="2.1" size="0.635" layer="21" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<circle x="-1.778" y="1.778" radius="0.127" width="0.127" layer="21"/>
 </package>
 <package name="TSOT23-6">
 <description>Vishay TSOT-23 6 Lead
@@ -3664,6 +3665,42 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <rectangle x1="0.325" y1="0.325" x2="0.975" y2="0.975" layer="31"/>
 <rectangle x1="0.325" y1="-0.975" x2="0.975" y2="-0.325" layer="31"/>
 <rectangle x1="-0.975" y1="-0.975" x2="-0.325" y2="-0.325" layer="31"/>
+</package>
+<package name="NEOPAC-26">
+<description>NeoPAC 26 ball grid</description>
+<smd name="1" x="-1.4126" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="26" x="-1.009" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="25" x="-0.6054" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="24" x="-0.2018" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="23" x="0.2018" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="22" x="0.6054" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="21" x="1.009" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="20" x="1.4126" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="2" x="-1.4126" y="0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="19" x="1.4126" y="0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="3" x="-1.4126" y="0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="18" x="1.4126" y="0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="4" x="-1.4126" y="0" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="17" x="1.4126" y="0" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="5" x="-1.4126" y="-0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="16" x="1.4126" y="-0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="6" x="-1.4126" y="-0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="15" x="1.4126" y="-0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="7" x="-1.4126" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="14" x="1.4126" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="8" x="-1.009" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="9" x="-0.6054" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="10" x="-0.2018" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="11" x="0.2018" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="12" x="0.6054" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="13" x="1.009" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<wire x1="-1.603" y1="1.478" x2="-1.603" y2="-1.478" width="0.127" layer="21"/>
+<wire x1="-1.603" y1="-1.478" x2="1.603" y2="-1.478" width="0.127" layer="21"/>
+<wire x1="1.603" y1="-1.478" x2="1.603" y2="1.478" width="0.127" layer="21"/>
+<wire x1="1.603" y1="1.478" x2="-1.603" y2="1.478" width="0.127" layer="21"/>
+<wire x1="0.0148" y1="0.0419" x2="0.0148" y2="-0.1581" width="0.05" layer="21"/>
+<wire x1="-0.0852" y1="-0.0581" x2="0.1148" y2="-0.0581" width="0.05" layer="21"/>
+<text x="-1.5" y="1.75" size="0.8128" layer="21" font="vector" ratio="12">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -6966,6 +7003,34 @@ RF Switch</text>
 <wire x1="10.16" y1="7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
 <text x="-10.16" y="8.128" size="1.778" layer="95" ratio="12">&gt;NAME</text>
 <text x="-10.16" y="-9.652" size="1.778" layer="96" ratio="12">&gt;VALUE</text>
+</symbol>
+<symbol name="HM01B0">
+<description>Low power color image sensor</description>
+<pin name="INT" x="12.7" y="15.24" length="short" rot="R180"/>
+<pin name="SDA" x="-12.7" y="5.08" length="short"/>
+<pin name="SCL" x="-12.7" y="2.54" length="short"/>
+<pin name="LVLD" x="12.7" y="12.7" length="short" rot="R180"/>
+<pin name="FVLD" x="12.7" y="10.16" length="short" rot="R180"/>
+<pin name="TRIG" x="-12.7" y="-2.54" length="short"/>
+<pin name="AVDD" x="-12.7" y="15.24" length="short"/>
+<pin name="GND" x="-12.7" y="-12.7" length="short"/>
+<pin name="DVDD" x="-12.7" y="12.7" length="short"/>
+<pin name="IOVDD" x="-12.7" y="10.16" length="short"/>
+<pin name="MCLK" x="-12.7" y="-5.08" length="short"/>
+<pin name="PCLKO" x="-12.7" y="-7.62" length="short"/>
+<pin name="D0" x="12.7" y="5.08" length="short" rot="R180"/>
+<pin name="D1" x="12.7" y="2.54" length="short" rot="R180"/>
+<pin name="D2" x="12.7" y="0" length="short" rot="R180"/>
+<pin name="D3" x="12.7" y="-2.54" length="short" rot="R180"/>
+<pin name="D4" x="12.7" y="-5.08" length="short" rot="R180"/>
+<pin name="D5" x="12.7" y="-7.62" length="short" rot="R180"/>
+<pin name="D6" x="12.7" y="-10.16" length="short" rot="R180"/>
+<pin name="D7" x="12.7" y="-12.7" length="short" rot="R180"/>
+<wire x1="-10.16" y1="17.78" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<text x="-10.16" y="18.796" size="1.778" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -11288,7 +11353,7 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="KW21Z">
+<deviceset name="KW21Z" prefix="U">
 <description>NXP KW21Z Cortex M0+ 802.15.4</description>
 <gates>
 <gate name="G$1" symbol="KWX1Z" x="0" y="0"/>
@@ -11558,6 +11623,101 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <technology name="">
 <attribute name="DIGIKEY" value="ADXL327BCPZ-ND" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="KW41Z" prefix="U">
+<description>NXP KW21Z Cortex M0+ 802.15.4</description>
+<gates>
+<gate name="G$1" symbol="KWX1Z" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LAMINATE-QFN-48-7MM">
+<connects>
+<connect gate="G$1" pin="ADC0_DM0" pad="25"/>
+<connect gate="G$1" pin="ADC0_DP0" pad="24"/>
+<connect gate="G$1" pin="ANT" pad="33"/>
+<connect gate="G$1" pin="DCDC_CFG" pad="9"/>
+<connect gate="G$1" pin="DCDC_LN" pad="12"/>
+<connect gate="G$1" pin="DCDC_LP" pad="11"/>
+<connect gate="G$1" pin="EXTAL" pad="30"/>
+<connect gate="G$1" pin="GND" pad="13 26 34 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64"/>
+<connect gate="G$1" pin="PSWITCH" pad="8"/>
+<connect gate="G$1" pin="PTA16" pad="4"/>
+<connect gate="G$1" pin="PTA17" pad="5"/>
+<connect gate="G$1" pin="PTA18" pad="6"/>
+<connect gate="G$1" pin="PTA19" pad="7"/>
+<connect gate="G$1" pin="PTB0" pad="16"/>
+<connect gate="G$1" pin="PTB1" pad="17"/>
+<connect gate="G$1" pin="PTB16/EXTAL32K" pad="21"/>
+<connect gate="G$1" pin="PTB17/XTAL32K" pad="22"/>
+<connect gate="G$1" pin="PTB18" pad="23"/>
+<connect gate="G$1" pin="PTB2" pad="18"/>
+<connect gate="G$1" pin="PTB3" pad="19"/>
+<connect gate="G$1" pin="PTC1" pad="37"/>
+<connect gate="G$1" pin="PTC16" pad="45"/>
+<connect gate="G$1" pin="PTC17" pad="46"/>
+<connect gate="G$1" pin="PTC18" pad="47"/>
+<connect gate="G$1" pin="PTC19" pad="48"/>
+<connect gate="G$1" pin="PTC2" pad="38"/>
+<connect gate="G$1" pin="PTC3" pad="39"/>
+<connect gate="G$1" pin="PTC4" pad="40"/>
+<connect gate="G$1" pin="PTC5" pad="41"/>
+<connect gate="G$1" pin="PTC6" pad="42"/>
+<connect gate="G$1" pin="PTC7" pad="43"/>
+<connect gate="G$1" pin="RESET" pad="3"/>
+<connect gate="G$1" pin="SWD_CLK" pad="2"/>
+<connect gate="G$1" pin="SWD_DIO" pad="1"/>
+<connect gate="G$1" pin="VDD" pad="10 20 32 44"/>
+<connect gate="G$1" pin="VDDA" pad="28"/>
+<connect gate="G$1" pin="VDD_1P5/PMC" pad="15"/>
+<connect gate="G$1" pin="VDD_1P8_OUT" pad="14"/>
+<connect gate="G$1" pin="VDD_RF" pad="35 36"/>
+<connect gate="G$1" pin="VREFH" pad="27"/>
+<connect gate="G$1" pin="XTAL" pad="31"/>
+<connect gate="G$1" pin="XTAL_OUT" pad="29"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="MKW41Z512VHT4-ND" constant="no"/>
+<attribute name="MPN" value="MKW41Z512VHT4" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="HM01B0" prefix="U">
+<description>ultra low power CMOS Image Sensor 320 x 320</description>
+<gates>
+<gate name="G$1" symbol="HM01B0" x="10.16" y="15.24"/>
+</gates>
+<devices>
+<device name="-ANA" package="NEOPAC-26">
+<connects>
+<connect gate="G$1" pin="AVDD" pad="8"/>
+<connect gate="G$1" pin="D0" pad="17"/>
+<connect gate="G$1" pin="D1" pad="18"/>
+<connect gate="G$1" pin="D2" pad="19"/>
+<connect gate="G$1" pin="D3" pad="20"/>
+<connect gate="G$1" pin="D4" pad="21"/>
+<connect gate="G$1" pin="D5" pad="22"/>
+<connect gate="G$1" pin="D6" pad="25"/>
+<connect gate="G$1" pin="D7" pad="26"/>
+<connect gate="G$1" pin="DVDD" pad="13 14 23"/>
+<connect gate="G$1" pin="FVLD" pad="5"/>
+<connect gate="G$1" pin="GND" pad="7 9 10 11 24"/>
+<connect gate="G$1" pin="INT" pad="1"/>
+<connect gate="G$1" pin="IOVDD" pad="12"/>
+<connect gate="G$1" pin="LVLD" pad="4"/>
+<connect gate="G$1" pin="MCLK" pad="15"/>
+<connect gate="G$1" pin="PCLKO" pad="16"/>
+<connect gate="G$1" pin="SCL" pad="3"/>
+<connect gate="G$1" pin="SDA" pad="2"/>
+<connect gate="G$1" pin="TRIG" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
