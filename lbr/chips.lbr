@@ -28,7 +28,7 @@
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
@@ -53,7 +53,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
@@ -3211,7 +3211,7 @@ Per TI's guidelines: http://www.ti.com/lit/an/scba017d/scba017d.pdf</description
 <smd name="18" x="-1.74" y="0" dx="0.28" dy="0.85" layer="1" roundness="100" rot="R270"/>
 <smd name="19" x="-1.74" y="-0.5" dx="0.28" dy="0.85" layer="1" roundness="100" rot="R270"/>
 <smd name="20" x="-1.74" y="-1" dx="0.28" dy="0.85" layer="1" roundness="100" rot="R270"/>
-<circle x="-2.5" y="-2.5" radius="0.3" width="0" layer="21"/>
+<circle x="-2.1" y="-2" radius="0.2" width="0" layer="21"/>
 <smd name="PAD" x="0" y="0" dx="2.05" dy="2.05" layer="1" cream="no"/>
 <rectangle x1="-0.4" y1="0.6" x2="0.4" y2="1" layer="31"/>
 <rectangle x1="0.6" y1="-0.4" x2="1" y2="0.4" layer="31"/>
@@ -3668,39 +3668,53 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 </package>
 <package name="NEOPAC-26">
 <description>NeoPAC 26 ball grid</description>
-<smd name="1" x="-1.4126" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="26" x="-1.009" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="25" x="-0.6054" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="24" x="-0.2018" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="23" x="0.2018" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="22" x="0.6054" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="21" x="1.009" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="20" x="1.4126" y="1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="2" x="-1.4126" y="0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="19" x="1.4126" y="0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="3" x="-1.4126" y="0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="18" x="1.4126" y="0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="4" x="-1.4126" y="0" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="17" x="1.4126" y="0" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="5" x="-1.4126" y="-0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="16" x="1.4126" y="-0.4292" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="6" x="-1.4126" y="-0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="15" x="1.4126" y="-0.8584" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="7" x="-1.4126" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="14" x="1.4126" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="8" x="-1.009" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="9" x="-0.6054" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="10" x="-0.2018" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="11" x="0.2018" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="12" x="0.6054" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<smd name="13" x="1.009" y="-1.2876" dx="0.22" dy="0.22" layer="1" roundness="100"/>
-<wire x1="-1.603" y1="1.478" x2="-1.603" y2="-1.478" width="0.127" layer="21"/>
-<wire x1="-1.603" y1="-1.478" x2="1.603" y2="-1.478" width="0.127" layer="21"/>
-<wire x1="1.603" y1="-1.478" x2="1.603" y2="1.478" width="0.127" layer="21"/>
-<wire x1="1.603" y1="1.478" x2="-1.603" y2="1.478" width="0.127" layer="21"/>
-<wire x1="0.0148" y1="0.0419" x2="0.0148" y2="-0.1581" width="0.05" layer="21"/>
-<wire x1="-0.0852" y1="-0.0581" x2="0.1148" y2="-0.0581" width="0.05" layer="21"/>
-<text x="-1.5" y="1.75" size="0.8128" layer="21" font="vector" ratio="12">&gt;NAME</text>
+<smd name="1" x="-1.4274" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="26" x="-1.0238" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="25" x="-0.6202" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="24" x="-0.2166" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="23" x="0.187" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="22" x="0.5906" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="21" x="0.9942" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="20" x="1.3978" y="1.3457" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="2" x="-1.4274" y="0.9165" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="19" x="1.3978" y="0.9165" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="3" x="-1.4274" y="0.4873" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="18" x="1.3978" y="0.4873" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="4" x="-1.4274" y="0.0581" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="17" x="1.3978" y="0.0581" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="5" x="-1.4274" y="-0.3711" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="16" x="1.3978" y="-0.3711" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="6" x="-1.4274" y="-0.8003" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="15" x="1.3978" y="-0.8003" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="7" x="-1.4274" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="14" x="1.3978" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="8" x="-1.0238" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="9" x="-0.6202" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="10" x="-0.2166" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="11" x="0.187" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="12" x="0.5906" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<smd name="13" x="0.9942" y="-1.2295" dx="0.22" dy="0.22" layer="1" roundness="100"/>
+<wire x1="-1.6178" y1="1.5361" x2="-1.6178" y2="-1.4199" width="0.127" layer="21"/>
+<wire x1="-1.6178" y1="-1.4199" x2="1.5882" y2="-1.4199" width="0.127" layer="21"/>
+<wire x1="1.5882" y1="-1.4199" x2="1.5882" y2="1.5361" width="0.127" layer="21"/>
+<wire x1="1.5882" y1="1.5361" x2="-1.6178" y2="1.5361" width="0.127" layer="21"/>
+<wire x1="0" y1="0.1" x2="0" y2="-0.1" width="0.05" layer="21"/>
+<wire x1="-0.1" y1="0" x2="0.1" y2="0" width="0.05" layer="21"/>
+<text x="-1.6" y="1.8" size="0.8128" layer="21" font="vector" ratio="12">&gt;NAME</text>
+<hole x="0" y="10" drill="2"/>
+<hole x="0" y="-10" drill="2"/>
+<wire x1="-8.75" y1="8.75" x2="-2.5" y2="8.75" width="0.127" layer="21"/>
+<wire x1="2.5" y1="8.75" x2="8.75" y2="8.75" width="0.127" layer="21"/>
+<wire x1="8.75" y1="8.75" x2="8.75" y2="-8.75" width="0.127" layer="21"/>
+<wire x1="8.75" y1="-8.75" x2="2.5" y2="-8.75" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="-8.75" x2="-8.75" y2="-8.75" width="0.127" layer="21"/>
+<wire x1="-8.75" y1="-8.75" x2="-8.75" y2="8.75" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="10.1" x2="-2.5" y2="8.75" width="0.127" layer="21"/>
+<wire x1="2.5" y1="10" x2="2.5" y2="8.75" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="10.1" x2="2.5" y2="10" width="0.127" layer="21" curve="-180"/>
+<wire x1="-2.5" y1="-10" x2="-2.5" y2="-8.75" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-10.1" x2="2.5" y2="-8.75" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-10.1" x2="-2.5" y2="-10" width="0.127" layer="21" curve="-180"/>
 </package>
 </packages>
 <symbols>
@@ -7031,6 +7045,19 @@ RF Switch</text>
 <wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="-15.24" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
 <text x="-10.16" y="18.796" size="1.778" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="MCP1810">
+<description>Ultra low quiescent current (20nA) LDO
+1.2-4.2V output</description>
+<pin name="VIN" x="-2.54" y="5.08" length="short"/>
+<pin name="!SHDN" x="-2.54" y="2.54" length="short"/>
+<pin name="GND" x="20.32" y="2.54" length="short" rot="R180"/>
+<pin name="VOUT" x="20.32" y="5.08" length="short" rot="R180"/>
+<wire x1="0" y1="7.62" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="17.78" y2="0" width="0.254" layer="94"/>
+<wire x1="17.78" y1="0" x2="17.78" y2="7.62" width="0.254" layer="94"/>
+<wire x1="17.78" y1="7.62" x2="0" y2="7.62" width="0.254" layer="94"/>
+<text x="0" y="8.89" size="1.778" layer="96">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -11715,6 +11742,26 @@ https://www.mouser.com/ds/2/813/ESP8266ModuleV1-1095236.pdf</description>
 <connect gate="G$1" pin="SCL" pad="3"/>
 <connect gate="G$1" pin="SDA" pad="2"/>
 <connect gate="G$1" pin="TRIG" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MCP1810" prefix="U">
+<description>Ultra low quiescent (20nA) LDO
+1.2-4.2V output</description>
+<gates>
+<gate name="G$1" symbol="MCP1810" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-23-5">
+<connects>
+<connect gate="G$1" pin="!SHDN" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="VIN" pad="1"/>
+<connect gate="G$1" pin="VOUT" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
