@@ -28,4 +28,4 @@ When inspecting the NC drill file (.drd), make sure that you *first* add another
 
 # Panelizing
 
-In order to produce more prize-efficient boards, you can panelize your boards to fit multiple ones onto the same panel. While we generally do not do this ourselves (it is often done by the board manufacturer directly), feel free to try out EAGLE's new *design block* feature and add multiple versions of your board to the design.
+In order to produce more price-efficient boards, you can panelize your boards to fit multiple ones onto the same panel. While we generally do not do this ourselves (it is often done by the board manufacturer directly), feel free to try out EAGLE's new *design block* feature and add multiple versions of your board to the design.
