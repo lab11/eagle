@@ -8112,6 +8112,19 @@ a motion sensor.</description>
 <text x="-17.78" y="24.13" size="1.778" layer="95">&gt;NAME</text>
 <text x="-17.78" y="-27.94" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
+<symbol name="TPS22860">
+<pin name="VIN" x="-10.16" y="5.08" length="short"/>
+<pin name="ON" x="-10.16" y="-5.08" length="short"/>
+<pin name="VBIAS" x="-10.16" y="0" length="short"/>
+<pin name="VOUT" x="12.7" y="5.08" length="short" rot="R180"/>
+<pin name="GND" x="12.7" y="-5.08" length="short" rot="R180"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<text x="-7.62" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-10.16" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="BQ25504" prefix="U">
@@ -12986,6 +12999,29 @@ a motion sensor.</description>
 <technology name="">
 <attribute name="DIGIKEY" value="1479-1004-1-ND" constant="no"/>
 <attribute name="MPN" value="DWM1001C" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TPS22860" prefix="U">
+<description>Ultra-Low Leakage Load Switch</description>
+<gates>
+<gate name="G$1" symbol="TPS22860" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT-23-6">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="ON" pad="6"/>
+<connect gate="G$1" pin="VBIAS" pad="5"/>
+<connect gate="G$1" pin="VIN" pad="4"/>
+<connect gate="G$1" pin="VOUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-43982-1-ND" constant="no"/>
+<attribute name="MPN" value="TPS22860DBVR" constant="no"/>
 </technology>
 </technologies>
 </device>
