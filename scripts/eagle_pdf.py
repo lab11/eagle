@@ -39,11 +39,11 @@ except:
 	sys.exit(1)
 
 if platform.system().lower() == 'darwin':
-	if os.path.exists('/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf'):
+	if os.path.exists('/usr/local/bin/wkhtmltopdf'):
 		include_bom = True
 	else:
 		print("If you want to include the bom you must have wkhtmltopdf installed.")
-		print("Get it from here: https://code.google.com/p/wkhtmltopdf/downloads/detail?name=wkhtmltopdf.dmg")
+		print("Get it from here: https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.macos-cocoa.pkg")
 		include_bom = False
 else:
 	try:
@@ -146,7 +146,7 @@ for sch in glob('*.sch'):
 					call(['qlmanage','-o','osx_bom_to_pdf','-p',boms[0]])
 					qldir = boms[0] + '.qlpreview'
 					os.chdir("%s/%s" % ('osx_bom_to_pdf',qldir))
-					call(['/Applications/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf',
+					call(['wkhtmltopdf',
 						'Preview.html', '{}_bom.pdf'.format(sch_name)])
 					mv('{}_bom.pdf'.format(sch_name), '../../')
 					os.chdir('../..')
