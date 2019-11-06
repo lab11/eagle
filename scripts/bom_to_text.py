@@ -48,7 +48,6 @@ header = """\
 """
 
 boms = glob('*bom*xls*')
-
 if len(boms) == 0:
 	path = os.path.dirname(os.path.realpath(__file__))
 	for l in open(os.path.join(path, '..', 'doc', 'BOM.md')):
@@ -61,7 +60,10 @@ if len(boms) == 0:
 	sys.exit(1)
 
 for bom in boms:
-	# Get the root name
+	if '~$' in bom:
+		continue
+
+        # Get the root name
 	base = os.path.splitext(bom)[0]
 	csvfile = '{}.csv'.format(base)
 	txtfile = '{}.txt'.format(base)
