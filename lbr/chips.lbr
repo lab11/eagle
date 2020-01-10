@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.1">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunitdist="mm" altunit="mm"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -4662,42 +4662,99 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 </package>
 <package name="OLGA-8">
 <description>8-PIN smd package for AS7341 color spectrum sensor</description>
-<smd name="3" x="-0.4" y="0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="4" x="-1.2" y="0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="2" x="0.4" y="0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="6" x="-0.4" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="5" x="-1.2" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="7" x="0.4" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
-<smd name="8" x="1.2" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="3" x="-1.009" y="0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="4" x="-1.809" y="0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="2" x="-0.209" y="0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="6" x="-1.009" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="5" x="-1.809" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="7" x="-0.209" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
+<smd name="8" x="0.591" y="-0.638" dx="0.488" dy="0.575" layer="1"/>
 <polygon width="0" layer="1">
-<vertex x="0.956" y="0.6005"/>
-<vertex x="1.206" y="0.3505"/>
-<vertex x="1.444" y="0.3505"/>
-<vertex x="1.444" y="0.9255"/>
-<vertex x="0.956" y="0.9255"/>
+<vertex x="0.347" y="0.6005"/>
+<vertex x="0.597" y="0.3505"/>
+<vertex x="0.835" y="0.3505"/>
+<vertex x="0.835" y="0.9255"/>
+<vertex x="0.347" y="0.9255"/>
 </polygon>
 <polygon width="0.2" layer="29">
-<vertex x="0.956" y="0.6005"/>
-<vertex x="1.206" y="0.3505"/>
-<vertex x="1.444" y="0.3505"/>
-<vertex x="1.444" y="0.9255"/>
-<vertex x="0.956" y="0.9255"/>
+<vertex x="0.347" y="0.6005"/>
+<vertex x="0.597" y="0.3505"/>
+<vertex x="0.835" y="0.3505"/>
+<vertex x="0.835" y="0.9255"/>
+<vertex x="0.347" y="0.9255"/>
 </polygon>
 <polygon width="0" layer="31">
-<vertex x="0.956" y="0.6005"/>
-<vertex x="1.206" y="0.3505"/>
-<vertex x="1.444" y="0.3505"/>
-<vertex x="1.444" y="0.9255"/>
-<vertex x="0.956" y="0.9255"/>
+<vertex x="0.347" y="0.6005"/>
+<vertex x="0.597" y="0.3505"/>
+<vertex x="0.835" y="0.3505"/>
+<vertex x="0.835" y="0.9255"/>
+<vertex x="0.347" y="0.9255"/>
 </polygon>
-<smd name="1" x="1.2" y="0.8" dx="0.25" dy="0.25" layer="1"/>
-<wire x1="-1.55" y1="1" x2="-1.55" y2="-1" width="0.1" layer="21"/>
-<wire x1="-1.55" y1="-1" x2="1.55" y2="-1" width="0.1" layer="21"/>
-<wire x1="1.55" y1="-1" x2="1.55" y2="1" width="0.1" layer="21"/>
-<wire x1="1.55" y1="1" x2="-1.55" y2="1" width="0.1" layer="21"/>
-<circle x="0.609" y="0" radius="0.45" width="0.1" layer="21"/>
-<text x="-1.6" y="1.2" size="0.762" layer="25" font="vector" ratio="12">&gt;NAME</text>
-<text x="-1.6" y="-1.9" size="0.762" layer="27" font="vector" ratio="12">&gt;VALUE</text>
+<smd name="1" x="0.591" y="0.8" dx="0.25" dy="0.25" layer="1"/>
+<wire x1="-2.159" y1="1" x2="-2.159" y2="-1" width="0.1" layer="21"/>
+<wire x1="-2.159" y1="-1" x2="0.941" y2="-1" width="0.1" layer="21"/>
+<wire x1="0.941" y1="-1" x2="0.941" y2="1" width="0.1" layer="21"/>
+<wire x1="0.941" y1="1" x2="-2.159" y2="1" width="0.1" layer="21"/>
+<circle x="0" y="0" radius="0.45" width="0.1" layer="21"/>
+<text x="-2.209" y="1.2" size="0.762" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<text x="-2.209" y="-1.9" size="0.762" layer="27" font="vector" ratio="12">&gt;VALUE</text>
+</package>
+<package name="YFP28">
+<smd name="A1" x="-0.6" y="1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="A2" x="-0.2" y="1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="A3" x="0.2" y="1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="A4" x="0.6" y="1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="B1" x="-0.6" y="0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="B2" x="-0.2" y="0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="B3" x="0.2" y="0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="B4" x="0.6" y="0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="C1" x="-0.6" y="0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="C2" x="-0.2" y="0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="C3" x="0.2" y="0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="C4" x="0.6" y="0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="D1" x="-0.6" y="0" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="D2" x="-0.2" y="0" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="D3" x="0.2" y="0" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="D4" x="0.6" y="0" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="E1" x="-0.6" y="-0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="E2" x="-0.2" y="-0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="E3" x="0.2" y="-0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="E4" x="0.6" y="-0.4" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="F1" x="-0.6" y="-0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="F2" x="-0.2" y="-0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="F3" x="0.2" y="-0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="F4" x="0.6" y="-0.8" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="G1" x="-0.6" y="-1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="G2" x="-0.2" y="-1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="G3" x="0.2" y="-1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<smd name="G4" x="0.6" y="-1.2" dx="0.2286" dy="0.2286" layer="1" roundness="100"/>
+<wire x1="-1.0414" y1="-0.4064" x2="-1.27" y2="-0.4064" width="0.1524" layer="21"/>
+<wire x1="1.0414" y1="-0.4064" x2="1.2446" y2="-0.4064" width="0.1524" layer="21"/>
+<wire x1="-1.1176" y1="-1.8288" x2="1.1176" y2="-1.8288" width="0.1524" layer="21"/>
+<wire x1="1.1176" y1="-1.8288" x2="1.1176" y2="1.8288" width="0.1524" layer="21"/>
+<wire x1="1.1176" y1="1.8288" x2="-1.1176" y2="1.8288" width="0.1524" layer="21"/>
+<wire x1="-1.1176" y1="1.8288" x2="-1.1176" y2="-1.8288" width="0.1524" layer="21"/>
+<text x="-2.794" y="0.5588" size="1.27" layer="21" ratio="6" rot="SR0">A</text>
+<text x="-2.794" y="-1.8288" size="1.27" layer="21" ratio="6" rot="SR0">G</text>
+<text x="0.0254" y="2.3622" size="1.27" layer="21" ratio="6" rot="SR90">1</text>
+<text x="1.2446" y="2.3622" size="1.27" layer="21" ratio="6" rot="SR90">4</text>
+<text x="-1.7272" y="-0.635" size="1.27" layer="21" ratio="6" rot="SR0">&gt;Value</text>
+<wire x1="-0.8128" y1="1.7272" x2="-1.016" y2="1.524" width="0.1524" layer="51"/>
+<wire x1="-1.016" y1="-1.7272" x2="1.016" y2="-1.7272" width="0.1524" layer="51"/>
+<wire x1="1.016" y1="-1.7272" x2="1.016" y2="1.7272" width="0.1524" layer="51"/>
+<wire x1="1.016" y1="1.7272" x2="-1.016" y2="1.7272" width="0.1524" layer="51"/>
+<wire x1="-1.016" y1="1.7272" x2="-1.016" y2="-1.7272" width="0.1524" layer="51"/>
+<text x="-2.794" y="0.5588" size="1.27" layer="51" ratio="6" rot="SR0">A</text>
+<text x="-2.794" y="-1.8288" size="1.27" layer="51" ratio="6" rot="SR0">G</text>
+<text x="0.0254" y="2.3622" size="1.27" layer="51" ratio="6" rot="SR90">1</text>
+<text x="1.2446" y="2.3622" size="1.27" layer="51" ratio="6" rot="SR90">4</text>
+<polygon width="0.1524" layer="39">
+<vertex x="-1.2445" y="1.8445"/>
+<vertex x="1.2445" y="1.8445"/>
+<vertex x="1.2445" y="-1.8445"/>
+<vertex x="-1.2445" y="-1.8445"/>
+</polygon>
+<text x="-3.2766" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
 </package>
 </packages>
 <symbols>
@@ -7411,24 +7468,24 @@ RF Switch</text>
 <wire x1="0" y1="99.06" x2="40.64" y2="99.06" width="0.254" layer="94"/>
 <wire x1="40.64" y1="99.06" x2="40.64" y2="0" width="0.254" layer="94"/>
 <wire x1="40.64" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<pin name="P0.29/AIN5" x="43.18" y="83.82" length="short" rot="R180"/>
-<pin name="P0.30/AIN6" x="43.18" y="81.28" length="short" rot="R180"/>
-<pin name="P0.31/AIN7" x="43.18" y="78.74" length="short" rot="R180"/>
-<pin name="P0.02/AIN0" x="43.18" y="96.52" length="short" rot="R180"/>
-<pin name="P1.15" x="43.18" y="35.56" length="short" rot="R180"/>
-<pin name="P1.13" x="43.18" y="40.64" length="short" rot="R180"/>
+<pin name="P0.29*/AIN5" x="43.18" y="83.82" length="short" rot="R180"/>
+<pin name="P0.30*/AIN6" x="43.18" y="81.28" length="short" rot="R180"/>
+<pin name="P0.31*/AIN7" x="43.18" y="78.74" length="short" rot="R180"/>
+<pin name="P0.02*/AIN0" x="43.18" y="96.52" length="short" rot="R180"/>
+<pin name="P1.15*" x="43.18" y="35.56" length="short" rot="R180"/>
+<pin name="P1.13*" x="43.18" y="40.64" length="short" rot="R180"/>
 <pin name="DEC2" x="-2.54" y="86.36" length="short"/>
-<pin name="P1.10" x="43.18" y="48.26" length="short" rot="R180"/>
+<pin name="P1.10*" x="43.18" y="48.26" length="short" rot="R180"/>
 <pin name="VDD" x="20.32" y="101.6" length="short" rot="R270"/>
 <pin name="XC2" x="43.18" y="20.32" length="short" rot="R180"/>
 <pin name="DCC" x="-2.54" y="93.98" length="short"/>
 <pin name="DEC4" x="-2.54" y="81.28" length="short"/>
 <pin name="VSS" x="20.32" y="-2.54" length="short" rot="R90"/>
-<pin name="P0.28/AIN4" x="43.18" y="86.36" length="short" rot="R180"/>
-<pin name="P0.03/AIN1" x="43.18" y="93.98" length="short" rot="R180"/>
-<pin name="P1.14" x="43.18" y="38.1" length="short" rot="R180"/>
-<pin name="P1.12" x="43.18" y="43.18" length="short" rot="R180"/>
-<pin name="P1.11" x="43.18" y="45.72" length="short" rot="R180"/>
+<pin name="P0.28*/AIN4" x="43.18" y="86.36" length="short" rot="R180"/>
+<pin name="P0.03*/AIN1" x="43.18" y="93.98" length="short" rot="R180"/>
+<pin name="P1.14*" x="43.18" y="38.1" length="short" rot="R180"/>
+<pin name="P1.12*" x="43.18" y="43.18" length="short" rot="R180"/>
+<pin name="P1.11*" x="43.18" y="45.72" length="short" rot="R180"/>
 <pin name="XC1" x="43.18" y="22.86" length="short" rot="R180"/>
 <pin name="DEC1" x="-2.54" y="88.9" length="short"/>
 <pin name="P0.00/XL1" x="43.18" y="15.24" length="short" rot="R180"/>
@@ -7440,25 +7497,25 @@ RF Switch</text>
 <pin name="P0.27" x="43.18" y="33.02" length="short" rot="R180"/>
 <pin name="ANT" x="43.18" y="5.08" length="short" rot="R180"/>
 <pin name="P0.04/AIN2" x="43.18" y="91.44" length="short" rot="R180"/>
-<pin name="P0.10/NFC2" x="-2.54" y="55.88" length="short"/>
+<pin name="P0.10*/NFC2" x="-2.54" y="55.88" length="short"/>
 <pin name="P0.05/AIN3" x="43.18" y="88.9" length="short" rot="R180"/>
 <pin name="P0.06" x="-2.54" y="50.8" length="short"/>
-<pin name="P0.09/NFC1" x="-2.54" y="58.42" length="short"/>
+<pin name="P0.09*/NFC1" x="-2.54" y="58.42" length="short"/>
 <pin name="P0.07" x="-2.54" y="48.26" length="short"/>
 <pin name="P0.08" x="-2.54" y="45.72" length="short"/>
 <pin name="DEC5" x="-2.54" y="78.74" length="short"/>
 <pin name="P1.08" x="43.18" y="53.34" length="short" rot="R180"/>
-<pin name="P1.07" x="43.18" y="55.88" length="short" rot="R180"/>
+<pin name="P1.07*" x="43.18" y="55.88" length="short" rot="R180"/>
 <pin name="P1.09" x="43.18" y="50.8" length="short" rot="R180"/>
-<pin name="P1.06" x="43.18" y="58.42" length="short" rot="R180"/>
+<pin name="P1.06*" x="43.18" y="58.42" length="short" rot="R180"/>
 <pin name="P0.11" x="-2.54" y="43.18" length="short"/>
-<pin name="P1.05" x="43.18" y="60.96" length="short" rot="R180"/>
+<pin name="P1.05*" x="43.18" y="60.96" length="short" rot="R180"/>
 <pin name="P0.12" x="-2.54" y="40.64" length="short"/>
-<pin name="P1.04" x="43.18" y="63.5" length="short" rot="R180"/>
-<pin name="P1.03" x="43.18" y="66.04" length="short" rot="R180"/>
-<pin name="P1.02" x="43.18" y="68.58" length="short" rot="R180"/>
+<pin name="P1.04*" x="43.18" y="63.5" length="short" rot="R180"/>
+<pin name="P1.03*" x="43.18" y="66.04" length="short" rot="R180"/>
+<pin name="P1.02*" x="43.18" y="68.58" length="short" rot="R180"/>
 <pin name="VDDH" x="17.78" y="101.6" length="short" rot="R270"/>
-<pin name="P1.01" x="43.18" y="71.12" length="short" rot="R180"/>
+<pin name="P1.01*" x="43.18" y="71.12" length="short" rot="R180"/>
 <pin name="SWDCLK" x="-2.54" y="2.54" length="short"/>
 <pin name="DCCH" x="-2.54" y="96.52" length="short"/>
 <pin name="DECUSB" x="-2.54" y="71.12" length="short"/>
@@ -7482,6 +7539,7 @@ RF Switch</text>
 <pin name="P1.00" x="43.18" y="73.66" length="short" rot="R180"/>
 <text x="0" y="101.6" size="1.778" layer="95">&gt;NAME</text>
 <text x="30.48" y="101.6" size="1.778" layer="95">&gt;VALUE</text>
+<text x="27.94" y="-5.08" size="1.778" layer="97">* denotes standard drive/low frequency GPIO</text>
 </symbol>
 <symbol name="AB1815-T3">
 <wire x1="0" y1="0" x2="0" y2="33.02" width="0.254" layer="94"/>
@@ -8182,6 +8240,33 @@ a motion sensor.</description>
 <pin name="GPIO" x="20.32" y="2.54" length="short" rot="R180"/>
 <text x="0" y="19.05" size="1.27" layer="95">&gt;NAME</text>
 <text x="0" y="-2.54" size="1.27" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="BQ51050B">
+<pin name="GND" x="25.4" y="-45.72" length="middle" direction="pwr" rot="R90"/>
+<pin name="AC2" x="2.54" y="-17.78" length="middle" direction="in"/>
+<pin name="AC1" x="2.54" y="-12.7" length="middle" direction="in"/>
+<pin name="BOOT2" x="2.54" y="-20.32" length="middle" direction="out"/>
+<pin name="RECT" x="43.18" y="-5.08" length="middle" direction="out" rot="R180"/>
+<pin name="BOOT1" x="2.54" y="-10.16" length="middle" direction="out"/>
+<pin name="BAT" x="43.18" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="COMM2" x="2.54" y="-22.86" length="middle" direction="out"/>
+<pin name="CLMP2" x="2.54" y="-27.94" length="middle" direction="out"/>
+<pin name="CLMP1" x="2.54" y="-30.48" length="middle" direction="out"/>
+<pin name="COMM1" x="2.54" y="-7.62" length="middle" direction="out"/>
+<pin name="TS/CTRL" x="43.18" y="-10.16" length="middle" direction="in" rot="R180"/>
+<pin name="FOD" x="20.32" y="-45.72" length="middle" direction="in" rot="R90"/>
+<pin name="!AD_EN" x="2.54" y="0" length="middle" direction="out"/>
+<pin name="!CHG" x="43.18" y="-27.94" length="middle" direction="out" rot="R180"/>
+<pin name="ILIM" x="2.54" y="-38.1" length="middle"/>
+<pin name="EN2" x="43.18" y="-38.1" length="middle" direction="in" rot="R180"/>
+<pin name="TERM" x="43.18" y="-33.02" length="middle" direction="in" rot="R180"/>
+<pin name="AD" x="2.54" y="-2.54" length="middle" direction="in"/>
+<wire x1="7.62" y1="2.54" x2="7.62" y2="-40.64" width="0.1524" layer="94"/>
+<wire x1="7.62" y1="-40.64" x2="38.1" y2="-40.64" width="0.1524" layer="94"/>
+<wire x1="38.1" y1="-40.64" x2="38.1" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="38.1" y1="2.54" x2="7.62" y2="2.54" width="0.1524" layer="94"/>
+<text x="7.62" y="7.62" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
+<text x="7.62" y="5.08" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -11975,15 +12060,15 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="DECUSB" pad="AC5"/>
 <connect gate="G$1" pin="P0.00/XL1" pad="D2"/>
 <connect gate="G$1" pin="P0.01/XL2" pad="F2"/>
-<connect gate="G$1" pin="P0.02/AIN0" pad="A12"/>
-<connect gate="G$1" pin="P0.03/AIN1" pad="B13"/>
+<connect gate="G$1" pin="P0.02*/AIN0" pad="A12"/>
+<connect gate="G$1" pin="P0.03*/AIN1" pad="B13"/>
 <connect gate="G$1" pin="P0.04/AIN2" pad="J1"/>
 <connect gate="G$1" pin="P0.05/AIN3" pad="K2"/>
 <connect gate="G$1" pin="P0.06" pad="L1"/>
 <connect gate="G$1" pin="P0.07" pad="M2"/>
 <connect gate="G$1" pin="P0.08" pad="N1"/>
-<connect gate="G$1" pin="P0.09/NFC1" pad="L24"/>
-<connect gate="G$1" pin="P0.10/NFC2" pad="J24"/>
+<connect gate="G$1" pin="P0.09*/NFC1" pad="L24"/>
+<connect gate="G$1" pin="P0.10*/NFC2" pad="J24"/>
 <connect gate="G$1" pin="P0.11" pad="T2"/>
 <connect gate="G$1" pin="P0.12" pad="U1"/>
 <connect gate="G$1" pin="P0.13" pad="AD8"/>
@@ -12001,26 +12086,26 @@ SCHMITT-TRIGGER INVERTER GATE</description>
 <connect gate="G$1" pin="P0.25" pad="AC21"/>
 <connect gate="G$1" pin="P0.26" pad="G1"/>
 <connect gate="G$1" pin="P0.27" pad="H2"/>
-<connect gate="G$1" pin="P0.28/AIN4" pad="B11"/>
-<connect gate="G$1" pin="P0.29/AIN5" pad="A10"/>
-<connect gate="G$1" pin="P0.30/AIN6" pad="B9"/>
-<connect gate="G$1" pin="P0.31/AIN7" pad="A8"/>
+<connect gate="G$1" pin="P0.28*/AIN4" pad="B11"/>
+<connect gate="G$1" pin="P0.29*/AIN5" pad="A10"/>
+<connect gate="G$1" pin="P0.30*/AIN6" pad="B9"/>
+<connect gate="G$1" pin="P0.31*/AIN7" pad="A8"/>
 <connect gate="G$1" pin="P1.00" pad="AD22"/>
-<connect gate="G$1" pin="P1.01" pad="Y23"/>
-<connect gate="G$1" pin="P1.02" pad="W24"/>
-<connect gate="G$1" pin="P1.03" pad="V23"/>
-<connect gate="G$1" pin="P1.04" pad="U24"/>
-<connect gate="G$1" pin="P1.05" pad="T23"/>
-<connect gate="G$1" pin="P1.06" pad="R24"/>
-<connect gate="G$1" pin="P1.07" pad="P23"/>
+<connect gate="G$1" pin="P1.01*" pad="Y23"/>
+<connect gate="G$1" pin="P1.02*" pad="W24"/>
+<connect gate="G$1" pin="P1.03*" pad="V23"/>
+<connect gate="G$1" pin="P1.04*" pad="U24"/>
+<connect gate="G$1" pin="P1.05*" pad="T23"/>
+<connect gate="G$1" pin="P1.06*" pad="R24"/>
+<connect gate="G$1" pin="P1.07*" pad="P23"/>
 <connect gate="G$1" pin="P1.08" pad="P2"/>
 <connect gate="G$1" pin="P1.09" pad="R1"/>
-<connect gate="G$1" pin="P1.10" pad="A20"/>
-<connect gate="G$1" pin="P1.11" pad="B19" route="any"/>
-<connect gate="G$1" pin="P1.12" pad="B17"/>
-<connect gate="G$1" pin="P1.13" pad="A16"/>
-<connect gate="G$1" pin="P1.14" pad="B15"/>
-<connect gate="G$1" pin="P1.15" pad="A14"/>
+<connect gate="G$1" pin="P1.10*" pad="A20"/>
+<connect gate="G$1" pin="P1.11*" pad="B19" route="any"/>
+<connect gate="G$1" pin="P1.12*" pad="B17"/>
+<connect gate="G$1" pin="P1.13*" pad="A16"/>
+<connect gate="G$1" pin="P1.14*" pad="B15"/>
+<connect gate="G$1" pin="P1.15*" pad="A14"/>
 <connect gate="G$1" pin="SWDCLK" pad="AA24"/>
 <connect gate="G$1" pin="SWDIO" pad="AC24"/>
 <connect gate="G$1" pin="VBUS" pad="AD2"/>
@@ -13119,6 +13204,43 @@ a motion sensor.</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BQ51050B" prefix="U">
+<gates>
+<gate name="A" symbol="BQ51050B" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="YFP28">
+<connects>
+<connect gate="A" pin="!AD_EN" pad="F3"/>
+<connect gate="A" pin="!CHG" pad="F4"/>
+<connect gate="A" pin="AC1" pad="B3 B4"/>
+<connect gate="A" pin="AC2" pad="B1 B2"/>
+<connect gate="A" pin="AD" pad="G4"/>
+<connect gate="A" pin="BAT" pad="D1 D2 D3 D4"/>
+<connect gate="A" pin="BOOT1" pad="C4"/>
+<connect gate="A" pin="BOOT2" pad="C1"/>
+<connect gate="A" pin="CLMP1" pad="E3"/>
+<connect gate="A" pin="CLMP2" pad="E2"/>
+<connect gate="A" pin="COMM1" pad="E4"/>
+<connect gate="A" pin="COMM2" pad="E1"/>
+<connect gate="A" pin="EN2" pad="G2"/>
+<connect gate="A" pin="FOD" pad="F2"/>
+<connect gate="A" pin="GND" pad="A1 A2 A3 A4"/>
+<connect gate="A" pin="ILIM" pad="G1"/>
+<connect gate="A" pin="RECT" pad="C2 C3"/>
+<connect gate="A" pin="TERM" pad="G3"/>
+<connect gate="A" pin="TS/CTRL" pad="F1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="BUILT_BY" value="EMA_UL_Team" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="BQ51050BYFPR" constant="no"/>
+<attribute name="VENDOR" value="Texas Instruments" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
