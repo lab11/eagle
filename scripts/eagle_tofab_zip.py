@@ -31,12 +31,13 @@ revision     = ''
 project_name = ''
 project_date = ''
 
-fab_extensions = ['bot', 'bsk', 'drd','0102','0116','1516','0216','0215','0115', 'oln', 'slk', 'smb', 'smt', 'top',
-                  'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10',
-                  'GBL', 'GBO', 'GBS', 'GTL', 'GTO', 'GTS', 'TXT', 'DIM', 'mil',
-                  'gbs', 'gts']
-assembler_extensions = ['bps', 'tps', 'tsp', 'bsp', 'centroid', 'pdf']
-stencil_extensions = ['tsp', 'bsp', 'oln', 'DIM', 'mil']
+fab_extensions = [x.upper() for x in ['bot', 'bsk',
+    'drd','0102','0116','1516','0216','0215','0115', 'oln', 'slk', 'smb', \
+    'smt', 'top', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10', \
+    'GBL', 'GBO', 'GBS', 'GTL', 'GTO', 'GTS', 'TXT', 'DIM', 'mil', 'gbs', \
+    'gts']]
+assembler_extensions = [x.upper() for x in ['bps', 'tps', 'tsp', 'bsp', 'centroid', 'pdf']]
+stencil_extensions = [x.upper() for x in ['tsp', 'bsp', 'oln', 'DIM', 'mil']]
 # Files to add if they exist
 fab_add_files = ['fabnotes.txt']
 
@@ -117,12 +118,12 @@ else:
 files = os.listdir('.')
 for f in files:
 	fname, fext = os.path.splitext(f)
-	if fext[1:] in fab_extensions:
+	if fext[1:].upper() in fab_extensions:
 		fab_files.append(f)
 		assem_files.append(f)
-	if fext[1:] in assembler_extensions:
+	if fext[1:].upper() in assembler_extensions:
 		assem_files.append(f)
-	if fext[1:] in stencil_extensions:
+	if fext[1:].upper() in stencil_extensions:
 		stencil_files.append(f)
 	if os.path.basename(f) in fab_add_files:
 		fab_files.append(f)
