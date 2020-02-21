@@ -90,6 +90,9 @@ if (schematic)
             sheetswitched = 0;
             S.parts(P)
             {
+                //Set the display to off
+                strCmd += "CHANGE DISPLAY OFF;\n";
+
                 for(int i = 0; i < cnt; i++) {
                     if(parts[i] == P.name && P.device.package) {
                         // Add attribute to group
