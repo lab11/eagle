@@ -13769,7 +13769,7 @@ a motion sensor.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="NRF9160" prefix="IC">
+<deviceset name="NRF9160" prefix="U">
 <gates>
 <gate name="G$1" symbol="NRF9160" x="0" y="2.54"/>
 </gates>
