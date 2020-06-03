@@ -121,12 +121,12 @@ Digi-Key Part 863-1495-1-ND</description>
 <text x="-0.927" y="-1.954" size="0.5" layer="27">&gt;VALUE</text>
 </package>
 <package name="XCL20X">
-<smd name="6" x="-0.55" y="1.0625" dx="0.35" dy="0.375" layer="1"/>
-<smd name="5" x="0" y="1.0625" dx="0.35" dy="0.375" layer="1"/>
-<smd name="4" x="0.55" y="1.0625" dx="0.35" dy="0.375" layer="1"/>
-<smd name="1" x="-0.55" y="-1.0625" dx="0.35" dy="0.375" layer="1"/>
-<smd name="2" x="0" y="-1.0625" dx="0.35" dy="0.375" layer="1"/>
-<smd name="3" x="0.55" y="-1.0625" dx="0.35" dy="0.375" layer="1"/>
+<smd name="6" x="-0.55" y="0.9375" dx="0.35" dy="0.375" layer="1"/>
+<smd name="5" x="0" y="0.9375" dx="0.35" dy="0.375" layer="1"/>
+<smd name="4" x="0.55" y="0.9375" dx="0.35" dy="0.375" layer="1"/>
+<smd name="1" x="-0.55" y="-0.9375" dx="0.35" dy="0.375" layer="1"/>
+<smd name="2" x="0" y="-0.9375" dx="0.35" dy="0.375" layer="1"/>
+<smd name="3" x="0.55" y="-0.9375" dx="0.35" dy="0.375" layer="1"/>
 <smd name="PAD" x="0" y="0" dx="1.5" dy="0.9" layer="1"/>
 <smd name="7" x="-1.275" y="0" dx="0.35" dy="2.1" layer="1"/>
 <smd name="8" x="1.275" y="0" dx="0.35" dy="2.1" layer="1"/>
@@ -344,13 +344,13 @@ Boost Switching Regulator IC Positive Adjustable 2.5V 1 Output 750mA (Switch) SO
 </device>
 </devices>
 </deviceset>
-<deviceset name="XCL206B" prefix="U">
+<deviceset name="XCL206" prefix="U" uservalue="yes">
 <description>Non-Isolated PoL Module DC DC Converter 1 Output 1.8V 600mA 2V - 6V Input</description>
 <gates>
 <gate name="G$1" symbol="XCL20X" x="0" y="0"/>
 </gates>
 <devices>
-<device name="&quot;" package="XCL20X">
+<device name="B" package="XCL20X">
 <connects>
 <connect gate="G$1" pin="CE/MODE" pad="4"/>
 <connect gate="G$1" pin="GND" pad="2 5"/>
