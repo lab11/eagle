@@ -153,7 +153,7 @@ def unit_package_sort(value, unit_prefixes, device):
    return _unit_package_list.index((normalized, device))
 
 sch_part_tag_re = re.compile(
-      '<part name="{}(.+?)".*device[set]*="([0-9A-Z_-]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
+      '<part name="{}([0-9]+?)".*device[set]*="([0-9A-Z_-]+)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
 sch_part_tag_dnp_re = re.compile(
@@ -164,7 +164,7 @@ sch_instance_tag_re = re.compile('<instance part="{}([\.0-9]+?)".*'.format(prefi
 sch_pinref_tag_re = re.compile('<pinref part="{}([\.0-9]+?)".*'.format(prefix))
 
 brd_element_tag_re = re.compile(
-      '<element name="{}(.+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
+      '<element name="{}([0-9]+?)".*value="([\.0-9]+)([{}]?)(.*?)".*[/]?>'.\
             format(prefix, ''.join(known_unit_prefixes.keys()))
             )
 brd_element_tag_othervalue_re = re.compile(
