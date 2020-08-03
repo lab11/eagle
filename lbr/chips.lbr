@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5535,6 +5535,29 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <smd name="23" x="-0.6" y="1.545" dx="0.64" dy="0.22" layer="1" roundness="25" rot="R270"/>
 <smd name="24" x="-1" y="1.545" dx="0.64" dy="0.22" layer="1" roundness="25" rot="R270"/>
 </package>
+<package name="DNP0006A">
+<smd name="1" x="-0.95" y="0.65" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="2" x="-0.95" y="0" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="3" x="-0.95" y="-0.655" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="4" x="0.95" y="-0.65" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="5" x="0.95" y="0" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="6" x="0.95" y="0.65" dx="0.5" dy="0.25" layer="1" roundness="100"/>
+<smd name="7" x="0" y="0" dx="0.65" dy="1.35" layer="1" cream="no"/>
+<text x="-1.143" y="-2.032" size="0.8128" layer="27" font="vector" ratio="12" rot="SR0">&gt;Value</text>
+<wire x1="-1.0414" y1="1.0414" x2="1.0414" y2="1.0414" width="0.1524" layer="21"/>
+<wire x1="1.0414" y1="-1.0414" x2="1.0414" y2="1.0414" width="0.1524" layer="21"/>
+<wire x1="-1.0414" y1="-1.0414" x2="1.0414" y2="-1.0414" width="0.1524" layer="21"/>
+<wire x1="-1.0414" y1="-1.0414" x2="-1.0414" y2="1.0414" width="0.1524" layer="21"/>
+<wire x1="-1.3716" y1="1.016" x2="-1.778" y2="1.016" width="0.1016" layer="21" curve="-180"/>
+<wire x1="-1.778" y1="1.016" x2="-1.3716" y2="1.016" width="0.1016" layer="21" curve="-180"/>
+<polygon width="0.0254" layer="31">
+<vertex x="0.31" y="-0.625"/>
+<vertex x="0.31" y="0.625"/>
+<vertex x="-0.31" y="0.625"/>
+<vertex x="-0.31" y="-0.625"/>
+</polygon>
+<text x="-1.143" y="1.27" size="0.8128" layer="25" font="vector" ratio="12" rot="SR0">&gt;Name</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BQ25504">
@@ -9232,6 +9255,20 @@ a motion sensor.</description>
 <pin name="NCS" x="-20.32" y="-7.62" length="middle" direction="in"/>
 <pin name="SDA/SDI" x="-20.32" y="-5.08" length="middle"/>
 <pin name="AUX_CL" x="-20.32" y="5.08" length="middle" direction="in" function="clk"/>
+</symbol>
+<symbol name="OPT3004DNP">
+<pin name="VDD" x="-15.24" y="5.08" length="middle" direction="pwr"/>
+<pin name="ADDR" x="-15.24" y="0" length="middle" direction="in"/>
+<pin name="GND" x="-15.24" y="-5.08" length="middle" direction="pwr"/>
+<pin name="SCL" x="12.7" y="-2.54" length="middle" direction="in" rot="R180"/>
+<pin name="INT" x="12.7" y="5.08" length="middle" direction="out" rot="R180"/>
+<pin name="SDA" x="12.7" y="-5.08" length="middle" direction="in" rot="R180"/>
+<wire x1="-10.16" y1="-7.62" x2="7.62" y2="-7.62" width="0.2032" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="7.62" width="0.2032" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="-10.16" y2="7.62" width="0.2032" layer="94"/>
+<wire x1="-10.16" y1="7.62" x2="-10.16" y2="-7.62" width="0.2032" layer="94"/>
+<text x="-10.16" y="8.382" size="1.778" layer="95" ratio="6" rot="SR0">&gt;NAME</text>
+<text x="-10.16" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -14535,6 +14572,30 @@ a motion sensor.</description>
 <attribute name="MF" value="TDK InvenSense"/>
 <attribute name="MP" value="ICM-20948"/>
 <attribute name="PACKAGE" value="QFN-24 InvenSense"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="OPT3004DNPR" prefix="U">
+<gates>
+<gate name="A" symbol="OPT3004DNP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DNP0006A">
+<connects>
+<connect gate="A" pin="ADDR" pad="2"/>
+<connect gate="A" pin="GND" pad="3 7"/>
+<connect gate="A" pin="INT" pad="5"/>
+<connect gate="A" pin="SCL" pad="4"/>
+<connect gate="A" pin="SDA" pad="6"/>
+<connect gate="A" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
+<attribute name="PARTNUMBER" value="OPT3004DNPR" constant="no"/>
+<attribute name="REFDES" value="RefDes" constant="no"/>
 </technology>
 </technologies>
 </device>
