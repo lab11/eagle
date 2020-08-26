@@ -5558,7 +5558,114 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 </polygon>
 <text x="-1.143" y="1.27" size="0.8128" layer="25" font="vector" ratio="12" rot="SR0">&gt;Name</text>
 </package>
+<package name="BC840M">
+<description>Original name &lt;b&gt;BC840-MZ1&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="0" y1="-0.0032" x2="7.0104" y2="-0.0032" width="0.1501125" layer="21"/>
+<wire x1="0" y1="-0.0032" x2="0" y2="7.2" width="0.1501125" layer="21"/>
+<wire x1="0" y1="7.2" x2="-3" y2="7.2" width="0.1501125" layer="21"/>
+<wire x1="-3" y1="7.2" x2="-3" y2="11.9884" width="0.1501125" layer="21"/>
+<wire x1="7.0104" y1="-0.0032" x2="7.0104" y2="12" width="0.1501125" layer="21"/>
+<wire x1="-3" y1="11.9884" x2="7.0104" y2="12" width="0.1501125" layer="21"/>
+<smd name="A1" x="0.6604" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A0" x="0.6604" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A2" x="0.6604" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A3" x="0.6604" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A4" x="0.6604" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A5" x="0.6604" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A6" x="0.6604" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="A7" x="0.6604" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B0" x="1.4478" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B1" x="1.4478" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B2" x="1.4478" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B3" x="1.4478" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B4" x="1.4478" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B5" x="1.4478" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B6" x="1.4478" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="B7" x="1.4478" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C1" x="2.2606" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C0" x="2.2606" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C2" x="2.2606" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C3" x="2.2606" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C4" x="2.2606" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C5" x="2.2606" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C6" x="2.2606" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="C7" x="2.2606" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D0" x="3.048" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D1" x="3.048" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D2" x="3.048" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D3" x="3.048" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D4" x="3.048" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D5" x="3.048" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D6" x="3.048" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="D7" x="3.048" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E0" x="3.8608" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E1" x="3.8608" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E2" x="3.8608" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E3" x="3.8608" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E4" x="3.8608" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E5" x="3.8608" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E6" x="3.8608" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="E7" x="3.8608" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F1" x="4.6482" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F0" x="4.6482" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F2" x="4.6482" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F3" x="4.6482" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F4" x="4.6482" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F5" x="4.6482" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F6" x="4.6482" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="F7" x="4.6482" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G1" x="5.461" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G0" x="5.461" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G2" x="5.461" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G3" x="5.461" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G4" x="5.461" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G5" x="5.461" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G6" x="5.461" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="G7" x="5.461" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H1" x="6.2484" y="5.153" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H0" x="6.2484" y="5.9658" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H2" x="6.2484" y="4.3656" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H3" x="6.2484" y="3.5528" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H4" x="6.2484" y="2.7654" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H5" x="6.2484" y="1.9526" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H6" x="6.2484" y="1.1652" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+<smd name="H7" x="6.2484" y="0.3524" dx="0.3048" dy="0.3048" layer="1" roundness="100"/>
+</package>
+<package name="SOIC127P600X175-8N" urn="urn:adsk.eagle:footprint:22765752/1">
+<description>8-SOIC, 1.27 mm pitch, 6.00 mm span, 4.90 X 3.90 X 1.75 mm body
+&lt;p&gt;8-pin SOIC package with 1.27 mm pitch, 6.00 mm span with body size 4.90 X 3.90 X 1.75 mm&lt;/p&gt;</description>
+<circle x="-2.7288" y="2.7125" radius="0.25" width="0" layer="21"/>
+<wire x1="-2" y1="2.4625" x2="-2" y2="2.515" width="0.12" layer="21"/>
+<wire x1="-2" y1="2.515" x2="2" y2="2.515" width="0.12" layer="21"/>
+<wire x1="2" y1="2.515" x2="2" y2="2.4625" width="0.12" layer="21"/>
+<wire x1="-2" y1="-2.4625" x2="-2" y2="-2.515" width="0.12" layer="21"/>
+<wire x1="-2" y1="-2.515" x2="2" y2="-2.515" width="0.12" layer="21"/>
+<wire x1="2" y1="-2.515" x2="2" y2="-2.4625" width="0.12" layer="21"/>
+<wire x1="2" y1="-2.515" x2="-2" y2="-2.515" width="0.12" layer="51"/>
+<wire x1="-2" y1="-2.515" x2="-2" y2="2.515" width="0.12" layer="51"/>
+<wire x1="-2" y1="2.515" x2="2" y2="2.515" width="0.12" layer="51"/>
+<wire x1="2" y1="2.515" x2="2" y2="-2.515" width="0.12" layer="51"/>
+<smd name="1" x="-2.635" y="1.905" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="2" x="-2.635" y="0.635" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="3" x="-2.635" y="-0.635" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="4" x="-2.635" y="-1.905" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="5" x="2.635" y="-1.905" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="6" x="2.635" y="-0.635" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="7" x="2.635" y="0.635" dx="1.6454" dy="0.6071" layer="1"/>
+<smd name="8" x="2.635" y="1.905" dx="1.6454" dy="0.6071" layer="1"/>
+<text x="0" y="3.5975" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-3.15" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+</package>
 </packages>
+<packages3d>
+<package3d name="SOIC127P600X175-8N" urn="urn:adsk.eagle:package:22765747/1" type="model">
+<description>8-SOIC, 1.27 mm pitch, 6.00 mm span, 4.90 X 3.90 X 1.75 mm body
+&lt;p&gt;8-pin SOIC package with 1.27 mm pitch, 6.00 mm span with body size 4.90 X 3.90 X 1.75 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOIC127P600X175-8N"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="BQ25504">
 <pin name="GND" x="0" y="-27.94" visible="pin" length="middle" rot="R90"/>
@@ -9269,6 +9376,120 @@ a motion sensor.</description>
 <wire x1="-10.16" y1="7.62" x2="-10.16" y2="-7.62" width="0.2032" layer="94"/>
 <text x="-10.16" y="8.382" size="1.778" layer="95" ratio="6" rot="SR0">&gt;NAME</text>
 <text x="-10.16" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="BC840M">
+<wire x1="-35.56" y1="30.48" x2="35.56" y2="30.48" width="0.254" layer="94"/>
+<wire x1="35.56" y1="30.48" x2="35.56" y2="-38.1" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-38.1" x2="-35.56" y2="-38.1" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="-38.1" x2="-35.56" y2="30.48" width="0.254" layer="94"/>
+<pin name="A0/P101" x="-40.64" y="27.94" length="middle"/>
+<pin name="A1/P025" x="-40.64" y="25.4" length="middle"/>
+<pin name="A2/P019" x="-40.64" y="22.86" length="middle"/>
+<pin name="A3/P017" x="-40.64" y="20.32" length="middle"/>
+<pin name="A4/D+" x="-40.64" y="17.78" length="middle"/>
+<pin name="A5/D-" x="-40.64" y="15.24" length="middle"/>
+<pin name="A6/DCCH" x="-40.64" y="12.7" length="middle"/>
+<pin name="A7/VDDH" x="-40.64" y="10.16" length="middle"/>
+<pin name="B0/P104" x="-40.64" y="5.08" length="middle"/>
+<pin name="B1/SWDIO" x="-40.64" y="2.54" length="middle"/>
+<pin name="B2/P022" x="-40.64" y="0" length="middle"/>
+<pin name="B3/P015" x="-40.64" y="-2.54" length="middle"/>
+<pin name="B4/P018/RESET" x="-40.64" y="-5.08" length="middle"/>
+<pin name="B5/VBUS" x="-40.64" y="-7.62" length="middle"/>
+<pin name="B6/P007" x="-40.64" y="-10.16" length="middle"/>
+<pin name="B7/P012" x="-40.64" y="-12.7" length="middle"/>
+<pin name="C0/P107" x="-40.64" y="-17.78" length="middle"/>
+<pin name="C1/SWDCLK" x="-40.64" y="-20.32" length="middle"/>
+<pin name="C2/P020" x="-40.64" y="-22.86" length="middle"/>
+<pin name="C3/P021" x="-40.64" y="-25.4" length="middle"/>
+<pin name="C4/P014" x="-40.64" y="-27.94" length="middle"/>
+<pin name="C5/P108" x="-40.64" y="-30.48" length="middle"/>
+<pin name="C6/P109" x="-40.64" y="-33.02" length="middle"/>
+<pin name="C7/P008" x="-40.64" y="-35.56" length="middle"/>
+<pin name="H0/P003" x="40.64" y="27.94" length="middle" rot="R180"/>
+<pin name="H1/P028" x="40.64" y="25.4" length="middle" rot="R180"/>
+<pin name="H2/P110" x="40.64" y="22.86" length="middle" rot="R180"/>
+<pin name="H3/P114" x="40.64" y="20.32" length="middle" rot="R180"/>
+<pin name="H4/VSS" x="40.64" y="17.78" length="middle" rot="R180"/>
+<pin name="H5/VSS" x="40.64" y="15.24" length="middle" rot="R180"/>
+<pin name="H6/VSS" x="40.64" y="12.7" length="middle" rot="R180"/>
+<pin name="H7/VSS" x="40.64" y="10.16" length="middle" rot="R180"/>
+<pin name="G0/VSS" x="40.64" y="5.08" length="middle" rot="R180"/>
+<pin name="G1/P030" x="40.64" y="2.54" length="middle" rot="R180"/>
+<pin name="G2/P111" x="40.64" y="0" length="middle" rot="R180"/>
+<pin name="G3/P113" x="40.64" y="-2.54" length="middle" rot="R180"/>
+<pin name="G4/VSS" x="40.64" y="-5.08" length="middle" rot="R180"/>
+<pin name="G5/VSS" x="40.64" y="-7.62" length="middle" rot="R180"/>
+<pin name="G6/VSS" x="40.64" y="-10.16" length="middle" rot="R180"/>
+<pin name="G7/P005" x="40.64" y="-12.7" length="middle" rot="R180"/>
+<pin name="F0/P023" x="40.64" y="-17.78" length="middle" rot="R180"/>
+<pin name="F1/P024" x="40.64" y="-20.32" length="middle" rot="R180"/>
+<pin name="F2/P102" x="40.64" y="-22.86" length="middle" rot="R180"/>
+<pin name="F3/P112" x="40.64" y="-25.4" length="middle" rot="R180"/>
+<pin name="F4/P002" x="40.64" y="-27.94" length="middle" rot="R180"/>
+<pin name="F5/VDD" x="40.64" y="-30.48" length="middle" rot="R180"/>
+<pin name="F6/P000" x="40.64" y="-33.02" length="middle" rot="R180"/>
+<pin name="F7/P001" x="40.64" y="-35.56" length="middle" rot="R180"/>
+<pin name="D0/P100" x="-20.32" y="-43.18" length="middle" rot="R90"/>
+<pin name="D1/P105" x="-17.78" y="-43.18" length="middle" rot="R90"/>
+<pin name="D2/P009" x="-15.24" y="-43.18" length="middle" rot="R90"/>
+<pin name="D3/P016" x="-12.7" y="-43.18" length="middle" rot="R90"/>
+<pin name="D4/P013" x="-10.16" y="-43.18" length="middle" rot="R90"/>
+<pin name="D5/P011" x="-7.62" y="-43.18" length="middle" rot="R90"/>
+<pin name="D6/P027" x="-5.08" y="-43.18" length="middle" rot="R90"/>
+<pin name="D7/P006" x="-2.54" y="-43.18" length="middle" rot="R90"/>
+<pin name="E0/P103" x="2.54" y="-43.18" length="middle" rot="R90"/>
+<pin name="E1/P106" x="5.08" y="-43.18" length="middle" rot="R90"/>
+<pin name="E2/P010" x="7.62" y="-43.18" length="middle" rot="R90"/>
+<pin name="E3/P115" x="10.16" y="-43.18" length="middle" rot="R90"/>
+<pin name="E4/P029" x="12.7" y="-43.18" length="middle" rot="R90"/>
+<pin name="E5/P031" x="15.24" y="-43.18" length="middle" rot="R90"/>
+<pin name="E6/P026" x="17.78" y="-43.18" length="middle" rot="R90"/>
+<pin name="E7/P004" x="20.32" y="-43.18" length="middle" rot="R90"/>
+<text x="-35.56" y="33.02" size="1.778" layer="95">&gt;NAME</text>
+<circle x="-35.56" y="25.4" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="22.86" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="20.32" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="0" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-2.54" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-10.16" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-12.7" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-5.08" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-22.86" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-25.4" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-27.94" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-30.48" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-33.02" radius="0.254" width="0.254" layer="94"/>
+<circle x="-35.56" y="-35.56" radius="0.254" width="0.254" layer="94"/>
+<circle x="-20.32" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="-12.7" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="-10.16" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="-7.62" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="-5.08" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="-2.54" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="17.78" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="20.32" y="-38.1" radius="0.254" width="0.254" layer="94"/>
+<circle x="35.56" y="-35.56" radius="0.254" width="0.254" layer="94"/>
+<circle x="35.56" y="-33.02" radius="0.254" width="0.254" layer="94"/>
+<circle x="35.56" y="-20.32" radius="0.254" width="0.254" layer="94"/>
+<circle x="35.56" y="-17.78" radius="0.254" width="0.254" layer="94"/>
+<circle x="35.56" y="-12.7" radius="0.254" width="0.254" layer="94"/>
+</symbol>
+<symbol name="MX25R3235F">
+<wire x1="0" y1="0" x2="0" y2="20.32" width="0.254" layer="94"/>
+<wire x1="0" y1="20.32" x2="25.4" y2="20.32" width="0.254" layer="94"/>
+<wire x1="25.4" y1="20.32" x2="25.4" y2="0" width="0.254" layer="94"/>
+<wire x1="25.4" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="CS" x="27.94" y="15.24" length="short" rot="R180"/>
+<pin name="SI/SIO0" x="27.94" y="10.16" length="short" rot="R180"/>
+<pin name="SO/SIO1" x="27.94" y="7.62" length="short" rot="R180"/>
+<pin name="SCLK" x="27.94" y="17.78" length="short" rot="R180"/>
+<pin name="WP/SIO2" x="27.94" y="5.08" length="short" rot="R180"/>
+<pin name="RESET/SIO3" x="27.94" y="2.54" length="short" rot="R180"/>
+<pin name="GND" x="-2.54" y="2.54" length="short"/>
+<pin name="VCC" x="-2.54" y="17.78" length="short"/>
+<text x="0" y="21.082" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -14474,10 +14695,8 @@ a motion sensor.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="BUILT_BY" value="EMA_Jessica" constant="no"/>
-<attribute name="COPYRIGHT" value="Copyright (C) 2018 Accelerated Designs. All rights reserved" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="LSM9DS1TR" constant="no"/>
-<attribute name="SOURCELIBRARY" value="STMicro_2020-01-02" constant="no"/>
+<attribute name="DIGIKEY" value="497-14946-1-ND" constant="no"/>
+<attribute name="MPN" value="LSM9DS1TR" constant="no"/>
 <attribute name="VENDOR" value="STMicroelectronics" constant="no"/>
 </technology>
 </technologies>
@@ -14593,9 +14812,123 @@ a motion sensor.</description>
 </connects>
 <technologies>
 <technology name="">
+<attribute name="DIGIKEY" value="296-53402-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
-<attribute name="PARTNUMBER" value="OPT3004DNPR" constant="no"/>
-<attribute name="REFDES" value="RefDes" constant="no"/>
+<attribute name="MPN" value="OPT3004DNPR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BC840M" prefix="U">
+<description>802.15.4, Bluetooth Bluetooth v5.0, Thread, Zigbee® Transceiver Module 2.4GHz PCB Trace Surface Mount 
+ 
+&lt;a href="https://snapeda.com/parts/BC840M/Fanstel%20Corp./view-part/?ref=eda"&gt;Buy Part&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="BC840M" x="0" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="BC840M">
+<connects>
+<connect gate="G$1" pin="A0/P101" pad="A0"/>
+<connect gate="G$1" pin="A1/P025" pad="A1"/>
+<connect gate="G$1" pin="A2/P019" pad="A2"/>
+<connect gate="G$1" pin="A3/P017" pad="A3"/>
+<connect gate="G$1" pin="A4/D+" pad="A4"/>
+<connect gate="G$1" pin="A5/D-" pad="A5"/>
+<connect gate="G$1" pin="A6/DCCH" pad="A6"/>
+<connect gate="G$1" pin="A7/VDDH" pad="A7"/>
+<connect gate="G$1" pin="B0/P104" pad="B0"/>
+<connect gate="G$1" pin="B1/SWDIO" pad="B1"/>
+<connect gate="G$1" pin="B2/P022" pad="B2"/>
+<connect gate="G$1" pin="B3/P015" pad="B3"/>
+<connect gate="G$1" pin="B4/P018/RESET" pad="B4"/>
+<connect gate="G$1" pin="B5/VBUS" pad="B5"/>
+<connect gate="G$1" pin="B6/P007" pad="B6"/>
+<connect gate="G$1" pin="B7/P012" pad="B7"/>
+<connect gate="G$1" pin="C0/P107" pad="C0"/>
+<connect gate="G$1" pin="C1/SWDCLK" pad="C1"/>
+<connect gate="G$1" pin="C2/P020" pad="C2"/>
+<connect gate="G$1" pin="C3/P021" pad="C3"/>
+<connect gate="G$1" pin="C4/P014" pad="C4"/>
+<connect gate="G$1" pin="C5/P108" pad="C5"/>
+<connect gate="G$1" pin="C6/P109" pad="C6"/>
+<connect gate="G$1" pin="C7/P008" pad="C7"/>
+<connect gate="G$1" pin="D0/P100" pad="D0"/>
+<connect gate="G$1" pin="D1/P105" pad="D1"/>
+<connect gate="G$1" pin="D2/P009" pad="D2"/>
+<connect gate="G$1" pin="D3/P016" pad="D3"/>
+<connect gate="G$1" pin="D4/P013" pad="D4"/>
+<connect gate="G$1" pin="D5/P011" pad="D5"/>
+<connect gate="G$1" pin="D6/P027" pad="D6"/>
+<connect gate="G$1" pin="D7/P006" pad="D7"/>
+<connect gate="G$1" pin="E0/P103" pad="E0"/>
+<connect gate="G$1" pin="E1/P106" pad="E1"/>
+<connect gate="G$1" pin="E2/P010" pad="E2"/>
+<connect gate="G$1" pin="E3/P115" pad="E3"/>
+<connect gate="G$1" pin="E4/P029" pad="E4"/>
+<connect gate="G$1" pin="E5/P031" pad="E5"/>
+<connect gate="G$1" pin="E6/P026" pad="E6"/>
+<connect gate="G$1" pin="E7/P004" pad="E7"/>
+<connect gate="G$1" pin="F0/P023" pad="F0"/>
+<connect gate="G$1" pin="F1/P024" pad="F1"/>
+<connect gate="G$1" pin="F2/P102" pad="F2"/>
+<connect gate="G$1" pin="F3/P112" pad="F3"/>
+<connect gate="G$1" pin="F4/P002" pad="F4"/>
+<connect gate="G$1" pin="F5/VDD" pad="F5"/>
+<connect gate="G$1" pin="F6/P000" pad="F6"/>
+<connect gate="G$1" pin="F7/P001" pad="F7"/>
+<connect gate="G$1" pin="G0/VSS" pad="G0"/>
+<connect gate="G$1" pin="G1/P030" pad="G1"/>
+<connect gate="G$1" pin="G2/P111" pad="G2"/>
+<connect gate="G$1" pin="G3/P113" pad="G3"/>
+<connect gate="G$1" pin="G4/VSS" pad="G4"/>
+<connect gate="G$1" pin="G5/VSS" pad="G5"/>
+<connect gate="G$1" pin="G6/VSS" pad="G6"/>
+<connect gate="G$1" pin="G7/P005" pad="G7"/>
+<connect gate="G$1" pin="H0/P003" pad="H0"/>
+<connect gate="G$1" pin="H1/P028" pad="H1"/>
+<connect gate="G$1" pin="H2/P110" pad="H2"/>
+<connect gate="G$1" pin="H3/P114" pad="H3"/>
+<connect gate="G$1" pin="H4/VSS" pad="H4"/>
+<connect gate="G$1" pin="H5/VSS" pad="H5"/>
+<connect gate="G$1" pin="H6/VSS" pad="H6"/>
+<connect gate="G$1" pin="H7/VSS" pad="H7"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="1914-BC840MCT-ND" constant="no"/>
+<attribute name="MP" value="MPN"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MX25R3235F" prefix="U">
+<description>FLASH - NOR Memory IC 32Mb (4M x 8) SPI - Quad I/O 80MHz 8-SOP</description>
+<gates>
+<gate name="G$1" symbol="MX25R3235F" x="0" y="0"/>
+</gates>
+<devices>
+<device name="M1IH0" package="SOIC127P600X175-8N">
+<connects>
+<connect gate="G$1" pin="CS" pad="1"/>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="RESET/SIO3" pad="7"/>
+<connect gate="G$1" pin="SCLK" pad="6"/>
+<connect gate="G$1" pin="SI/SIO0" pad="5"/>
+<connect gate="G$1" pin="SO/SIO1" pad="2"/>
+<connect gate="G$1" pin="VCC" pad="8"/>
+<connect gate="G$1" pin="WP/SIO2" pad="3"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22765747/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="MX25R3235FM1IH0" constant="no"/>
+<attribute name="MANUFACTURER" value="Macronix" constant="no"/>
+<attribute name="MPN" value="MX25R3235FM1IH0" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14608,6 +14941,16 @@ a motion sensor.</description>
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>
