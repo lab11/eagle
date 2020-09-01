@@ -14898,7 +14898,8 @@ a motion sensor.</description>
 <technologies>
 <technology name="">
 <attribute name="DIGIKEY" value="1914-BC840MCT-ND" constant="no"/>
-<attribute name="MP" value="MPN"/>
+<attribute name="MANUFACTURER" value="FANSTEL" constant="no"/>
+<attribute name="MPN" value="BC840M"/>
 </technology>
 </technologies>
 </device>
