@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -15073,7 +15073,10 @@ a motion sensor.</description>
 <connect gate="G$1" pin="WP/SIO2" pad="3"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="1092-1202-ND" constant="no"/>
+<attribute name="MPN" value="MX25R3235FZNIL0" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="ZBIL0" package="8-USON_4X3">
@@ -15088,7 +15091,10 @@ a motion sensor.</description>
 <connect gate="G$1" pin="WP/SIO2" pad="3"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="MX25R3235FZBIL0-ND" constant="no"/>
+<attribute name="MPN" value="MX25R3235FZBIL0" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

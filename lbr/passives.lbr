@@ -816,10 +816,10 @@ Source: https://www.ibselectronics.com/pdf/pa/walsin/smt_notes.pdf</description>
 <smd name="P$1" x="0" y="0.22" dx="0.3" dy="0.21" layer="1"/>
 <smd name="P$2" x="0" y="-0.22" dx="0.3" dy="0.21" layer="1"/>
 <text x="-0.36" y="0.4" size="0.3048" layer="25" font="vector" ratio="12">&gt;NAME</text>
-<wire x1="-0.15" y1="0.05" x2="0" y2="0.05" width="0.05" layer="21"/>
-<wire x1="0" y1="0.05" x2="0.15" y2="0.05" width="0.05" layer="21"/>
-<wire x1="-0.1" y1="-0.05" x2="0" y2="0.05" width="0.05" layer="21"/>
-<wire x1="0" y1="0.05" x2="0.1" y2="-0.05" width="0.05" layer="21"/>
+<wire x1="-0.2" y1="0.05" x2="0" y2="0.05" width="0.0762" layer="21"/>
+<wire x1="0" y1="0.05" x2="0.2" y2="0.05" width="0.0762" layer="21"/>
+<wire x1="0" y1="0.05" x2="-0.2" y2="-0.1" width="0.0762" layer="21"/>
+<wire x1="0" y1="0.05" x2="0.2" y2="-0.1" width="0.0762" layer="21"/>
 </package>
 </packages>
 <symbols>
