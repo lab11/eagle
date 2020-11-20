@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -144,9 +144,10 @@
 <package name="0402_RES">
 <smd name="2" x="0.43306875" y="0" dx="0.535940625" dy="0.5461" layer="1"/>
 <smd name="1" x="-0.43306875" y="0" dx="0.535940625" dy="0.5461" layer="1"/>
-<rectangle x1="-0.127" y1="-0.127" x2="0.127" y2="0.127" layer="21"/>
 <text x="0" y="0.381" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
 <text x="0" y="-1.397" size="1.016" layer="27" font="vector" ratio="12" align="bottom-center">&gt;VALUE</text>
+<wire x1="-0.7" y1="0.4" x2="0.7" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.7" y1="-0.4" x2="0.7" y2="-0.4" width="0.127" layer="21"/>
 </package>
 <package name="0402_RES-HIGH_SPEED">
 <description>Reference Plane Void for high-speed SMD passive
@@ -371,7 +372,8 @@ It has a reduced top mask to make it harder to install upside-down.</description
 <smd name="2" x="0.43306875" y="0" dx="0.535940625" dy="0.5461" layer="1"/>
 <smd name="1" x="-0.43306875" y="0" dx="0.535940625" dy="0.5461" layer="1"/>
 <text x="0" y="0.381" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
-<circle x="0" y="0" radius="0.127" width="0" layer="21"/>
+<wire x1="-0.7" y1="0.4" x2="0.7" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.7" y1="-0.4" x2="0.7" y2="-0.4" width="0.127" layer="21"/>
 </package>
 <package name="LPS4018">
 <description>Coilcraft LPS4018 series inductor package.</description>
@@ -815,11 +817,11 @@ Source: https://www.ibselectronics.com/pdf/pa/walsin/smt_notes.pdf</description>
 <package name="0201_DIODE">
 <smd name="P$1" x="0" y="0.22" dx="0.3" dy="0.21" layer="1"/>
 <smd name="P$2" x="0" y="-0.22" dx="0.3" dy="0.21" layer="1"/>
-<text x="-0.36" y="0.4" size="0.3048" layer="25" font="vector" ratio="12">&gt;NAME</text>
-<wire x1="-0.2" y1="0.05" x2="0" y2="0.05" width="0.0762" layer="21"/>
-<wire x1="0" y1="0.05" x2="0.2" y2="0.05" width="0.0762" layer="21"/>
-<wire x1="0" y1="0.05" x2="-0.2" y2="-0.1" width="0.0762" layer="21"/>
-<wire x1="0" y1="0.05" x2="0.2" y2="-0.1" width="0.0762" layer="21"/>
+<text x="-0.26" y="0.7" size="0.3048" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<wire x1="-0.2" y1="0.4" x2="0" y2="0.6" width="0.0762" layer="21"/>
+<wire x1="0" y1="0.6" x2="0.2" y2="0.4" width="0.0762" layer="21"/>
+<wire x1="0.2" y1="0.4" x2="-0.2" y2="0.4" width="0.0762" layer="21"/>
+<wire x1="-0.2" y1="0.6" x2="0.2" y2="0.6" width="0.0762" layer="21"/>
 </package>
 </packages>
 <symbols>
