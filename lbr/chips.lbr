@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -5685,8 +5685,8 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <wire x1="1.62" y1="-1.3" x2="-1.62" y2="-1.3" width="0.05" layer="39"/>
 <wire x1="-1.62" y1="-1.3" x2="-1.62" y2="1.3" width="0.05" layer="39"/>
 <rectangle x1="-0.285" y1="-0.475" x2="0.285" y2="0.475" layer="31"/>
-<circle x="-1.9" y="0.9" radius="0.1" width="0.2" layer="51"/>
-<circle x="-1.9" y="0.9" radius="0.1" width="0.2" layer="21"/>
+<circle x="-1.4" y="1.4" radius="0.1" width="0.2" layer="51"/>
+<circle x="-1.4" y="1.4" radius="0.1" width="0.2" layer="21"/>
 <smd name="1" x="-0.985" y="0.8" dx="0.76" dy="0.22" layer="1"/>
 <smd name="2" x="-0.985" y="0.4" dx="0.76" dy="0.22" layer="1"/>
 <smd name="3" x="-0.985" y="0" dx="0.76" dy="0.22" layer="1"/>
@@ -5700,12 +5700,12 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <smd name="11" x="0" y="0" dx="0.9" dy="1.5" layer="1" cream="no"/>
 </package>
 <package name="6-WLP-1.42/0.89">
-<smd name="A1" x="-0.4" y="0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
-<smd name="A2" x="0" y="0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
-<smd name="A3" x="0.4" y="0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
-<smd name="B1" x="-0.4" y="-0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
-<smd name="B2" x="0" y="-0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
-<smd name="B3" x="0.4" y="-0.2" dx="0.25" dy="0.25" layer="1" roundness="100"/>
+<smd name="A1" x="-0.4" y="0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
+<smd name="A2" x="0" y="0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
+<smd name="A3" x="0.4" y="0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
+<smd name="B1" x="-0.4" y="-0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
+<smd name="B2" x="0" y="-0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
+<smd name="B3" x="0.4" y="-0.2" dx="0.24" dy="0.24" layer="1" roundness="100"/>
 <wire x1="-0.7085" y1="0.443" x2="0.7085" y2="0.443" width="0.127" layer="21"/>
 <wire x1="0.7085" y1="0.443" x2="0.7085" y2="-0.4435" width="0.127" layer="21"/>
 <wire x1="0.7085" y1="-0.4435" x2="-0.7085" y2="-0.4435" width="0.127" layer="21"/>
@@ -5753,6 +5753,303 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 <wire x1="-1.75" y1="2.25" x2="-2" y2="2.25" width="0.127" layer="25"/>
 <wire x1="-2" y1="2.25" x2="-2" y2="2" width="0.127" layer="25"/>
 </package>
+<package name="WDFN-8L/3MM" urn="urn:adsk.eagle:footprint:25090296/1" locally_modified="yes">
+<description>8-SON (DFN), 0.65 mm pitch, 3.00 X 3.00 X 0.80 mm body, 2.35 X 1.60 mm thermal pad
+&lt;p&gt;8-pin SON (DFN) package with 0.65 mm pitch with body size 3.00 X 3.00 X 0.80 mm and thermal pad size 2.35 X 1.60 mm&lt;/p&gt;</description>
+<circle x="-2.029" y="1.614" radius="0.25" width="0" layer="21"/>
+<wire x1="-1.525" y1="1.364" x2="-1.525" y2="1.525" width="0.12" layer="21"/>
+<wire x1="-1.525" y1="1.525" x2="1.525" y2="1.525" width="0.12" layer="21"/>
+<wire x1="1.525" y1="1.525" x2="1.525" y2="1.364" width="0.12" layer="21"/>
+<wire x1="-1.525" y1="-1.364" x2="-1.525" y2="-1.525" width="0.12" layer="21"/>
+<wire x1="-1.525" y1="-1.525" x2="1.525" y2="-1.525" width="0.12" layer="21"/>
+<wire x1="1.525" y1="-1.525" x2="1.525" y2="-1.364" width="0.12" layer="21"/>
+<wire x1="1.525" y1="-1.525" x2="-1.525" y2="-1.525" width="0.12" layer="51"/>
+<wire x1="-1.525" y1="-1.525" x2="-1.525" y2="1.525" width="0.12" layer="51"/>
+<wire x1="-1.525" y1="1.525" x2="1.525" y2="1.525" width="0.12" layer="51"/>
+<wire x1="1.525" y1="1.525" x2="1.525" y2="-1.525" width="0.12" layer="51"/>
+<smd name="1" x="-1.3576" y="0.975" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="2" x="-1.3576" y="0.325" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="3" x="-1.3576" y="-0.325" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="4" x="-1.3576" y="-0.975" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="5" x="1.3576" y="-0.975" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="6" x="1.3576" y="-0.325" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="7" x="1.3576" y="0.325" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="8" x="1.3576" y="0.975" dx="0.7848" dy="0.27" layer="1"/>
+<smd name="9" x="0" y="0" dx="1.6" dy="2.35" layer="1" thermals="no"/>
+<text x="0" y="2.499" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-2.16" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+</package>
+<package name="UTDFN-8/1.5MM" urn="urn:adsk.eagle:footprint:25092868/1" locally_modified="yes">
+<description>8-SON (DFN), 0.40 mm pitch, 1.50 X 1.50 X 0.50 mm body, 1.50 X 0.70 mm thermal pad
+&lt;p&gt;8-pin SON (DFN) package with 0.40 mm pitch with body size 1.50 X 1.50 X 0.50 mm and thermal pad size 1.50 X 0.70 mm&lt;/p&gt;</description>
+<circle x="-1.279" y="1.214" radius="0.25" width="0" layer="21"/>
+<wire x1="-0.775" y1="0.964" x2="-0.775" y2="1.064" width="0.12" layer="21"/>
+<wire x1="-0.775" y1="1.064" x2="0.775" y2="1.064" width="0.12" layer="21"/>
+<wire x1="0.775" y1="1.064" x2="0.775" y2="0.964" width="0.12" layer="21"/>
+<wire x1="-0.775" y1="-0.964" x2="-0.775" y2="-1.064" width="0.12" layer="21"/>
+<wire x1="-0.775" y1="-1.064" x2="0.775" y2="-1.064" width="0.12" layer="21"/>
+<wire x1="0.775" y1="-1.064" x2="0.775" y2="-0.964" width="0.12" layer="21"/>
+<wire x1="0.775" y1="-0.775" x2="-0.775" y2="-0.775" width="0.12" layer="51"/>
+<wire x1="-0.775" y1="-0.775" x2="-0.775" y2="0.775" width="0.12" layer="51"/>
+<wire x1="-0.775" y1="0.775" x2="0.775" y2="0.775" width="0.12" layer="51"/>
+<wire x1="0.775" y1="0.775" x2="0.775" y2="-0.775" width="0.12" layer="51"/>
+<smd name="1" x="-0.75" y="0.6" dx="0.42" dy="0.22" layer="1"/>
+<smd name="2" x="-0.75" y="0.2" dx="0.42" dy="0.22" layer="1"/>
+<smd name="3" x="-0.75" y="-0.2" dx="0.42" dy="0.22" layer="1"/>
+<smd name="4" x="-0.75" y="-0.6" dx="0.42" dy="0.22" layer="1"/>
+<smd name="5" x="0.75" y="-0.6" dx="0.42" dy="0.22" layer="1"/>
+<smd name="6" x="0.75" y="-0.2" dx="0.42" dy="0.22" layer="1"/>
+<smd name="7" x="0.75" y="0.2" dx="0.42" dy="0.22" layer="1"/>
+<smd name="8" x="0.75" y="0.6" dx="0.42" dy="0.22" layer="1"/>
+<smd name="9" x="0" y="0" dx="0.75" dy="1.45" layer="1" thermals="no"/>
+<text x="0" y="2.099" size="0.8128" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+</package>
+<package name="IC_TPD1S414YZR">
+<text x="-1.1" y="1.1" size="0.6096" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<circle x="-1.345" y="0.9" radius="0.1" width="0.1016" layer="21"/>
+<wire x1="0.96" y1="0.715" x2="0.96" y2="-0.715" width="0.127" layer="51"/>
+<wire x1="-0.96" y1="0.715" x2="-0.96" y2="-0.715" width="0.127" layer="51"/>
+<wire x1="0.96" y1="0.715" x2="-0.96" y2="0.715" width="0.127" layer="51"/>
+<wire x1="0.96" y1="-0.715" x2="-0.96" y2="-0.715" width="0.127" layer="51"/>
+<wire x1="1.045" y1="0.845" x2="1.045" y2="0.4225" width="0.127" layer="21"/>
+<wire x1="1.045" y1="0.845" x2="0.5225" y2="0.845" width="0.127" layer="21"/>
+<wire x1="1.045" y1="-0.845" x2="1.045" y2="-0.4225" width="0.127" layer="21"/>
+<wire x1="1.045" y1="-0.845" x2="0.5225" y2="-0.845" width="0.127" layer="21"/>
+<wire x1="-1.045" y1="-0.845" x2="-1.045" y2="-0.4225" width="0.127" layer="21"/>
+<wire x1="-1.045" y1="-0.845" x2="-0.5225" y2="-0.845" width="0.127" layer="21"/>
+<wire x1="-1.045" y1="0.845" x2="-1.045" y2="0.4225" width="0.127" layer="21"/>
+<wire x1="-1.045" y1="0.845" x2="-0.5225" y2="0.845" width="0.127" layer="21"/>
+<wire x1="1.21" y1="-0.965" x2="1.21" y2="0.965" width="0.05" layer="39"/>
+<wire x1="-1.21" y1="-0.965" x2="-1.21" y2="0.965" width="0.05" layer="39"/>
+<wire x1="1.21" y1="-0.965" x2="-1.21" y2="-0.965" width="0.05" layer="39"/>
+<wire x1="1.21" y1="0.965" x2="-1.21" y2="0.965" width="0.05" layer="39"/>
+<polygon width="0.001" layer="29">
+<vertex x="0.4375" y="0.4" curve="-90"/>
+<vertex x="0.6" y="0.5625" curve="-90"/>
+<vertex x="0.7625" y="0.4" curve="-90"/>
+<vertex x="0.6" y="0.2375" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="0.0375" y="0.4" curve="-90"/>
+<vertex x="0.2" y="0.5625" curve="-90"/>
+<vertex x="0.3625" y="0.4" curve="-90"/>
+<vertex x="0.2" y="0.2375" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.3625" y="0.4" curve="-90"/>
+<vertex x="-0.2" y="0.5625" curve="-90"/>
+<vertex x="-0.0375" y="0.4" curve="-90"/>
+<vertex x="-0.2" y="0.2375" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.7625" y="0.4" curve="-90"/>
+<vertex x="-0.6" y="0.5625" curve="-90"/>
+<vertex x="-0.4375" y="0.4" curve="-90"/>
+<vertex x="-0.6" y="0.2375" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="0.4375" y="0" curve="-90"/>
+<vertex x="0.6" y="0.1625" curve="-90"/>
+<vertex x="0.7625" y="0" curve="-90"/>
+<vertex x="0.6" y="-0.1625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="0.4375" y="-0.4" curve="-90"/>
+<vertex x="0.6" y="-0.2375" curve="-90"/>
+<vertex x="0.7625" y="-0.4" curve="-90"/>
+<vertex x="0.6" y="-0.5625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="0.0375" y="-0.4" curve="-90"/>
+<vertex x="0.2" y="-0.2375" curve="-90"/>
+<vertex x="0.3625" y="-0.4" curve="-90"/>
+<vertex x="0.2" y="-0.5625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.7625" y="-0.4" curve="-90"/>
+<vertex x="-0.6" y="-0.2375" curve="-90"/>
+<vertex x="-0.4375" y="-0.4" curve="-90"/>
+<vertex x="-0.6" y="-0.5625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.7625" y="-0.4" curve="-90"/>
+<vertex x="-0.6" y="-0.2375" curve="-90"/>
+<vertex x="-0.4375" y="-0.4" curve="-90"/>
+<vertex x="-0.6" y="-0.5625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.7625" y="0" curve="-90"/>
+<vertex x="-0.6" y="0.1625" curve="-90"/>
+<vertex x="-0.4375" y="0" curve="-90"/>
+<vertex x="-0.6" y="-0.1625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.3625" y="-0.4" curve="-90"/>
+<vertex x="-0.2" y="-0.2375" curve="-90"/>
+<vertex x="-0.0375" y="-0.4" curve="-90"/>
+<vertex x="-0.2" y="-0.5625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.3625" y="0" curve="-90"/>
+<vertex x="-0.2" y="0.1625" curve="-90"/>
+<vertex x="-0.0375" y="0" curve="-90"/>
+<vertex x="-0.2" y="-0.1625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="-0.3625" y="0" curve="-90"/>
+<vertex x="-0.2" y="0.1625" curve="-90"/>
+<vertex x="-0.0375" y="0" curve="-90"/>
+<vertex x="-0.2" y="-0.1625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="29">
+<vertex x="0.0375" y="0" curve="-90"/>
+<vertex x="0.2" y="0.1625" curve="-90"/>
+<vertex x="0.3625" y="0" curve="-90"/>
+<vertex x="0.2" y="-0.1625" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.725" y="0.32"/>
+<vertex x="-0.725" y="0.48" curve="-90"/>
+<vertex x="-0.68" y="0.525"/>
+<vertex x="-0.52" y="0.525" curve="-90"/>
+<vertex x="-0.475" y="0.48"/>
+<vertex x="-0.475" y="0.32" curve="-90"/>
+<vertex x="-0.52" y="0.275"/>
+<vertex x="-0.68" y="0.275" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.325" y="0.32"/>
+<vertex x="-0.325" y="0.48" curve="-90"/>
+<vertex x="-0.28" y="0.525"/>
+<vertex x="-0.12" y="0.525" curve="-90"/>
+<vertex x="-0.075" y="0.48"/>
+<vertex x="-0.075" y="0.32" curve="-90"/>
+<vertex x="-0.12" y="0.275"/>
+<vertex x="-0.28" y="0.275" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.075" y="0.32"/>
+<vertex x="0.075" y="0.48" curve="-90"/>
+<vertex x="0.12" y="0.525"/>
+<vertex x="0.28" y="0.525" curve="-90"/>
+<vertex x="0.325" y="0.48"/>
+<vertex x="0.325" y="0.32" curve="-90"/>
+<vertex x="0.28" y="0.275"/>
+<vertex x="0.12" y="0.275" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.475" y="0.32"/>
+<vertex x="0.475" y="0.48" curve="-90"/>
+<vertex x="0.52" y="0.525"/>
+<vertex x="0.68" y="0.525" curve="-90"/>
+<vertex x="0.725" y="0.48"/>
+<vertex x="0.725" y="0.32" curve="-90"/>
+<vertex x="0.68" y="0.275"/>
+<vertex x="0.52" y="0.275" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.475" y="-0.08"/>
+<vertex x="0.475" y="0.08" curve="-90"/>
+<vertex x="0.52" y="0.125"/>
+<vertex x="0.68" y="0.125" curve="-90"/>
+<vertex x="0.725" y="0.08"/>
+<vertex x="0.725" y="-0.08" curve="-90"/>
+<vertex x="0.68" y="-0.125"/>
+<vertex x="0.52" y="-0.125" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.475" y="-0.48"/>
+<vertex x="0.475" y="-0.32" curve="-90"/>
+<vertex x="0.52" y="-0.275"/>
+<vertex x="0.68" y="-0.275" curve="-90"/>
+<vertex x="0.725" y="-0.32"/>
+<vertex x="0.725" y="-0.48" curve="-90"/>
+<vertex x="0.68" y="-0.525"/>
+<vertex x="0.52" y="-0.525" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.725" y="-0.08"/>
+<vertex x="-0.725" y="0.08" curve="-90"/>
+<vertex x="-0.68" y="0.125"/>
+<vertex x="-0.52" y="0.125" curve="-90"/>
+<vertex x="-0.475" y="0.08"/>
+<vertex x="-0.475" y="-0.08" curve="-90"/>
+<vertex x="-0.52" y="-0.125"/>
+<vertex x="-0.68" y="-0.125" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.725" y="-0.48"/>
+<vertex x="-0.725" y="-0.32" curve="-90"/>
+<vertex x="-0.68" y="-0.275"/>
+<vertex x="-0.52" y="-0.275" curve="-90"/>
+<vertex x="-0.475" y="-0.32"/>
+<vertex x="-0.475" y="-0.48" curve="-90"/>
+<vertex x="-0.52" y="-0.525"/>
+<vertex x="-0.68" y="-0.525" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.075" y="-0.48"/>
+<vertex x="0.075" y="-0.32" curve="-90"/>
+<vertex x="0.12" y="-0.275"/>
+<vertex x="0.28" y="-0.275" curve="-90"/>
+<vertex x="0.325" y="-0.32"/>
+<vertex x="0.325" y="-0.48" curve="-90"/>
+<vertex x="0.28" y="-0.525"/>
+<vertex x="0.12" y="-0.525" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.325" y="-0.48"/>
+<vertex x="-0.325" y="-0.32" curve="-90"/>
+<vertex x="-0.28" y="-0.275"/>
+<vertex x="-0.12" y="-0.275" curve="-90"/>
+<vertex x="-0.075" y="-0.32"/>
+<vertex x="-0.075" y="-0.48" curve="-90"/>
+<vertex x="-0.12" y="-0.525"/>
+<vertex x="-0.28" y="-0.525" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.325" y="-0.08"/>
+<vertex x="-0.325" y="0.08" curve="-90"/>
+<vertex x="-0.28" y="0.125"/>
+<vertex x="-0.12" y="0.125" curve="-90"/>
+<vertex x="-0.075" y="0.08"/>
+<vertex x="-0.075" y="-0.08" curve="-90"/>
+<vertex x="-0.12" y="-0.125"/>
+<vertex x="-0.28" y="-0.125" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="-0.325" y="-0.08"/>
+<vertex x="-0.325" y="0.08" curve="-90"/>
+<vertex x="-0.28" y="0.125"/>
+<vertex x="-0.12" y="0.125" curve="-90"/>
+<vertex x="-0.075" y="0.08"/>
+<vertex x="-0.075" y="-0.08" curve="-90"/>
+<vertex x="-0.12" y="-0.125"/>
+<vertex x="-0.28" y="-0.125" curve="-90"/>
+</polygon>
+<polygon width="0.001" layer="31">
+<vertex x="0.075" y="-0.08"/>
+<vertex x="0.075" y="0.08" curve="-90"/>
+<vertex x="0.12" y="0.125"/>
+<vertex x="0.28" y="0.125" curve="-90"/>
+<vertex x="0.325" y="0.08"/>
+<vertex x="0.325" y="-0.08" curve="-90"/>
+<vertex x="0.28" y="-0.125"/>
+<vertex x="0.12" y="-0.125" curve="-90"/>
+</polygon>
+<smd name="A1" x="-0.6" y="0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="B1" x="-0.6" y="0" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="C1" x="-0.6" y="-0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="A2" x="-0.2" y="0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="B2" x="-0.2" y="0" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="C2" x="-0.2" y="-0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="A3" x="0.2" y="0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="B3" x="0.2" y="0" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="C3" x="0.2" y="-0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="A4" x="0.6" y="0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="B4" x="0.6" y="0" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+<smd name="C4" x="0.6" y="-0.4" dx="0.225" dy="0.225" layer="1" roundness="100" stop="no" cream="no"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="SOIC127P600X175-8N" urn="urn:adsk.eagle:package:22765747/1" type="model">
@@ -5760,6 +6057,20 @@ https://www.vishay.com/docs/72821/72821.pdf</description>
 &lt;p&gt;8-pin SOIC package with 1.27 mm pitch, 6.00 mm span with body size 4.90 X 3.90 X 1.75 mm&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="SOIC127P600X175-8N"/>
+</packageinstances>
+</package3d>
+<package3d name="SON65P300X300X80-9T160X235L" urn="urn:adsk.eagle:package:25090215/1" type="model">
+<description>8-SON (DFN), 0.65 mm pitch, 3.00 X 3.00 X 0.80 mm body, 2.35 X 1.60 mm thermal pad
+&lt;p&gt;8-pin SON (DFN) package with 0.65 mm pitch with body size 3.00 X 3.00 X 0.80 mm and thermal pad size 2.35 X 1.60 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="WDFN-8L/3MM"/>
+</packageinstances>
+</package3d>
+<package3d name="SON40P150X150X50-9T70X150N" urn="urn:adsk.eagle:package:25092857/1" type="model">
+<description>8-SON (DFN), 0.40 mm pitch, 1.50 X 1.50 X 0.50 mm body, 1.50 X 0.70 mm thermal pad
+&lt;p&gt;8-pin SON (DFN) package with 0.40 mm pitch with body size 1.50 X 1.50 X 0.50 mm and thermal pad size 1.50 X 0.70 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="UTDFN-8/1.5MM"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -9634,6 +9945,67 @@ a motion sensor.</description>
 <pin name="VCC" x="-2.54" y="17.78" length="short"/>
 <text x="0" y="21.082" size="1.778" layer="95">&gt;NAME</text>
 <text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="TPS7A02">
+<description>Ultra low quiescent current (20nA) LDO
+1.2-4.2V output</description>
+<pin name="IN" x="-2.54" y="5.08" length="short"/>
+<pin name="EN" x="-2.54" y="2.54" length="short"/>
+<pin name="GND" x="20.32" y="2.54" length="short" rot="R180"/>
+<pin name="VOUT" x="20.32" y="5.08" length="short" rot="R180"/>
+<wire x1="0" y1="7.62" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="17.78" y2="0" width="0.254" layer="94"/>
+<wire x1="17.78" y1="0" x2="17.78" y2="7.62" width="0.254" layer="94"/>
+<wire x1="17.78" y1="7.62" x2="0" y2="7.62" width="0.254" layer="94"/>
+<text x="0" y="8.89" size="1.778" layer="96">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="RT9301">
+<description>3-Channel Low Dropout RGB LED Driver</description>
+<wire x1="0" y1="0" x2="0" y2="20.32" width="0.254" layer="94"/>
+<wire x1="0" y1="20.32" x2="17.78" y2="20.32" width="0.254" layer="94"/>
+<wire x1="17.78" y1="20.32" x2="17.78" y2="0" width="0.254" layer="94"/>
+<wire x1="17.78" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="ISET1" x="-2.54" y="12.7" length="short"/>
+<pin name="ISET2" x="-2.54" y="10.16" length="short"/>
+<pin name="ISET3" x="-2.54" y="7.62" length="short"/>
+<pin name="LED3" x="20.32" y="7.62" length="short" rot="R180"/>
+<pin name="GND" x="-2.54" y="2.54" length="short"/>
+<pin name="LED2" x="20.32" y="10.16" length="short" rot="R180"/>
+<pin name="LED1" x="20.32" y="12.7" length="short" rot="R180"/>
+<pin name="VIN" x="-2.54" y="17.78" length="short"/>
+<text x="0" y="21.082" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="KTD2026">
+<description>Constant Current RGB LED Driver with I2C Control</description>
+<wire x1="0" y1="0" x2="0" y2="20.32" width="0.254" layer="94"/>
+<wire x1="0" y1="20.32" x2="20.32" y2="20.32" width="0.254" layer="94"/>
+<wire x1="20.32" y1="20.32" x2="20.32" y2="0" width="0.254" layer="94"/>
+<wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="D1" x="5.08" y="22.86" length="short" rot="R270"/>
+<pin name="D2" x="10.16" y="22.86" length="short" rot="R270"/>
+<pin name="D3" x="15.24" y="22.86" length="short" rot="R270"/>
+<pin name="VIN" x="-2.54" y="10.16" length="short"/>
+<pin name="SCL" x="-2.54" y="7.62" length="short"/>
+<pin name="SDA" x="-2.54" y="5.08" length="short"/>
+<pin name="ST" x="-2.54" y="2.54" length="short"/>
+<pin name="GND" x="10.16" y="-2.54" length="short" rot="R90"/>
+<text x="17.78" y="21.336" size="1.778" layer="95">&gt;NAME</text>
+<text x="12.7" y="-2.54" size="1.778" layer="95">&gt;VALUE</text>
+</symbol>
+<symbol name="TPD1S414YZR">
+<wire x1="-15.24" y1="7.62" x2="-15.24" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-15.24" y1="-7.62" x2="15.24" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="15.24" y1="-7.62" x2="15.24" y2="7.62" width="0.1524" layer="94"/>
+<wire x1="15.24" y1="7.62" x2="-15.24" y2="7.62" width="0.1524" layer="94"/>
+<text x="-15.24" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-15.24" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="!ACK" x="20.32" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="!EN" x="-20.32" y="0" length="middle" direction="in"/>
+<pin name="VBUS_CON" x="-20.32" y="5.08" length="middle"/>
+<pin name="VBUS_SYS" x="20.32" y="5.08" length="middle" rot="R180"/>
+<pin name="GND" x="20.32" y="-5.08" length="middle" direction="pwr" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -15135,6 +15507,7 @@ a motion sensor.</description>
 </connects>
 <technologies>
 <technology name="">
+<attribute name="DIGIKEY" value="296-37142-1-ND"/>
 <attribute name="MANUFACTURER" value="Texas Instruments"/>
 <attribute name="MPN" value="BQ24040DSQR"/>
 </technology>
@@ -15190,9 +15563,9 @@ nanoPower Buck Converter</description>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="MX25R3235FM1IH0" constant="no"/>
+<attribute name="DIGIKEY" value="MX25L3233FM2I-08G-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Macronix" constant="no"/>
-<attribute name="MPN" value="MX25R3235FM1IH0" constant="no"/>
+<attribute name="MPN" value="MX25L3233FM2I-08G" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -15209,8 +15582,9 @@ nanoPower Buck Converter</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="1092-1202-ND" constant="no"/>
-<attribute name="MPN" value="MX25R3235FZNIL0" constant="no"/>
+<attribute name="DIGIKEY" value="MX25L3233FZNI-08G-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Macronix" constant="no"/>
+<attribute name="MPN" value="MX25L3233FZNI-08G" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -15227,8 +15601,113 @@ nanoPower Buck Converter</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="MX25R3235FZBIL0-ND" constant="no"/>
-<attribute name="MPN" value="MX25R3235FZBIL0" constant="no"/>
+<attribute name="DIGIKEY" value="1092-MX25L3233FZBI-08QCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Macronix" constant="no"/>
+<attribute name="MPN" value="MX25L3233FZBI-08Q" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TPS7A02">
+<description>Nanopower Low Dropout Voltage Regulator</description>
+<gates>
+<gate name="G$1" symbol="TPS7A02" x="0" y="0"/>
+</gates>
+<devices>
+<device name="18PDBVR" package="SOT-23-5">
+<connects>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2 4"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="VOUT" pad="5"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-TPS7A0218PDBVRCT-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="Texas Instruments" constant="no"/>
+<attribute name="MPN" value="TPS7A0218PDBVR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RT9301" prefix="U">
+<description>3-Channel Low Dropout RGB LED Driver</description>
+<gates>
+<gate name="G$1" symbol="RT9301" x="0" y="0"/>
+</gates>
+<devices>
+<device name="GJ8" package="WDFN-8L/3MM">
+<connects>
+<connect gate="G$1" pin="GND" pad="7 9"/>
+<connect gate="G$1" pin="ISET1" pad="3"/>
+<connect gate="G$1" pin="ISET2" pad="4"/>
+<connect gate="G$1" pin="ISET3" pad="5"/>
+<connect gate="G$1" pin="LED1" pad="2"/>
+<connect gate="G$1" pin="LED2" pad="1"/>
+<connect gate="G$1" pin="LED3" pad="8"/>
+<connect gate="G$1" pin="VIN" pad="6"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25090215/1"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="KTD2026" prefix="U">
+<description>Constant Current RGB LED Driver with I2C Control</description>
+<gates>
+<gate name="G$1" symbol="KTD2026" x="0" y="0"/>
+</gates>
+<devices>
+<device name="EWE-TR" package="UTDFN-8/1.5MM">
+<connects>
+<connect gate="G$1" pin="D1" pad="4"/>
+<connect gate="G$1" pin="D2" pad="3"/>
+<connect gate="G$1" pin="D3" pad="2"/>
+<connect gate="G$1" pin="GND" pad="8 9"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="7"/>
+<connect gate="G$1" pin="ST" pad="1"/>
+<connect gate="G$1" pin="VIN" pad="5"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:25092857/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MANUFACTURER" value="Kinetic Technologies" constant="no"/>
+<attribute name="MOUSER" value="389-KTD2026EWETR" constant="no"/>
+<attribute name="MPN" value="KTD2026EWE-TR" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TPD1S414YZR" prefix="U">
+<description>USB Charger Over Voltage Protection Switch With ESD 12-Pin DSBGA T/R &lt;a href="https://pricing.snapeda.com/parts/TPD1S414YZR/Texas%20Instruments/view-part?ref=eda"&gt;Check prices&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="TPD1S414YZR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="IC_TPD1S414YZR">
+<connects>
+<connect gate="G$1" pin="!ACK" pad="B1"/>
+<connect gate="G$1" pin="!EN" pad="C1"/>
+<connect gate="G$1" pin="GND" pad="A1 A4 B4 C4"/>
+<connect gate="G$1" pin="VBUS_CON" pad="B3 C2 C3"/>
+<connect gate="G$1" pin="VBUS_SYS" pad="A2 A3 B2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-37297-1-ND"/>
+<attribute name="MANUFACTURER" value="Texas Instruments"/>
+<attribute name="MPN" value="TPD1S414YZR"/>
+<attribute name="PACKAGE" value="DSBGA-12 Texas Instruments"/>
 </technology>
 </technologies>
 </device>
