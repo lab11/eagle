@@ -1413,6 +1413,9 @@ Entry</text>
 <smd name="S1" x="-3.35" y="-5.75" dx="1.5" dy="3.4" layer="1" rot="R180"/>
 </package>
 <package name="CX90B-16P">
+<description>NOTE!!! THIS PART ONLY INTENDED FOR 2 OR 4 LAYER DESIGNS
+&lt;br&gt;
+MILLING SLOTS DO NOT AVOID INTERNAL LAYERS BESIDES 2 AND 15</description>
 <smd name="GND11" x="-4.67" y="-0.425" dx="1.1" dy="2.6" layer="1" roundness="100"/>
 <wire x1="-4.92" y1="-1.125" x2="-4.92" y2="0.275" width="0.01" layer="46"/>
 <wire x1="-4.32" y1="0.275" x2="-4.32" y2="-1.125" width="0.01" layer="46"/>
@@ -1465,6 +1468,54 @@ Entry</text>
 <wire x1="4.47" y1="-5.375" x2="4.47" y2="-6.175" width="0.1524" layer="21"/>
 <text x="0" y="-5.6" size="0.3048" layer="51" font="vector" ratio="12" align="top-center">PCB Edge</text>
 <text x="-4" y="0.7" size="0.6096" layer="21" font="vector" ratio="12">&gt;NAME</text>
+<polygon width="0.127" layer="2" spacing="0.1" pour="cutout">
+<vertex x="-5.2" y="0.9"/>
+<vertex x="-4" y="0.9"/>
+<vertex x="-4" y="-1.7"/>
+<vertex x="-5.2" y="-1.7"/>
+</polygon>
+<polygon width="0.127" layer="15" spacing="0.1" pour="cutout">
+<vertex x="-5.2" y="0.9"/>
+<vertex x="-4" y="0.9"/>
+<vertex x="-4" y="-1.7"/>
+<vertex x="-5.2" y="-1.7"/>
+</polygon>
+<polygon width="0.127" layer="15" spacing="0.1" pour="cutout">
+<vertex x="-4.9" y="-2.8"/>
+<vertex x="-3.7" y="-2.8"/>
+<vertex x="-3.7" y="-5.1"/>
+<vertex x="-4.9" y="-5.1"/>
+</polygon>
+<polygon width="0.127" layer="15" spacing="0.1" pour="cutout">
+<vertex x="3.7" y="-2.8"/>
+<vertex x="4.9" y="-2.8"/>
+<vertex x="4.9" y="-5.1"/>
+<vertex x="3.7" y="-5.1"/>
+</polygon>
+<polygon width="0.127" layer="15" spacing="0.1" pour="cutout">
+<vertex x="4" y="-1.7"/>
+<vertex x="4" y="0.9"/>
+<vertex x="5.2" y="0.9"/>
+<vertex x="5.2" y="-1.7"/>
+</polygon>
+<polygon width="0.127" layer="2" spacing="0.1" pour="cutout">
+<vertex x="4" y="0.9"/>
+<vertex x="4" y="-1.7"/>
+<vertex x="5.2" y="-1.7"/>
+<vertex x="5.2" y="0.9"/>
+</polygon>
+<polygon width="0.127" layer="2" spacing="0.1" pour="cutout">
+<vertex x="3.7" y="-2.8"/>
+<vertex x="3.7" y="-5.1"/>
+<vertex x="4.9" y="-5.1"/>
+<vertex x="4.9" y="-2.8"/>
+</polygon>
+<polygon width="0.127" layer="2" spacing="0.1" pour="cutout">
+<vertex x="-4.9" y="-2.8"/>
+<vertex x="-4.9" y="-5.1"/>
+<vertex x="-3.7" y="-5.1"/>
+<vertex x="-3.7" y="-2.8"/>
+</polygon>
 </package>
 </packages>
 <symbols>
