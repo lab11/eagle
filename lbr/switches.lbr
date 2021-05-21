@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -835,6 +835,27 @@ Digi-Key FPF1320UCXCT-ND</description>
 <text x="-0.7" y="1" size="0.5" layer="25">&gt;NAME</text>
 <text x="-0.7" y="-1.5" size="0.5" layer="27">&gt;VALUE</text>
 </package>
+<package name="JS202011CQN">
+<pad name="1" x="0" y="0" drill="0.9"/>
+<pad name="2" x="2.5" y="0" drill="0.9"/>
+<pad name="3" x="5" y="0" drill="0.9"/>
+<pad name="4" x="0" y="3.3" drill="0.9"/>
+<pad name="5" x="2.5" y="3.3" drill="0.9"/>
+<pad name="6" x="5" y="3.3" drill="0.9"/>
+<wire x1="7" y1="3.3" x2="7" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="-2" y1="-0.3" x2="-2" y2="3.3" width="0.127" layer="21"/>
+<wire x1="-2" y1="3.3" x2="-1" y2="3.3" width="0.127" layer="21"/>
+<wire x1="7" y1="3.3" x2="6" y2="3.3" width="0.127" layer="21"/>
+<wire x1="-2" y1="-0.3" x2="-1" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="7" y1="-0.3" x2="6" y2="-0.3" width="0.127" layer="21"/>
+<wire x1="0" y1="4.2" x2="0" y2="4.5" width="0.127" layer="21"/>
+<wire x1="0" y1="4.5" x2="2.3" y2="4.5" width="0.127" layer="21"/>
+<wire x1="2.3" y1="4.5" x2="2.3" y2="4.2" width="0.127" layer="21"/>
+<wire x1="2.7" y1="4.2" x2="2.7" y2="4.5" width="0.127" layer="21"/>
+<wire x1="2.7" y1="4.5" x2="5" y2="4.5" width="0.127" layer="21"/>
+<wire x1="5" y1="4.5" x2="5" y2="4.2" width="0.127" layer="21"/>
+<text x="-2" y="-2" size="0.8128" layer="21" font="vector" ratio="12">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="8X_SPST">
@@ -1246,6 +1267,28 @@ Digi-Key FPF1320UCXCT-ND</description>
 <text x="-7.62" y="11.43" size="2.54" layer="95">&gt;NAME</text>
 <text x="-7.62" y="-13.97" size="2.54" layer="96">&gt;VALUE</text>
 <pin name="GND" x="-12.7" y="-7.62" visible="pin" length="middle" direction="pwr"/>
+</symbol>
+<symbol name="DPDT">
+<pin name="I1" x="-2.54" y="5.08" visible="off" length="short"/>
+<circle x="0" y="5.08" radius="0.762" width="0.254" layer="94"/>
+<circle x="7.62" y="7.62" radius="0.762" width="0.254" layer="94"/>
+<circle x="7.62" y="2.54" radius="0.762" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="7.112" y2="8.89" width="0.254" layer="94"/>
+<pin name="A1" x="10.16" y="7.62" visible="off" length="short" rot="R180"/>
+<pin name="B1" x="10.16" y="2.54" visible="off" length="short" rot="R180"/>
+<text x="9.144" y="7.874" size="1.016" layer="94" align="bottom-center">A</text>
+<text x="9.144" y="2.794" size="1.016" layer="94" align="bottom-center">B</text>
+<pin name="I2" x="-2.54" y="-5.08" visible="off" length="short"/>
+<circle x="0" y="-5.08" radius="0.762" width="0.254" layer="94"/>
+<circle x="7.62" y="-2.54" radius="0.762" width="0.254" layer="94"/>
+<circle x="7.62" y="-7.62" radius="0.762" width="0.254" layer="94"/>
+<wire x1="0" y1="-5.08" x2="7.112" y2="-1.27" width="0.254" layer="94"/>
+<pin name="A2" x="10.16" y="-2.54" visible="off" length="short" rot="R180"/>
+<pin name="B2" x="10.16" y="-7.62" visible="off" length="short" rot="R180"/>
+<text x="9.144" y="-2.286" size="1.016" layer="94" align="bottom-center">A</text>
+<text x="9.144" y="-7.366" size="1.016" layer="94" align="bottom-center">B</text>
+<text x="-2.54" y="-10.16" size="1.27" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-12.7" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2048,6 +2091,31 @@ X=0/1 chooses whether Vout floats or is grounded when EN is low</description>
 <attribute name="DIGIKEY" value="863-1056-1-ND" constant="no"/>
 <attribute name="MANUFACTURER" value="Skyworks Solutions Inc." constant="no"/>
 <attribute name="MPN" value="SKY13317-373LF" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="JS202011CQN" prefix="S">
+<description>DPDT through hole</description>
+<gates>
+<gate name="G$1" symbol="DPDT" x="2.54" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="JS202011CQN">
+<connects>
+<connect gate="G$1" pin="A1" pad="4"/>
+<connect gate="G$1" pin="A2" pad="1"/>
+<connect gate="G$1" pin="B1" pad="6"/>
+<connect gate="G$1" pin="B2" pad="3"/>
+<connect gate="G$1" pin="I1" pad="5"/>
+<connect gate="G$1" pin="I2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="401-2001-ND" constant="no"/>
+<attribute name="MANUFACTURER" value="C&amp;K" constant="no"/>
+<attribute name="MPN" value="JS202011CQN" constant="no"/>
 </technology>
 </technologies>
 </device>
