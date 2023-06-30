@@ -2,6 +2,6 @@ DataPrint==1.1
 distro==1.5.0
 et-xmlfile==1.0.1
 openpyxl==3.0.7
-PyPDF2==1.27.5
+PyPDF2==1.27.9
 sh==1.14.1
 unotools==0.3.3
